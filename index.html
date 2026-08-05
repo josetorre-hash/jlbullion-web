@@ -86,12 +86,20 @@
         .btn-quote { background: var(--primary); color: var(--accent); border: 1px solid var(--accent); padding: 0.6rem 1rem; text-align: center; font-size: 0.85rem; font-weight: 600; border-radius: 4px; text-decoration: none; transition: 0.3s; display: block; cursor: pointer; width: 100%; }
         .btn-quote:hover { background: var(--accent); color: var(--primary); }
 
-        /* CONTACT FORM */
+        /* CONTACT FORM & CART NOTICES */
         .form-section { background: var(--secondary); color: var(--text-light); padding: 3rem; border-radius: 8px; margin-top: 4rem; }
         .form-group { margin-bottom: 1.2rem; }
         .form-group label { display: block; margin-bottom: 0.5rem; color: var(--accent); font-size: 0.9rem; }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border-radius: 4px; border: 1px solid #334155; background: #0f172a; color: white; }
         .form-notice { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; }
+
+        .cart-summary-box { background: #0f172a; border: 1px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin-bottom: 1.5rem; }
+        .cart-total-header { display: flex; justify-content: space-between; align-items: center; color: var(--text-light); font-size: 1.2rem; font-family: 'Cinzel', serif; }
+        .cart-total-header span { color: var(--accent); font-weight: 700; }
+        .timer-badge { background: #7f1d1d; color: #fecaca; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+        .notice-banner { background-color: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; border-radius: 4px; margin-bottom: 1rem; font-size: 0.82rem; color: #cbd5e1; line-height: 1.4; }
+        .notice-banner strong { color: var(--accent); }
 
         footer { background: var(--primary); color: var(--text-muted); text-align: center; padding: 2.5rem; margin-top: 4rem; border-top: 1px solid #1e293b; font-size: 0.85rem; }
         footer a { color: var(--accent); text-decoration: none; }
@@ -135,22 +143,10 @@
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
             {
                 "symbols": [
-                    {
-                        "proName": "TVC:GOLD",
-                        "title": "Gold Spot ($/oz)"
-                    },
-                    {
-                        "proName": "TVC:SILVER",
-                        "title": "Silver Spot ($/oz)"
-                    },
-                    {
-                        "proName": "TVC:PLATINUM",
-                        "title": "Platinum ($/oz)"
-                    },
-                    {
-                        "proName": "TVC:PALLADIUM",
-                        "title": "Palladium ($/oz)"
-                    }
+                    { "proName": "TVC:GOLD", "title": "Gold Spot ($/oz)" },
+                    { "proName": "TVC:SILVER", "title": "Silver Spot ($/oz)" },
+                    { "proName": "TVC:PLATINUM", "title": "Platinum ($/oz)" },
+                    { "proName": "TVC:PALLADIUM", "title": "Palladium ($/oz)" }
                 ],
                 "showSymbolLogo": false,
                 "colorTheme": "light",
@@ -213,7 +209,7 @@
         </div>
     </div>
 
-    <!-- PAGE 2: SPECIALS (AUTOMATIC SELECTION SUPPORT) -->
+    <!-- PAGE 2: SPECIALS (FULL LIST) -->
     <div id="specials" class="tab-page">
         <div class="container">
             <h1 class="page-header-title">Specials 🔥 (Melt Value / 0% Premium)</h1>
@@ -221,7 +217,7 @@
 
             <div class="inventory-grid">
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-1">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Details</span>
@@ -232,11 +228,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.1106">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Austria 1915 Gold Ducat Restrike KM-2267 PCGS Genuine Unc Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-1', 'Austria 1915 Gold Ducat Restrike KM-2267 PCGS Genuine Unc Details', 0.1106, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-2">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU-55</span>
@@ -247,11 +243,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.1867">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Belgium 1875 Gold 20 Francs KM-37 PCGS AU-55')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-2', 'Belgium 1875 Gold 20 Francs KM-37 PCGS AU-55', 0.1867, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-3">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-stock">In Stock</span>
@@ -261,11 +257,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.2127">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Turkey 1923 Year 35 (1958) Gold 100 Kurush Kemal Atatürk KM-855')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-3', 'Turkey 1923 Year 35 (1958) Gold 100 Kurush Kemal Atatürk KM-855', 0.2127, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-4">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Details</span>
@@ -276,11 +272,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.7516">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Egypt AH 1384 // 1964 Gold £10 Sadd el-Ali Dam KM-409 PCGS Genuine')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-4', 'Egypt AH 1384 // 1964 Gold £10 Sadd el-Ali Dam KM-409 PCGS Genuine', 0.7516, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-5">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Details</span>
@@ -291,11 +287,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.1152">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Germany - East Prussia 1879-A Gold 10 Mk KM-504 PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-5', 'Germany - East Prussia 1879-A Gold 10 Mk KM-504 PCGS Genuine AU Details', 0.1152, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-6">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Unc Details</span>
@@ -306,11 +302,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.1947">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Netherlands 1875 Gold 10 Gulden KM-105 PCGS Genuine Unc Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-6', 'Netherlands 1875 Gold 10 Gulden KM-105 PCGS Genuine Unc Details', 0.1947, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-7">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Proof-69</span>
@@ -321,11 +317,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.5000">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Canada 1978 Gold $100 Canadian Unification KM-122 PCGS Proof-69')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-7', 'Canada 1978 Gold $100 Canadian Unification KM-122 PCGS Proof-69', 0.5000, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-8">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Details</span>
@@ -336,11 +332,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.1867">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Italy 1881-R Gold 20 Lire KM-21 PCGS Genuine Unc Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-8', 'Italy 1881-R Gold 20 Lire KM-21 PCGS Genuine Unc Details', 0.1867, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-9">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU-58</span>
@@ -351,11 +347,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.1947">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Netherlands 1875 Gold 10 Gulden KM-105 PCGS AU-58')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-9', 'Netherlands 1875 Gold 10 Gulden KM-105 PCGS AU-58', 0.1947, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-10">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS VF Details</span>
@@ -366,11 +362,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1880 Liberty Gold Half Eagle PCGS Genuine VF Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-10', '1880 Liberty Gold Half Eagle PCGS Genuine VF Details', 0.24187, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-11">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-anacs">ANACS AU-50</span>
@@ -381,11 +377,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1885 Liberty Gold Half Eagle ANACS AU-50 Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-11', '1885 Liberty Gold Half Eagle ANACS AU-50 Details', 0.24187, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-12">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS XF Details</span>
@@ -396,11 +392,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1905-S Liberty Gold Half Eagle PCGS Genuine XF Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-12', '1905-S Liberty Gold Half Eagle PCGS Genuine XF Details', 0.24187, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-13">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU Details</span>
@@ -411,11 +407,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.48375">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1932 Indian Gold Eagle PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-13', '1932 Indian Gold Eagle PCGS Genuine AU Details', 0.48375, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-14">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-anacs">ANACS Proof-64</span>
@@ -426,11 +422,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.5000">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Canada 1979 Gold $100 Year of Child KM-126 ANACS Proof-64 DCAM')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-14', 'Canada 1979 Gold $100 Year of Child KM-126 ANACS Proof-64 DCAM', 0.5000, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-15">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Proof-65</span>
@@ -441,11 +437,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.2263">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Jamaica 1975-FM Gold $100 Columbus KM-67 PCGS Proof-65')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-15', 'Jamaica 1975-FM Gold $100 Columbus KM-67 PCGS Proof-65', 0.2263, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-16">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU Details</span>
@@ -456,11 +452,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1901-S Liberty Gold Double Eagle PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-16', '1901-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-17">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-stock">In Stock</span>
@@ -470,11 +466,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.2500">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card of Issue')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-17', 'Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card of Issue', 0.2500, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-18">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Unc Details</span>
@@ -485,11 +481,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.5885">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Chile 1949-So Gold 100 Pesos KM-175 PCGS Genuine Unc Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-18', 'Chile 1949-So Gold 100 Pesos KM-175 PCGS Genuine Unc Details', 0.5885, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-19">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU Details</span>
@@ -500,11 +496,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.4710">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'Great Britain 1887 Gold £2 KM-768 PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-19', 'Great Britain 1887 Gold £2 KM-768 PCGS Genuine AU Details', 0.4710, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-20">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS XF Details</span>
@@ -515,11 +511,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1881 Liberty Gold Half Eagle PCGS Genuine XF Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-20', '1881 Liberty Gold Half Eagle PCGS Genuine XF Details', 0.24187, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-21">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU Details</span>
@@ -530,11 +526,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1895 Liberty Gold Half Eagle PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-21', '1895 Liberty Gold Half Eagle PCGS Genuine AU Details', 0.24187, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-22">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS XF-40</span>
@@ -545,11 +541,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.48375">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1893 Liberty Gold Eagle PCGS XF-40')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-22', '1893 Liberty Gold Eagle PCGS XF-40', 0.48375, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-23">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU Details</span>
@@ -560,11 +556,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1880 Liberty Gold Half Eagle PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-23', '1880 Liberty Gold Half Eagle PCGS Genuine AU Details', 0.24187, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-24">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU Details</span>
@@ -575,11 +571,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1891-S Liberty Gold Double Eagle PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-24', '1891-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-25">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS AU Details</span>
@@ -590,11 +586,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1895-S Liberty Gold Double Eagle PCGS Genuine AU Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-25', '1895-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-26">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Unc Details</span>
@@ -605,11 +601,11 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, '1907 Liberty Gold Double Eagle PCGS Genuine Unc Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-26', '1907 Liberty Gold Double Eagle PCGS Genuine Unc Details', 0.9675, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
-                <div class="item-card">
+                <div class="item-card" data-id="coin-27">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Unc Details</span>
@@ -620,7 +616,7 @@
                     </div>
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.2356">Calculating spot...</div>
-                        <button class="btn-quote" onclick="selectCoin(this, 'South Africa 1926-SA Gold Sovereign KM-21 PCGS Genuine Unc Details')">Add to Order</button>
+                        <button class="btn-quote" onclick="selectCoin('coin-27', 'South Africa 1926-SA Gold Sovereign KM-21 PCGS Genuine Unc Details', 0.2356, 'gold')">Add to Order</button>
                     </div>
                 </div>
 
@@ -646,30 +642,48 @@
     <!-- GLOBAL CONTACT FORM / TRADING DESK -->
     <div class="container">
         <div class="form-section" id="contacto">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1.5rem; text-align: center;">Trading Desk</h2>
+            <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1rem; text-align: center;">Trading Desk</h2>
+
+            <!-- CART SUMMARY & TIMER -->
+            <div class="cart-summary-box">
+                <div class="cart-total-header">
+                    <div>Estimated Order Total: <span id="cart-total-amount">$0.00 USD</span></div>
+                    <div id="timer-display" class="timer-badge" style="display: none;">Time Left: 10:00</div>
+                </div>
+            </div>
+
+            <!-- IMPORTANT CLIENT NOTICES -->
+            <div class="notice-banner">
+                <strong>📈 Live Spot Market Disclaimer:</strong> All item prices and total amounts in your order continuously update in real time based on live market spot prices. Prices are officially locked only after submitting this completed form and receiving confirmation from our Trading Desk.
+            </div>
+
+            <div class="notice-banner">
+                <strong>⏱️ 10-Minute Reservation Policy:</strong> Items added from "Specials" are temporarily reserved in your cart for 10 minutes. If the inquiry form is not submitted within 10 minutes of adding your first item, selected items will automatically return to the public "Specials" section.
+            </div>
+
             <form action="mailto:trading@jlbullion.com" method="POST" enctype="text/plain">
                 <div class="form-group">
-                    <label>Full Name</label>
+                    <label>Full Name *</label>
                     <input type="text" name="Full_Name" required placeholder="e.g. John Doe">
                 </div>
                 <div class="form-group">
-                    <label>Email Address</label>
+                    <label>Email Address *</label>
                     <input type="email" name="Email" required placeholder="your-email@example.com">
                 </div>
                 <div class="form-group">
-                    <label>Phone Number</label>
+                    <label>Phone Number *</label>
                     <input type="tel" name="Phone" required placeholder="(305) 000-0000">
                 </div>
                 <div class="form-group">
-                    <label>Preferred Delivery Method</label>
-                    <select name="Delivery_Method">
+                    <label>Preferred Delivery Method *</label>
+                    <select name="Delivery_Method" required>
                         <option>FedEx Shipping ($30 USD Flat Rate - Adult Signature Required)</option>
                         <option>In-Person Appointment (Miami Area)</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Order / Inquiry Details</label>
-                    <textarea id="order-details" name="Order_Details" rows="6" placeholder="Specify items of interest, quantities, or general inquiries..."></textarea>
+                    <label>Order / Inquiry Details *</label>
+                    <textarea id="order-details" name="Order_Details" rows="6" required placeholder="Specify items of interest, quantities, or general inquiries..."></textarea>
                 </div>
                 <button type="submit" class="cta-btn" style="width: 100%;">Submit Inquiry to Trading Desk</button>
                 <p class="form-notice">* Due to compliance regulations in the State of Florida and security protocols, in-person pickups require presentation of a valid government-issued photo ID (Driver's License / Passport).</p>
@@ -683,8 +697,14 @@
         <p>Trading Desk Contact: <a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></p>
     </footer>
 
-    <!-- JAVASCRIPT: NAVIGATION, AUTOMATIC SELECTION & SPOT PRICING -->
+    <!-- JAVASCRIPT: DYNAMIC CART, TIMER, REAL-TIME FLUCTUATION & NAVIGATION -->
     <script>
+        var selectedItems = []; // Array storing selected items
+        var goldSpotPrice = 2650.00;
+        var silverSpotPrice = 31.50;
+        var reservationTimer = null;
+        var timeRemaining = 600; // 10 minutes in seconds
+
         function openTab(tabId, event) {
             var pages = document.querySelectorAll('.tab-page');
             for(var i=0; i<pages.length; i++) {
@@ -708,48 +728,121 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // FUNCTION TO HANDLE COIN SELECTION
-        function selectCoin(buttonElement, coinTitle) {
-            var card = buttonElement.closest('.item-card');
-            var priceText = card.querySelector('.item-price').innerText;
-
-            // 1. Hide the item card from "Specials"
+        // COIN SELECTION
+        function selectCoin(cardId, title, weight, metal) {
+            var card = document.querySelector('.item-card[data-id="' + cardId + '"]');
+            
+            // 1. Hide the item from Specials
             card.style.display = 'none';
 
-            // 2. Append item details to the Trading Desk textarea
-            var textArea = document.getElementById('order-details');
-            var currentText = textArea.value.trim();
-            
-            var newEntry = "• " + coinTitle + " [" + priceText + "]";
+            // 2. Add to array
+            selectedItems.push({
+                id: cardId,
+                title: title,
+                weight: weight,
+                metal: metal
+            });
 
-            if (currentText === "") {
-                textArea.value = "Selected Items for Purchase:\n" + newEntry;
-            } else {
-                textArea.value = currentText + "\n" + newEntry;
+            // 3. Start 10-minute timer if this is the first item
+            if (selectedItems.length === 1 && !reservationTimer) {
+                startReservationTimer();
             }
 
-            // 3. Smooth scroll down to Trading Desk
+            // 4. Update Trading Desk Form and Total Price
+            updateTradingDesk();
+
+            // 5. Scroll to Trading Desk
             document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // AUTOMATIC PRICE CALCULATION AT SPOT
+        // UPDATE TRADING DESK TEXTAREA & TOTAL PRICE
+        function updateTradingDesk() {
+            var textArea = document.getElementById('order-details');
+            var totalAmount = 0;
+            var textLines = ["Selected Items for Purchase (Prices subject to live market spot fluctuation):"];
+
+            selectedItems.forEach(function(item) {
+                var spot = (item.metal === 'silver') ? silverSpotPrice : goldSpotPrice;
+                var itemPrice = item.weight * spot;
+                totalAmount += itemPrice;
+
+                textLines.push("• " + item.title + " [Spot Price: $" + itemPrice.toFixed(2) + " USD]");
+            });
+
+            if (selectedItems.length > 0) {
+                textLines.push("\nESTIMATED TOTAL AT LIVE SPOT: $" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD");
+                textArea.value = textLines.join("\n");
+            } else {
+                textArea.value = "";
+            }
+
+            document.getElementById('cart-total-amount').innerText = "$" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD";
+        }
+
+        // START 10-MINUTE TIMER
+        function startReservationTimer() {
+            timeRemaining = 600;
+            var timerDisplay = document.getElementById('timer-display');
+            timerDisplay.style.display = 'inline-block';
+
+            reservationTimer = setInterval(function() {
+                timeRemaining--;
+                
+                var minutes = Math.floor(timeRemaining / 60);
+                var seconds = timeRemaining % 60;
+                if (seconds < 10) seconds = "0" + seconds;
+
+                timerDisplay.innerText = "Time Left: " + minutes + ":" + seconds;
+
+                if (timeRemaining <= 0) {
+                    resetCartAndReturnItems();
+                }
+            }, 1000);
+        }
+
+        // RESET CART AFTER 10 MINUTES
+        function resetCartAndReturnItems() {
+            clearInterval(reservationTimer);
+            reservationTimer = null;
+            document.getElementById('timer-display').style.display = 'none';
+
+            // Unhide all items in Specials
+            selectedItems.forEach(function(item) {
+                var card = document.querySelector('.item-card[data-id="' + item.id + '"]');
+                if (card) card.style.display = 'flex';
+            });
+
+            selectedItems = [];
+            updateTradingDesk();
+
+            alert("⏱️ Your 10-minute reservation period has expired. The selected items have been returned to the 'Specials' catalog.");
+        }
+
+        // FETCH LIVE SPOT PRICES AND RECALCULATE ENTIRE CART EN VIVO
         function calculateSpotPrices() {
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd')
                 .then(function(res) { return res.json(); })
                 .then(function(data) {
-                    var goldSpot = data['pax-gold'] ? data['pax-gold'].usd : 2650.00;
-                    var silverSpot = 31.50;
+                    if (data['pax-gold']) {
+                        goldSpotPrice = data['pax-gold'].usd;
+                    }
 
+                    // Update catalog prices
                     document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
                         var weight = parseFloat(el.getAttribute('data-weight'));
                         var metal = el.getAttribute('data-metal');
-                        var spot = (metal === 'silver') ? silverSpot : goldSpot;
+                        var spot = (metal === 'silver') ? silverSpotPrice : goldSpotPrice;
 
                         if (!isNaN(weight)) {
                             var finalPrice = (weight * spot).toFixed(2);
                             el.innerHTML = 'Spot Price: $' + Number(finalPrice).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
                         }
                     });
+
+                    // Recalculate Trading Desk total live if items exist
+                    if (selectedItems.length > 0) {
+                        updateTradingDesk();
+                    }
                 })
                 .catch(function(err) {
                     console.log("Error fetching spot prices:", err);
@@ -758,7 +851,7 @@
 
         window.onload = function() {
             calculateSpotPrices();
-            setInterval(calculateSpotPrices, 120000);
+            setInterval(calculateSpotPrices, 120000); // Fetch live prices every 2 minutes
         };
     </script>
 
