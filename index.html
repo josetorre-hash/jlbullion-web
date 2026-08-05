@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JL Bullion LLC | Metales Preciosos & Numismática en Miami</title>
+    <title>JL Bullion LLC | Precious Metals & Numismatics in Miami</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -17,11 +17,10 @@
             --bg-light: #f4f6f9;
         }
 
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--bg-light); color: #333; line-height: 1.6; }
 
-        /* HEADER Y LOGO */
+        /* HEADER AND LOGO */
         header { background-color: var(--primary); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .logo-container { display: flex; align-items: center; text-decoration: none; cursor: pointer; }
         .logo-svg { height: 55px; width: auto; margin-right: 15px; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); }
@@ -31,10 +30,10 @@
         .contact-header { color: var(--text-light); font-size: 0.85rem; text-align: right; }
         .contact-header a { color: var(--accent); text-decoration: none; font-weight: 600; }
 
-        /* CONTENEDOR DEL WIDGET TRADINGVIEW */
+        /* TRADINGVIEW WIDGET WRAPPER */
         .ticker-wrapper { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; }
 
-        /* BARRA DE PESTAÑAS PRINCIPALES */
+        /* MAIN NAVIGATION TABS */
         .main-nav-tabs { background-color: #0a192f; display: flex; align-items: center; padding: 0 5%; border-bottom: 3px solid #d4af37; overflow-x: auto; }
         .nav-tab { color: #f8f9fa; text-decoration: none; padding: 12px 22px; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s ease; border-bottom: 3px solid transparent; margin-bottom: -3px; white-space: nowrap; cursor: pointer; }
         .nav-tab:hover { background-color: #172a45; color: #d4af37; }
@@ -50,7 +49,7 @@
 
         .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
 
-        /* BANNER COMERCIAL Y CONDICIONES */
+        /* COMMERCIAL BANNER AND CONDITIONS */
         .info-banner { background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid var(--accent); border-radius: 8px; padding: 2rem; margin-bottom: 3.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .info-banner h2 { font-family: 'Cinzel', serif; color: var(--primary); margin-bottom: 0.8rem; font-size: 1.6rem; text-align: center; }
         .info-banner .subtext { text-align: center; color: #475569; font-size: 1.05rem; margin-bottom: 1.8rem; }
@@ -61,11 +60,11 @@
         .info-card ul { padding-left: 1.2rem; margin: 0; }
         .disclaimer-box { background-color: #fefce8; border: 1px solid #fef08a; padding: 1rem; border-radius: 6px; font-size: 0.85rem; color: #713f12; line-height: 1.5; }
 
-        /* VISTAS PÁGINAS DINÁMICAS */
+        /* DYNAMIC PAGE VIEWS */
         .tab-page { display: none; }
         .tab-page.active-page { display: block; }
 
-        /* TITULOS E INVENTARIO */
+        /* TITLES & INVENTORY */
         .page-header-title { font-family: 'Cinzel', serif; color: var(--primary); font-size: 2.2rem; margin-bottom: 0.5rem; }
         .page-subtitle { color: #64748b; font-size: 1rem; margin-bottom: 2rem; }
 
@@ -80,14 +79,14 @@
         .badge-ngc { background: #475569; color: #ffffff; }
         .badge-stock { background: #15803d; color: white; }
 
-        .item-card h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--primary); margin-bottom: 0.6rem; line-height: 1.3; }
+        .item-card h3 { font-family: 'Cinzel', serif; font-size: 1.05rem; color: var(--primary); margin-bottom: 0.6rem; line-height: 1.3; }
         .item-details { font-size: 0.85rem; color: #64748b; margin-bottom: 1.2rem; }
         .item-price { font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 1.2rem; background: #f8fafc; padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--accent); }
         
         .btn-quote { background: var(--primary); color: var(--accent); border: 1px solid var(--accent); padding: 0.6rem 1rem; text-align: center; font-size: 0.85rem; font-weight: 600; border-radius: 4px; text-decoration: none; transition: 0.3s; display: block; }
         .btn-quote:hover { background: var(--accent); color: var(--primary); }
 
-        /* FORMULARIO */
+        /* CONTACT FORM */
         .form-section { background: var(--secondary); color: var(--text-light); padding: 3rem; border-radius: 8px; margin-top: 4rem; }
         .form-group { margin-bottom: 1.2rem; }
         .form-group label { display: block; margin-bottom: 0.5rem; color: var(--accent); font-size: 0.9rem; }
@@ -100,7 +99,7 @@
 </head>
 <body>
 
-    <!-- CABECERA INSTITUCIONAL -->
+    <!-- INSTITUTIONAL HEADER -->
     <header>
         <div class="logo-container" onclick="openTab('home', event)">
             <svg class="logo-svg" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +122,7 @@
             </svg>
             <div class="logo-text-group">
                 <span class="logo-title">JL BULLION</span>
-                <span class="logo-subtitle">Metales Preciosos & Numismática</span>
+                <span class="logo-subtitle">Precious Metals & Numismatics</span>
             </div>
         </div>
         <div class="contact-header">Miami, FL<br><a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></div>
@@ -157,196 +156,498 @@
                 "colorTheme": "light",
                 "isTransparent": true,
                 "displayMode": "regular",
-                "locale": "es"
+                "locale": "en"
             }
             </script>
         </div>
     </div>
 
-    <!-- PESTAÑAS PRINCIPALES DE NAVEGACIÓN -->
+    <!-- MAIN NAVIGATION TABS -->
     <nav class="main-nav-tabs">
-        <span class="nav-tab active" onclick="openTab('home', event)">Inicio</span>
+        <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
         <span class="nav-tab" onclick="openTab('gold', event)">Gold</span>
         <span class="nav-tab" onclick="openTab('silver', event)">Silver</span>
         <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥</span>
         <a href="#contacto" class="nav-tab">Trading Desk</a>
     </nav>
 
-    <!-- PÁGINA 1: INICIO / HOME -->
+    <!-- PAGE 1: HOME -->
     <div id="home" class="tab-page active-page">
         <section class="hero">
             <h1>JL BULLION LLC</h1>
-            <div class="tagline">Metales Preciosos & Numismática</div>
-            <p>Venta institucional de lingotes, monedas de inversión y piezas de alto valor numismático en Miami. Operamos bajo citas privadas y envíos directos por FedEx a todo el país.</p>
-            <a href="#contacto" class="cta-btn">Mesa de Negociación</a>
+            <div class="tagline">Precious Metals & Numismatics</div>
+            <p>Institutional sale of bullion bars, investment coins, and high-value numismatic pieces in Miami. Operating through private appointments and direct FedEx shipping nationwide.</p>
+            <a href="#contacto" class="cta-btn">Trading Desk</a>
         </section>
 
         <div class="container">
             <div class="info-banner">
-                <h2>¡Bienvenido a la Tienda en Línea de JL Bullion!</h2>
-                <p class="subtext">Vendemos lingotes y monedas de inversión de oro, plata y piezas bimetálicas.</p>
+                <h2>Welcome to JL Bullion Online Store!</h2>
+                <p class="subtext">We sell gold, silver bullion bars and coins, as well as bimetallic items.</p>
 
                 <div class="info-grid">
                     <div class="info-card" style="border-left: 3px solid var(--primary);">
-                        <h3>📦 Órdenes y Fijación de Precio</h3>
-                        <p>Para realizar un pedido o cotizar, envíenos un mensaje directo a:<br>
+                        <h3>📦 Orders & Lock-In Prices</h3>
+                        <p>To place an order or request a quotation, send us a direct message at:<br>
                         <a href="mailto:trading@jlbullion.com" style="color: #b8860b; font-weight: bold; text-decoration: none;">trading@jlbullion.com</a></p>
                     </div>
                     <div class="info-card" style="border-left: 3px solid var(--accent);">
-                        <h3>💳 Métodos de Pago</h3>
+                        <h3>💳 Payment Methods</h3>
                         <ul>
-                            <li>Efectivo <em>(Cash)</em></li>
-                            <li>Transferencia Bancaria <em>(Wire)</em></li>
+                            <li>Cash</li>
+                            <li>Bank Wire Transfer</li>
                             <li>Zelle</li>
-                            <li>Cita en persona <em>(Miami)</em></li>
+                            <li>In-person appointment <em>(Miami)</em></li>
                         </ul>
                     </div>
                     <div class="info-card" style="border-left: 3px solid #16a34a;">
-                        <h3>🛡️ Entregas y Envíos</h3>
-                        <p>• <strong>FedEx:</strong> Tarifa fija $30 USD (Firma de adulto requerida).<br>• <strong>Citas:</strong> Sin costo en Miami (ID oficial requerido).</p>
+                        <h3>🛡️ Delivery & Shipping</h3>
+                        <p>• <strong>FedEx:</strong> Flat rate $30 USD (Adult Signature Required).<br>• <strong>Appointments:</strong> Free in Miami (Government-issued ID required).</p>
                     </div>
                 </div>
 
                 <div class="disclaimer-box">
-                    <strong>Nota importante:</strong> Nos esforzamos por mantener actualizados los precios de nuestro sitio web. Las primas son solo indicativas y están sujetas a cambios según las condiciones del mercado.
+                    <strong>Important Note:</strong> We strive to keep our website prices updated. Premiums are indicative only and subject to market fluctuations.
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PÁGINA 2: SPECIALS (0% PREMIUM / MELT VALUE) -->
+    <!-- PAGE 2: SPECIALS (FULL LIST FROM IMAGE) -->
     <div id="specials" class="tab-page">
         <div class="container">
             <h1 class="page-header-title">Specials 🔥 (Melt Value / 0% Premium)</h1>
-            <p class="page-subtitle">Oportunidad exclusiva: Piezas liquidadas estrictamente al precio spot del mercado sin primas comerciales.</p>
+            <p class="page-subtitle">Exclusive inventory liquidated strictly at live spot market prices with 0% dealer premium.</p>
 
             <div class="inventory-grid">
 
-                <!-- LINGOTE 100 OZ PLATA -->
+                <!-- Austria 1915 Gold Ducat Restrike -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
-                            <span class="badge badge-stock">En Stock</span>
-                            <span class="badge" style="background: #dc2626; color: white;">0% Premium</span>
+                            <span class="badge badge-pcgs">PCGS Details</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
-                        <h3>Canada 100oz Johnson Matthey Silver Bar</h3>
-                        <div class="item-details">Lingote clásico de 100 oz de plata pura. ASW: 99.99 oz.</div>
+                        <h3>Austria 1915 Gold Ducat Restrike</h3>
+                        <div class="item-details">KM-2267 PCGS Genuine Unc Details.</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="silver" data-weight="99.99">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.1106">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
-                <!-- KRUGERRAND ORO 1 OZ -->
+                <!-- Belgium 1875 Gold 20 Francs -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
-                            <span class="badge badge-ngc">NGC Proof-69</span>
-                            <span class="badge badge-stock">En Stock</span>
+                            <span class="badge badge-pcgs">PCGS AU-55</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
-                        <h3>South Africa 1974 Gold Krugerrand 1 oz</h3>
-                        <div class="item-details">1 onza de oro puro en edición Proof. AGW: 1.0003 oz.</div>
+                        <h3>Belgium 1875 Gold 20 Francs</h3>
+                        <div class="item-details">KM-37 PCGS AU-55 (AGW = 0.1867 oz).</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="gold" data-weight="1.0003">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.1867">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
-                <!-- $20 SAINT-GAUDENS -->
+                <!-- Turkey 1923 Year 35 (1958) Gold 100 Kurush -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
-                            <span class="badge badge-ngc">NGC AU-58</span>
-                            <span class="badge badge-stock">En Stock</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
-                        <h3>1923 Saint-Gaudens Gold Double Eagle $20</h3>
-                        <div class="item-details">Clásico de oro Pre-1933. AGW: 0.9675 oz. Certificada NGC.</div>
+                        <h3>Turkey 1923 Year 35 (1958) Gold 100 Kurush</h3>
+                        <div class="item-details">Kemal Atatürk KM-855. AGW = 0.2127 oz.</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="gold" data-weight="0.9675">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.2127">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
-                <!-- GREAT BRITAIN £2 GOLD -->
+                <!-- Egypt AH 1384 // 1964 Gold £10 -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
-                            <span class="badge badge-pcgs">PCGS AU Details</span>
-                            <span class="badge badge-stock">En Stock</span>
+                            <span class="badge badge-pcgs">PCGS Details</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
-                        <h3>Great Britain 1887 Gold £2 Victoria</h3>
-                        <div class="item-details">Moneda de 2 Libras de oro. AGW: 0.4710 oz. PCGS.</div>
+                        <h3>Egypt AH 1384 // 1964 Gold £10</h3>
+                        <div class="item-details">Sadd el-Ali Dam KM-409 PCGS Genuine.</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="gold" data-weight="0.4710">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.7516">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
-                <!-- $10 LIBERTY EAGLE -->
+                <!-- Germany - East Prussia 1879-A Gold 10 Mk -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
-                            <span class="badge badge-pcgs">PCGS AU-50</span>
-                            <span class="badge badge-stock">En Stock</span>
+                            <span class="badge badge-pcgs">PCGS Details</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
-                        <h3>1893 Liberty Gold Eagle $10</h3>
-                        <div class="item-details">Moneda histórica de $10 de oro. AGW: 0.48375 oz. PCGS.</div>
+                        <h3>Germany - East Prussia 1879-A Gold 10 Mk</h3>
+                        <div class="item-details">KM-504 PCGS Genuine AU Details.</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="gold" data-weight="0.48375">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.1152">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
-                <!-- SOVEREIGN BRITÁNICO -->
+                <!-- Netherlands 1875 Gold 10 Gulden #1 -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Unc Details</span>
-                            <span class="badge badge-stock">En Stock</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
-                        <h3>Great Britain 1913 Gold Sovereign</h3>
-                        <div class="item-details">Soberano de oro de Jorge V. AGW: 0.2355 oz. PCGS.</div>
+                        <h3>Netherlands 1875 Gold 10 Gulden</h3>
+                        <div class="item-details">KM-105 PCGS Genuine Unc Details. AGW = 0.1947 oz.</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="gold" data-weight="0.2355">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.1947">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
-                <!-- $5 LIBERTY HALF EAGLE -->
+                <!-- Canada 1978 Gold $100 -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS Proof-69</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Canada 1978 Gold $100</h3>
+                        <div class="item-details">Canadian Unification KM-122 PCGS Proof-69. AGW = 0.5000 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.5000">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- Italy 1881-R Gold 20 Lire -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Italy 1881-R Gold 20 Lire</h3>
+                        <div class="item-details">KM-21 PCGS Genuine Unc Details (AGW = 0.1867 oz).</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.1867">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- Netherlands 1875 Gold 10 Gulden AU-58 -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU-58</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Netherlands 1875 Gold 10 Gulden</h3>
+                        <div class="item-details">KM-105 PCGS AU-58 (AGW = 0.1947 oz).</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.1947">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1880 Liberty Gold Half Eagle VF Details -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS VF Details</span>
-                            <span class="badge badge-stock">En Stock</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1880 Liberty Gold Half Eagle $5</h3>
-                        <div class="item-details">Moneda de $5 de oro Pre-1933. AGW: 0.24187 oz. PCGS.</div>
+                        <div class="item-details">PCGS Genuine VF Details. AGW = 0.24187 oz.</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="gold" data-weight="0.24187">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
-                <!-- 10 GULDEN HOLANDA -->
+                <!-- 1885 Liberty Gold Half Eagle ANACS AU-50 -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-anacs">ANACS AU-50</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1885 Liberty Gold Half Eagle $5</h3>
+                        <div class="item-details">ANACS AU-50 Details. AGW = 0.24187 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1905-S Liberty Gold Half Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS XF Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1905-S Liberty Gold Half Eagle $5</h3>
+                        <div class="item-details">PCGS Genuine XF Details. AGW = 0.24187 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1932 Indian Gold Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1932 Indian Gold Eagle $10</h3>
+                        <div class="item-details">PCGS Genuine AU Details. AGW = 0.48375 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.48375">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- Canada 1979 Gold $100 -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-anacs">ANACS Proof-64</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Canada 1979 Gold $100 Year of Child</h3>
+                        <div class="item-details">KM-126 ANACS Proof-64 DCAM. AGW = 0.5000 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.5000">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- Jamaica 1975-FM Gold $100 -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS Proof-65</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Jamaica 1975-FM Gold $100 Columbus</h3>
+                        <div class="item-details">KM-67 PCGS Proof-65. AGW = 0.2263 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.2263">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1901-S Liberty Gold Double Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1901-S Liberty Gold Double Eagle $20</h3>
+                        <div class="item-details">PCGS Genuine AU Details. AGW = 0.9675 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- Niue 2015 Gold $25 Statue of Liberty -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Niue 2015 Gold $25 Statue of Liberty</h3>
+                        <div class="item-details">Proof Uncertified in Card of Issue. AGW = 0.2500 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.2500">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- Chile 1949-So Gold 100 Pesos -->
                 <div class="item-card">
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Unc Details</span>
-                            <span class="badge badge-stock">En Stock</span>
+                            <span class="badge badge-stock">In Stock</span>
                         </div>
-                        <h3>Netherlands 1875 Gold 10 Gulden</h3>
-                        <div class="item-details">Moneda holandesa de oro de Guillermo III. AGW: 0.1947 oz. PCGS.</div>
+                        <h3>Chile 1949-So Gold 100 Pesos</h3>
+                        <div class="item-details">KM-175 PCGS Genuine Unc Details. AGW = 0.5885 oz.</div>
                     </div>
                     <div>
-                        <div class="item-price" data-metal="gold" data-weight="0.1947">Calculando spot...</div>
-                        <a href="#contacto" class="btn-quote">Comprar a Spot</a>
+                        <div class="item-price" data-metal="gold" data-weight="0.5885">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- Great Britain 1887 Gold £2 -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Great Britain 1887 Gold £2 Victoria</h3>
+                        <div class="item-details">KM-768 PCGS Genuine AU Details (AGW = 0.4710 oz).</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.4710">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1881 Liberty Gold Half Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS XF Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1881 Liberty Gold Half Eagle $5</h3>
+                        <div class="item-details">PCGS Genuine XF Details. AGW = 0.24187 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1895 Liberty Gold Half Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1895 Liberty Gold Half Eagle $5</h3>
+                        <div class="item-details">PCGS Genuine AU Details. AGW = 0.24187 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1893 Liberty Gold Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS XF-40</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1893 Liberty Gold Eagle $10</h3>
+                        <div class="item-details">PCGS XF-40. AGW = 0.48375 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.48375">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1880 Liberty Gold Half Eagle AU Details -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1880 Liberty Gold Half Eagle $5</h3>
+                        <div class="item-details">PCGS Genuine AU Details. AGW = 0.24187 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1891-S Liberty Gold Double Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1891-S Liberty Gold Double Eagle $20</h3>
+                        <div class="item-details">PCGS Genuine AU Details. AGW = 0.9675 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1895-S Liberty Gold Double Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS AU Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1895-S Liberty Gold Double Eagle $20</h3>
+                        <div class="item-details">PCGS Genuine AU Details. AGW = 0.9675 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- 1907 Liberty Gold Double Eagle -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS Unc Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1907 Liberty Gold Double Eagle $20</h3>
+                        <div class="item-details">PCGS Genuine Unc Details. AGW = 0.9675 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.9675">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
+                    </div>
+                </div>
+
+                <!-- South Africa 1926-SA Gold Sovereign -->
+                <div class="item-card">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS Unc Details</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>South Africa 1926-SA Gold Sovereign</h3>
+                        <div class="item-details">KM-21 PCGS Genuine Unc Details. AGW = 0.2356 oz.</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.2356">Calculating spot...</div>
+                        <a href="#contacto" class="btn-quote">Buy at Spot</a>
                     </div>
                 </div>
 
@@ -354,62 +655,62 @@
         </div>
     </div>
 
-    <!-- PÁGINAS ADICIONALES (GOLD / SILVER) -->
+    <!-- ADDITIONAL PAGES (GOLD / SILVER) -->
     <div id="gold" class="tab-page">
         <div class="container">
-            <h1 class="page-header-title">Catálogo de Oro (Gold)</h1>
-            <p class="page-subtitle">Próximamente más productos de oro en stock.</p>
+            <h1 class="page-header-title">Gold Catalog</h1>
+            <p class="page-subtitle">Additional bullion and numismatic gold inventory coming soon.</p>
         </div>
     </div>
 
     <div id="silver" class="tab-page">
         <div class="container">
-            <h1 class="page-header-title">Catálogo de Plata (Silver)</h1>
-            <p class="page-subtitle">Próximamente más productos de plata en stock.</p>
+            <h1 class="page-header-title">Silver Catalog</h1>
+            <p class="page-subtitle">Additional bullion and numismatic silver inventory coming soon.</p>
         </div>
     </div>
 
-    <!-- FORMULARIO DE CONTACTO FIJO PARA TODAS LAS SECCIONES -->
+    <!-- GLOBAL CONTACT FORM -->
     <div class="container">
         <div class="form-section" id="contacto">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1.5rem; text-align: center;">Mesa de Negociación (Trading Desk)</h2>
+            <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1.5rem; text-align: center;">Trading Desk</h2>
             <form action="mailto:trading@jlbullion.com" method="POST" enctype="text/plain">
                 <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <input type="text" name="Nombre" required placeholder="Ej. José Torre">
+                    <label>Full Name</label>
+                    <input type="text" name="Full_Name" required placeholder="e.g. John Doe">
                 </div>
                 <div class="form-group">
-                    <label>Correo Electrónico de Contacto</label>
-                    <input type="email" name="Email" required placeholder="su-email@ejemplo.com">
+                    <label>Email Address</label>
+                    <input type="email" name="Email" required placeholder="your-email@example.com">
                 </div>
                 <div class="form-group">
-                    <label>Teléfono Directo</label>
-                    <input type="tel" name="Telefono" required placeholder="(305) 000-0000">
+                    <label>Phone Number</label>
+                    <input type="tel" name="Phone" required placeholder="(305) 000-0000">
                 </div>
                 <div class="form-group">
-                    <label>Modalidad Deseada</label>
-                    <select name="Modalidad">
-                        <option>Envío por FedEx ($30 USD - Firma Requerida)</option>
-                        <option>Cita Presencial en Sitios JL Bullion (Miami Area)</option>
+                    <label>Preferred Delivery Method</label>
+                    <select name="Delivery_Method">
+                        <option>FedEx Shipping ($30 USD Flat Rate - Adult Signature Required)</option>
+                        <option>In-Person Appointment (Miami Area)</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Detalle del Pedido</label>
-                    <textarea name="Detalle_Pedido" rows="4" placeholder="Indique las piezas de su interés, cantidades deseadas o cualquier consulta..."></textarea>
+                    <label>Order / Inquiry Details</label>
+                    <textarea name="Order_Details" rows="4" placeholder="Specify items of interest, quantities, or general inquiries..."></textarea>
                 </div>
-                <button type="submit" class="cta-btn" style="width: 100%;">Enviar Pedido a Trading Desk</button>
-                <p class="form-notice">* Por motivos de cumplimiento legal en el estado de Florida y protocolo de seguridad, las entregas presenciales requieren presentación de identificación oficial emitida por el gobierno (Driver's License / Pasaporte).</p>
+                <button type="submit" class="cta-btn" style="width: 100%;">Submit Inquiry to Trading Desk</button>
+                <p class="form-notice">* Due to compliance regulations in the State of Florida and security protocols, in-person pickups require presentation of a valid government-issued photo ID (Driver's License / Passport).</p>
             </form>
         </div>
     </div>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; JL BULLION LLC. Todos los derechos reservados. Miami, Florida.</p>
-        <p>Contacto Mesa de Operaciones: <a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></p>
+        <p>&copy; JL BULLION LLC. All rights reserved. Miami, Florida.</p>
+        <p>Trading Desk Contact: <a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></p>
     </footer>
 
-    <!-- JAVASCRIPT: NAVEGACIÓN Y CÁLCULO DINÁMICO DE SPOT (ORO Y PLATA AL 0% PREMIUM) -->
+    <!-- JAVASCRIPT: NAVIGATION & AUTOMATIC SPOT PRICING -->
     <script>
         function openTab(tabId, event) {
             var pages = document.querySelectorAll('.tab-page');
@@ -434,13 +735,13 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // CÁLCULO AUTOMÁTICO DE PRECIOS SEGÚN SPOT DE ORO Y PLATA
+        // AUTOMATIC PRICE CALCULATION AT SPOT (GOLD & SILVER)
         function calculateSpotPrices() {
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd')
                 .then(function(res) { return res.json(); })
                 .then(function(data) {
                     var goldSpot = data['pax-gold'] ? data['pax-gold'].usd : 2650.00;
-                    var silverSpot = 31.50; // Cotización spot base de referencia para la plata
+                    var silverSpot = 31.50; // Reference silver spot price
 
                     document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
                         var weight = parseFloat(el.getAttribute('data-weight'));
@@ -449,19 +750,19 @@
 
                         if (!isNaN(weight)) {
                             var finalPrice = (weight * spot).toFixed(2);
-                            el.innerHTML = 'Precio Spot: $' + Number(finalPrice).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
+                            el.innerHTML = 'Spot Price: $' + Number(finalPrice).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
                         }
                     });
                 })
                 .catch(function(err) {
-                    console.log("Error al obtener los precios spot:", err);
+                    console.log("Error fetching spot prices:", err);
                 });
         }
 
-        // Cargar cálculos al iniciar
+        // Initialize calculations on page load
         window.onload = function() {
             calculateSpotPrices();
-            setInterval(calculateSpotPrices, 120000); // Recalcular automáticamente cada 2 minutos
+            setInterval(calculateSpotPrices, 120000); // Recalculate every 2 minutes
         };
     </script>
 
