@@ -11,7 +11,6 @@
             --primary: #0a192f;
             --secondary: #172a45;
             --accent: #d4af37;
-            --accent-glow: rgba(212, 175, 55, 0.3);
             --text-light: #f8f9fa;
             --text-muted: #8892b0;
             --bg-light: #f4f6f9;
@@ -20,19 +19,17 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--bg-light); color: #333; line-height: 1.6; }
 
-        /* FIXED / STICKY HEADER & TICKER CONTAINER */
+        /* FIXED STICKY HEADER & TICKER */
         .sticky-top-wrapper { position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
         header { background-color: var(--primary); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
         .logo-container { display: flex; align-items: center; text-decoration: none; cursor: pointer; }
-        .logo-svg { height: 50px; width: auto; margin-right: 15px; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); }
         .logo-text-group { display: flex; flex-direction: column; }
         .logo-title { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--accent); font-weight: 700; letter-spacing: 2px; line-height: 1.1; }
         .logo-subtitle { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; color: var(--text-light); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px; }
         .contact-header { color: var(--text-light); font-size: 0.85rem; text-align: right; }
         .contact-header a { color: var(--accent); text-decoration: none; font-weight: 600; }
 
-        /* TRADINGVIEW WIDGET WRAPPER (STICKY TOGETHER) */
         .ticker-wrapper { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; }
 
         /* MAIN NAVIGATION TABS */
@@ -41,40 +38,27 @@
         .nav-tab:hover { background-color: #172a45; color: #d4af37; }
         .nav-tab.active { background-color: #1e3a8a; color: #ffffff; border-bottom-color: #d4af37; }
 
-        /* HERO SECTION */
-        .hero { background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(23, 42, 69, 0.92)), url('https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: var(--text-light); text-align: center; padding: 4rem 1rem; border-bottom: 1px solid #1e293b; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 2.6rem; color: var(--accent); margin-bottom: 0.5rem; }
-        .hero .tagline { font-size: 1rem; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
-        .hero p { max-width: 800px; margin: 0 auto 2rem; font-size: 1.05rem; color: var(--text-muted); font-weight: 300; }
-        .cta-btn { background: linear-gradient(135deg, var(--accent) 0%, #b8860b 100%); color: var(--primary); padding: 0.9rem 2.2rem; border: none; font-weight: 600; border-radius: 4px; text-decoration: none; display: inline-block; transition: 0.3s; cursor: pointer; box-shadow: 0 4px 10px rgba(212,175,55,0.2); }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(212,175,55,0.3); }
-
         .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
 
-        /* COMMERCIAL BANNER AND CONDITIONS */
-        .info-banner { background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid var(--accent); border-radius: 8px; padding: 2rem; margin-bottom: 3.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .info-banner h2 { font-family: 'Cinzel', serif; color: var(--primary); margin-bottom: 0.8rem; font-size: 1.6rem; text-align: center; }
-        .info-banner .subtext { text-align: center; color: #475569; font-size: 1.05rem; margin-bottom: 1.8rem; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem; }
-        .info-card { background: #f8fafc; padding: 1.2rem; border-radius: 6px; }
-        .info-card h3 { font-size: 0.95rem; color: var(--primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .info-card p, .info-card ul { font-size: 0.88rem; color: #334155; line-height: 1.5; }
-        .info-card ul { padding-left: 1.2rem; margin: 0; }
-        .disclaimer-box { background-color: #fefce8; border: 1px solid #fef08a; padding: 1rem; border-radius: 6px; font-size: 0.85rem; color: #713f12; line-height: 1.5; }
-
-        /* DYNAMIC PAGE & SUBTAB VIEWS */
         .tab-page { display: none; }
         .tab-page.active-page { display: block; }
+
+        /* SUB-TABS LEVEL 1 */
+        .sub-nav-tabs { display: flex; gap: 10px; margin-bottom: 1.5rem; border-bottom: 2px solid #cbd5e1; flex-wrap: wrap; }
+        .sub-tab-btn { padding: 10px 20px; font-weight: 600; font-size: 0.95rem; background: #e2e8f0; color: #475569; border: none; border-radius: 6px 6px 0 0; cursor: pointer; transition: 0.2s; }
+        .sub-tab-btn.active-subtab { background: var(--primary); color: var(--accent); border-bottom: 3px solid var(--accent); }
 
         .sub-tab-content { display: none; }
         .sub-tab-content.active-subcontent { display: block; }
 
-        /* SUB-TABS STYLING (FOR SPECIALS) */
-        .sub-nav-tabs { display: flex; gap: 10px; margin-bottom: 2rem; border-bottom: 2px solid #cbd5e1; }
-        .sub-tab-btn { padding: 10px 20px; font-weight: 600; font-size: 0.95rem; background: #e2e8f0; color: #475569; border: none; border-radius: 6px 6px 0 0; cursor: pointer; transition: 0.2s; }
-        .sub-tab-btn.active-subtab { background: var(--primary); color: var(--accent); border-bottom: 3px solid var(--accent); }
+        /* NESTED SUB-TABS LEVEL 2 (FOR GOLD COINS) */
+        .nested-nav-tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; background: #cbd5e1; padding: 5px; border-radius: 6px; width: fit-content; flex-wrap: wrap; }
+        .nested-tab-btn { padding: 8px 16px; font-weight: 600; font-size: 0.85rem; background: transparent; color: #334155; border: none; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .nested-tab-btn.active-nestedtab { background: #ffffff; color: var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
-        /* TITLES & INVENTORY */
+        .nested-tab-content { display: none; }
+        .nested-tab-content.active-nestedcontent { display: block; }
+
         .page-header-title { font-family: 'Cinzel', serif; color: var(--primary); font-size: 2.2rem; margin-bottom: 0.5rem; }
         .page-subtitle { color: #64748b; font-size: 1rem; margin-bottom: 1.5rem; }
 
@@ -88,6 +72,7 @@
         .badge-anacs { background: #1e3a8a; color: #ffffff; }
         .badge-ngc { background: #475569; color: #ffffff; }
         .badge-stock { background: #15803d; color: white; }
+        .badge-premium { background: #b8860b; color: white; }
 
         .item-card h3 { font-family: 'Cinzel', serif; font-size: 1.05rem; color: var(--primary); margin-bottom: 0.6rem; line-height: 1.3; }
         .item-details { font-size: 0.85rem; color: #64748b; margin-bottom: 1.2rem; }
@@ -96,7 +81,6 @@
         .btn-quote { background: var(--primary); color: var(--accent); border: 1px solid var(--accent); padding: 0.6rem 1rem; text-align: center; font-size: 0.85rem; font-weight: 600; border-radius: 4px; text-decoration: none; transition: 0.3s; display: block; cursor: pointer; width: 100%; }
         .btn-quote:hover { background: var(--accent); color: var(--primary); }
 
-        /* CONTACT FORM & CART NOTICES */
         .form-section { background: var(--secondary); color: var(--text-light); padding: 3rem; border-radius: 8px; margin-top: 4rem; }
         .form-group { margin-bottom: 1.2rem; }
         .form-group label { display: block; margin-bottom: 0.5rem; color: var(--accent); font-size: 0.9rem; }
@@ -117,28 +101,10 @@
 </head>
 <body>
 
-    <!-- STICKY HEADER & TRADINGVIEW TICKER CONTAINER -->
+    <!-- STICKY HEADER & TICKER -->
     <div class="sticky-top-wrapper">
         <header>
             <div class="logo-container" onclick="openTab('home', event)">
-                <svg class="logo-svg" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="gold3d" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fff2a3" />
-                            <stop offset="25%" stop-color="#d4af37" />
-                            <stop offset="50%" stop-color="#aa7c11" />
-                            <stop offset="75%" stop-color="#e6ca65" />
-                            <stop offset="100%" stop-color="#996515" />
-                        </linearGradient>
-                    </defs>
-                    <g fill="url(#gold3d)">
-                        <path d="M200,10 L370,80 L370,270 L200,430 L30,270 L30,80 Z" opacity="0.15"/>
-                        <path d="M200,30 L350,95 L350,260 L200,400 L50,260 L50,95 Z" fill="none" stroke="url(#gold3d)" stroke-width="18" stroke-linejoin="round"/>
-                        <path d="M110,130 L170,130 L170,290 C170,330 140,340 110,320 L110,285 C125,295 140,290 140,270 L140,165 L110,165 Z"/>
-                        <path d="M230,130 L265,130 L265,285 L300,285 L300,320 L230,320 Z"/>
-                        <line x1="200" y1="40" x2="200" y2="390" stroke="url(#gold3d)" stroke-width="6" opacity="0.4"/>
-                    </g>
-                </svg>
                 <div class="logo-text-group">
                     <span class="logo-title">JL BULLION</span>
                     <span class="logo-subtitle">Precious Metals & Numismatics</span>
@@ -147,7 +113,6 @@
             <div class="contact-header">Miami, FL<br><a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></div>
         </header>
 
-        <!-- ALWAYS VISIBLE LIVE SPOT TICKER TAPE -->
         <div class="ticker-wrapper">
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -155,9 +120,7 @@
                 {
                     "symbols": [
                         { "proName": "TVC:GOLD", "title": "Gold Spot ($/oz)" },
-                        { "proName": "TVC:SILVER", "title": "Silver Spot ($/oz)" },
-                        { "proName": "TVC:PLATINUM", "title": "Platinum ($/oz)" },
-                        { "proName": "TVC:PALLADIUM", "title": "Palladium ($/oz)" }
+                        { "proName": "TVC:SILVER", "title": "Silver Spot ($/oz)" }
                     ],
                     "showSymbolLogo": false,
                     "colorTheme": "light",
@@ -187,514 +150,580 @@
             <p>Institutional sale of bullion bars, investment coins, and high-value numismatic pieces in Miami. Operating through private appointments and direct FedEx shipping nationwide.</p>
             <a href="#contacto" class="cta-btn">Trading Desk</a>
         </section>
+    </div>
 
+    <!-- PAGE 2: GOLD (WITH NESTED GOLD COINS SUB-TABS) -->
+    <div id="gold" class="tab-page">
         <div class="container">
-            <div class="info-banner">
-                <h2>Welcome to JL Bullion Online Store!</h2>
-                <p class="subtext">We sell gold, silver bullion bars and coins, as well as bimetallic items.</p>
+            <h1 class="page-header-title">Gold Catalog</h1>
+            <p class="page-subtitle">Explore our premium selection of investment gold pieces.</p>
 
-                <div class="info-grid">
-                    <div class="info-card" style="border-left: 3px solid var(--primary);">
-                        <h3>📦 Orders & Lock-In Prices</h3>
-                        <p>To place an order or request a quotation, send us a direct message at:<br>
-                        <a href="mailto:trading@jlbullion.com" style="color: #b8860b; font-weight: bold; text-decoration: none;">trading@jlbullion.com</a></p>
-                    </div>
-                    <div class="info-card" style="border-left: 3px solid var(--accent);">
-                        <h3>💳 Payment Methods</h3>
-                        <ul>
-                            <li>Cash</li>
-                            <li>Bank Wire Transfer</li>
-                            <li>Zelle</li>
-                            <li>In-person appointment <em>(Miami)</em></li>
-                        </ul>
-                    </div>
-                    <div class="info-card" style="border-left: 3px solid #16a34a;">
-                        <h3>🛡️ Delivery & Shipping</h3>
-                        <p>• <strong>FedEx:</strong> Flat rate $30 USD (Adult Signature Required).<br>• <strong>Appointments:</strong> Free in Miami (Government-issued ID required).</p>
+            <div class="sub-nav-tabs">
+                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins</button>
+            </div>
+
+            <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
+                <div class="nested-nav-tabs">
+                    <button class="nested-tab-btn" onclick="openNestedTab('nested-gold-bullion', event)">Gold Bullion Coins</button>
+                    <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Bullion Coins</button>
+                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-numismatic-gold', event)">Numismatic Gold Coins</button>
+                </div>
+
+                <div id="nested-gold-bullion" class="nested-tab-content">
+                    <div class="inventory-grid">
+                        <p style="color: #64748b;">Standard uncertified gold bullion coins coming soon.</p>
                     </div>
                 </div>
 
-                <div class="disclaimer-box">
-                    <strong>Important Note:</strong> We strive to keep our website prices updated. Premiums are indicative only and subject to market fluctuations.
+                <div id="nested-graduated-gold" class="nested-tab-content">
+                    <div class="inventory-grid">
+                        <div class="item-card" data-id="grad-1">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-pcgs">PCGS MS-67</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>Austrian States 1915 Gold 4 Ducat Restrike</h3>
+                                <div class="item-details">KM-2276 PCGS MS-67 | AGW = 0.4427 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4427" data-premium="0.05">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('grad-1', 'Austrian States 1915 Gold 4 Ducat Restrike PCGS MS-67', 0.4427, 'gold', 0, 0.05)">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTENIDO 3: NUMISMATIC GOLD COINS (TABLA ADJUNTADA) -->
+                <div id="nested-numismatic-gold" class="nested-tab-content active-nestedcontent">
+                    <div class="inventory-grid">
+
+                        <div class="item-card" data-id="1608989">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Isle of Man 2009 Bimetallic 1/4 Angel NGC Proof</h3>
+                                <div class="item-details">Item #1608989 | AGW = 0.1250 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.1250" data-cost="415.25" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1608989', 'Isle of Man 2009 Bimetallic 1/4 Angel NGC Proof', 0.1250, 'gold', 415.25, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1999183">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>China 1990 Bi-metallic 7/10 Ounce 1990 Hong Kong</h3>
+                                <div class="item-details">Item #1999183 | AGW = 0.6993 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.6993" data-cost="2858.32" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1999183', 'China 1990 Bi-metallic 7/10 Ounce 1990 Hong Kong', 0.6993, 'gold', 2858.32, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1674449">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+30.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1927 Saint-Gaudens Gold Double Eagle PCGS</h3>
+                                <div class="item-details">Item #1674449 | AGW = 0.9675 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="6179.93" data-premium="0.30">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1674449', '1927 Saint-Gaudens Gold Double Eagle PCGS', 0.9675, 'gold', 6179.93, 0.30)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1674696">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1908 Saint-Gaudens Gold Double Eagle No Motto</h3>
+                                <div class="item-details">Item #1674696 | AGW = 0.9675 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="5280.09" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1674696', '1908 Saint-Gaudens Gold Double Eagle No Motto', 0.9675, 'gold', 5280.09, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2001216">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS MS-65</span><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Mexico 1946 Gold 50 Pesos KM-481 PCGS MS-65</h3>
+                                <div class="item-details">Item #2001216 | AGW = 1.2057 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="1.2057" data-cost="7570.95" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2001216', 'Mexico 1946 Gold 50 Pesos KM-481 PCGS MS-65', 1.2057, 'gold', 7570.95, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2041635">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-ngc">NGC</span><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1927 Saint-Gaudens Gold Double Eagle NGC</h3>
+                                <div class="item-details">Item #2041635 | AGW = 0.9675 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="5347.84" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2041635', '1927 Saint-Gaudens Gold Double Eagle NGC', 0.9675, 'gold', 5347.84, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="19-14347-59233">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1990 China Gold & Silver Bi-Metallic Panda</h3>
+                                <div class="item-details">Item #19-14347-59233 | AGW = 0.6993 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.6993" data-cost="3140.90" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('19-14347-59233', '1990 China Gold & Silver Bi-Metallic Panda', 0.6993, 'gold', 3140.90, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2133115">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-ngc">NGC MS-63</span><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1926 Indian Gold Eagle NGC MS-63</h3>
+                                <div class="item-details">Item #2133115 | AGW = 0.4838 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="2306.89" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2133115', '1926 Indian Gold Eagle NGC MS-63', 0.4838, 'gold', 2306.89, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2154020">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-ngc">NGC AU</span><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1881 Liberty Gold Eagle DDR VP-001 NGC AU</h3>
+                                <div class="item-details">Item #2154020 | AGW = 0.4838 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="2038.07" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2154020', '1881 Liberty Gold Eagle DDR VP-001 NGC AU', 0.4838, 'gold', 2038.07, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2152371">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+30.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>2014-W Baseball Hall of Fame Gold $5 PCGS</h3>
+                                <div class="item-details">Item #2152371 | AGW = 0.2419 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2419" data-cost="1017.44" data-premium="0.30">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2152371', '2014-W Baseball Hall of Fame Gold $5 PCGS', 0.2419, 'gold', 1017.44, 0.30)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2140474">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Australia 1985 Gold $200 Koala KM-86 PCGS</h3>
+                                <div class="item-details">Item #2140474 | AGW = 0.2948 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2948" data-cost="1241.32" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2140474', 'Australia 1985 Gold $200 Koala KM-86 PCGS', 0.2948, 'gold', 1241.32, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1926895">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Austrian States 1915 Gold 4 Ducat Restrike</h3>
+                                <div class="item-details">Item #1926895 | AGW = 0.4427 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4427" data-cost="1866.76" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1926895', 'Austrian States 1915 Gold 4 Ducat Restrike', 0.4427, 'gold', 1866.76, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1974430">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Canada 1914 Gold $10 Canadian Gold Reserve</h3>
+                                <div class="item-details">Item #1974430 | AGW = 0.4838 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="2003.95" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1974430', 'Canada 1914 Gold $10 Canadian Gold Reserve', 0.4838, 'gold', 2003.95, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2057526">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Canada 2005 Gold $300 Standard Time-Atlantic</h3>
+                                <div class="item-details">Item #2057526 | AGW = 0.8439 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.8439" data-cost="3526.11" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2057526', 'Canada 2005 Gold $300 Standard Time-Atlantic', 0.8439, 'gold', 3526.11, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1927168">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+20.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Great Britain 2002 Gold Sovereign Shield KM-1014</h3>
+                                <div class="item-details">Item #1927168 | AGW = 0.2352 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2352" data-cost="991.10" data-premium="0.20">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1927168', 'Great Britain 2002 Gold Sovereign Shield KM-1014', 0.2352, 'gold', 991.10, 0.20)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2092559">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+60.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Great Britain 2022 Gold Sovereign Platinum Jubilee</h3>
+                                <div class="item-details">Item #2092559 | AGW = 0.2354 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2354" data-cost="992.20" data-premium="0.60">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2092559', 'Great Britain 2022 Gold Sovereign Platinum Jubilee', 0.2354, 'gold', 992.20, 0.60)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1915068">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+25.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Hong Kong 1997 Gold $1000 Return of Hong Kong</h3>
+                                <div class="item-details">Item #1915068 | AGW = 0.4708 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4708" data-cost="1966.63" data-premium="0.25">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1915068', 'Hong Kong 1997 Gold $1000 Return of Hong Kong', 0.4708, 'gold', 1966.63, 0.25)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2140536">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Israel JE 5733 (1973) Gold 50 Lirot 25th Anniv</h3>
+                                <div class="item-details">Item #2140536 | AGW = 0.2025 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2025" data-cost="842.84" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2140536', 'Israel JE 5733 (1973) Gold 50 Lirot 25th Anniv', 0.2025, 'gold', 842.84, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1546764">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Netherlands 1928 Gold Ducat KM-83.1a PCGS</h3>
+                                <div class="item-details">Item #1546764 | AGW = 0.1104 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.1104" data-cost="462.03" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1546764', 'Netherlands 1928 Gold Ducat KM-83.1a PCGS', 0.1104, 'gold', 462.03, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1773368">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-ngc">NGC Gem Proof</span><span class="badge badge-premium">+20.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Netherlands 2023 Gold 2 Ducat NGC Gem Proof</h3>
+                                <div class="item-details">Item #1773368 | AGW = 0.2209 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2209" data-cost="931.73" data-premium="0.20">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1773368', 'Netherlands 2023 Gold 2 Ducat NGC Gem Proof', 0.2209, 'gold', 931.73, 0.20)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1685003">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS MS-63</span><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Uruguay 1930 Gold 5 Pesos KM-27 PCGS MS-63</h3>
+                                <div class="item-details">Item #1685003 | AGW = 0.2501 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2501" data-cost="1053.65" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1685003', 'Uruguay 1930 Gold 5 Pesos KM-27 PCGS MS-63', 0.2501, 'gold', 1053.65, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2057541">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Canada 2005 Gold $300 Standard Time-Mountain</h3>
+                                <div class="item-details">Item #2057541 | AGW = 0.8439 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.8439" data-cost="3524.02" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2057541', 'Canada 2005 Gold $300 Standard Time-Mountain', 0.8439, 'gold', 3524.02, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2108800">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Canada 2007 Gold $75 Olympics RCMP KM-748</h3>
+                                <div class="item-details">Item #2108800 | AGW = 0.2249 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2249" data-cost="907.61" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2108800', 'Canada 2007 Gold $75 Olympics RCMP KM-748', 0.2249, 'gold', 907.61, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2056274">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Denmark 1900-VBP Gold 10 Kroner KM-790.2</h3>
+                                <div class="item-details">Item #2056274 | AGW = 0.1296 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.1296" data-cost="510.34" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2056274', 'Denmark 1900-VBP Gold 10 Kroner KM-790.2', 0.1296, 'gold', 510.34, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2057570">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Netherlands 1912 Gold 10 Gulden KM-149 PCGS</h3>
+                                <div class="item-details">Item #2057570 | AGW = 0.1947 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.1947" data-cost="813.32" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2057570', 'Netherlands 1912 Gold 10 Gulden KM-149 PCGS', 0.1947, 'gold', 813.32, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1926959">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Belgium 1914 Gold 20 Francs DER BELGEN PCGS</h3>
+                                <div class="item-details">Item #1926959 | AGW = 0.1867 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.1867" data-cost="754.07" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1926959', 'Belgium 1914 Gold 20 Francs DER BELGEN PCGS', 0.1867, 'gold', 754.07, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1915049">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Panama 1975-FM Gold 500 Balboas 500th Anniv</h3>
+                                <div class="item-details">Item #1915049 | AGW = 1.2066 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="1.2066" data-cost="4822.70" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1915049', 'Panama 1975-FM Gold 500 Balboas 500th Anniv', 1.2066, 'gold', 4822.70, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1674665">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-ngc">NGC MS-63</span><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1904 Liberty Gold Double Eagle NGC MS-63</h3>
+                                <div class="item-details">Item #1674665 | AGW = 0.9675 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="3853.36" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1674665', '1904 Liberty Gold Double Eagle NGC MS-63', 0.9675, 'gold', 3853.36, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2127696">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-ngc">NGC MS-63</span><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>1924 Saint-Gaudens Gold Double Eagle NGC MS-63</h3>
+                                <div class="item-details">Item #2127696 | AGW = 0.9675 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="3853.36" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2127696', '1924 Saint-Gaudens Gold Double Eagle NGC MS-63', 0.9675, 'gold', 3853.36, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1926893">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Austrian States 1915 Gold 4 Ducat Restrike</h3>
+                                <div class="item-details">Item #1926893 | AGW = 0.4427 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4427" data-cost="1755.97" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1926893', 'Austrian States 1915 Gold 4 Ducat Restrike', 0.4427, 'gold', 1755.97, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2094223">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Macau 1987 Gold 1000 Patacas Year of the Rabbit</h3>
+                                <div class="item-details">Item #2094223 | AGW = 0.4710 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4710" data-cost="1873.51" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2094223', 'Macau 1987 Gold 1000 Patacas Year of the Rabbit', 0.4710, 'gold', 1873.51, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2170283">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>2007-W Jamestown 400th Anniversary Gold $5</h3>
+                                <div class="item-details">Item #2170283 | AGW = 0.2419 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2419" data-cost="982.24" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2170283', '2007-W Jamestown 400th Anniversary Gold $5', 0.2419, 'gold', 982.24, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="1685008">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS MS-62</span><span class="badge badge-premium">+20.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Uruguay 1930 Gold 5 Pesos KM-27 PCGS MS-62</h3>
+                                <div class="item-details">Item #1685008 | AGW = 0.2501 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2501" data-cost="1015.16" data-premium="0.20">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1685008', 'Uruguay 1930 Gold 5 Pesos KM-27 PCGS MS-62', 0.2501, 'gold', 1015.16, 0.20)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2178055">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Great Britain 2023 Gold £2 Ada Lovelace Coin</h3>
+                                <div class="item-details">Item #2178055 | AGW = 0.4710 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.4710" data-cost="1845.97" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2178055', 'Great Britain 2023 Gold £2 Ada Lovelace Coin', 0.4710, 'gold', 1845.97, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2183791">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+11.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Australia 1911-P Gold Sovereign KM-29 PCGS</h3>
+                                <div class="item-details">Item #2183791 | AGW = 0.2355 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2355" data-cost="924.41" data-premium="0.11">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2183791', 'Australia 1911-P Gold Sovereign KM-29 PCGS', 0.2355, 'gold', 924.41, 0.11)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2183792">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+15.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Australia 1922-P Gold Sovereign KM-29 PCGS</h3>
+                                <div class="item-details">Item #2183792 | AGW = 0.2355 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2355" data-cost="924.41" data-premium="0.15">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2183792', 'Australia 1922-P Gold Sovereign KM-29 PCGS', 0.2355, 'gold', 924.41, 0.15)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2140471">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-pcgs">PCGS</span><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Australia 1980 Gold $200 Koala KM-71 PCGS</h3>
+                                <div class="item-details">Item #2140471 | AGW = 0.2948 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2948" data-cost="1158.37" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2140471', 'Australia 1980 Gold $200 Koala KM-71 PCGS', 0.2948, 'gold', 1158.37, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2183808">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Turkey AH 1293 Year 32 (1907) Gold 100 Kurush</h3>
+                                <div class="item-details">Item #2183808 | AGW = 0.2127 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2127" data-cost="835.49" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2183808', 'Turkey AH 1293 Year 32 (1907) Gold 100 Kurush', 0.2127, 'gold', 835.49, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <div class="item-card" data-id="2183809">
+                            <div>
+                                <div class="badge-holder"><span class="badge badge-premium">+12.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                                <h3>Turkey AH 1327 Year 3 (1911) Gold 100 Kurush</h3>
+                                <div class="item-details">Item #2183809 | AGW = 0.2127 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2127" data-cost="836.09" data-premium="0.12">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2183809', 'Turkey AH 1327 Year 3 (1911) Gold 100 Kurush', 0.2127, 'gold', 836.09, 0.12)">Add to Order</button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PAGE 2: SPECIALS (WITH SUB-TABS: 0% PREMIUM vs WITH PREMIUM) -->
+    <!-- PAGE 3: SPECIALS -->
     <div id="specials" class="tab-page">
         <div class="container">
             <h1 class="page-header-title">Specials 🔥</h1>
             <p class="page-subtitle">Select between our 0% Premium melt-value inventory or curated pieces with Premium.</p>
 
-            <!-- SUB-TABS NAVIGATION -->
             <div class="sub-nav-tabs">
                 <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-zero-premium', event)">0% Premium (Melt Value)</button>
                 <button class="sub-tab-btn" onclick="openSubTab('sub-with-premium', event)">With Premium</button>
             </div>
 
-            <!-- SUB-TAB 1: 0% PREMIUM (ORIGINAL FULL INVENTORY) -->
+            <!-- SUB-TAB 1: 0% PREMIUM -->
             <div id="sub-zero-premium" class="sub-tab-content active-subcontent">
                 <div class="inventory-grid">
-
-                    <div class="item-card" data-id="coin-1">
+                    <div class="item-card" data-id="1926942">
                         <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Austria 1915 Gold Ducat Restrike</h3>
-                            <div class="item-details">KM-2267 PCGS Genuine Unc Details.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.1106" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-1', 'Austria 1915 Gold Ducat Restrike KM-2267 PCGS Genuine Unc Details', 0.1106, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-2">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU-55</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Belgium 1875 Gold 20 Francs</h3>
-                            <div class="item-details">KM-37 PCGS AU-55 (AGW = 0.1867 oz).</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.1867" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-2', 'Belgium 1875 Gold 20 Francs KM-37 PCGS AU-55', 0.1867, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-3">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
+                            <div class="badge-holder"><span class="badge badge-stock">In Stock</span></div>
                             <h3>Turkey 1923 Year 35 (1958) Gold 100 Kurush</h3>
-                            <div class="item-details">Kemal Atatürk KM-855. AGW = 0.2127 oz.</div>
+                            <div class="item-details">Item #1926942 | AGW = 0.2127 oz</div>
                         </div>
                         <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.2127" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-3', 'Turkey 1923 Year 35 (1958) Gold 100 Kurush Kemal Atatürk KM-855', 0.2127, 'gold', 0)">Add to Order</button>
+                            <div class="item-price" data-metal="gold" data-weight="0.2127" data-cost="880.16" data-premium="0">Calculating spot...</div>
+                            <button class="btn-quote" onclick="selectCoin('1926942', 'Turkey 1923 Year 35 (1958) Gold 100 Kurush', 0.2127, 'gold', 880.16, 0)">Add to Order</button>
                         </div>
                     </div>
-
-                    <div class="item-card" data-id="coin-4">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Egypt AH 1384 // 1964 Gold £10</h3>
-                            <div class="item-details">Sadd el-Ali Dam KM-409 PCGS Genuine.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.7516" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-4', 'Egypt AH 1384 // 1964 Gold £10 Sadd el-Ali Dam KM-409 PCGS Genuine', 0.7516, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-5">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Germany - East Prussia 1879-A Gold 10 Mk</h3>
-                            <div class="item-details">KM-504 PCGS Genuine AU Details.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.1152" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-5', 'Germany - East Prussia 1879-A Gold 10 Mk KM-504 PCGS Genuine AU Details', 0.1152, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-6">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Unc Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Netherlands 1875 Gold 10 Gulden</h3>
-                            <div class="item-details">KM-105 PCGS Genuine Unc Details. AGW = 0.1947 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.1947" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-6', 'Netherlands 1875 Gold 10 Gulden KM-105 PCGS Genuine Unc Details', 0.1947, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-7">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Proof-69</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Canada 1978 Gold $100</h3>
-                            <div class="item-details">Canadian Unification KM-122 PCGS Proof-69. AGW = 0.5000 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-7', 'Canada 1978 Gold $100 Canadian Unification KM-122 PCGS Proof-69', 0.5000, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-8">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Italy 1881-R Gold 20 Lire</h3>
-                            <div class="item-details">KM-21 PCGS Genuine Unc Details (AGW = 0.1867 oz).</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.1867" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-8', 'Italy 1881-R Gold 20 Lire KM-21 PCGS Genuine Unc Details', 0.1867, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-9">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU-58</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Netherlands 1875 Gold 10 Gulden</h3>
-                            <div class="item-details">KM-105 PCGS AU-58 (AGW = 0.1947 oz).</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.1947" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-9', 'Netherlands 1875 Gold 10 Gulden KM-105 PCGS AU-58', 0.1947, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-10">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS VF Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1880 Liberty Gold Half Eagle $5</h3>
-                            <div class="item-details">PCGS Genuine VF Details. AGW = 0.24187 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.24187" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-10', '1880 Liberty Gold Half Eagle PCGS Genuine VF Details', 0.24187, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-11">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-anacs">ANACS AU-50</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1885 Liberty Gold Half Eagle $5</h3>
-                            <div class="item-details">ANACS AU-50 Details. AGW = 0.24187 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.24187" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-11', '1885 Liberty Gold Half Eagle ANACS AU-50 Details', 0.24187, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-12">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS XF Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1905-S Liberty Gold Half Eagle $5</h3>
-                            <div class="item-details">PCGS Genuine XF Details. AGW = 0.24187 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.24187" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-12', '1905-S Liberty Gold Half Eagle PCGS Genuine XF Details', 0.24187, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-13">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1932 Indian Gold Eagle $10</h3>
-                            <div class="item-details">PCGS Genuine AU Details. AGW = 0.48375 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.48375" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-13', '1932 Indian Gold Eagle PCGS Genuine AU Details', 0.48375, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-14">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-anacs">ANACS Proof-64</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Canada 1979 Gold $100 Year of Child</h3>
-                            <div class="item-details">KM-126 ANACS Proof-64 DCAM. AGW = 0.5000 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-14', 'Canada 1979 Gold $100 Year of Child KM-126 ANACS Proof-64 DCAM', 0.5000, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-15">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Proof-65</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Jamaica 1975-FM Gold $100 Columbus</h3>
-                            <div class="item-details">KM-67 PCGS Proof-65. AGW = 0.2263 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.2263" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-15', 'Jamaica 1975-FM Gold $100 Columbus KM-67 PCGS Proof-65', 0.2263, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-16">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1901-S Liberty Gold Double Eagle $20</h3>
-                            <div class="item-details">PCGS Genuine AU Details. AGW = 0.9675 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.9675" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-16', '1901-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-17">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Niue 2015 Gold $25 Statue of Liberty</h3>
-                            <div class="item-details">Proof Uncertified in Card of Issue. AGW = 0.2500 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.2500" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-17', 'Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card of Issue', 0.2500, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-18">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Unc Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Chile 1949-So Gold 100 Pesos</h3>
-                            <div class="item-details">KM-175 PCGS Genuine Unc Details. AGW = 0.5885 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.5885" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-18', 'Chile 1949-So Gold 100 Pesos KM-175 PCGS Genuine Unc Details', 0.5885, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-19">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Great Britain 1887 Gold £2 Victoria</h3>
-                            <div class="item-details">KM-768 PCGS Genuine AU Details (AGW = 0.4710 oz).</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.4710" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-19', 'Great Britain 1887 Gold £2 KM-768 PCGS Genuine AU Details', 0.4710, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-20">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS XF Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1881 Liberty Gold Half Eagle $5</h3>
-                            <div class="item-details">PCGS Genuine XF Details. AGW = 0.24187 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.24187" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-20', '1881 Liberty Gold Half Eagle PCGS Genuine XF Details', 0.24187, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-21">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1895 Liberty Gold Half Eagle $5</h3>
-                            <div class="item-details">PCGS Genuine AU Details. AGW = 0.24187 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.24187" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-21', '1895 Liberty Gold Half Eagle PCGS Genuine AU Details', 0.24187, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-22">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS XF-40</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1893 Liberty Gold Eagle $10</h3>
-                            <div class="item-details">PCGS XF-40. AGW = 0.48375 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.48375" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-22', '1893 Liberty Gold Eagle PCGS XF-40', 0.48375, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-23">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1880 Liberty Gold Half Eagle $5</h3>
-                            <div class="item-details">PCGS Genuine AU Details. AGW = 0.24187 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.24187" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-23', '1880 Liberty Gold Half Eagle PCGS Genuine AU Details', 0.24187, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-24">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1891-S Liberty Gold Double Eagle $20</h3>
-                            <div class="item-details">PCGS Genuine AU Details. AGW = 0.9675 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.9675" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-24', '1891-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-25">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS AU Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1895-S Liberty Gold Double Eagle $20</h3>
-                            <div class="item-details">PCGS Genuine AU Details. AGW = 0.9675 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.9675" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-25', '1895-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-26">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Unc Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1907 Liberty Gold Double Eagle $20</h3>
-                            <div class="item-details">PCGS Genuine Unc Details. AGW = 0.9675 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.9675" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-26', '1907 Liberty Gold Double Eagle PCGS Genuine Unc Details', 0.9675, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="coin-27">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS Unc Details</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>South Africa 1926-SA Gold Sovereign</h3>
-                            <div class="item-details">KM-21 PCGS Genuine Unc Details. AGW = 0.2356 oz.</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.2356" data-premium="0">Calculating spot...</div>
-                            <button class="btn-quote" onclick="selectCoin('coin-27', 'South Africa 1926-SA Gold Sovereign KM-21 PCGS Genuine Unc Details', 0.2356, 'gold', 0)">Add to Order</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
-            <!-- SUB-TAB 2: WITH PREMIUM (NUMISMATIC & BULLION PIECES WITH PREMIUM) -->
+            <!-- SUB-TAB 2: WITH PREMIUM -->
             <div id="sub-with-premium" class="sub-tab-content">
                 <div class="inventory-grid">
-
-                    <div class="item-card" data-id="prem-1">
+                    <div class="item-card" data-id="1567859">
                         <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-pcgs">PCGS MS-63</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1924 Saint-Gaudens Gold Double Eagle $20</h3>
-                            <div class="item-details">PCGS MS-63 Choice Uncirculated. AGW = 0.9675 oz (+5% Premium).</div>
+                            <div class="badge-holder"><span class="badge badge-premium">+10.0% Premium</span><span class="badge badge-stock">In Stock</span></div>
+                            <h3>Vatican City 1999 Anno XXI-R Gold 100,000 Lire</h3>
+                            <div class="item-details">Item #1567859 | AGW = 0.4422 oz</div>
                         </div>
                         <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.9675" data-premium="0.05">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('prem-1', '1924 Saint-Gaudens Gold Double Eagle $20 PCGS MS-63 (+5% Premium)', 0.9675, 'gold', 0.05)">Add to Order</button>
+                            <div class="item-price" data-metal="gold" data-weight="0.4422" data-cost="1058.49" data-premium="0.10">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('1567859', 'Vatican City 1999 Anno XXI-R Gold 100,000 Lire', 0.4422, 'gold', 1058.49, 0.10)">Add to Order</button>
                         </div>
                     </div>
-
-                    <div class="item-card" data-id="prem-2">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-ngc">NGC MS-70</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>1 oz Gold American Eagle (Current Year)</h3>
-                            <div class="item-details">NGC MS-70 Early Releases. AGW = 1.0000 oz (+4% Premium).</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="1.0000" data-premium="0.04">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('prem-2', '1 oz Gold American Eagle NGC MS-70 (+4% Premium)', 1.0000, 'gold', 0.04)">Add to Order</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 
-    <!-- ADDITIONAL PAGES -->
-    <div id="gold" class="tab-page">
-        <div class="container">
-            <h1 class="page-header-title">Gold Catalog</h1>
-            <p class="page-subtitle">Additional bullion and numismatic gold inventory coming soon.</p>
-        </div>
-    </div>
-
+    <!-- PAGE 4: SILVER -->
     <div id="silver" class="tab-page">
         <div class="container">
             <h1 class="page-header-title">Silver Catalog</h1>
-            <p class="page-subtitle">Additional bullion and numismatic silver inventory coming soon.</p>
+            <p class="page-subtitle">Additional silver inventory coming soon.</p>
         </div>
     </div>
 
@@ -703,7 +732,6 @@
         <div class="form-section" id="contacto">
             <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1rem; text-align: center;">Trading Desk</h2>
 
-            <!-- CART SUMMARY & TIMER -->
             <div class="cart-summary-box">
                 <div class="cart-total-header">
                     <div>Estimated Order Total: <span id="cart-total-amount">$0.00 USD</span></div>
@@ -711,7 +739,6 @@
                 </div>
             </div>
 
-            <!-- IMPORTANT CLIENT NOTICES -->
             <div class="notice-banner">
                 <strong>📈 Live Spot Market Disclaimer:</strong> All item prices and total amounts in your order continuously update in real time based on live market spot prices. Prices are officially locked only after submitting this completed form and receiving confirmation from our Trading Desk.
             </div>
@@ -756,84 +783,71 @@
         <p>Trading Desk Contact: <a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></p>
     </footer>
 
-    <!-- JAVASCRIPT: DYNAMIC CART, SUB-TABS, TIMER, REAL-TIME FLUCTUATION & NAVIGATION -->
+    <!-- JAVASCRIPT: NAVIGATION & SPOT PRICING -->
     <script>
         var selectedItems = [];
         var goldSpotPrice = 2650.00;
         var silverSpotPrice = 31.50;
         var reservationTimer = null;
-        var timeRemaining = 600; // 10 minutes
+        var timeRemaining = 600;
 
         function openTab(tabId, event) {
             var pages = document.querySelectorAll('.tab-page');
-            for(var i=0; i<pages.length; i++) {
-                pages[i].classList.remove('active-page');
-            }
+            for(var i=0; i<pages.length; i++) pages[i].classList.remove('active-page');
 
             var tabs = document.querySelectorAll('.nav-tab');
-            for(var j=0; j<tabs.length; j++) {
-                tabs[j].classList.remove('active');
-            }
+            for(var j=0; j<tabs.length; j++) tabs[j].classList.remove('active');
 
             var selectedPage = document.getElementById(tabId);
-            if(selectedPage) {
-                selectedPage.classList.add('active-page');
-            }
+            if(selectedPage) selectedPage.classList.add('active-page');
 
-            if(event && event.currentTarget) {
-                event.currentTarget.classList.add('active');
-            }
-
+            if(event && event.currentTarget) event.currentTarget.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // SUB-TABS SWITCHER FOR SPECIALS
         function openSubTab(subTabId, event) {
             var subContents = document.querySelectorAll('.sub-tab-content');
-            for(var i=0; i<subContents.length; i++) {
-                subContents[i].classList.remove('active-subcontent');
-            }
+            for(var i=0; i<subContents.length; i++) subContents[i].classList.remove('active-subcontent');
 
             var subBtns = document.querySelectorAll('.sub-tab-btn');
-            for(var j=0; j<subBtns.length; j++) {
-                subBtns[j].classList.remove('active-subtab');
-            }
+            for(var j=0; j<subBtns.length; j++) subBtns[j].classList.remove('active-subtab');
 
             document.getElementById(subTabId).classList.add('active-subcontent');
-            if(event && event.currentTarget) {
-                event.currentTarget.classList.add('active-subtab');
-            }
+            if(event && event.currentTarget) event.currentTarget.classList.add('active-subtab');
         }
 
-        // COIN SELECTION WITH PREMIUM SUPPORT
-        function selectCoin(cardId, title, weight, metal, premiumRate) {
-            var card = document.querySelector('.item-card[data-id="' + cardId + '"]');
-            
-            // 1. Hide item from catalog
-            card.style.display = 'none';
+        function openNestedTab(nestedTabId, event) {
+            var nestedContents = document.querySelectorAll('.nested-tab-content');
+            for(var i=0; i<nestedContents.length; i++) nestedContents[i].classList.remove('active-nestedcontent');
 
-            // 2. Add to array
+            var nestedBtns = document.querySelectorAll('.nested-tab-btn');
+            for(var j=0; j<nestedBtns.length; j++) nestedBtns[j].classList.remove('active-nestedtab');
+
+            document.getElementById(nestedTabId).classList.add('active-nestedcontent');
+            if(event && event.currentTarget) event.currentTarget.classList.add('active-nestedtab');
+        }
+
+        function selectCoin(cardId, title, weight, metal, cost, premiumRate) {
+            var card = document.querySelector('.item-card[data-id="' + cardId + '"]');
+            if (card) card.style.display = 'none';
+
             selectedItems.push({
                 id: cardId,
                 title: title,
                 weight: weight,
                 metal: metal,
+                cost: cost || 0,
                 premiumRate: premiumRate || 0
             });
 
-            // 3. Start 10-minute timer if first item
             if (selectedItems.length === 1 && !reservationTimer) {
                 startReservationTimer();
             }
 
-            // 4. Update Trading Desk
             updateTradingDesk();
-
-            // 5. Scroll down to Trading Desk
             document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // UPDATE TRADING DESK TEXTAREA & TOTAL PRICE
         function updateTradingDesk() {
             var textArea = document.getElementById('order-details');
             var totalAmount = 0;
@@ -844,7 +858,7 @@
                 var itemPrice = (item.weight * spot) * (1 + item.premiumRate);
                 totalAmount += itemPrice;
 
-                textLines.push("• " + item.title + " [Price: $" + itemPrice.toFixed(2) + " USD]");
+                textLines.push("• Item #" + item.id + " - " + item.title + " [Price: $" + itemPrice.toFixed(2) + " USD]");
             });
 
             if (selectedItems.length > 0) {
@@ -857,7 +871,6 @@
             document.getElementById('cart-total-amount').innerText = "$" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD";
         }
 
-        // START 10-MINUTE TIMER
         function startReservationTimer() {
             timeRemaining = 600;
             var timerDisplay = document.getElementById('timer-display');
@@ -865,7 +878,6 @@
 
             reservationTimer = setInterval(function() {
                 timeRemaining--;
-                
                 var minutes = Math.floor(timeRemaining / 60);
                 var seconds = timeRemaining % 60;
                 if (seconds < 10) seconds = "0" + seconds;
@@ -878,25 +890,18 @@
             }, 1000);
         }
 
-        // RESET CART AFTER 10 MINUTES
         function resetCartAndReturnItems() {
             clearInterval(reservationTimer);
             reservationTimer = null;
             document.getElementById('timer-display').style.display = 'none';
 
-            // Unhide all items
-            selectedItems.forEach(function(item) {
-                var card = document.querySelector('.item-card[data-id="' + item.id + '"]');
-                if (card) card.style.display = 'flex';
-            });
-
             selectedItems = [];
+            calculateSpotPrices();
             updateTradingDesk();
 
             alert("⏱️ Your 10-minute reservation period has expired. Selected items have been returned to the public Specials catalog.");
         }
 
-        // FETCH LIVE SPOT PRICES AND RECALCULATE IN REAL TIME
         function calculateSpotPrices() {
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd')
                 .then(function(res) { return res.json(); })
@@ -905,20 +910,33 @@
                         goldSpotPrice = data['pax-gold'].usd;
                     }
 
-                    // Update catalog display
                     document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
+                        var card = el.closest('.item-card');
+                        var cardId = card.getAttribute('data-id');
                         var weight = parseFloat(el.getAttribute('data-weight'));
                         var metal = el.getAttribute('data-metal');
+                        var cost = parseFloat(el.getAttribute('data-cost')) || 0;
                         var premium = parseFloat(el.getAttribute('data-premium')) || 0;
                         var spot = (metal === 'silver') ? silverSpotPrice : goldSpotPrice;
 
                         if (!isNaN(weight)) {
-                            var finalPrice = (weight * spot * (1 + premium)).toFixed(2);
-                            el.innerHTML = 'Price: $' + Number(finalPrice).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
+                            var sellPrice = weight * spot * (1 + premium);
+                            el.innerHTML = 'Price: $' + Number(sellPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
+
+                            var isSelectedInCart = selectedItems.some(function(item) { return item.id === cardId; });
+
+                            if (!isSelectedInCart && cost > 0) {
+                                var profitMarginPercent = ((sellPrice - cost) / sellPrice) * 100;
+
+                                if (profitMarginPercent >= 2.0) {
+                                    card.style.display = 'flex';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            }
                         }
                     });
 
-                    // Recalculate Trading Desk total live
                     if (selectedItems.length > 0) {
                         updateTradingDesk();
                     }
@@ -930,7 +948,7 @@
 
         window.onload = function() {
             calculateSpotPrices();
-            setInterval(calculateSpotPrices, 120000); // Recalculate live prices every 2 minutes
+            setInterval(calculateSpotPrices, 120000);
         };
     </script>
 
