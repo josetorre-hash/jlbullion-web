@@ -99,10 +99,18 @@
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border-radius: 4px; border: 1px solid #334155; background: #0f172a; color: white; }
         .form-notice { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; }
 
+        /* CART SUMMARY & REMOVE ITEMS */
         .cart-summary-box { background: #0f172a; border: 1px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin-bottom: 1.5rem; }
-        .cart-total-header { display: flex; justify-content: space-between; align-items: center; color: var(--text-light); font-size: 1.2rem; font-family: 'Cinzel', serif; }
+        .cart-total-header { display: flex; justify-content: space-between; align-items: center; color: var(--text-light); font-size: 1.2rem; font-family: 'Cinzel', serif; margin-bottom: 0.8rem; }
         .cart-total-header span { color: var(--accent); font-weight: 700; }
         .timer-badge { background: #7f1d1d; color: #fecaca; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+        .selected-items-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; border-top: 1px solid #1e293b; padding-top: 10px; }
+        .cart-item-row { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 8px 12px; border-radius: 4px; font-size: 0.85rem; }
+        .cart-item-title { color: var(--text-light); }
+        .cart-item-price { color: var(--accent); font-weight: 600; margin-left: auto; margin-right: 12px; }
+        .btn-remove-item { background: #ef4444; color: white; border: none; padding: 3px 8px; border-radius: 3px; font-size: 0.75rem; cursor: pointer; font-weight: 600; transition: 0.2s; }
+        .btn-remove-item:hover { background: #dc2626; }
 
         .notice-banner { background-color: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; border-radius: 4px; margin-bottom: 1rem; font-size: 0.82rem; color: #cbd5e1; line-height: 1.4; }
         .notice-banner strong { color: var(--accent); }
@@ -1238,6 +1246,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine Unc</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>South Africa 1926-SA Gold Sovereign KM-21</h3>
@@ -1254,6 +1263,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine Unc</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>Chile 1949-So Gold 100 Pesos KM-175</h3>
@@ -1269,6 +1279,7 @@
                 <div class="item-card" data-id="1945802" data-category="oceania" data-search="Niue 2015 Gold $25 Statue of Liberty Proof Uncertified Card Issue 1945802">
                     <div>
                         <div class="badge-holder">
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>Niue 2015 Gold $25 Statue of Liberty Proof</h3>
@@ -1285,6 +1296,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine XF</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1881 Liberty Gold Half Eagle</h3>
@@ -1301,6 +1313,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine AU</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1880 Liberty Gold Half Eagle</h3>
@@ -1317,6 +1330,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine AU</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1895 Liberty Gold Half Eagle</h3>
@@ -1333,6 +1347,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine AU</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1891-S Liberty Gold Double Eagle</h3>
@@ -1349,6 +1364,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine AU</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1895-S Liberty Gold Double Eagle</h3>
@@ -1365,6 +1381,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine AU</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1901-S Liberty Gold Double Eagle</h3>
@@ -1381,6 +1398,7 @@
                     <div>
                         <div class="badge-holder">
                             <span class="badge badge-pcgs">PCGS Genuine Unc</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
                             <span class="badge badge-stock">In Stock</span>
                         </div>
                         <h3>1907 Liberty Gold Double Eagle</h3>
@@ -1414,6 +1432,7 @@
                     <div>Estimated Order Total: <span id="cart-total-amount">$0.00 USD</span></div>
                     <div id="timer-display" class="timer-badge" style="display: none;">Time Left: 10:00</div>
                 </div>
+                <div id="selected-items-container" class="selected-items-list" style="display: none;"></div>
             </div>
 
             <div class="notice-banner">
@@ -1588,23 +1607,55 @@
             document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
         }
 
+        function removeCoinFromCart(cardId) {
+            selectedItems = selectedItems.filter(function(item) {
+                return item.id !== cardId;
+            });
+
+            var card = document.querySelector('.item-card[data-id="' + cardId + '"]');
+            if (card) {
+                card.style.display = 'flex';
+            }
+
+            if (selectedItems.length === 0) {
+                clearInterval(reservationTimer);
+                reservationTimer = null;
+                document.getElementById('timer-display').style.display = 'none';
+            }
+
+            calculateSpotPrices();
+            updateTradingDesk();
+        }
+
         function updateTradingDesk() {
             var textArea = document.getElementById('order-details');
+            var container = document.getElementById('selected-items-container');
             var totalAmount = 0;
             var textLines = ["Selected Items for Purchase (Prices subject to live market spot fluctuation):"];
 
-            selectedItems.forEach(function(item) {
-                var spot = (item.metal === 'silver') ? silverSpotPrice : goldSpotPrice;
-                var itemPrice = (item.weight * spot) * (1 + item.premiumRate);
-                totalAmount += itemPrice;
-
-                textLines.push("• Item #" + item.id + " - " + item.title + " [Price: $" + itemPrice.toFixed(2) + " USD]");
-            });
+            container.innerHTML = "";
 
             if (selectedItems.length > 0) {
+                container.style.display = "flex";
+                selectedItems.forEach(function(item) {
+                    var spot = (item.metal === 'silver') ? silverSpotPrice : goldSpotPrice;
+                    var itemPrice = (item.weight * spot) * (1 + item.premiumRate);
+                    totalAmount += itemPrice;
+
+                    textLines.push("• Item #" + item.id + " - " + item.title + " [Price: $" + itemPrice.toFixed(2) + " USD]");
+
+                    var row = document.createElement('div');
+                    row.className = 'cart-item-row';
+                    row.innerHTML = '<span class="cart-item-title">Item #' + item.id + ' - ' + item.title + '</span>' +
+                                    '<span class="cart-item-price">$' + itemPrice.toFixed(2) + ' USD</span>' +
+                                    '<button type="button" class="btn-remove-item" onclick="removeCoinFromCart(\'' + item.id + '\')">🗑️ Remove</button>';
+                    container.appendChild(row);
+                });
+
                 textLines.push("\nESTIMATED TOTAL AT LIVE MARKET: $" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD");
                 textArea.value = textLines.join("\n");
             } else {
+                container.style.display = "none";
                 textArea.value = "";
             }
 
