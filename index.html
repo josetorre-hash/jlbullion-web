@@ -19,8 +19,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--bg-light); color: #333; line-height: 1.6; }
 
-        /* FIXED STICKY HEADER & TICKER */
-        .sticky-top-wrapper { position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        /* FIXED STICKY TOP WRAPPER (HEADER, TICKER & INTEGRATED NAV BAR) */
+        .sticky-top-wrapper { position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); background-color: var(--primary); }
 
         header { background-color: var(--primary); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
         .logo-container { display: flex; align-items: center; text-decoration: none; cursor: pointer; }
@@ -32,19 +32,26 @@
 
         .ticker-wrapper { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; }
 
-        /* MAIN NAVIGATION TABS */
-        .main-nav-tabs { background-color: #0a192f; display: flex; align-items: center; padding: 0 5%; border-bottom: 3px solid #d4af37; overflow-x: auto; }
-        .nav-tab { color: #f8f9fa; text-decoration: none; padding: 12px 22px; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s ease; border-bottom: 3px solid transparent; margin-bottom: -3px; white-space: nowrap; cursor: pointer; }
+        /* INTEGRATED NAV & SEARCH BAR */
+        .main-nav-tabs { background-color: #0a192f; display: flex; align-items: center; padding: 0.5rem 5%; border-bottom: 3px solid #d4af37; gap: 1rem; flex-wrap: wrap; justify-content: space-between; }
+        .nav-links-group { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+        .nav-tab { color: #f8f9fa; text-decoration: none; padding: 8px 16px; font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s ease; border-bottom: 3px solid transparent; white-space: nowrap; cursor: pointer; border-radius: 4px; }
         .nav-tab:hover { background-color: #172a45; color: #d4af37; }
         .nav-tab.active { background-color: #1e3a8a; color: #ffffff; border-bottom-color: #d4af37; }
 
-        .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
+        /* HEADER SEARCH & SORT CONTROLS */
+        .header-search-group { display: flex; align-items: center; gap: 0.6rem; flex: 1; max-width: 520px; min-width: 280px; }
+        .header-search-input { flex: 1; padding: 0.5rem 0.9rem; border-radius: 20px; border: 1px solid #cbd5e1; font-size: 0.82rem; outline: none; background: #ffffff; color: var(--primary); font-weight: 500; }
+        .header-search-input:focus { border-color: var(--accent); box-shadow: 0 0 6px rgba(212, 175, 55, 0.4); }
+        .header-sort-dropdown { padding: 0.5rem 0.8rem; border-radius: 20px; border: 1px solid #cbd5e1; font-size: 0.8rem; background: #ffffff; color: var(--primary); font-weight: 600; cursor: pointer; outline: none; }
+
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
 
         .tab-page { display: none; }
         .tab-page.active-page { display: block; }
 
         /* SUB-TABS LEVEL 1 */
-        .sub-nav-tabs { display: flex; gap: 10px; margin-bottom: 1.5rem; border-bottom: 2px solid #cbd5e1; flex-wrap: wrap; }
+        .sub-nav-tabs { display: flex; gap: 10px; margin-bottom: 1.2rem; border-bottom: 2px solid #cbd5e1; flex-wrap: wrap; }
         .sub-tab-btn { padding: 10px 20px; font-weight: 600; font-size: 0.95rem; background: #e2e8f0; color: #475569; border: none; border-radius: 6px 6px 0 0; cursor: pointer; transition: 0.2s; }
         .sub-tab-btn.active-subtab { background: var(--primary); color: var(--accent); border-bottom: 3px solid var(--accent); }
 
@@ -52,22 +59,15 @@
         .sub-tab-content.active-subcontent { display: block; }
 
         /* NESTED SUB-TABS LEVEL 2 */
-        .nested-nav-tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; background: #cbd5e1; padding: 5px; border-radius: 6px; width: fit-content; flex-wrap: wrap; }
+        .nested-nav-tabs { display: flex; gap: 8px; margin-bottom: 1.2rem; background: #cbd5e1; padding: 5px; border-radius: 6px; width: fit-content; flex-wrap: wrap; }
         .nested-tab-btn { padding: 8px 16px; font-weight: 600; font-size: 0.85rem; background: transparent; color: #334155; border: none; border-radius: 4px; cursor: pointer; transition: 0.2s; }
         .nested-tab-btn.active-nestedtab { background: #ffffff; color: var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
         .nested-tab-content { display: none; }
         .nested-tab-content.active-nestedcontent { display: block; }
 
-        /* CATALOG CONTROLS */
-        .catalog-controls { background: #ffffff; padding: 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .controls-top-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between; align-items: center; }
-        .search-box-input { flex: 1; min-width: 240px; padding: 0.65rem 1rem; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.9rem; outline: none; }
-        .search-box-input:focus { border-color: var(--accent); }
-        
-        .sort-dropdown { padding: 0.65rem 1rem; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.88rem; background: white; color: var(--primary); font-weight: 600; cursor: pointer; }
-        
-        .filter-chips-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        /* CATEGORY FILTER CHIPS ROW */
+        .filter-chips-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 1.8rem; background: #ffffff; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
         .filter-chip { padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; cursor: pointer; transition: 0.2s; }
         .filter-chip.active-chip { background: var(--primary); color: var(--accent); border-color: var(--primary); }
 
@@ -121,7 +121,7 @@
 </head>
 <body>
 
-    <!-- STICKY HEADER & TICKER -->
+    <!-- FIXED STICKY HEADER, TICKER & INTEGRATED SEARCH/NAV BAR -->
     <div class="sticky-top-wrapper">
         <header>
             <div class="logo-container" onclick="openTab('home', event)">
@@ -151,16 +151,30 @@
                 </script>
             </div>
         </div>
-    </div>
 
-    <!-- MAIN NAVIGATION TABS -->
-    <nav class="main-nav-tabs">
-        <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
-        <span class="nav-tab" onclick="openTab('gold', event)">Gold</span>
-        <span class="nav-tab" onclick="openTab('silver', event)">Silver</span>
-        <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥</span>
-        <a href="#contacto" class="nav-tab">Trading Desk</a>
-    </nav>
+        <!-- MAIN NAVIGATION & SEARCH CONTROLS INTEGRATED TOGETHER -->
+        <nav class="main-nav-tabs">
+            <div class="nav-links-group">
+                <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
+                <span class="nav-tab" onclick="openTab('gold', event)">Gold</span>
+                <span class="nav-tab" onclick="openTab('silver', event)">Silver</span>
+                <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥</span>
+                <a href="#contacto" class="nav-tab">Trading Desk</a>
+            </div>
+
+            <!-- SEARCH INPUT & SORT DROPDOWN IN STICKY HEADER -->
+            <div class="header-search-group">
+                <input type="text" class="header-search-input search-box-input" placeholder="🔍 Search coins by name, year, slab, or item #..." onkeyup="filterInventory(this.value)">
+                <select class="header-sort-dropdown" onchange="sortInventory(this.value)">
+                    <option value="default">Default Order</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="weight-desc">Gold Weight (AGW)</option>
+                    <option value="id-asc">Item # (Ascending)</option>
+                </select>
+            </div>
+        </nav>
+    </div>
 
     <!-- PAGE 1: HOME -->
     <div id="home" class="tab-page active-page">
@@ -188,31 +202,17 @@
                     <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins</button>
                 </div>
 
-                <!-- CONTROLES DINÁMICOS DE BÚSQUEDA Y ORDENAMIENTO -->
-                <div class="catalog-controls">
-                    <div class="controls-top-row">
-                        <input type="text" class="search-box-input" placeholder="🔍 Search coins by name, year, slab (PCGS/NGC), or item #..." onkeyup="filterInventory(this.value)">
-                        
-                        <select class="sort-dropdown" onchange="sortInventory(this.value)">
-                            <option value="default">Default Order</option>
-                            <option value="price-asc">Price: Low to High</option>
-                            <option value="price-desc">Price: High to Low</option>
-                            <option value="weight-desc">Gold Weight (AGW): High to Low</option>
-                            <option value="id-asc">Item # (Ascending)</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-chips-row">
-                        <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('world', this)">World Coins 🌎</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
-                        <span class="filter-chip" onclick="applyCategoryFilter('graded', this)">Graded Coins 🛡️</span>
-                    </div>
+                <!-- CATEGORY FILTER CHIPS -->
+                <div class="filter-chips-row">
+                    <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('world', this)">World Coins 🌎</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('graded', this)">Graded Coins 🛡️</span>
                 </div>
 
                 <div id="nested-gold-bullion" class="nested-tab-content active-nestedcontent">
@@ -1227,6 +1227,91 @@
                             </div>
                         </div>
 
+                        <!-- MONEDA GRADUADA 60: 1901/0-S LIBERTY GOLD HALF EAGLE FS-301 (#2197750) -->
+                        <div class="item-card" data-id="2197750" data-category="us" data-search="1901/0-S Liberty Gold Half Eagle FS-301 ANACS AU-50 Details 2197750">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-anacs">ANACS AU-50 Details</span>
+                                    <span class="badge badge-premium">+7.5% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>1901/0-S Liberty Gold Half Eagle FS-301</h3>
+                                <div class="item-details">Item #2197750 | FS-301 ANACS AU-50 Details | AGW = 0.24187 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.24187" data-cost="1002.36" data-premium="0.075">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2197750', '1901/0-S Liberty Gold Half Eagle FS-301 ANACS AU-50 Details', 0.24187, 'gold', 1002.36, 0.075)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <!-- MONEDA GRADUADA 61: 1926 INDIAN GOLD EAGLE (#2205185) -->
+                        <div class="item-card" data-id="2205185" data-category="us" data-search="1926 Indian Gold Eagle PCGS Genuine Unc Details 2205185">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-pcgs">PCGS Genuine Unc</span>
+                                    <span class="badge badge-premium">+6.0% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>1926 Indian Gold Eagle</h3>
+                                <div class="item-details">Item #2205185 | PCGS Genuine Unc Details | AGW = 0.48375 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.48375" data-cost="2031.06" data-premium="0.06">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2205185', '1926 Indian Gold Eagle PCGS Genuine Unc Details', 0.48375, 'gold', 2031.06, 0.06)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <!-- MONEDA GRADUADA 62: AUSTRALIA 1913-P GOLD SOVEREIGN (#1936697) -->
+                        <div class="item-card" data-id="1936697" data-category="oceania" data-search="Australia 1913-P Gold Sovereign KM-29 PCGS MS-62 1936697">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-pcgs">PCGS MS-62</span>
+                                    <span class="badge badge-premium">+10.0% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>Australia 1913-P Gold Sovereign KM-29</h3>
+                                <div class="item-details">Item #1936697 | KM-29 PCGS MS-62 | AGW = 0.2355 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2355" data-cost="1003.46" data-premium="0.10">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1936697', 'Australia 1913-P Gold Sovereign KM-29 PCGS MS-62', 0.2355, 'gold', 1003.46, 0.10)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <!-- MONEDA GRADUADA 63: AUSTRALIA 1913-P GOLD SOVEREIGN (#1936685) -->
+                        <div class="item-card" data-id="1936685" data-category="oceania" data-search="Australia 1913-P Gold Sovereign KM-29 PCGS MS-62 1936685">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-pcgs">PCGS MS-62</span>
+                                    <span class="badge badge-premium">+10.0% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>Australia 1913-P Gold Sovereign KM-29</h3>
+                                <div class="item-details">Item #1936685 | KM-29 PCGS MS-62 | AGW = 0.2355 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.2355" data-cost="1003.33" data-premium="0.10">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1936685', 'Australia 1913-P Gold Sovereign KM-29 PCGS MS-62', 0.2355, 'gold', 1003.33, 0.10)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <!-- MONEDA GRADUADA 64: BRITISH VIRGIN ISLANDS 2015 GOLD $125 ABE LINCOLN (#2080155) -->
+                        <div class="item-card" data-id="2080155" data-category="americas" data-search="British Virgin Islands 2015 Gold $125 Abe Lincoln Ultra High Relief KM-478 With Case of Issue NGC Proof-69 UC 2080155">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-ngc">NGC PR-69 UC</span>
+                                    <span class="badge badge-premium">+5.0% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>British Virgin Islands 2015 Gold $125 Abe Lincoln High Relief</h3>
+                                <div class="item-details">Item #2080155 | KM-478 With Case | NGC Proof-69 UC | AGW = 0.9990 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="gold" data-weight="0.9990" data-cost="4261.94" data-premium="0.05">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2080155', 'British Virgin Islands 2015 Gold $125 Abe Lincoln NGC PR-69 UC', 0.9990, 'gold', 4261.94, 0.05)">Add to Order</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1407,6 +1492,91 @@
                     <div>
                         <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="3767.69" data-premium="0">Calculating spot...</div>
                         <button class="btn-quote" onclick="selectCoin('2179338', '1907 Liberty Gold Double Eagle PCGS Genuine Unc Details', 0.9675, 'gold', 3767.69, 0)">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- MONEDA SPECIAL 11: 1881 LIBERTY GOLD HALF EAGLE (#2197756) -->
+                <div class="item-card" data-id="2197756" data-category="us" data-search="1881 Liberty Gold Half Eagle ANACS XF-45 Details 2197756">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-anacs">ANACS XF-45 Details</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1881 Liberty Gold Half Eagle</h3>
+                        <div class="item-details">Item #2197756 | ANACS XF-45 Details | AGW = 0.24187 oz</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187" data-cost="1018.93" data-premium="0">Calculating spot...</div>
+                        <button class="btn-quote" onclick="selectCoin('2197756', '1881 Liberty Gold Half Eagle ANACS XF-45 Details', 0.24187, 'gold', 1018.93, 0)">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- MONEDA SPECIAL 12: 1901-S LIBERTY GOLD HALF EAGLE (#2197752) -->
+                <div class="item-card" data-id="2197752" data-category="us" data-search="1901-S Liberty Gold Half Eagle ANACS VF-30 2197752">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-anacs">ANACS VF-30</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1901-S Liberty Gold Half Eagle</h3>
+                        <div class="item-details">Item #2197752 | ANACS VF-30 | AGW = 0.24187 oz</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187" data-cost="1002.36" data-premium="0">Calculating spot...</div>
+                        <button class="btn-quote" onclick="selectCoin('2197752', '1901-S Liberty Gold Half Eagle ANACS VF-30', 0.24187, 'gold', 1002.36, 0)">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- MONEDA SPECIAL 13: 1903-S LIBERTY GOLD HALF EAGLE (#2197754) -->
+                <div class="item-card" data-id="2197754" data-category="us" data-search="1903-S Liberty Gold Half Eagle ANACS XF-40 Details 2197754">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-anacs">ANACS XF-40 Details</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1903-S Liberty Gold Half Eagle</h3>
+                        <div class="item-details">Item #2197754 | ANACS XF-40 Details | AGW = 0.24187 oz</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.24187" data-cost="1019.93" data-premium="0">Calculating spot...</div>
+                        <button class="btn-quote" onclick="selectCoin('2197754', '1903-S Liberty Gold Half Eagle ANACS XF-40 Details', 0.24187, 'gold', 1019.93, 0)">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- MONEDA SPECIAL 14: 1904 LIBERTY GOLD EAGLE (#2207269) -->
+                <div class="item-card" data-id="2207269" data-category="us" data-search="1904 Liberty Gold Eagle PCGS Genuine Unc Details 2207269">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-pcgs">PCGS Genuine Unc</span>
+                            <span class="badge badge-premium">0.0% Premium</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>1904 Liberty Gold Eagle</h3>
+                        <div class="item-details">Item #2207269 | PCGS Genuine Unc Details | AGW = 0.48375 oz</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="0.48375" data-cost="2039.85" data-premium="0">Calculating spot...</div>
+                        <button class="btn-quote" onclick="selectCoin('2207269', '1904 Liberty Gold Eagle PCGS Genuine Unc Details', 0.48375, 'gold', 2039.85, 0)">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- MONEDA SPECIAL 15: MEXICO 1947 GOLD 50 PESOS RESTRIKE (#2205179) -->
+                <div class="item-card" data-id="2205179" data-category="americas" data-search="Mexico 1947 Gold 50 Pesos New Die Restrike KM-481 NGC MS-63 2205179">
+                    <div>
+                        <div class="badge-holder">
+                            <span class="badge badge-ngc">NGC MS-63</span>
+                            <span class="badge badge-premium">+5.0% Premium</span>
+                            <span class="badge badge-stock">In Stock</span>
+                        </div>
+                        <h3>Mexico 1947 Gold 50 Pesos Restrike</h3>
+                        <div class="item-details">Item #2205179 | KM-481 NGC MS-63 | AGW = 1.2057 oz</div>
+                    </div>
+                    <div>
+                        <div class="item-price" data-metal="gold" data-weight="1.2057" data-cost="5093.37" data-premium="0.05">Calculating spot...</div>
+                        <button class="btn-quote" onclick="selectCoin('2205179', 'Mexico 1947 Gold 50 Pesos New Die Restrike NGC MS-63', 1.2057, 'gold', 5093.37, 0.05)">Add to Order</button>
                     </div>
                 </div>
 
