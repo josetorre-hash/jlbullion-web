@@ -23,7 +23,8 @@
         .sticky-top-wrapper { position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); background-color: var(--primary); }
 
         header { background-color: var(--primary); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
-        .logo-container { display: flex; align-items: center; text-decoration: none; cursor: pointer; }
+        .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; cursor: pointer; }
+        .logo-img { height: 55px; width: auto; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); object-fit: cover; }
         .logo-text-group { display: flex; flex-direction: column; }
         .logo-title { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--accent); font-weight: 700; letter-spacing: 2px; line-height: 1.1; }
         .logo-subtitle { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; color: var(--text-light); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px; }
@@ -127,6 +128,8 @@
     <div class="sticky-top-wrapper">
         <header>
             <div class="logo-container" onclick="openTab('home', event)">
+                <!-- LOGO INTEGRATION -->
+                <img src="Logo Escudo con Fondo.png" alt="JL Bullion Logo" class="logo-img">
                 <div class="logo-text-group">
                     <span class="logo-title">JL BULLION</span>
                     <span class="logo-subtitle">Precious Metals & Numismatics</span>
