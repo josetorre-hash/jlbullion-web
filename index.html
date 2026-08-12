@@ -215,7 +215,6 @@
                     <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins</button>
                 </div>
 
-                <!-- CATEGORY FILTER CHIPS (COINS) -->
                 <div class="filter-chips-row">
                     <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
                     <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
@@ -230,7 +229,6 @@
 
                 <div id="nested-gold-bullion" class="nested-tab-content active-nestedcontent">
                     <div class="inventory-grid" id="grid-gold-bullion">
-                        <!-- BULLION COINS -->
                         <div class="item-card" data-id="GECD" data-category="us" data-search="Gold American Eagle 1oz 1 oz GECD CY">
                             <div>
                                 <div class="badge-holder">
@@ -262,156 +260,11 @@
                                 <button class="btn-quote" onclick="selectCoin('GE.50CD', 'Gold American Eagle 1/2 oz (GE.50CD & CY)', 0.5000, 'gold', 0, 0.042)">Add to Order</button>
                             </div>
                         </div>
-
-                        <div class="item-card" data-id="GE.25CD" data-category="us" data-search="Gold American Eagle 1/4oz Quarter Ounce GE.25CD CY">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+6.0% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold American Eagle 1/4 oz</h3>
-                                <div class="item-details">Product Code: GE.25CD & CY | AGW = 0.2500 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="0.2500" data-cost="0" data-premium="0.06">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GE.25CD', 'Gold American Eagle 1/4 oz (GE.25CD & CY)', 0.2500, 'gold', 0, 0.06)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GE.10CD" data-category="us" data-search="Gold American Eagle 1/10oz Tenth Ounce GE.10CD CY">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+10.5% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold American Eagle 1/10 oz</h3>
-                                <div class="item-details">Product Code: GE.10CD & CY | AGW = 0.1000 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="0.1000" data-cost="0" data-premium="0.105">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GE.10CD', 'Gold American Eagle 1/10 oz (GE.10CD & CY)', 0.1000, 'gold', 0, 0.105)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GKR" data-category="africa" data-search="Gold South African Krugerrand 1oz 1 oz GKR">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+3.0% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold South African Krugerrand 1 oz</h3>
-                                <div class="item-details">Product Code: GKR | AGW = 1.0000 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.03">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GKR', 'Gold South African Krugerrand 1 oz (GKR)', 1.0000, 'gold', 0, 0.03)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GPHIL" data-category="europe" data-search="Gold Austrian Philharmonic 1oz 1 oz GPHIL">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+3.5% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold Austrian Philharmonic 1 oz</h3>
-                                <div class="item-details">Product Code: GPHIL | AGW = 1.0000 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.035">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GPHIL', 'Gold Austrian Philharmonic 1 oz (GPHIL)', 1.0000, 'gold', 0, 0.035)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GROO" data-category="oceania" data-search="Gold Australian Kangaroo 1oz 1 oz GROO">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+3.5% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold Australian Kangaroo 1 oz</h3>
-                                <div class="item-details">Product Code: GROO | AGW = 1.0000 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.035">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GROO', 'Gold Australian Kangaroo 1 oz (GROO)', 1.0000, 'gold', 0, 0.035)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GMLCD" data-category="americas" data-search="Gold Canadian Maple Leaf 1oz 1 oz GMLCD CY">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+3.5% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold Canadian Maple Leaf 1 oz</h3>
-                                <div class="item-details">Product Code: GMLCD & CY | AGW = 1.0000 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.035">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GMLCD', 'Gold Canadian Maple Leaf 1 oz (GMLCD & CY)', 1.0000, 'gold', 0, 0.035)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GBRIT" data-category="europe" data-search="Gold Britannia 1oz 1 oz GBRIT">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+3.5% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold Britannia 1 oz</h3>
-                                <div class="item-details">Product Code: GBRIT | AGW = 1.0000 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.035">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GBRIT', 'Gold Britannia 1 oz (GBRIT)', 1.0000, 'gold', 0, 0.035)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GP1T" data-category="asia" data-search="Gold Panda 1oz 1 oz GP1T">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+4.5% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold Panda 1 oz</h3>
-                                <div class="item-details">Product Code: GP1T | AGW = 1.0000 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.045">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GP1T', 'Gold Panda 1 oz (GP1T)', 1.0000, 'gold', 0, 0.045)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="GMEX50P" data-category="americas" data-search="Gold Mexican 50 Peso Centenario GMEX50P">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-bullion">Bullion Coin</span>
-                                    <span class="badge badge-premium">+3.25% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Gold Mexican 50 Peso</h3>
-                                <div class="item-details">Product Code: GMEX50P | AGW = 1.2057 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="1.2057" data-cost="0" data-premium="0.0325">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('GMEX50P', 'Gold Mexican 50 Peso (GMEX50P)', 1.2057, 'gold', 0, 0.0325)">Add to Order</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div id="nested-graduated-gold" class="nested-tab-content">
                     <div class="inventory-grid" id="grid-graduated-gold">
-                        <!-- GRADUATED GOLD ITEMS -->
                         <div class="item-card" data-id="2057528" data-category="americas" data-search="Panama 1975-FM Gold 100 Balboas 500th Anniversary Vasco Nunez de Balboa KM-41 PCGS Proof-69 DCAM 2057528">
                             <div>
                                 <div class="badge-holder">
@@ -425,22 +278,6 @@
                             <div>
                                 <div class="item-price" data-metal="gold" data-weight="0.2361" data-cost="935.05" data-premium="0.06">Calculating price...</div>
                                 <button class="btn-quote" onclick="selectCoin('2057528', 'Panama 1975-FM Gold 100 Balboas 500th Anniv PCGS Proof-69 DCAM', 0.2361, 'gold', 935.05, 0.06)">Add to Order</button>
-                            </div>
-                        </div>
-
-                        <div class="item-card" data-id="1685008" data-category="americas" data-search="Uruguay 1930 Gold 5 Pesos KM-27 PCGS MS-62 1685008">
-                            <div>
-                                <div class="badge-holder">
-                                    <span class="badge badge-pcgs">PCGS MS-62</span>
-                                    <span class="badge badge-premium">+20.0% Premium</span>
-                                    <span class="badge badge-stock">In Stock</span>
-                                </div>
-                                <h3>Uruguay 1930 Gold 5 Pesos KM-27</h3>
-                                <div class="item-details">Item #1685008 | KM-27 PCGS MS-62 | AGW = 0.2501 oz</div>
-                            </div>
-                            <div>
-                                <div class="item-price" data-metal="gold" data-weight="0.2501" data-cost="1015.16" data-premium="0.20">Calculating price...</div>
-                                <button class="btn-quote" onclick="selectCoin('1685008', 'Uruguay 1930 Gold 5 Pesos KM-27 PCGS MS-62', 0.2501, 'gold', 1015.16, 0.20)">Add to Order</button>
                             </div>
                         </div>
                     </div>
@@ -468,118 +305,6 @@
                         <div>
                             <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.04">Calculating price...</div>
                             <button class="btn-quote" onclick="selectCoin('GB1VAL', 'Gold Bar 1 oz (Sealed Valcambi)', 1.0000, 'gold', 0, 0.04)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="GB1C" data-category="1oz-bar" data-search="Gold Bar 1oz Sealed Carded Any Brand GB1C 1 oz">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-bar">Gold Bar</span>
-                                <span class="badge badge-premium">+3.5% Premium</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Gold Bar 1 oz (Sealed/Carded Any Brand)</h3>
-                            <div class="item-details">Product Code: GB1C | AGW = 1.0000 oz</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.035">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('GB1C', 'Gold Bar 1 oz (Sealed/Carded Any Brand)', 1.0000, 'gold', 0, 0.035)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="GB1PAMPF" data-category="1oz-bar" data-search="Gold Bar 1oz Pamp Fortuna Veriscan GB1PAMPF 1 oz">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-bar">Gold Bar</span>
-                                <span class="badge badge-premium">+4.0% Premium</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Gold Bar 1 oz (Pamp Fortuna Veriscan)</h3>
-                            <div class="item-details">Product Code: GB1PAMPF | AGW = 1.0000 oz</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="0" data-premium="0.04">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('GB1PAMPF', 'Gold Bar 1 oz (Pamp Fortuna Veriscan)', 1.0000, 'gold', 0, 0.04)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="GB2.5G" data-category="gram-bar" data-search="Gold Bar 2.5 Gram Sealed & Random Brand GB2.5G 2.5g">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-bar">Gold Bar</span>
-                                <span class="badge badge-premium">+4.5% Premium</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Gold Bar 2.5 Gram (Sealed / Random Brand)</h3>
-                            <div class="item-details">Product Code: GB2.5G | AGW = 0.0804 oz</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.0804" data-cost="0" data-premium="0.045">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('GB2.5G', 'Gold Bar 2.5 Gram (Sealed / Random Brand)', 0.0804, 'gold', 0, 0.045)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="GB5G" data-category="gram-bar" data-search="Gold Bar 5 Gram Sealed & Random Brand GB5G 5g">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-bar">Gold Bar</span>
-                                <span class="badge badge-premium">+4.5% Premium</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Gold Bar 5 Gram (Sealed / Random Brand)</h3>
-                            <div class="item-details">Product Code: GB5G | AGW = 0.1608 oz</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.1608" data-cost="0" data-premium="0.045">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('GB5G', 'Gold Bar 5 Gram (Sealed / Random Brand)', 0.1608, 'gold', 0, 0.045)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="GB10G" data-category="gram-bar" data-search="Gold Bar 10 Gram Sealed & Random Brand GB10G 10g">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-bar">Gold Bar</span>
-                                <span class="badge badge-premium">+4.0% Premium</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Gold Bar 10 Gram (Sealed / Random Brand)</h3>
-                            <div class="item-details">Product Code: GB10G | AGW = 0.3215 oz</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.3215" data-cost="0" data-premium="0.04">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('GB10G', 'Gold Bar 10 Gram (Sealed / Random Brand)', 0.3215, 'gold', 0, 0.04)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="GB20G" data-category="gram-bar" data-search="Gold Bar 20 Gram Sealed & Random Brand GB20G 20g">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-bar">Gold Bar</span>
-                                <span class="badge badge-premium">+4.0% Premium</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Gold Bar 20 Gram (Sealed / Random Brand)</h3>
-                            <div class="item-details">Product Code: GB20G | AGW = 0.6430 oz</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="0.6430" data-cost="0" data-premium="0.04">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('GB20G', 'Gold Bar 20 Gram (Sealed / Random Brand)', 0.6430, 'gold', 0, 0.04)">Add to Order</button>
-                        </div>
-                    </div>
-
-                    <div class="item-card" data-id="GB50G" data-category="gram-bar" data-search="Gold Bar 50 Gram Sealed & Random Brand GB50G 50g">
-                        <div>
-                            <div class="badge-holder">
-                                <span class="badge badge-bar">Gold Bar</span>
-                                <span class="badge badge-premium">+4.0% Premium</span>
-                                <span class="badge badge-stock">In Stock</span>
-                            </div>
-                            <h3>Gold Bar 50 Gram (Sealed / Random Brand)</h3>
-                            <div class="item-details">Product Code: GB50G | AGW = 1.6075 oz</div>
-                        </div>
-                        <div>
-                            <div class="item-price" data-metal="gold" data-weight="1.6075" data-cost="0" data-premium="0.04">Calculating price...</div>
-                            <button class="btn-quote" onclick="selectCoin('GB50G', 'Gold Bar 50 Gram (Sealed / Random Brand)', 1.6075, 'gold', 0, 0.04)">Add to Order</button>
                         </div>
                     </div>
                 </div>
@@ -624,7 +349,6 @@
                     <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-graduated-silver', event)">Graduated Silver Coins</button>
                 </div>
 
-                <!-- CATEGORY FILTER CHIPS FOR SILVER -->
                 <div class="filter-chips-row">
                     <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
                     <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Silver 🇺🇸</span>
@@ -636,7 +360,8 @@
 
                 <div id="nested-graduated-silver" class="nested-tab-content active-nestedcontent">
                     <div class="inventory-grid" id="grid-graduated-silver">
-                        <!-- 51 GRADUATED SILVER ITEMS -->
+                        
+                        <!-- ITEM 1: DENMARK 1937-NS 2 KRONER -->
                         <div class="item-card" data-id="1661528" data-category="europe" data-search="Denmark 1937-NS Silver 2 Kroner 25th Anniversary KM-830 PCGS Genuine Unc Details 1661528">
                             <div>
                                 <div class="badge-holder">
@@ -653,6 +378,7 @@
                             </div>
                         </div>
 
+                        <!-- ITEM 2: GREAT BRITAIN 2017 SILVER £5 -->
                         <div class="item-card" data-id="1960752" data-category="europe" data-search="Great Britain 2017 Silver £5 Royal Platinum Wedding Anniversary KM-1457a PCGS Proof-70 DCAM 1960752">
                             <div>
                                 <div class="badge-holder">
@@ -668,6 +394,58 @@
                                 <button class="btn-quote" onclick="selectCoin('1960752', 'Great Britain 2017 Silver £5 Royal Platinum Wedding Anniv PCGS PR-70 DCAM', 1.6810, 'silver', 296.82, 1.40)">Add to Order</button>
                             </div>
                         </div>
+
+                        <!-- ITEM 3: ISRAEL 1986 NEW SHEQALIM #1 -->
+                        <div class="item-card" data-id="1883695-2" data-category="asia" data-search="Israel 1986 Silver New Sheqalim PCGS MS-69 1883695-2">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-pcgs">PCGS MS-69</span>
+                                    <span class="badge badge-premium">+140.0% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>Israel 1986 Silver New Sheqalim</h3>
+                                <div class="item-details">Item #1883695-2 | PCGS MS-69 | ASW = 0.7870 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="silver" data-weight="0.7870" data-cost="61.78" data-premium="1.40">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1883695-2', 'Israel 1986 Silver New Sheqalim PCGS MS-69', 0.7870, 'silver', 61.78, 1.40)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 4: MEXICO 1968-Mo SILVER 25 PESOS OLYMPICS -->
+                        <div class="item-card" data-id="1997799" data-category="americas" data-search="Mexico 1968-Mo Silver 25 Pesos Olympics Type 1 KM-479.1 NGC MS-66 1997799">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-ngc">NGC MS-66</span>
+                                    <span class="badge badge-premium">+120.0% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>Mexico 1968-Mo Silver 25 Pesos Olympics T1</h3>
+                                <div class="item-details">Item #1997799 | KM-479.1 NGC MS-66 | ASW = 0.5208 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="silver" data-weight="0.5208" data-cost="87.11" data-premium="1.20">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('1997799', 'Mexico 1968-Mo Silver 25 Pesos Olympics NGC MS-66', 0.5208, 'silver', 87.11, 1.20)">Add to Order</button>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 5: MEXICO 1982 LIBERTAD -->
+                        <div class="item-card" data-id="2053962" data-category="americas" data-search="Mexico 1982-Mo Silver Onza Libertad KM-494.1 NGC MS-65 2053962">
+                            <div>
+                                <div class="badge-holder">
+                                    <span class="badge badge-ngc">NGC MS-65</span>
+                                    <span class="badge badge-premium">+130.0% Premium</span>
+                                    <span class="badge badge-stock">In Stock</span>
+                                </div>
+                                <h3>Mexico 1982-Mo Silver Onza Libertad</h3>
+                                <div class="item-details">Item #2053962 | KM-494.1 NGC MS-65 | ASW = 1.0000 oz</div>
+                            </div>
+                            <div>
+                                <div class="item-price" data-metal="silver" data-weight="1.0000" data-cost="136.11" data-premium="1.30">Calculating price...</div>
+                                <button class="btn-quote" onclick="selectCoin('2053962', 'Mexico 1982-Mo Silver Onza Libertad NGC MS-65', 1.0000, 'silver', 136.11, 1.30)">Add to Order</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -735,7 +513,7 @@
     <script>
         var selectedItems = [];
         var goldSpotPrice = 2650.00;
-        var silverSpotPrice = 31.50;
+        var silverSpotPrice = 31.50; // Spot base de Plata
         var reservationTimer = null;
         var timeRemaining = 600;
         var activeCategoryFilter = 'all';
@@ -779,12 +557,12 @@
         }
 
         /* 
-           REGLA DE NEGOCIO CODIFICADA:
-           Un producto SOLO se mostrará a la venta si:
-           1. Coincide con la búsqueda y categoría.
+           PROTECCIÓN DE MARGEN EN TIEMPO REAL (ORO Y PLATA):
+           Un artículo solo se muestra a la venta si:
+           1. Coincide con búsqueda y categoría.
            2. No está en el carrito.
-           3. El precio de venta supera al costo en AL MENOS un 2% ((sellPrice - cost) / sellPrice >= 0.02)
-              o si no tiene costo asignado (cost === 0).
+           3. El precio de venta calculado según el spot (de oro o plata) supera al costo en al menos un 2%
+              ((sellPrice - cost) / sellPrice >= 0.02) o si no tiene costo registrado (cost === 0).
         */
         function filterInventory(query) {
             var searchTerm = query.toLowerCase().trim();
@@ -803,11 +581,11 @@
                 var cost = priceEl ? parseFloat(priceEl.getAttribute('data-cost')) || 0 : 0;
                 var sellPrice = priceEl ? parseFloat(priceEl.getAttribute('data-calculated-price')) || 0 : 0;
 
-                // Cálculo del margen del precio de venta sobre el costo
+                // Aplicación estricta de protección de margen (mínimo 2%) basada en spot
                 var passesMarginCheck = true;
                 if (cost > 0 && sellPrice > 0) {
                     var profitMarginPercent = ((sellPrice - cost) / sellPrice) * 100;
-                    passesMarginCheck = (profitMarginPercent >= 2.0); // Condicional de margen mínimo del 2%
+                    passesMarginCheck = (profitMarginPercent >= 2.0); 
                 }
 
                 if (matchesSearch && matchesCategory && !isSelectedInCart && passesMarginCheck) {
@@ -974,11 +752,15 @@
         }
 
         function calculateSpotPrices() {
-            fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd')
+            // Consulta en tiempo real del Spot de Oro y Plata a través de API
+            fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold,kinesis-silver&vs_currencies=usd')
                 .then(function(res) { return res.json(); })
                 .then(function(data) {
                     if (data['pax-gold']) {
                         goldSpotPrice = data['pax-gold'].usd;
+                    }
+                    if (data['kinesis-silver']) {
+                        silverSpotPrice = data['kinesis-silver'].usd;
                     }
 
                     document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
@@ -1004,6 +786,20 @@
                 })
                 .catch(function(err) {
                     console.log("Error fetching spot prices:", err);
+                    // Fallback a los cálculos con valores estáticos si falla la conexión
+                    document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
+                        var weight = parseFloat(el.getAttribute('data-weight'));
+                        var metal = el.getAttribute('data-metal');
+                        var premium = parseFloat(el.getAttribute('data-premium')) || 0;
+                        var spot = (metal === 'silver') ? silverSpotPrice : goldSpotPrice;
+
+                        if (!isNaN(weight)) {
+                            var sellPrice = weight * spot * (1 + premium);
+                            el.setAttribute('data-calculated-price', sellPrice.toFixed(2));
+                            el.innerHTML = 'Price: $' + Number(sellPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
+                        }
+                    });
+                    filterInventory('');
                 });
         }
 
