@@ -45,6 +45,9 @@
         .nav-tab:hover { background-color: #172a45; color: #d4af37; }
         .nav-tab.active { background-color: #1e3a8a; color: #ffffff; border-bottom-color: #d4af37; }
 
+        /* COUNTER BADGE IN TABS */
+        .tab-count-badge { background: var(--accent); color: var(--primary); font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 12px; margin-left: 4px; }
+
         .header-search-group { display: flex; align-items: center; gap: 0.6rem; flex: 1; max-width: 520px; min-width: 280px; }
         .header-search-input { flex: 1; padding: 0.5rem 0.9rem; border-radius: 20px; border: 1px solid #cbd5e1; font-size: 0.82rem; outline: none; background: #ffffff; color: var(--primary); font-weight: 500; }
         .header-search-input:focus { border-color: var(--accent); box-shadow: 0 0 6px rgba(212, 175, 55, 0.4); }
@@ -157,9 +160,9 @@
         <nav class="main-nav-tabs">
             <div class="nav-links-group">
                 <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
-                <span class="nav-tab" onclick="openTab('gold', event)">Gold</span>
-                <span class="nav-tab" onclick="openTab('silver', event)">Silver</span>
-                <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥</span>
+                <span class="nav-tab" onclick="openTab('gold', event)">Gold <span class="tab-count-badge" id="cnt-tab-gold">0</span></span>
+                <span class="nav-tab" onclick="openTab('silver', event)">Silver <span class="tab-count-badge" id="cnt-tab-silver">0</span></span>
+                <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥 <span class="tab-count-badge" id="cnt-tab-specials">0</span></span>
                 <a href="#contacto" class="nav-tab">Trading Desk</a>
             </div>
 
@@ -193,14 +196,14 @@
             <p class="page-subtitle">Explore our premium selection of investment gold pieces.</p>
 
             <div class="sub-nav-tabs">
-                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins</button>
-                <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars</button>
+                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">0</span></button>
+                <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
             </div>
 
             <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
                 <div class="nested-nav-tabs">
-                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-gold-bullion', event)">Gold Bullion Coins</button>
-                    <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins</button>
+                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-gold-bullion', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-gold-bullion">0</span></button>
+                    <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">0</span></button>
                 </div>
 
                 <div class="filter-chips-row">
@@ -228,7 +231,6 @@
 
                 <div id="nested-graduated-gold" class="nested-tab-content">
                     <div class="inventory-grid" id="grid-graduated-gold">
-                        
                         <!-- 67 MONEDAS GRADUADAS DE ORO -->
                         <div class="item-card" data-id="2109000" data-category="us" data-search="1881 Liberty Gold Eagle $10 2109000"><div><div class="badge-holder"><span class="badge badge-stock">In Stock</span></div><h3>1881 Liberty Gold Eagle $10</h3><div class="item-details">Item #2109000 | AGW = 0.4838 oz</div></div><div><div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1950.21" data-premium="0.08">Calculating price...</div><button class="btn-quote" onclick="selectCoin('2109000', '1881 Liberty Gold Eagle $10', 0.4838, 'gold', 1950.21, 0.08)">Add to Order</button></div></div>
                         <div class="item-card" data-id="2108999" data-category="us" data-search="1894 Liberty Gold Eagle $10 2108999"><div><div class="badge-holder"><span class="badge badge-stock">In Stock</span></div><h3>1894 Liberty Gold Eagle $10</h3><div class="item-details">Item #2108999 | AGW = 0.4838 oz</div></div><div><div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1965.57" data-premium="0.08">Calculating price...</div><button class="btn-quote" onclick="selectCoin('2108999', '1894 Liberty Gold Eagle $10', 0.4838, 'gold', 1965.57, 0.08)">Add to Order</button></div></div>
@@ -352,12 +354,12 @@
             <p class="page-subtitle">Explore our fine collection of investment and numismatic silver coins.</p>
 
             <div class="sub-nav-tabs">
-                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins</button>
+                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins <span class="tab-count-badge" id="cnt-sub-silver-coins">0</span></button>
             </div>
 
             <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
                 <div class="nested-nav-tabs">
-                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-graduated-silver', event)">Graduated Silver Coins</button>
+                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-graduated-silver', event)">Graduated Silver Coins <span class="tab-count-badge" id="cnt-nested-graduated-silver">0</span></button>
                 </div>
 
                 <div class="filter-chips-row">
@@ -462,6 +464,48 @@
             var selectedNested = document.getElementById(nestedTabId);
             if (selectedNested) selectedNested.classList.add('active-nestedcontent');
             if(event && event.currentTarget) event.currentTarget.classList.add('active-nestedtab');
+        }
+
+        /* 
+           FUNCIÓN DE ACTUALIZACIÓN DINÁMICA DE CONTADORES
+        */
+        function updateTabCounters() {
+            // Contadores por pestañas principales
+            var goldCards = document.querySelectorAll('#gold .item-card');
+            var silverCards = document.querySelectorAll('#silver .item-card');
+            var specialsCards = document.querySelectorAll('#grid-specials .item-card');
+
+            var elGold = document.getElementById('cnt-tab-gold');
+            var elSilver = document.getElementById('cnt-tab-silver');
+            var elSpecials = document.getElementById('cnt-tab-specials');
+
+            if(elGold) elGold.innerText = goldCards.length;
+            if(elSilver) elSilver.innerText = silverCards.length;
+            if(elSpecials) elSpecials.innerText = specialsCards.length;
+
+            // Contadores sub-pestañas Gold
+            var subGoldCoins = document.querySelectorAll('#sub-gold-coins .item-card');
+            var subGoldBars = document.querySelectorAll('#sub-gold-bars .item-card');
+            var elSubCoins = document.getElementById('cnt-sub-gold-coins');
+            var elSubBars = document.getElementById('cnt-sub-gold-bars');
+            if(elSubCoins) elSubCoins.innerText = subGoldCoins.length;
+            if(elSubBars) elSubBars.innerText = subGoldBars.length;
+
+            // Contadores nested Gold
+            var nestedBullion = document.querySelectorAll('#nested-gold-bullion .item-card');
+            var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card');
+            var elNestBullion = document.getElementById('cnt-nested-gold-bullion');
+            var elNestGraduated = document.getElementById('cnt-nested-graduated-gold');
+            if(elNestBullion) elNestBullion.innerText = nestedBullion.length;
+            if(elNestGraduated) elNestGraduated.innerText = nestedGraduated.length;
+
+            // Contadores Silver
+            var subSilverCoins = document.querySelectorAll('#sub-silver-coins .item-card');
+            var nestedSilverGrad = document.querySelectorAll('#nested-graduated-silver .item-card');
+            var elSubSilver = document.getElementById('cnt-sub-silver-coins');
+            var elNestSilver = document.getElementById('cnt-nested-graduated-silver');
+            if(elSubSilver) elSubSilver.innerText = subSilverCoins.length;
+            if(elNestSilver) elNestSilver.innerText = nestedSilverGrad.length;
         }
 
         function filterInventory(query) {
@@ -643,12 +687,6 @@
             alert("⏱️ Your 10-minute reservation period has expired. Selected items have been returned to the public Specials catalog.");
         }
 
-        /* 
-           LÓGICA DINÁMICA DE MIGRACIÓN AUTOMÁTICA Y PRECIO PISO DE SPECIALS:
-           1. Evalúa si el precio calculado (Melt + Premium) es menor al costo + 2%.
-           2. Si es menor, ajusta el precio a costo * 1.02 y MUEVE el producto a "Graduated Gold Coins".
-           3. Si es igual o mayor, recupera la fórmula normal y RETORNA el producto a "Specials 🔥".
-        */
         function processSpecialsMigration() {
             document.querySelectorAll('.item-card[data-is-special="true"]').forEach(function(card) {
                 var priceEl = card.querySelector('.item-price');
@@ -663,14 +701,11 @@
                 var gridSpecials = document.getElementById('grid-specials');
                 var gridGraduated = document.getElementById('grid-graduated-gold');
 
-                // Excepción (1): Si cae por debajo de costo + 2%, pasa a Graduated Gold
                 if (cost > 0 && calcPrice < minPrice) {
                     if (card.parentElement !== gridGraduated) {
                         gridGraduated.appendChild(card);
                     }
-                } 
-                // Excepción (2): Si recupera o supera el costo + 2%, vuelve a Specials
-                else {
+                } else {
                     if (card.parentElement !== gridSpecials) {
                         gridSpecials.appendChild(card);
                     }
@@ -702,6 +737,7 @@
             var searchInput = document.querySelector('.search-box-input');
             var currentSearch = searchInput ? searchInput.value : '';
             filterInventory(currentSearch);
+            updateTabCounters();
 
             if (selectedItems.length > 0) {
                 updateTradingDesk();
