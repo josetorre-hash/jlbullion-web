@@ -19,7 +19,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--bg-light); color: #333; line-height: 1.6; transition: background-color 0.3s ease, color 0.3s ease; }
 
-        /* 3. MODO OSCURO VIP (DARK LUXURY THEME) */
+        /* MODO OSCURO VIP (DARK LUXURY THEME) */
         body.dark-mode {
             --bg-light: #030712;
             background-color: #030712;
@@ -63,7 +63,7 @@
         .contact-header { color: var(--text-light); font-size: 0.85rem; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
         .contact-header a { color: var(--accent); text-decoration: none; font-weight: 600; }
 
-        /* 1. INDICADOR LED SPOT EN VIVO EN TICKER */
+        /* INDICADOR LED SPOT EN VIVO EN TICKER */
         .ticker-wrapper { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; padding-right: 1rem; }
         .live-status-pill {
             display: inline-flex; align-items: center; gap: 5px;
@@ -198,7 +198,7 @@
         .item-card h3 { font-family: 'Cinzel', serif; font-size: 1.05rem; color: var(--primary); margin-bottom: 0.6rem; line-height: 1.3; }
         .item-details { font-size: 0.85rem; color: #64748b; margin-bottom: 0.8rem; }
         
-        /* 1. ANIMACIÓN DE PARPADEO VERDE / ROJO AL ACTUALIZAR PRECIOS */
+        /* ANIMACIÓN DE PARPADEO VERDE / ROJO AL ACTUALIZAR PRECIOS */
         @keyframes flashGreen {
             0% { background-color: rgba(16, 185, 129, 0.35); border-color: #10b981; }
             100% { background-color: rgba(15, 23, 42, 0.03); border-left-color: var(--accent); }
@@ -245,6 +245,11 @@
             margin: 4px auto; border: 1px solid #fde68a; box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
         }
 
+        .slab-coin-view.silver-coin {
+            background: radial-gradient(circle, #ffffff 0%, #cbd5e1 70%, #475569 100%);
+            border-color: #f1f5f9;
+        }
+
         .slab-cert-num { font-size: 0.58rem; color: #94a3b8; font-family: monospace; }
 
         .btn-verify-cert {
@@ -289,7 +294,7 @@
 
         .drawer-checkout-btn { width: 100%; background: var(--accent); color: var(--primary); padding: 0.8rem; font-weight: 700; border: none; border-radius: 4px; cursor: pointer; text-align: center; text-decoration: none; display: block; }
 
-        /* 4. ESTILOS DE CALCULADORA B2B INVERSA */
+        /* CALCULADORA DE ASIGNACIÓN DE CAPITAL */
         .b2b-calc-container {
             background: var(--secondary); border: 1px solid var(--accent); border-radius: 8px;
             padding: 2rem; margin: 2rem 0; color: #f8f9fa; box-shadow: 0 8px 25px rgba(0,0,0,0.2);
@@ -341,7 +346,6 @@
             </div>
             
             <div class="contact-header">
-                <!-- 3. BOTÓN CONMUTADOR MODO OSCURO VIP -->
                 <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
                     <span id="themeSwitchText">🌙 VIP Dark Mode</span>
                 </button>
@@ -349,7 +353,6 @@
             </div>
         </header>
 
-        <!-- 1. BARRA TICKER CON LED PULSE LIVE STATUS -->
         <div class="ticker-wrapper">
             <div class="tradingview-widget-container" style="flex: 1;">
                 <div class="tradingview-widget-container__widget"></div>
@@ -383,11 +386,9 @@
                 <a href="#contacto" class="nav-tab">Trading Desk</a>
             </div>
 
-            <!-- BÚSQUEDA Y FILTROS DUALES POR PRECIO Y PESO -->
             <div class="header-search-group">
                 <input type="text" class="header-search-input search-box-input" placeholder="🔍 Search coins, dates..." onkeyup="filterInventory(this.value)">
 
-                <!-- Filtro Dinámico de Presupuesto (Precio) -->
                 <select class="header-filter-dropdown" id="priceRangeFilter" onchange="filterInventory(document.querySelector('.search-box-input').value)">
                     <option value="all">💰 All Prices</option>
                     <option value="under1000">Under $1,000 USD</option>
@@ -395,7 +396,6 @@
                     <option value="over2500">Over $2,500 USD</option>
                 </select>
 
-                <!-- Filtro Dinámico de Peso de Metal (AGW / ASW) -->
                 <select class="header-filter-dropdown" id="weightRangeFilter" onchange="filterInventory(document.querySelector('.search-box-input').value)">
                     <option value="all">⚖️ All Weights</option>
                     <option value="fractional">&lt; 1.0 oz (Fractional)</option>
@@ -403,7 +403,6 @@
                     <option value="multi">1.0+ oz / Kilos / Bars</option>
                 </select>
 
-                <!-- Ordenamiento -->
                 <select class="header-sort-dropdown" onchange="sortInventory(this.value)">
                     <option value="default">Default Order</option>
                     <option value="price-asc">Price: Low to High</option>
@@ -415,7 +414,6 @@
         </nav>
     </div>
 
-    <!-- 2. CARRITO FLOTANTE LATERAL CON ACCIONES B2B (PDF & COPY) -->
     <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
     <div class="cart-drawer" id="cartDrawer">
         <div>
@@ -433,7 +431,6 @@
                 <span id="drawerTotalAmount" style="color: var(--accent);">$0.00 USD</span>
             </div>
             
-            <!-- ACCIONES B2B: PDF Y COPIAR TEXTO -->
             <div class="drawer-actions-row">
                 <button type="button" class="btn-drawer-action" onclick="copyQuoteToClipboard()">📋 Copy Quote</button>
                 <button type="button" class="btn-drawer-action" onclick="printFormalPDFQuote()">📄 Print PDF Quote</button>
@@ -452,11 +449,11 @@
             <a href="#contacto" class="btn-quote" style="display: inline-block; width: auto; padding: 0.8rem 2rem; font-size: 1rem;">Trading Desk</a>
         </section>
 
-        <!-- 4. MÓDULO CALCULADORA B2B INVERSA DE CAPITAL -->
+        <!-- CALCULADORA DE ASIGNACIÓN DE CAPITAL -->
         <div class="container">
             <div class="b2b-calc-container">
-                <h3 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 0.5rem;">📊 B2B Capital Allocation Calculator</h3>
-                <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1.2rem;">Enter your total available capital to generate an optimized precious metals allocation strategy based on real-time spot prices.</p>
+                <h3 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 0.5rem;">📊 Capital Allocation Calculator</h3>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1.2rem;">Enter your total available investment capital to generate an optimized precious metals allocation strategy based on real-time spot prices.</p>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; align-items: end;">
                     <div>
@@ -560,7 +557,6 @@
                             <div><div class="item-price" data-metal="gold" data-weight="1.2057" data-cost="0" data-premium="0.0325" data-premium-type="percent">Calculating price...</div><button class="btn-quote" onclick="selectCoin('GMEX-50P', 'Gold Mexican 50 Peso', 1.2057, 'gold', 0, 0.0325, 'percent')">Add to Order</button></div>
                         </div>
 
-                        <!-- EMPTY SEARCH STATE BANNER -->
                         <div class="empty-search-state" style="display: none; grid-column: 1 / -1; background: #ffffff; border: 1px dashed var(--accent); padding: 2.5rem 1.5rem; border-radius: 8px; text-align: center; margin: 1.5rem 0;">
                             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
                             <h3 style="font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem;">No items found matching your criteria</h3>
@@ -628,7 +624,6 @@
             </div>
         </div>
     </div>
-
 
 
 
@@ -1228,13 +1223,13 @@
             printWindow.print();
         }
 
-        /* CALCULADORA B2B INVERSA DE FONDOS */
+        /* CALCULADORA DE ASIGNACIÓN DE CAPITAL */
         function calculateB2BAllocation() {
             var capital = parseFloat(document.getElementById('b2bCapitalInput').value) || 0;
             var strategy = document.getElementById('b2bStrategySelect').value;
             
             if (capital < 1000) {
-                alert("Minimum B2B allocation threshold is $1,000 USD.");
+                alert("Minimum allocation threshold is $1,000 USD.");
                 return;
             }
 
