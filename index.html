@@ -1490,7 +1490,7 @@
             });
         }
 
-        /* INYECTOR DINÁMICO REFINADO DE LEY Y PURA DE METAL */
+        /* INYECTOR DINÁMICO REFINADO DE LEY Y PURA DE METAL (INCLUYE CONMEMORATIVAS US) */
         function injectMetalPurityBadges() {
             document.querySelectorAll('.item-card').forEach(function(card) {
                 var priceEl = card.querySelector('.item-price');
@@ -1509,18 +1509,24 @@
                     if (title.includes('uruguay') || title.includes('peru') || title.includes('libra')) {
                         badge.innerHTML = '🪙 .917 Gold (22K) • AGW';
                     }
-                    // 2. Monedas con Ley .900 / 21.6K (Pre-33 US, 50 Pesos México, Chile 5 Pesos, Gulden, Francos, etc.)
+                    // 2. Excepciones .9999 de EE. UU.: American Buffalo y American Liberty High Relief
+                    else if (title.includes('buffalo') || title.includes('american liberty')) {
+                        badge.innerHTML = '✨ .9999 Gold • AGW';
+                    }
+                    // 3. Monedas Ley .900 / 21.6K: Pre-33 US, Conmemorativas US ($5, $10, $25 como Jamestown, WWII, etc.), 50 Pesos México, Chile 5 Pesos, Gulden, Francos, etc.
                     else if (title.includes('50 peso') || title.includes('chile') || title.includes('liberty') || 
                              title.includes('saint-gaudens') || title.includes('indian') || title.includes('double eagle') || 
-                             title.includes('half eagle') || title.includes('eagle $') || title.includes('gulden') || 
-                             title.includes('franc') || title.includes('panama') || title.includes('balboas')) {
+                             title.includes('half eagle') || title.includes('eagle $') || title.includes('gold $5') || 
+                             title.includes('gold $10') || title.includes('gold $25') || title.includes('jamestown') || 
+                             title.includes('wwii') || title.includes('gulden') || title.includes('franc') || 
+                             title.includes('panama') || title.includes('balboas')) {
                         badge.innerHTML = '🪙 .900 Gold (21.6K) • AGW';
                     } 
-                    // 3. Monedas Bullion Modernas de 22K (American Eagle moderno & Krugerrand)
+                    // 4. Monedas Bullion Modernas de 22K (American Eagle moderno & Krugerrand)
                     else if (title.includes('american eagle') || title.includes('krugerrand')) {
                         badge.innerHTML = '🪙 22K Gold • AGW';
                     } 
-                    // 4. Lingotes y Monedas de Alta Pureza .9999 (Maple, PAMP, Britannia, Filarmónica, Panda, etc.)
+                    // 5. Lingotes y Monedas de Alta Pureza .9999 (Maple, PAMP, Britannia, Filarmónica, Panda, etc.)
                     else {
                         badge.innerHTML = '✨ .9999 Gold • AGW';
                     }
