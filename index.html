@@ -600,6 +600,8 @@
             <!-- TAB: GRADUATED GOLD COINS -->
             <div id="nested-graduated-gold" class="nested-tab-content active-nestedcontent">
                 <div class="inventory-grid" id="grid-graduated-gold">
+
+
 <!-- ITEM 2109000 -->
 <div class="item-card gold-card-finish" data-id="2109000" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="NGC" data-cert-number="599682-013" data-grade="NGC Graded" data-search="1881 liberty gold eagle $10 2109000 599682-013 ngc graded .900 gold (21.6k)">
     <div>
@@ -630,6 +632,8 @@
         <button class="btn-quote" onclick="selectCoin('2109000', '1881 Liberty Gold Eagle $10', 0.4838, 'gold', 1950.21, 0.08, 'percent')">Add to Order</button>
     </div>
 </div>
+
+
 <!-- ITEM 2108999 -->
 <div class="item-card gold-card-finish" data-id="2108999" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="PCGS/NGC" data-cert-number="2108999" data-grade="Graded" data-search="1894 liberty gold eagle $10 2108999 2108999 pcgs/ngc graded .900 gold (21.6k)">
     <div>
@@ -651,6 +655,8 @@
         <button class="btn-quote" onclick="selectCoin('2108999', '1894 Liberty Gold Eagle $10', 0.4838, 'gold', 1965.57, 0.08, 'percent')">Add to Order</button>
     </div>
 </div>
+
+
 <!-- ITEM 2170283 -->
 <div class="item-card gold-card-finish" data-id="2170283" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="Uncertified" data-cert-number="" data-grade="BU" data-search="2007-w jamestown gold $5 2170283 uncertified bu .900 gold (21.6k)">
     <div>
@@ -3426,36 +3432,69 @@
         }
 
 
-/* GENERADOR DINÁMICO DE ENLACES DE VERIFICACIÓN NGC / PCGS */
-function renderGradedSlabs() {
+/* GENERADOR Y CONSTRUCTOR AUTOMÁTICO DE SLABS PARA TODAS LAS MONEDAS GRADUADAS */
+function autoGenerateSlabsForGradedCoins() {
     document.querySelectorAll('.item-card').forEach(function(card) {
-        var service = card.getAttribute('data-grading-service');
-        var certNum = card.getAttribute('data-cert-number');
-        if (!service || !certNum || card.querySelector('.btn-verify-cert')) return;
+        var service = card.getAttribute('data-grading-service') || '';
+        var certNum = card.getAttribute('data-cert-number') || '';
+        var itemId = card.getAttribute('data-id') || '';
+        
+        // Si no es uncertified y no tiene slab ya insertado
+        if (service && service.toLowerCase() !== 'uncertified' && !card.querySelector('.card-media-wrapper')) {
+            var isNGC = service.toUpperCase().includes('NGC');
+            var isPCGS = service.toUpperCase().includes('PCGS');
+            
+            // Si Cert Number no está definido o es igual al SKU, usar el SKU como referencia de búsqueda
+            var displayCert = (certNum && certNum !== itemId) ? certNum : itemId;
+            var certUrl = isNGC 
+                ? 'https://www.ngccoin.com/certlookup/' + displayCert + '/'
+                : 'https://www.pcgs.com/cert/' + displayCert;
 
-        var isNGC = service.toUpperCase().includes('NGC');
-        var certUrl = isNGC 
-            ? 'https://www.ngccoin.com/certlookup/' + certNum + '/'
-            : 'https://www.pcgs.com/cert/' + certNum;
+            var slabHeader = isNGC ? 'NGC CERTIFIED SLAB' : (isPCGS ? 'PCGS CERTIFIED SLAB' : service + ' CERTIFIED');
+            var slabClass = isNGC ? 'ngc-slab' : 'pcgs-slab';
+            var headerClass = isNGC ? 'slab-header-ngc' : 'slab-header-pcgs';
+            var btnClass = isNGC ? 'ngc-btn' : 'pcgs-btn';
 
-        var verifyBtn = document.createElement('a');
-        verifyBtn.className = 'btn-verify-cert ' + (isNGC ? 'ngc-btn' : 'pcgs-btn');
-        verifyBtn.href = certUrl;
-        verifyBtn.target = '_blank';
-        verifyBtn.rel = 'noopener';
-        verifyBtn.innerHTML = '🔍 Verify Cert #' + certNum + ' on ' + (isNGC ? 'NGC' : 'PCGS');
+            // 1. Crear contenedor de la Cápsula Digital
+            var mediaWrapper = document.createElement('div');
+            mediaWrapper.className = 'card-media-wrapper';
+            mediaWrapper.innerHTML = `
+                <div class="digital-slab-placeholder ${slabClass}">
+                    <div class="${headerClass}">${slabHeader}</div>
+                    <div class="slab-coin-view">🦅 $10</div>
+                    <div class="slab-cert-num">${service} CERT #${displayCert}</div>
+                </div>
+            `;
 
-        var detailsEl = card.querySelector('.item-details');
-        if (detailsEl && detailsEl.parentNode) {
-            detailsEl.parentNode.insertBefore(verifyBtn, detailsEl.nextSibling);
+            // Insertar antes del badge-holder
+            var badgeHolder = card.querySelector('.badge-holder');
+            if (badgeHolder && badgeHolder.parentNode) {
+                badgeHolder.parentNode.insertBefore(mediaWrapper, badgeHolder);
+            }
+
+            // 2. Crear Botón de Verificación Oficial
+            var verifyBtn = document.createElement('a');
+            verifyBtn.className = 'btn-verify-cert ' + btnClass;
+            verifyBtn.href = certUrl;
+            verifyBtn.target = '_blank';
+            verifyBtn.rel = 'noopener';
+            verifyBtn.innerHTML = '🔍 Verify Cert #' + displayCert + ' on ' + (isNGC ? 'NGC' : 'PCGS');
+
+            var specsGrid = card.querySelector('.item-specs-grid');
+            if (specsGrid && specsGrid.parentNode) {
+                specsGrid.parentNode.insertBefore(verifyBtn, specsGrid.nextSibling);
+            }
         }
     });
 }
 
-// Ejecutar al cargar la página
+// Ejecutar automáticamente al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
-    renderGradedSlabs();
+    autoGenerateSlabsForGradedCoins();
 });
+
+
+
 
         /* ANIMACIÓN DE DESTELLO SPOT EN TIEMPO REAL (FLASH UP/DOWN) */
         function updateAllPrices() {
