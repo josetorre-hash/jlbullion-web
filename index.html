@@ -567,6 +567,64 @@
 
 
 
+<!-- PAGE 2: GOLD -->
+<div id="gold" class="tab-page">
+    <div class="container">
+        <h1 class="page-header-title">Gold Catalog</h1>
+        <p class="page-subtitle">Explore our official inventory database of investment gold, certified numismatic eagles, double eagles, and world gold pieces.</p>
+
+        <div class="sub-nav-tabs">
+            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">81</span></button>
+            <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
+        </div>
+
+        <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
+            <div class="nested-nav-tabs">
+                <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">66</span></button>
+                <button class="nested-tab-btn" onclick="openNestedTab('nested-specials-gold', event)">Specials <span class="tab-count-badge" id="cnt-nested-specials-gold">15</span></button>
+            </div>
+
+            <div class="filter-chips-row">
+                <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+            </div>
+
+            <!-- TAB: GRADUATED GOLD COINS (66 MONEDAS) -->
+            <div id="nested-graduated-gold" class="nested-tab-content active-nestedcontent">
+                <div class="inventory-grid" id="grid-graduated-gold">
+
+                    <!-- (Aquí se despliegan las 66 tarjetas de Graduated) -->
+
+                </div>
+            </div>
+
+            <!-- TAB: SPECIALS GOLD COINS (15 MONEDAS) -->
+            <div id="nested-specials-gold" class="nested-tab-content">
+                <div class="inventory-grid" id="grid-specials-gold">
+
+                    <!-- (Aquí se despliegan las 15 tarjetas de Specials) -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- SUB-TAB: GOLD BARS -->
+        <div id="sub-gold-bars" class="sub-tab-content">
+            <div class="inventory-grid" id="grid-gold-bars">
+                <div class="no-items-message"><p>Currently no loose gold bars in primary stock. Check Gold Coins tab for full inventory.</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 <!-- PAGE 3: SPECIALS 🔥 -->
