@@ -18,8 +18,8 @@
             --border-gold: rgba(212, 175, 55, 0.3);
             --gold-accent: #d4af37;
             --gold-hover: #b8860b;
-            --flash-up: rgba(34, 197, 94, 0.2);
-            --flash-down: rgba(239, 68, 68, 0.2);
+            --flash-up: rgba(34, 197, 94, 0.25);
+            --flash-down: rgba(239, 68, 68, 0.25);
         }
 
         body.dark-mode {
@@ -53,12 +53,12 @@
         }
 
         /* =========================================================
-           2. CABECERA & NAVEGACIÓN
+           2. CABECERA & TICKER DE PRECIOS SPOT EN VIVO
            ========================================================= */
         header {
             background-color: var(--bg-header);
             border-bottom: 2px solid var(--gold-accent);
-            padding: 15px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -68,6 +68,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .brand-logo {
@@ -75,6 +77,28 @@
             font-weight: 800;
             color: var(--gold-accent);
             letter-spacing: 1px;
+        }
+
+        /* TICKER BAR EN EL ENCABEZADO */
+        .spot-ticker-bar {
+            display: flex;
+            gap: 18px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .spot-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .spot-val {
+            color: #ffffff;
         }
 
         .main-tabs {
@@ -377,15 +401,29 @@
 </head>
 <body>
 
-    <!-- CABECERA PRINCIPAL DE NAVEGACIÓN -->
+    <!-- CABECERA PRINCIPAL DE NAVEGACIÓN Y COTIZADOR SPOT EN VIVO -->
     <header>
         <div class="container header-nav">
             <div class="brand-logo">JL BULLION LLC</div>
+            
+            <!-- BARRA DE PRECIOS SPOT EN TIEMPO REAL -->
+            <div class="spot-ticker-bar">
+                <div class="spot-item">
+                    <span>🪙 Gold Spot:</span>
+                    <span class="spot-val" id="goldSpotHeader">$Loading...</span>
+                </div>
+                <div class="spot-item">
+                    <span>🥈 Silver Spot:</span>
+                    <span class="spot-val" id="silverSpotHeader">$Loading...</span>
+                </div>
+            </div>
+
             <div class="main-tabs">
                 <button class="tab-btn active" onclick="switchPage('home')">Home</button>
                 <button class="tab-btn" onclick="switchPage('gold')">Gold Catalog</button>
                 <button class="tab-btn" onclick="switchPage('specials')">Specials 🔥</button>
             </div>
+            
             <button class="theme-switch-btn" onclick="toggleDarkMode()">
                 <span id="themeSwitchText">🌙 VIP Dark</span>
             </button>
@@ -553,6 +591,13 @@
 
         // CÁLCULO Y ANIMACIÓN DE PRECIOS SPOT
         function updateAllPrices() {
+            // Actualizar Ticker Bar del Encabezado
+            var goldHeader = document.getElementById('goldSpotHeader');
+            var silverHeader = document.getElementById('silverSpotHeader');
+            if (goldHeader) goldHeader.innerText = '$' + Number(goldSpotPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2}) + ' USD';
+            if (silverHeader) silverHeader.innerText = '$' + Number(silverSpotPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2}) + ' USD';
+
+            // Actualizar Precios en Tarjetas
             document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
                 var weight = parseFloat(el.getAttribute('data-weight'));
                 var metal = el.getAttribute('data-metal');
