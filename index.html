@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JL Bullion LLC | Precious Metals & Numismatics in Miami</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 1: ESTILOS CSS GENERALES Y COMPONENTES VISUALES   -->
+    <!-- ========================================================= -->
     <style>
 
 /* ESTILOS PARA SLAB Y ENLACE DE VERIFICACIÓN NGC / PCGS */
@@ -412,6 +419,13 @@
 </head>
 <body>
 
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 2: CABECERA, LOGO, TICKER SPOT Y NAVEGACIÓN      -->
+    <!-- ========================================================= -->
     <div class="sticky-top-wrapper">
         <header>
             <div class="logo-container" onclick="openTab('home', event)">
@@ -517,7 +531,13 @@
         </div>
     </div>
 
-    <!-- PAGE 1: HOME -->
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 3: PÁGINA 1 - HOME Y CALCULADORA DE CAPITAL       -->
+    <!-- ========================================================= -->
     <div id="home" class="tab-page active-page">
         <section class="hero" style="text-align: center; padding: 4rem 1rem;">
             <h1 style="font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--primary); margin-bottom: 0.5rem;">JL BULLION LLC</h1>
@@ -559,7 +579,216 @@
         </div>
     </div>
 
-    <!-- GLOBAL CONTACT FORM / TRADING DESK -->
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 4: PÁGINA 2 - CATALOGO DE ORO (GOLD CATALOG)      -->
+    <!-- ========================================================= -->
+<div id="gold" class="tab-page">
+    <div class="container">
+        <h1 class="page-header-title">Gold Catalog</h1>
+        <p class="page-subtitle">Explore our official inventory database of investment gold, certified numismatic eagles, double eagles, and world gold pieces.</p>
+
+        <div class="sub-nav-tabs">
+            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">81</span></button>
+            <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
+        </div>
+
+        <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
+            <div class="nested-nav-tabs">
+                <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">66</span></button>
+                <button class="nested-tab-btn" onclick="openNestedTab('nested-specials-gold', event)">Specials <span class="tab-count-badge" id="cnt-nested-specials-gold">15</span></button>
+            </div>
+
+            <div class="filter-chips-row">
+                <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+            </div>
+
+            <!-- TAB: GRADUATED GOLD COINS -->
+            <div id="nested-graduated-gold" class="nested-tab-content active-nestedcontent">
+                <div class="inventory-grid" id="grid-graduated-gold">
+<!-- ITEM 2109000 -->
+<div class="item-card gold-card-finish" data-id="2109000" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="NGC" data-cert-number="599682-013" data-grade="NGC Graded" data-search="1881 liberty gold eagle $10 2109000 599682-013 ngc graded .900 gold (21.6k)">
+    <div>
+        <span class="metal-purity-badge badge-gold-purity">🪙 .900 Gold (21.6K) • AGW</span>
+        <div class="card-media-wrapper">
+            <div class="digital-slab-placeholder ngc-slab">
+                <div class="slab-header-ngc">NGC CERTIFIED SLAB</div>
+                <div class="slab-coin-view">$10</div>
+                <div class="slab-cert-num">NGC CERT #599682-013</div>
+            </div>
+        </div>
+        <div class="badge-holder">
+            <span class="badge badge-ngc">NGC CERTIFIED</span>
+            <span class="badge badge-stock">In Stock</span>
+        </div>
+        <h3>1881 Liberty Gold Eagle $10</h3>
+        <div class="item-specs-grid">
+            <div class="spec-row"><span class="spec-label">Item SKU:</span> <span class="spec-val">#2109000</span></div>
+            <div class="spec-row"><span class="spec-label">Pure Gold (AGW):</span> <span class="spec-val">0.4838 oz troy</span></div>
+            <div class="spec-row"><span class="spec-label">Gross Weight:</span> <span class="spec-val">16.718 g</span></div>
+            <div class="spec-row"><span class="spec-label">Fineness / Ley:</span> <span class="spec-val">.900</span></div>
+            <div class="spec-row"><span class="spec-label">Cert #:</span> <span class="spec-val">599682-013</span></div>
+        </div>
+        <a href="https://www.ngccoin.com/certlookup/599682-013/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn">🔍 Verify Cert #599682-013 on NGC</a>
+    </div>
+    <div>
+        <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1950.21" data-premium="0.08" data-premium-type="percent">Calculating price...</div>
+        <button class="btn-quote" onclick="selectCoin('2109000', '1881 Liberty Gold Eagle $10', 0.4838, 'gold', 1950.21, 0.08, 'percent')">Add to Order</button>
+    </div>
+</div>
+<!-- ITEM 2108999 -->
+<div class="item-card gold-card-finish" data-id="2108999" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="PCGS/NGC" data-cert-number="2108999" data-grade="Graded" data-search="1894 liberty gold eagle $10 2108999 2108999 pcgs/ngc graded .900 gold (21.6k)">
+    <div>
+        <span class="metal-purity-badge badge-gold-purity">🪙 .900 Gold (21.6K) • AGW</span>
+        <div class="badge-holder">
+            <span class="badge badge-ngc">PCGS/NGC Graded</span>
+            <span class="badge badge-stock">In Stock</span>
+        </div>
+        <h3>1894 Liberty Gold Eagle $10</h3>
+        <div class="item-specs-grid">
+            <div class="spec-row"><span class="spec-label">Item SKU:</span> <span class="spec-val">#2108999</span></div>
+            <div class="spec-row"><span class="spec-label">Pure Gold (AGW):</span> <span class="spec-val">0.4838 oz troy</span></div>
+            <div class="spec-row"><span class="spec-label">Gross Weight:</span> <span class="spec-val">16.718 g</span></div>
+            <div class="spec-row"><span class="spec-label">Fineness / Ley:</span> <span class="spec-val">.900</span></div>
+        </div>
+    </div>
+    <div>
+        <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1965.57" data-premium="0.08" data-premium-type="percent">Calculating price...</div>
+        <button class="btn-quote" onclick="selectCoin('2108999', '1894 Liberty Gold Eagle $10', 0.4838, 'gold', 1965.57, 0.08, 'percent')">Add to Order</button>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUB-TAB: GOLD BARS -->
+        <div id="sub-gold-bars" class="sub-tab-content">
+            <div class="inventory-grid" id="grid-gold-bars">
+                <div class="no-items-message"><p>Currently no loose gold bars in primary stock. Check Gold Coins tab for full inventory.</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 5: PÁGINA 3 - OFERTAS ESPECIALES (SPECIALS 🔥)    -->
+    <!-- ========================================================= -->
+<div id="specials" class="tab-page">
+    <div class="container">
+        <h1 class="page-header-title">Specials & Zero-Premium Offers 🔥</h1>
+        <p class="page-subtitle">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
+
+        <div class="filter-chips-row">
+            <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Specials</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+        </div>
+
+        <div class="inventory-grid" id="grid-specials-page">
+<!-- ITEM 2169796 -->
+<div class="item-card gold-card-finish" data-id="2169796" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="PCGS/NGC" data-cert-number="2169796" data-grade="Graded" data-search="1901-s liberty gold double eagle $20 2169796 2169796 pcgs/ngc graded .900 gold (21.6k) special 0% premium">
+    <div>
+        <span class="metal-purity-badge badge-gold-purity">🪙 .900 Gold (21.6K) • AGW</span>
+        <div class="badge-holder">
+            <span class="badge badge-special-promo">🔥 0% Premium Offer</span>
+            <span class="badge badge-ngc">PCGS/NGC Graded</span>
+            <span class="badge badge-stock">In Stock</span>
+        </div>
+        <h3>1901-S Liberty Gold Double Eagle $20</h3>
+        <div class="item-specs-grid">
+            <div class="spec-row"><span class="spec-label">Item SKU:</span> <span class="spec-val">#2169796</span></div>
+            <div class="spec-row"><span class="spec-label">Pure Gold (AGW):</span> <span class="spec-val">0.9675 oz troy</span></div>
+            <div class="spec-row"><span class="spec-label">Gross Weight:</span> <span class="spec-val">33.436 g</span></div>
+            <div class="spec-row"><span class="spec-label">Fineness / Ley:</span> <span class="spec-val">.900</span></div>
+        </div>
+    </div>
+    <div>
+        <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="3841.18" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
+        <button class="btn-quote" onclick="selectCoin('2169796', '1901-S Liberty Gold Double Eagle $20', 0.9675, 'gold', 3841.18, 0.0, 'percent')">Add to Order</button>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 6: PÁGINA 4 - CATÁLOGO DE PLATA (SILVER CATALOG)   -->
+    <!-- ========================================================= -->
+    <div id="silver" class="tab-page">
+        <div class="container">
+            <h1 class="page-header-title">Silver Catalog</h1>
+            <p class="page-subtitle">Explore our fine collection of investment and numismatic silver pieces.</p>
+
+            <div class="sub-nav-tabs">
+                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins <span class="tab-count-badge" id="cnt-sub-silver-coins">0</span></button>
+                <button class="sub-tab-btn" onclick="openSubTab('sub-silver-bars', event)">Silver Bars <span class="tab-count-badge" id="cnt-sub-silver-bars">0</span></button>
+            </div>
+
+            <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
+                <div class="nested-nav-tabs">
+                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-silver-bullion', event)">Silver Bullion Coins <span class="tab-count-badge" id="cnt-nested-silver-bullion">0</span></button>
+                    <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-silver', event)">Graduated Silver Coins <span class="tab-count-badge" id="cnt-nested-graduated-silver">0</span></button>
+                </div>
+
+                <div class="filter-chips-row">
+                    <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Silver 🇺🇸</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Silver 🇪🇺</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+                </div>
+
+                <div id="nested-silver-bullion" class="nested-tab-content active-nestedcontent">
+                    <div class="inventory-grid" id="grid-silver-bullion">
+                        <div class="item-card silver-card-finish" data-id="SAE-2026-1OZ" data-category="us" data-search="Silver American Eagles 1oz 2026 SAE-2026-1OZ">
+                            <div><div class="badge-holder"><span class="badge badge-bullion">Bullion Coin</span><span class="badge badge-stock">In Stock</span></div><h3>Silver American Eagle 1 oz (2026 CY)</h3><div class="item-details">Product Code: SAE-2026-1OZ | ASW = 1.0000 oz</div></div>
+                            <div><div class="item-price" data-metal="silver" data-weight="1.0000" data-cost="0" data-premium="9.00" data-premium-type="fixed">Calculating price...</div><button class="btn-quote" onclick="selectCoin('SAE-2026-1OZ', 'Silver American Eagle 1 oz', 1.0000, 'silver', 0, 9.00, 'fixed')">Add to Order</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="nested-graduated-silver" class="nested-tab-content">
+                    <div class="inventory-grid" id="grid-graduated-silver">
+                        <div class="item-card silver-card-finish" data-id="2118184" data-category="us" data-search="1923 Peace Silver Dollar NGC MS-66 2118184"><div><div class="badge-holder"><span class="badge badge-ngc">NGC MS-66</span><span class="badge badge-stock">In Stock</span></div><h3>1923 Peace Silver Dollar</h3><div class="item-details">Item #2118184 | NGC MS-66 | ASW = 0.7734 oz</div></div><div><div class="item-price" data-metal="silver" data-weight="0.7734" data-cost="373.60" data-premium="5.50" data-premium-type="percent">Calculating price...</div><button class="btn-quote" onclick="selectCoin('2118184', '1923 Peace Silver Dollar NGC MS-66', 0.7734, 'silver', 373.60, 5.50, 'percent')">Add to Order</button></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sub-silver-bars" class="sub-tab-content">
+                <div class="inventory-grid" id="grid-silver-bars">
+                    <div class="no-items-message"><p>Currently no loose silver bars in primary stock.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 7: FORMULARIO TRADING DESK Y PIE DE PÁGINA        -->
+    <!-- ========================================================= -->
     <div class="container">
         <div class="form-section" id="contacto">
             <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1rem; text-align: center;">Trading Desk</h2>
@@ -626,6 +855,13 @@
         </div>
     </div>
 
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 8: LOGICA Y FUNCIONES JAVASCRIPT                  -->
+    <!-- ========================================================= -->
     <script>
         var selectedItems = [];
         var goldSpotPrice = 2650.00;
