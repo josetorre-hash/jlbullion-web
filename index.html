@@ -3495,6 +3495,77 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+/* CÓDIGO DE CONTROL Y CORRECCIÓN AUTOMÁTICA DE CERTIFICADOS */
+        function fixAndRenderCertificates() {
+            document.querySelectorAll('.item-card').forEach(function(card) {
+                var itemId = card.getAttribute('data-id') || '';
+                var certNum = card.getAttribute('data-cert-number') || '';
+                var service = card.getAttribute('data-grading-service') || '';
+                var isGraded = service && service.toLowerCase() !== 'uncertified' && service.toLowerCase() !== 'raw';
+
+                var isInvalidCert = (!certNum || certNum === itemId || certNum === '0' || certNum.length < 5);
+
+                if (isGraded) {
+                    if (isInvalidCert) {
+                        var certRow = card.querySelector('.item-specs-grid .spec-row:last-child');
+                        if (certRow && certRow.innerText.includes('Cert')) {
+                            certRow.remove();
+                        }
+
+                        var mediaWrapper = card.querySelector('.card-media-wrapper');
+                        if (mediaWrapper) {
+                            mediaWrapper.remove();
+                        }
+
+                        var verifyBtn = card.querySelector('.btn-verify-cert');
+                        if (verifyBtn) {
+                            verifyBtn.remove();
+                        }
+                    } else {
+                        var isNGC = service.toUpperCase().includes('NGC');
+                        var certUrl = isNGC 
+                            ? 'https://www.ngccoin.com/certlookup/' + certNum + '/'
+                            : 'https://www.pcgs.com/cert/' + certNum;
+
+                        var existingBtn = card.querySelector('.btn-verify-cert');
+                        if (!existingBtn) {
+                            var verifyBtn = document.createElement('a');
+                            verifyBtn.className = 'btn-verify-cert ' + (isNGC ? 'ngc-btn' : 'pcgs-btn');
+                            verifyBtn.href = certUrl;
+                            verifyBtn.target = '_blank';
+                            verifyBtn.rel = 'noopener';
+                            verifyBtn.innerHTML = '🔍 Verify Cert #' + certNum + ' on ' + (isNGC ? 'NGC' : 'PCGS');
+
+                            var specsGrid = card.querySelector('.item-specs-grid');
+                            if (specsGrid && specsGrid.parentNode) {
+                                specsGrid.parentNode.insertBefore(verifyBtn, specsGrid.nextSibling);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                var btnText = document.getElementById('themeSwitchText');
+                if (btnText) btnText.innerText = '☀️ VIP Light';
+            }
+            
+            calculateSpotPrices();
+            injectMetalPurityBadges();
+            fixAndRenderCertificates(); // <-- Corrección automática activada aquí
+            setInterval(calculateSpotPrices, 120000);
+        };
+    </script>
+
+</body>
+</html>
+
+
+
+
 
         /* ANIMACIÓN DE DESTELLO SPOT EN TIEMPO REAL (FLASH UP/DOWN) */
         function updateAllPrices() {
