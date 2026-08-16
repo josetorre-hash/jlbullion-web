@@ -652,13 +652,11 @@
             <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
         </div>
 
-       
         <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
             <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">1</span></button>
+                <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">6</span></button>
                 <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graded & Collector Gold <span class="tab-count-badge" id="cnt-nested-graduated-gold">0</span></button>
             </div>
-        
 
             <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
                 <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
@@ -670,19 +668,20 @@
                 <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
             </div>
 
-            <!-- CONTENEDOR 1: GOLD BULLION COINS (NO GRADUADAS) -->
+            <!-- CONTENEDOR 1: GOLD BULLION COINS (ELEMETAL + NIUE) -->
             <div id="nested-bullion-gold" class="nested-tab-content active-nestedcontent">
                 <div class="inventory-grid" id="grid-bullion-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
-                    <!-- ITEM 1945802 -->
+                    <!-- ITEM 1945802 (NIUE ON HAND) -->
                     <div class="item-card gold-card-finish" 
                          data-id="1945802" 
+                         data-availability="in-stock"
                          data-category="oceania" 
                          data-composition="✨ .9999 Gold" 
                          data-grading-service="Raw / Card of Issue" 
                          data-cert-number="010306" 
                          data-grade="BU" 
-                         data-search="niue 2015 gold $25 statue of liberty proof uncertified in card of issue 1945802 au 999.9 oceania bullion">
+                         data-search="niue 2015 gold $25 statue of liberty proof uncertified in card of issue 1945802 au 999.9 oceania bullion in stock">
                         <div>
                             <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
                             <div class="badge-holder" style="margin-bottom: 8px;">
@@ -694,8 +693,8 @@
                                 <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇳🇺 Niue</span></div>
                                 <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
                                 <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">B.H. Mayer's</span></div>
-                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">7.7800 g</span></div>
-                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2495 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">7.78 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.250 oz</span></div>
                                 <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
                                 <div class="spec-row"><span class="spec-label" style="color: #64748b;">Cert No:</span> <span class="spec-val" style="font-weight: 700;">#010306</span></div>
                             </div>
@@ -706,11 +705,161 @@
                         </div>
                     </div>
 
+                    <!-- GOLD AMERICAN EAGLE 1 OZ (ELEMETAL) -->
+                    <div class="item-card gold-card-finish" 
+                         data-id="GECD" 
+                         data-availability="in-transit"
+                         data-category="us" 
+                         data-composition="🪙 22K Gold (.9167)" 
+                         data-search="gold american eagle 1 oz bullion us gecd elemetal in transit">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.50% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">Official US Mint Bullion</span>
+                            </div>
+                            <h3>Gold American Eagle 1 oz (Random/Current Year)</h3>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#GECD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">U.S. Mint</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.93 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Purity:</span> <span class="spec-val" style="font-weight: 700;">.9167 (22K)</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">32.70 mm</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="1.00000" data-cost="0" data-premium="0.025" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('GECD', 'Gold American Eagle 1 oz Bullion', 1.00000, 'gold', 0, 0.025, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- CANADIAN GOLD MAPLE LEAF 1 OZ (ELEMETAL) -->
+                    <div class="item-card gold-card-finish" 
+                         data-id="GMLCD" 
+                         data-availability="in-transit"
+                         data-category="americas" 
+                         data-composition="✨ .9999 Pure Gold" 
+                         data-search="gold canadian maple leaf 1 oz bullion gmlcd elemetal in transit">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">Royal Canadian Mint</span>
+                            </div>
+                            <h3>Canadian Gold Maple Leaf 1 oz .9999 Fine</h3>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#GMLCD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇨🇦 Canada</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 CAD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">RCM</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">31.10 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Purity:</span> <span class="spec-val" style="font-weight: 700;">.9999 Pure</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">30.00 mm</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="1.00000" data-cost="0" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('GMLCD', 'Canadian Gold Maple Leaf 1 oz .9999', 1.00000, 'gold', 0, 0.02, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- SOUTH AFRICAN KRUGERRAND 1 OZ (ELEMETAL) -->
+                    <div class="item-card gold-card-finish" 
+                         data-id="GKR" 
+                         data-availability="in-transit"
+                         data-category="africa" 
+                         data-composition="🪙 22K Gold (.9167)" 
+                         data-search="south african krugerrand gold 1 oz bullion gkr elemetal in transit">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.80% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">Rand Refinery</span>
+                            </div>
+                            <h3>South African Gold Krugerrand 1 oz</h3>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#GKR</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇿🇦 South Africa</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">1 Krugerrand</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">SA Mint</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.93 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Purity:</span> <span class="spec-val" style="font-weight: 700;">.9167 (22K)</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">32.77 mm</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="1.00000" data-cost="0" data-premium="0.018" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('GKR', 'South African Gold Krugerrand 1 oz', 1.00000, 'gold', 0, 0.018, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- AUSTRIAN PHILHARMONIC 1 OZ (ELEMETAL) -->
+                    <div class="item-card gold-card-finish" 
+                         data-id="GPHIL" 
+                         data-availability="in-transit"
+                         data-category="europe" 
+                         data-composition="✨ .9999 Pure Gold" 
+                         data-search="austrian philharmonic gold 1 oz bullion gphil elemetal in transit">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">Austrian Mint</span>
+                            </div>
+                            <h3>Austrian Gold Philharmonic 1 oz .9999 Fine</h3>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#GPHIL</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇹 Austria</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">100 Euro</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Münze Österreich</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">31.10 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Purity:</span> <span class="spec-val" style="font-weight: 700;">.9999 Pure</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">37.00 mm</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="1.00000" data-cost="0" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('GPHIL', 'Austrian Gold Philharmonic 1 oz .9999', 1.00000, 'gold', 0, 0.02, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- BRITISH BRITANNIA 1 OZ (ELEMETAL) -->
+                    <div class="item-card gold-card-finish" 
+                         data-id="GBRIT" 
+                         data-availability="in-transit"
+                         data-category="europe" 
+                         data-composition="✨ .9999 Pure Gold" 
+                         data-search="gold british britannia 1 oz bullion gbrit elemetal in transit">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">The Royal Mint</span>
+                            </div>
+                            <h3>British Gold Britannia 1 oz .9999 Fine</h3>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#GBRIT</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇬🇧 UK</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">£100 GBP</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Royal Mint</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">31.10 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Purity:</span> <span class="spec-val" style="font-weight: 700;">.9999 Pure</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">32.69 mm</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="1.00000" data-cost="0" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('GBRIT', 'British Gold Britannia 1 oz .9999', 1.00000, 'gold', 0, 0.02, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- CONTENEDOR 2: GRADUATED GOLD COINS (GRADUADAS) -->
-            <div id="nested-graduated-gold" class="nested-tab-content">
+            <!-- CONTENEDOR 2: GRADED & COLLECTOR GOLD (MONEDAS CERTIFICADAS / OGP) -->
+            <div id="nested-graduated-gold" class="nested-tab-content" style="display: none;">
                 <div class="inventory-grid" id="grid-graduated-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
                     <!-- ITEM 2109000 -->
