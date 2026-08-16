@@ -597,12 +597,6 @@
 
 
 
-
-
-
-
-
-
 <!-- ========================================================= -->
 <!-- SECCIÓN 4: PÁGINA 2 - CATÁLOGO DE ORO (GOLD CATALOG)      -->
 <!-- ========================================================= -->
@@ -612,71 +606,66 @@
         <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Explore our official inventory database of investment gold, certified numismatic eagles, double eagles, and world gold pieces.</p>
 
         <div class="sub-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
-            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">6</span></button>
+            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">17</span></button>
             <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
         </div>
 
         <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
-    <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">1</span></button>
-        <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">21</span></button>
-    </div>
+            <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">1</span></button>
+                <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">16</span></button>
+            </div>
 
-    <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
-        <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
-        <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
-        <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
-        <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
-        <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
-        <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
-        <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
-    </div>
+            <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
+                <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+            </div>
 
-    <!-- PESTAÑA 1: GOLD BULLION COINS (1 MONEDA RAW/UNGRADED) -->
-    <div id="nested-bullion-gold" class="nested-tab-content active-nestedcontent">
-        <div class="inventory-grid" id="grid-bullion-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
-            
-            <!-- ITEM 1945802 -->
-            <div class="item-card gold-card-finish" 
-                 data-id="1945802" 
-                 data-category="oceania" 
-                 data-composition="✨ .9999 Gold" 
-                 data-grading-service="Raw / Card of Issue" 
-                 data-cert-number="010306" 
-                 data-grade="BU" 
-                 data-search="niue 2015 gold $25 statue of liberty proof uncertified in card of issue 1945802 au 999.9 oceania bullion">
-                <div>
-                    <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
-                    
-                    <div class="badge-holder" style="margin-bottom: 8px;">
-                        <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">BU in Card of Issue</span>
+            <!-- CONTENEDOR 1: GOLD BULLION COINS (NO GRADUADAS) -->
+            <div id="nested-bullion-gold" class="nested-tab-content active-nestedcontent">
+                <div class="inventory-grid" id="grid-bullion-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+
+                    <!-- ITEM 1945802 -->
+                    <div class="item-card gold-card-finish" 
+                         data-id="1945802" 
+                         data-category="oceania" 
+                         data-composition="✨ .9999 Gold" 
+                         data-grading-service="Raw / Card of Issue" 
+                         data-cert-number="010306" 
+                         data-grade="BU" 
+                         data-search="niue 2015 gold $25 statue of liberty proof uncertified in card of issue 1945802 au 999.9 oceania bullion">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">BU in Card of Issue</span>
+                            </div>
+                            <h3>Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card of Issue</h3>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1945802</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇳🇺 Niue</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">B.H. Mayer's</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">7.7800 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2495 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Cert No:</span> <span class="spec-val" style="font-weight: 700;">#010306</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.2495" data-cost="987.73" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('1945802', 'Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card', 0.2495, 'gold', 987.73, 0.02, 'percent')">Add to Order</button>
+                        </div>
                     </div>
 
-                    <h3>Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card of Issue</h3>
-
-                    <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1945802</span></div>
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇳🇺 Niue</span></div>
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">B.H. Mayer's</span></div>
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">7.7800 g</span></div>
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2495 oz</span></div>
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
-                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Cert No:</span> <span class="spec-val" style="font-weight: 700;">#010306</span></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="item-price" data-metal="gold" data-weight="0.2495" data-cost="987.73" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
-                    <button class="btn-quote" onclick="selectCoin('1945802', 'Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card', 0.2495, 'gold', 987.73, 0.02, 'percent')">Add to Order</button>
                 </div>
             </div>
 
-        </div>
-    </div>
-
-
-
-            <!-- TAB 2: GRADUATED GOLD -->
+            <!-- CONTENEDOR 2: GRADUATED GOLD COINS (GRADUADAS) -->
             <div id="nested-graduated-gold" class="nested-tab-content">
                 <div class="inventory-grid" id="grid-graduated-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
@@ -897,6 +886,471 @@
                         </div>
                     </div>
 
+                    <!-- ITEM 2148137 -->
+                    <div class="item-card gold-card-finish" data-id="2148137" data-category="us" data-composition="🪙 22K Gold" data-grading-service="NGC" data-cert-number="8444465-016" data-grade="MS-67" data-search="1989 $25 half-ounce gold american eagle ngc ms-67 2148137 8444465-016 ngc 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-67</span></div>
+                            <h3>1989 $25 Half-Ounce Gold American Eagle NGC MS-67</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #8444465-016</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2148137</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">44,829</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/8444465-016/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #8444465-016 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2148137', '1989 $25 1/2 oz Gold American Eagle NGC MS-67', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2182037 -->
+                    <div class="item-card gold-card-finish" data-id="2182037" data-category="us" data-composition="🪙 22K Gold" data-grading-service="NGC" data-cert-number="6979902-013" data-grade="MS-68" data-search="1993 $25 half-ounce gold american eagle ngc ms-68 2182037 6979902-013 ngc 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-68</span></div>
+                            <h3>1993 $25 Half-Ounce Gold American Eagle NGC MS-68</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #6979902-013</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2182037</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">73,324</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/6979902-013/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #6979902-013 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2182037', '1993 $25 1/2 oz Gold American Eagle NGC MS-68', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2140129 -->
+                    <div class="item-card gold-card-finish" data-id="2140129" data-category="us" data-composition="🪙 22K Gold" data-grading-service="NGC" data-cert-number="1792029-016" data-grade="MS-70" data-search="2004 $25 half-ounce gold american eagle ngc ms-70 2140129 1792029-016 ngc 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +3.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-70</span></div>
+                            <h3>2004 $25 Half-Ounce Gold American Eagle NGC MS-70</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1792029-016</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140129</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">98,040</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/1792029-016/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1792029-016 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.032" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2140129', '2004 $25 1/2 oz Gold American Eagle NGC MS-70', 0.5000, 'gold', 2052.25, 0.032, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2140140 -->
+                    <div class="item-card gold-card-finish" data-id="2140140" data-category="us" data-composition="🪙 22K Gold" data-grading-service="NGC" data-cert-number="1860361-123" data-grade="MS-69" data-search="2005 $25 half-ounce gold american eagle ngc ms-69 2140140 1860361-123 ngc 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-69</span></div>
+                            <h3>2005 $25 Half-Ounce Gold American Eagle NGC MS-69</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1860361-123</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140140</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">80,023</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/1860361-123/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1860361-123 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2140140', '2005 $25 1/2 oz Gold American Eagle NGC MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2140243 -->
+                    <div class="item-card gold-card-finish" data-id="2140243" data-category="us" data-composition="🪙 22K Gold" data-grading-service="NGC" data-cert-number="1992372-064" data-grade="MS-69" data-search="2006 $25 half-ounce gold american eagle ngc ms-69 2140243 1992372-064 ngc 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-69</span></div>
+                            <h3>2006 $25 Half-Ounce Gold American Eagle NGC MS-69</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1992372-064</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140243</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">66,005</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/1992372-064/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1992372-064 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2140243', '2006 $25 1/2 oz Gold American Eagle NGC MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2140255 -->
+                    <div class="item-card gold-card-finish" data-id="2140255" data-category="us" data-composition="🪙 22K Gold" data-grading-service="NGC" data-cert-number="1992372-059" data-grade="MS-69" data-search="2006 $25 half-ounce gold american eagle ngc ms-69 2140255 1992372-059 ngc 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-69</span></div>
+                            <h3>2006 $25 Half-Ounce Gold American Eagle NGC MS-69</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1992372-059</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140255</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">66,005</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/1992372-059/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1992372-059 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2140255', '2006 $25 1/2 oz Gold American Eagle NGC MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2174485 -->
+                    <div class="item-card gold-card-finish" data-id="2174485" data-category="us" data-composition="🪙 22K Gold" data-grading-service="ANACS" data-cert-number="7002810245" data-grade="MS-70" data-search="2011 $25 half-ounce gold american eagle first release anacs ms-70 2174485 7002810245 anacs 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-anacs" style="background: #eab308; color: #0f172a; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">ANACS MS-70</span></div>
+                            <h3>2011 $25 Half-Ounce Gold American Eagle First Release ANACS MS-70</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder anacs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #eab308; text-align: center;">
+                                    <div class="slab-header-anacs" style="background: #eab308; color: #0f172a; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">ANACS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #fef08a; font-size: 0.72rem; font-family: monospace; font-weight: 700;">ANACS CERT #7002810245</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2174485</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
+                            </div>
+                            <a href="https://www.anacs.com/Verify/CertVerification.aspx?Cert=7002810245" target="_blank" rel="noopener" class="btn-verify-cert" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #fef08a; border: 1px solid #eab308;">🔍 Verify Cert #7002810245 on ANACS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2174485', '2011 $25 1/2 oz Gold American Eagle First Release ANACS MS-70', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2140241 -->
+                    <div class="item-card gold-card-finish" data-id="2140241" data-category="us" data-composition="🪙 22K Gold" data-grading-service="NGC" data-cert-number="3548788-022" data-grade="MS-70" data-search="2011-w $50 one-ounce gold american eagle ngc ms-70 2140241 3548788-022 ngc 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +3.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-70</span></div>
+                            <h3>2011-W $50 One-Ounce Gold American Eagle NGC MS-70</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 42px; height: 42px; line-height: 42px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">$50</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #3548788-022</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140241</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.9310 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.0000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">32.70 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/3548788-022/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #3548788-022 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="4104.50" data-premium="0.03" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2140241', '2011-W $50 1 oz Gold American Eagle NGC MS-70', 1.0000, 'gold', 4104.50, 0.03, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2182866 -->
+                    <div class="item-card gold-card-finish" data-id="2182866" data-category="us" data-composition="🪙 22K Gold" data-grading-service="PCGS" data-cert-number="58382122" data-grade="MS-69" data-search="2021 $50 one-ounce gold american eagle type 2 pcgs ms-69 2182866 58382122 pcgs 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-69</span></div>
+                            <h3>2021 $50 One-Ounce Gold American Eagle Type 2 PCGS MS-69</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 42px; height: 42px; line-height: 42px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">$50</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58382122</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2182866</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.9310 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.0000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">32.70 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/58382122" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58382122 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="4104.50" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2182866', '2021 $50 1 oz Gold American Eagle Type 2 PCGS MS-69', 1.0000, 'gold', 4104.50, 0.02, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 1915046 -->
+                    <div class="item-card gold-card-finish" data-id="1915046" data-category="oceania" data-composition="🪙 .917 Gold (22K)" data-grading-service="NGC" data-cert-number="3155458-002" data-grade="Proof-69 CAMEO" data-search="american samoa 1988 gold 50 tala trans-antarctica expedition ngc proof-69 cameo 1915046 3155458-002 oceania">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC PR-69 CAMEO</span></div>
+                            <h3>American Samoa 1988 Gold 50 Tala Trans-Antarctica Expedition NGC Proof-69 CAMEO</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">50T</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #3155458-002</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1915046</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇸 Am. Samoa</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">50 Tala</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Valcambi</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.5000 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2496 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">2,500</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/3155458-002/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #3155458-002 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.2496" data-cost="1014.06" data-premium="0.01" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('1915046', 'American Samoa 1988 Gold 50 Tala Expedition NGC PR-69 CAMEO', 0.2496, 'gold', 1014.06, 0.01, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2094316 -->
+                    <div class="item-card gold-card-finish" data-id="2094316" data-category="oceania" data-composition="🪙 .916 Gold" data-grading-service="PCGS" data-cert-number="58430436" data-grade="MS-65" data-search="australia 1982 gold $200 commonwealth games pcgs ms-65 2094316 58430436 oceania">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.50% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-65</span></div>
+                            <h3>Australia 1982 Gold $200 Commonwealth Games With Folder Issue PCGS MS-65</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$200</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58430436</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2094316</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$200 AUD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Royal Australian</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">10.0000 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2945 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">24.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">77,206</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/58430436" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58430436 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.2945" data-cost="1196.24" data-premium="0.015" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2094316', 'Australia 1982 Gold $200 Commonwealth Games PCGS MS-65', 0.2945, 'gold', 1196.24, 0.015, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2140472 -->
+                    <div class="item-card gold-card-finish" data-id="2140472" data-category="oceania" data-composition="🪙 .917 Gold" data-grading-service="PCGS" data-cert-number="53766308" data-grade="Proof-69 DCAM" data-search="australia 1983 gold $200 koala pcgs proof-69 dcam 2140472 53766308 oceania">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.50% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-69 DCAM</span></div>
+                            <h3>Australia 1983 Gold $200 Koala PCGS Proof-69 DCAM</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$200</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #53766308</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140472</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$200 AUD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Royal Australian</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">10.0000 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2948 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">24.20 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">15,889</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/53766308" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #53766308 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.2948" data-cost="1197.45" data-premium="0.015" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2140472', 'Australia 1983 Gold $200 Koala PCGS PR-69 DCAM', 0.2948, 'gold', 1197.45, 0.015, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2137804 -->
+                    <div class="item-card gold-card-finish" data-id="2137804" data-category="oceania" data-composition="✨ .999 Gold" data-grading-service="PCGS" data-cert-number="58430444" data-grade="Proof-69 DCAM" data-search="australia 1987-p gold $50 nugget bobby dazzler 1899 pcgs proof-69 dcam 2137804 58430444 oceania">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.50% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-69 DCAM</span></div>
+                            <h3>Australia 1987-P Gold $50 Nugget Bobby Dazzler 1899 PCGS Proof-69 DCAM</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$50</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58430444</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2137804</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 AUD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Perth Mint ('P')</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">15.5500 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4994 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">25.10 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">1,224</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/58430444" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58430444 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.4994" data-cost="2042.38" data-premium="0.015" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2137804', 'Australia 1987-P Gold $50 Nugget PCGS PR-69 DCAM', 0.4994, 'gold', 2042.38, 0.015, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2142840 -->
+                    <div class="item-card gold-card-finish" data-id="2142840" data-category="oceania" data-composition="✨ .9999 Gold" data-grading-service="NGC" data-cert-number="1943782-231" data-grade="Proof-70 UC" data-search="australia 2006-p gold $50 discover australia koala ngc proof-70 uc 2142840 1943782-231 oceania">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC PR-70 UC</span></div>
+                            <h3>Australia 2006-P Gold $50 Discover Australia Koala NGC Proof-70 UC</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$50</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1943782-231</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2142840</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 AUD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Perth Mint ('P')</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">15.5500 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4999 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">25.60 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">1,000</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/1943782-231/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1943782-231 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.4999" data-cost="2042.38" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2142840', 'Australia 2006-P Gold $50 Koala NGC PR-70 UC', 0.4999, 'gold', 2042.38, 0.02, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 1926892 -->
+                    <div class="item-card gold-card-finish" data-id="1926892" data-category="europe" data-composition="🪙 .986 Gold" data-grading-service="PCGS" data-cert-number="57611051" data-grade="MS-67" data-search="austrian states 1915 gold 4 ducat restrike pcgs ms-67 1926892 57611051 europe austria">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +7.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-67</span></div>
+                            <h3>Austrian States 1915 Gold 4 Ducat Restrike PCGS MS-67</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 44px; height: 44px; line-height: 44px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">4D</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #57611051</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1926892</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇹 Austria</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">4 Ducats</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Vienna Mint</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">13.9630 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4427 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">39.50 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">4,950,000</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/57611051" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #57611051 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.4427" data-cost="1798.75" data-premium="0.07" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('1926892', 'Austrian States 1915 Gold 4 Ducat Restrike PCGS MS-67', 0.4427, 'gold', 1798.75, 0.07, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -908,610 +1362,9 @@
         </div>
     </div>
 </div>
-   
-
-<!-- ITEM 2148137 -->
-<div class="item-card gold-card-finish" 
-     data-id="2148137" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="8444465-016" 
-     data-grade="MS-67" 
-     data-search="1989 $25 half-ounce gold american eagle ngc ms-67 2148137 8444465-016 ngc 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-67</span>
-        </div>
-        <h3>1989 $25 Half-Ounce Gold American Eagle NGC MS-67</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #8444465-016</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2148137</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">44,829</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/8444465-016/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #8444465-016 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2148137', '1989 $25 1/2 oz Gold American Eagle NGC MS-67', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2182037 -->
-<div class="item-card gold-card-finish" 
-     data-id="2182037" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="6979902-013" 
-     data-grade="MS-68" 
-     data-search="1993 $25 half-ounce gold american eagle ngc ms-68 2182037 6979902-013 ngc 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-68</span>
-        </div>
-        <h3>1993 $25 Half-Ounce Gold American Eagle NGC MS-68</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #6979902-013</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2182037</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">73,324</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/6979902-013/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #6979902-013 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2182037', '1993 $25 1/2 oz Gold American Eagle NGC MS-68', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2140129 -->
-<div class="item-card gold-card-finish" 
-     data-id="2140129" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="1792029-016" 
-     data-grade="MS-70" 
-     data-search="2004 $25 half-ounce gold american eagle ngc ms-70 2140129 1792029-016 ngc 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +3.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-70</span>
-        </div>
-        <h3>2004 $25 Half-Ounce Gold American Eagle NGC MS-70</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1792029-016</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140129</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">98,040</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/1792029-016/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1792029-016 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.032" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2140129', '2004 $25 1/2 oz Gold American Eagle NGC MS-70', 0.5000, 'gold', 2052.25, 0.032, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2140140 -->
-<div class="item-card gold-card-finish" 
-     data-id="2140140" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="1860361-123" 
-     data-grade="MS-69" 
-     data-search="2005 $25 half-ounce gold american eagle ngc ms-69 2140140 1860361-123 ngc 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-69</span>
-        </div>
-        <h3>2005 $25 Half-Ounce Gold American Eagle NGC MS-69</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1860361-123</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140140</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">80,023</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/1860361-123/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1860361-123 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2140140', '2005 $25 1/2 oz Gold American Eagle NGC MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2140243 -->
-<div class="item-card gold-card-finish" 
-     data-id="2140243" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="1992372-064" 
-     data-grade="MS-69" 
-     data-search="2006 $25 half-ounce gold american eagle ngc ms-69 2140243 1992372-064 ngc 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-69</span>
-        </div>
-        <h3>2006 $25 Half-Ounce Gold American Eagle NGC MS-69</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1992372-064</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140243</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">66,005</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/1992372-064/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1992372-064 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2140243', '2006 $25 1/2 oz Gold American Eagle NGC MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-
-<!-- ITEM 2140255 -->
-<div class="item-card gold-card-finish" 
-     data-id="2140255" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="1992372-059" 
-     data-grade="MS-69" 
-     data-search="2006 $25 half-ounce gold american eagle ngc ms-69 2140255 1992372-059 ngc 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-69</span>
-        </div>
-        <h3>2006 $25 Half-Ounce Gold American Eagle NGC MS-69</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1992372-059</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140255</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">66,005</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/1992372-059/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1992372-059 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2140255', '2006 $25 1/2 oz Gold American Eagle NGC MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2174485 -->
-<div class="item-card gold-card-finish" 
-     data-id="2174485" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="ANACS" 
-     data-cert-number="7002810245" 
-     data-grade="MS-70" 
-     data-search="2011 $25 half-ounce gold american eagle first release anacs ms-70 2174485 7002810245 anacs 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-anacs" style="background: #eab308; color: #0f172a; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">ANACS MS-70</span>
-        </div>
-        <h3>2011 $25 Half-Ounce Gold American Eagle First Release ANACS MS-70</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder anacs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #eab308; text-align: center;">
-                <div class="slab-header-anacs" style="background: #eab308; color: #0f172a; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">ANACS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #fef08a; font-size: 0.72rem; font-family: monospace; font-weight: 700;">ANACS CERT #7002810245</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2174485</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
-        </div>
-        <a href="https://www.anacs.com/Verify/CertVerification.aspx?Cert=7002810245" target="_blank" rel="noopener" class="btn-verify-cert" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #fef08a; border: 1px solid #eab308;">🔍 Verify Cert #7002810245 on ANACS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2174485', '2011 $25 1/2 oz Gold American Eagle First Release ANACS MS-70', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2140241 -->
-<div class="item-card gold-card-finish" 
-     data-id="2140241" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="3548788-022" 
-     data-grade="MS-70" 
-     data-search="2011-w $50 one-ounce gold american eagle ngc ms-70 2140241 3548788-022 ngc 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +3.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-70</span>
-        </div>
-        <h3>2011-W $50 One-Ounce Gold American Eagle NGC MS-70</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 42px; height: 42px; line-height: 42px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">$50</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #3548788-022</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140241</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.9310 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.0000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">32.70 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/3548788-022/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #3548788-022 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="4104.50" data-premium="0.03" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2140241', '2011-W $50 1 oz Gold American Eagle NGC MS-70', 1.0000, 'gold', 4104.50, 0.03, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2182866 -->
-<div class="item-card gold-card-finish" 
-     data-id="2182866" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="58382122" 
-     data-grade="MS-69" 
-     data-search="2021 $50 one-ounce gold american eagle type 2 pcgs ms-69 2182866 58382122 pcgs 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-69</span>
-        </div>
-        <h3>2021 $50 One-Ounce Gold American Eagle Type 2 PCGS MS-69</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 42px; height: 42px; line-height: 42px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">$50</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58382122</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2182866</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.9310 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">1.0000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">32.70 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/58382122" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58382122 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="1.0000" data-cost="4104.50" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2182866', '2021 $50 1 oz Gold American Eagle Type 2 PCGS MS-69', 1.0000, 'gold', 4104.50, 0.02, 'percent')">Add to Order</button>
-    </div>
-</div>
 
 
 
-<!-- ITEM 1915046 -->
-<div class="item-card gold-card-finish" 
-     data-id="1915046" 
-     data-category="oceania" 
-     data-composition="🪙 .917 Gold (22K)" 
-     data-grading-service="NGC" 
-     data-cert-number="3155458-002" 
-     data-grade="Proof-69 CAMEO" 
-     data-search="american samoa 1988 gold 50 tala trans-antarctica expedition ngc proof-69 cameo 1915046 3155458-002 oceania">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC PR-69 CAMEO</span>
-        </div>
-        <h3>American Samoa 1988 Gold 50 Tala Trans-Antarctica Expedition NGC Proof-69 CAMEO</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">50T</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #3155458-002</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1915046</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇸 Am. Samoa</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">50 Tala</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Valcambi</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.5000 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2496 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">2,500</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/3155458-002/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #3155458-002 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.2496" data-cost="1014.06" data-premium="0.01" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('1915046', 'American Samoa 1988 Gold 50 Tala Expedition NGC PR-69 CAMEO', 0.2496, 'gold', 1014.06, 0.01, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2094316 -->
-<div class="item-card gold-card-finish" 
-     data-id="2094316" 
-     data-category="oceania" 
-     data-composition="🪙 .916 Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="58430436" 
-     data-grade="MS-65" 
-     data-search="australia 1982 gold $200 commonwealth games pcgs ms-65 2094316 58430436 oceania">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.50% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-65</span>
-        </div>
-        <h3>Australia 1982 Gold $200 Commonwealth Games With Folder Issue PCGS MS-65</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$200</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58430436</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2094316</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$200 AUD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Royal Australian</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">10.0000 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2945 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">24.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">77,206</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/58430436" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58430436 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.2945" data-cost="1196.24" data-premium="0.015" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2094316', 'Australia 1982 Gold $200 Commonwealth Games PCGS MS-65', 0.2945, 'gold', 1196.24, 0.015, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2140472 -->
-<div class="item-card gold-card-finish" 
-     data-id="2140472" 
-     data-category="oceania" 
-     data-composition="🪙 .917 Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="53766308" 
-     data-grade="Proof-69 DCAM" 
-     data-search="australia 1983 gold $200 koala pcgs proof-69 dcam 2140472 53766308 oceania">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.50% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-69 DCAM</span>
-        </div>
-        <h3>Australia 1983 Gold $200 Koala PCGS Proof-69 DCAM</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$200</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #53766308</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2140472</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$200 AUD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Royal Australian</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">10.0000 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2948 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">24.20 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">15,889</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/53766308" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #53766308 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.2948" data-cost="1197.45" data-premium="0.015" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2140472', 'Australia 1983 Gold $200 Koala PCGS PR-69 DCAM', 0.2948, 'gold', 1197.45, 0.015, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2137804 -->
-<div class="item-card gold-card-finish" 
-     data-id="2137804" 
-     data-category="oceania" 
-     data-composition="✨ .999 Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="58430444" 
-     data-grade="Proof-69 DCAM" 
-     data-search="australia 1987-p gold $50 nugget bobby dazzler 1899 pcgs proof-69 dcam 2137804 58430444 oceania">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.50% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-69 DCAM</span>
-        </div>
-        <h3>Australia 1987-P Gold $50 Nugget Bobby Dazzler 1899 PCGS Proof-69 DCAM</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$50</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58430444</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2137804</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 AUD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Perth Mint ('P')</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">15.5500 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4994 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">25.10 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">1,224</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/58430444" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58430444 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.4994" data-cost="2042.38" data-premium="0.015" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2137804', 'Australia 1987-P Gold $50 Nugget PCGS PR-69 DCAM', 0.4994, 'gold', 2042.38, 0.015, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 2142840 -->
-<div class="item-card gold-card-finish" 
-     data-id="2142840" 
-     data-category="oceania" 
-     data-composition="✨ .9999 Gold" 
-     data-grading-service="NGC" 
-     data-cert-number="1943782-231" 
-     data-grade="Proof-70 UC" 
-     data-search="australia 2006-p gold $50 discover australia koala ngc proof-70 uc 2142840 1943782-231 oceania">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC PR-70 UC</span>
-        </div>
-        <h3>Australia 2006-P Gold $50 Discover Australia Koala NGC Proof-70 UC</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$50</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #1943782-231</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2142840</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇺 Australia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$50 AUD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Perth Mint ('P')</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">15.5500 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4999 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">25.60 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">1,000</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/1943782-231/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #1943782-231 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.4999" data-cost="2042.38" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2142840', 'Australia 2006-P Gold $50 Koala NGC PR-70 UC', 0.4999, 'gold', 2042.38, 0.02, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-<!-- ITEM 1926892 -->
-<div class="item-card gold-card-finish" 
-     data-id="1926892" 
-     data-category="europe" 
-     data-composition="🪙 .986 Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="57611051" 
-     data-grade="MS-67" 
-     data-search="austrian states 1915 gold 4 ducat restrike pcgs ms-67 1926892 57611051 europe austria">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +7.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-67</span>
-        </div>
-        <h3>Austrian States 1915 Gold 4 Ducat Restrike PCGS MS-67</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 44px; height: 44px; line-height: 44px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">4D</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #57611051</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1926892</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇦🇹 Austria</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">4 Ducats</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Vienna Mint</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">13.9630 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4427 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">39.50 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">4,950,000</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/57611051" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #57611051 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.4427" data-cost="1798.75" data-premium="0.07" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('1926892', 'Austrian States 1915 Gold 4 Ducat Restrike PCGS MS-67', 0.4427, 'gold', 1798.75, 0.07, 'percent')">Add to Order</button>
-    </div>
-</div>
 
 
 
