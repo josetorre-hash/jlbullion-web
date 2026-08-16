@@ -604,8 +604,200 @@
 
 
 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- ========================================================= -->
+<!-- SECCIÓN 4: PÁGINA 3 - OFERTAS ESPECIALES (SPECIALS 🔥)    -->
+<!-- ========================================================= -->
+<div id="specials" class="tab-page">
+    <div class="container">
+        <h1 class="page-header-title">Specials & Zero-Premium Offers 🔥</h1>
+        <p class="page-subtitle">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
+
+        <div class="filter-chips-row">
+            <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Specials</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+        </div>
+
+        <div class="inventory-grid" id="grid-specials-page">
+            <div class="no-items-message"><p>No special promotional offers currently loaded.</p></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- ========================================================= -->
-<!-- SECCIÓN 4: PÁGINA 2 - CATÁLOGO DE ORO (GOLD CATALOG)      -->
+    <!-- SECCIÓN 5: PÁGINA 4 - CATÁLOGO DE PLATA (SILVER CATALOG)   -->
+    <!-- ========================================================= -->
+    <div id="silver" class="tab-page">
+        <div class="container">
+            <h1 class="page-header-title">Silver Catalog</h1>
+            <p class="page-subtitle">Explore our fine collection of investment and numismatic silver pieces.</p>
+
+            <div class="sub-nav-tabs">
+                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins <span class="tab-count-badge" id="cnt-sub-silver-coins">0</span></button>
+                <button class="sub-tab-btn" onclick="openSubTab('sub-silver-bars', event)">Silver Bars <span class="tab-count-badge" id="cnt-sub-silver-bars">0</span></button>
+            </div>
+
+            <!-- SUB-TAB 1: SILVER COINS -->
+            <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
+                <div class="nested-nav-tabs">
+                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-silver-bullion', event)">Silver Bullion Coins <span class="tab-count-badge" id="cnt-nested-silver-bullion">0</span></button>
+                    <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-silver', event)">Graduated Silver Coins <span class="tab-count-badge" id="cnt-nested-graduated-silver">0</span></button>
+                </div>
+
+                <div class="filter-chips-row">
+                    <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Silver 🇺🇸</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Silver 🇪🇺</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+                    <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+                </div>
+
+                <!-- CONTENEDOR 1: BULLION (VACÍO) -->
+                <div id="nested-silver-bullion" class="nested-tab-content active-nestedcontent">
+                    <div class="inventory-grid" id="grid-silver-bullion">
+                        <div class="no-items-message"><p>No silver bullion coins currently loaded.</p></div>
+                    </div>
+                </div>
+
+                <!-- CONTENEDOR 2: GRADUATED (VACÍO) -->
+                <div id="nested-graduated-silver" class="nested-tab-content">
+                    <div class="inventory-grid" id="grid-graduated-silver">
+                        <div class="no-items-message"><p>No graduated silver coins currently loaded.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-TAB 2: SILVER BARS (VACÍO) -->
+            <div id="sub-silver-bars" class="sub-tab-content">
+                <div class="inventory-grid" id="grid-silver-bars">
+                    <div class="no-items-message"><p>Currently no loose silver bars in primary stock.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN 6: FORMULARIO TRADING DESK Y PIE DE PÁGINA        -->
+    <!-- ========================================================= -->
+    <div class="container">
+        <div class="form-section" id="contacto">
+            <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1rem; text-align: center;">Trading Desk</h2>
+
+            <div class="cart-summary-box">
+                <div class="cart-total-header">
+                    <div>Estimated Order Total: <span id="cart-total-amount">$0.00 USD</span></div>
+                    <div id="timer-display" class="timer-badge" style="display: none;">Time Left: 10:00</div>
+                </div>
+                <div id="selected-items-container" class="selected-items-list" style="display: none;"></div>
+            </div>
+
+            <div class="notice-banner">
+                <strong>📈 Live Spot Market Disclaimer:</strong> All item prices and total amounts in your order continuously update in real time based on live market spot prices.
+            </div>
+
+            <form action="mailto:trading@jlbullion.com" method="POST" enctype="text/plain">
+                <div class="form-group"><label>Full Name *</label><input type="text" name="Full_Name" required placeholder="e.g. John Doe"></div>
+                <div class="form-group"><label>Email Address *</label><input type="email" name="Email" required placeholder="your-email@example.com"></div>
+                <div class="form-group"><label>Phone Number *</label><input type="tel" name="Phone" required placeholder="(305) 000-0000"></div>
+                <div class="form-group"><label>Preferred Delivery Method *</label><select name="Delivery_Method" required><option>FedEx Shipping ($30 USD Flat Rate - Adult Signature Required)</option><option>In-Person Appointment (Miami Area)</option></select></div>
+                <div class="form-group"><label>Order / Inquiry Details *</label><textarea id="order-details" name="Order_Details" rows="6" required placeholder="Specify items of interest, quantities, or general inquiries..."></textarea></div>
+                <button type="submit" class="cta-btn" style="width: 100%; background: var(--accent); color: var(--primary); padding: 0.8rem; font-weight: 700; border: none; border-radius: 4px; cursor: pointer;">Submit Inquiry to Trading Desk</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER INSTITUCIONAL B2R & COMPLIANCE -->
+    <footer style="background: var(--primary); color: var(--text-muted); padding: 3rem 1.5rem 1.5rem; margin-top: 4rem; border-top: 2px solid var(--accent); font-size: 0.82rem;">
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2rem;">
+            <div>
+                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">JL BULLION LLC</h4>
+                <p style="line-height: 1.5; color: #94a3b8; margin-bottom: 0.8rem;">Institutional & Retail Precious Metals Trading Desk based in Miami, FL. Registered Precious Metals Dealer with FinCEN.</p>
+                <p style="color: #cbd5e1; font-weight: 600;">Miami, FL 33156 | USA</p>
+                <p><a href="mailto:trading@jlbullion.com" style="color: var(--accent); text-decoration: none;">trading@jlbullion.com</a></p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">Legal & Compliance</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <li><a href="javascript:void(0)" onclick="openLegalModal('price-lock')" style="color: #f8f9fa; text-decoration: none;">🔒 Price Lock Agreement & Cancellation</a></li>
+                    <li><a href="javascript:void(0)" onclick="openLegalModal('b2r-terms')" style="color: #f8f9fa; text-decoration: none;">📄 B2R Terms of Trading</a></li>
+                    <li><a href="javascript:void(0)" onclick="openLegalModal('aml-policy')" style="color: #f8f9fa; text-decoration: none;">🛡️ AML / BSA Compliance Policy</a></li>
+                    <li><a href="javascript:void(0)" onclick="openLegalModal('privacy-policy')" style="color: #f8f9fa; text-decoration: none;">🔐 Privacy & Florida Sales Tax Rules</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">Regulatory Disclosures</h4>
+                <p style="font-size: 0.75rem; color: #64748b; line-height: 1.4;">
+                    All prices are bound to live spot market fluctuations. Placing an order constitutes a binding Price Lock Commitment. Cash transactions in excess of $10,000 USD are reported to the IRS via Form 8300 as mandated by U.S. federal law.
+                </p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 1.2rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: #64748b; font-size: 0.75rem;">
+            <p>&copy; 2026 JL BULLION LLC. All rights reserved. Registered Business in the State of Florida.</p>
+            <p>FinCEN MSB Registration ID: MRX26-00002577</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE DOCUMENTOS LEGALES -->
+    <div id="legalModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,25,47,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 1rem;">
+        <div style="background: #172a45; color: #f8f9fa; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 2rem; border-radius: 8px; border: 1px solid var(--accent); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <button onclick="closeLegalModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: var(--accent); font-size: 1.5rem; cursor: pointer; font-weight: 700;">&times;</button>
+            <div id="legalModalContent"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+ <!-- ========================================================= -->
+<!-- SECCIÓN 7: PÁGINA 2 - CATÁLOGO DE ORO (GOLD CATALOG)      -->
 <!-- ========================================================= -->
 <div id="gold" class="tab-page">
     <div class="container">
@@ -819,61 +1011,230 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- ========================================================= -->
-<!-- SECCIÓN 5: PÁGINA 3 - OFERTAS ESPECIALES (SPECIALS 🔥)    -->
-<!-- ========================================================= -->
-<div id="specials" class="tab-page">
-    <div class="container">
-        <h1 class="page-header-title">Specials & Zero-Premium Offers 🔥</h1>
-        <p class="page-subtitle">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
-
-        <div class="filter-chips-row">
-            <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Specials</span>
-            <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
-            <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
-            <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
-            <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+<!-- ITEM 2170283 -->
+<div class="item-card gold-card-finish" 
+     data-id="2170283" 
+     data-category="us" 
+     data-composition=".900 Gold (21.6K)" 
+     data-grading-service="PCGS" 
+     data-cert-number="64202727" 
+     data-grade="Proof-70 DCAM" 
+     data-search="2007-w jamestown 400th anniversary gold $5 pcgs proof-70 dcam 2170283 64202727 pcgs .900 gold (21.6k)">
+    
+    <div>
+        <!-- INSIGNIA SUPERIOR DE PREMIUM -->
+        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +3.00% Premium</span>
+        
+        <div class="badge-holder" style="margin-bottom: 8px;">
+            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-70 DCAM</span>
         </div>
 
-        <div class="inventory-grid" id="grid-specials-page">
-            <div class="no-items-message"><p>No special promotional offers currently loaded.</p></div>
+        <h3>2007-W Jamestown 400th Anniversary Gold $5 PCGS Proof-70 DCAM</h3>
+
+        <!-- CÁPSULA / SLAB DIGITAL VISUAL -->
+        <div class="card-media-wrapper" style="margin: 10px 0;">
+            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$5</div>
+                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #64202727</div>
+            </div>
         </div>
+
+        <!-- ESTRUCTURA EN CUADRÍCULA DE 2 COLUMNAS -->
+        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2170283</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$5.0 USD</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.3590 g</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2418 oz</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">21.60 mm</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">47,123</span></div>
+        </div>
+
+        <!-- BOTÓN DE VERIFICACIÓN PCGS -->
+        <a href="https://www.pcgs.com/cert/64202727" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">
+            🔍 Verify Cert #64202727 on PCGS
+        </a>
+    </div>
+    
+    <!-- BLOQUE DE PRECIO Y BOTÓN -->
+    <div>
+        <div class="item-price" 
+             data-metal="gold" 
+             data-weight="0.2418" 
+             data-cost="982.24" 
+             data-premium="0.03" 
+             data-premium-type="percent">Calculating price...</div>
+        <button class="btn-quote" onclick="selectCoin('2170283', '2007-W Jamestown 400th Anniversary Gold $5 PCGS Proof-70 DCAM', 0.2418, 'gold', 982.24, 0.03, 'percent')">Add to Order</button>
+    </div>
+</div>
+
+
+
+<!-- ITEM 1914605 -->
+<div class="item-card gold-card-finish" 
+     data-id="1914605" 
+     data-category="us" 
+     data-composition="✨ .9999 Gold" 
+     data-grading-service="PCGS" 
+     data-cert-number="41424734" 
+     data-grade="Proof-69 DCAM" 
+     data-search="2020-w end of world war ii 75th anniversary gold $25 first strike pcgs proof-69 dcam 1914605 41424734 pcgs .9999 gold">
+    
+    <div>
+        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+        
+        <div class="badge-holder" style="margin-bottom: 8px;">
+            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-69 DCAM</span>
+        </div>
+
+        <h3>2020-W End of World War II 75th Anniversary Gold $25 First Strike PCGS Proof-69 DCAM</h3>
+
+        <div class="card-media-wrapper" style="margin: 10px 0;">
+            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #41424734</div>
+            </div>
+        </div>
+
+        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1914605</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25.0 USD</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">15.5540 g</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">7,500</span></div>
+        </div>
+
+        <a href="https://www.pcgs.com/cert/41424734" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">
+            🔍 Verify Cert #41424734 on PCGS
+        </a>
+    </div>
+    
+    <div>
+        <div class="item-price" 
+             data-metal="gold" 
+             data-weight="0.5000" 
+             data-cost="2042.38" 
+             data-premium="0.022" 
+             data-premium-type="percent">Calculating price...</div>
+        <button class="btn-quote" onclick="selectCoin('1914605', '2020-W End of WWII 75th Anniv Gold $25 First Strike PCGS PR-69 DCAM', 0.5000, 'gold', 2042.38, 0.022, 'percent')">Add to Order</button>
+    </div>
+</div>
+
+
+
+<!-- ITEM 2178489 -->
+<div class="item-card gold-card-finish" 
+     data-id="2178489" 
+     data-category="us" 
+     data-composition="🪙 22K Gold" 
+     data-grading-service="PCGS" 
+     data-cert-number="58936942" 
+     data-grade="Proof-67 DCAM" 
+     data-search="2011-w $10 quarter-ounce gold american eagle pcgs proof-67 dcam 2178489 58936942 pcgs 22k gold">
+    
+    <div>
+        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +4.00% Premium</span>
+        
+        <div class="badge-holder" style="margin-bottom: 8px;">
+            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-67 DCAM</span>
+        </div>
+
+        <h3>2011-W $10 Quarter-Ounce Gold American Eagle PCGS Proof-67 DCAM</h3>
+
+        <div class="card-media-wrapper" style="margin: 10px 0;">
+            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
+                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58936942</div>
+            </div>
+        </div>
+
+        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2178489</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10.0 USD</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.4830 g</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2500 oz</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
+        </div>
+
+        <a href="https://www.pcgs.com/cert/58936942" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">
+            🔍 Verify Cert #58936942 on PCGS
+        </a>
+    </div>
+    
+    <div>
+        <div class="item-price" 
+             data-metal="gold" 
+             data-weight="0.2500" 
+             data-cost="1026.13" 
+             data-premium="0.04" 
+             data-premium-type="percent">Calculating price...</div>
+        <button class="btn-quote" onclick="selectCoin('2178489', '2011-W $10 1/4 oz Gold American Eagle PCGS PR-67 DCAM', 0.2500, 'gold', 1026.13, 0.04, 'percent')">Add to Order</button>
+    </div>
+</div>
+
+
+
+<!-- ITEM 2182029 -->
+<div class="item-card gold-card-finish" 
+     data-id="2182029" 
+     data-category="us" 
+     data-composition="🪙 22K Gold" 
+     data-grading-service="PCGS" 
+     data-cert-number="56811004" 
+     data-grade="MS-69" 
+     data-search="1986 $25 half-ounce gold american eagle pcgs ms-69 2182029 56811004 pcgs 22k gold">
+    
+    <div>
+        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+        
+        <div class="badge-holder" style="margin-bottom: 8px;">
+            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-69</span>
+        </div>
+
+        <h3>1986 $25 Half-Ounce Gold American Eagle PCGS MS-69</h3>
+
+        <div class="card-media-wrapper" style="margin: 10px 0;">
+            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #56811004</div>
+            </div>
+        </div>
+
+        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2182029</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25.0 USD</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">599,566</span></div>
+        </div>
+
+        <a href="https://www.pcgs.com/cert/56811004" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">
+            🔍 Verify Cert #56811004 on PCGS
+        </a>
+    </div>
+    
+    <div>
+        <div class="item-price" 
+             data-metal="gold" 
+             data-weight="0.5000" 
+             data-cost="2052.25" 
+             data-premium="0.022" 
+             data-premium-type="percent">Calculating price...</div>
+        <button class="btn-quote" onclick="selectCoin('2182029', '1986 $25 1/2 oz Gold American Eagle PCGS MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
     </div>
 </div>
 
@@ -881,147 +1242,6 @@
 
 
 
-
-
-
-
-
-
-
-
-    <!-- ========================================================= -->
-    <!-- SECCIÓN 6: PÁGINA 4 - CATÁLOGO DE PLATA (SILVER CATALOG)   -->
-    <!-- ========================================================= -->
-    <div id="silver" class="tab-page">
-        <div class="container">
-            <h1 class="page-header-title">Silver Catalog</h1>
-            <p class="page-subtitle">Explore our fine collection of investment and numismatic silver pieces.</p>
-
-            <div class="sub-nav-tabs">
-                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins <span class="tab-count-badge" id="cnt-sub-silver-coins">0</span></button>
-                <button class="sub-tab-btn" onclick="openSubTab('sub-silver-bars', event)">Silver Bars <span class="tab-count-badge" id="cnt-sub-silver-bars">0</span></button>
-            </div>
-
-            <!-- SUB-TAB 1: SILVER COINS -->
-            <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
-                <div class="nested-nav-tabs">
-                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-silver-bullion', event)">Silver Bullion Coins <span class="tab-count-badge" id="cnt-nested-silver-bullion">0</span></button>
-                    <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-silver', event)">Graduated Silver Coins <span class="tab-count-badge" id="cnt-nested-graduated-silver">0</span></button>
-                </div>
-
-                <div class="filter-chips-row">
-                    <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Silver 🇺🇸</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Silver 🇪🇺</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
-                </div>
-
-                <!-- CONTENEDOR 1: BULLION (VACÍO) -->
-                <div id="nested-silver-bullion" class="nested-tab-content active-nestedcontent">
-                    <div class="inventory-grid" id="grid-silver-bullion">
-                        <div class="no-items-message"><p>No silver bullion coins currently loaded.</p></div>
-                    </div>
-                </div>
-
-                <!-- CONTENEDOR 2: GRADUATED (VACÍO) -->
-                <div id="nested-graduated-silver" class="nested-tab-content">
-                    <div class="inventory-grid" id="grid-graduated-silver">
-                        <div class="no-items-message"><p>No graduated silver coins currently loaded.</p></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUB-TAB 2: SILVER BARS (VACÍO) -->
-            <div id="sub-silver-bars" class="sub-tab-content">
-                <div class="inventory-grid" id="grid-silver-bars">
-                    <div class="no-items-message"><p>Currently no loose silver bars in primary stock.</p></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- ========================================================= -->
-    <!-- SECCIÓN 7: FORMULARIO TRADING DESK Y PIE DE PÁGINA        -->
-    <!-- ========================================================= -->
-    <div class="container">
-        <div class="form-section" id="contacto">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--accent); margin-bottom: 1rem; text-align: center;">Trading Desk</h2>
-
-            <div class="cart-summary-box">
-                <div class="cart-total-header">
-                    <div>Estimated Order Total: <span id="cart-total-amount">$0.00 USD</span></div>
-                    <div id="timer-display" class="timer-badge" style="display: none;">Time Left: 10:00</div>
-                </div>
-                <div id="selected-items-container" class="selected-items-list" style="display: none;"></div>
-            </div>
-
-            <div class="notice-banner">
-                <strong>📈 Live Spot Market Disclaimer:</strong> All item prices and total amounts in your order continuously update in real time based on live market spot prices.
-            </div>
-
-            <form action="mailto:trading@jlbullion.com" method="POST" enctype="text/plain">
-                <div class="form-group"><label>Full Name *</label><input type="text" name="Full_Name" required placeholder="e.g. John Doe"></div>
-                <div class="form-group"><label>Email Address *</label><input type="email" name="Email" required placeholder="your-email@example.com"></div>
-                <div class="form-group"><label>Phone Number *</label><input type="tel" name="Phone" required placeholder="(305) 000-0000"></div>
-                <div class="form-group"><label>Preferred Delivery Method *</label><select name="Delivery_Method" required><option>FedEx Shipping ($30 USD Flat Rate - Adult Signature Required)</option><option>In-Person Appointment (Miami Area)</option></select></div>
-                <div class="form-group"><label>Order / Inquiry Details *</label><textarea id="order-details" name="Order_Details" rows="6" required placeholder="Specify items of interest, quantities, or general inquiries..."></textarea></div>
-                <button type="submit" class="cta-btn" style="width: 100%; background: var(--accent); color: var(--primary); padding: 0.8rem; font-weight: 700; border: none; border-radius: 4px; cursor: pointer;">Submit Inquiry to Trading Desk</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- FOOTER INSTITUCIONAL B2R & COMPLIANCE -->
-    <footer style="background: var(--primary); color: var(--text-muted); padding: 3rem 1.5rem 1.5rem; margin-top: 4rem; border-top: 2px solid var(--accent); font-size: 0.82rem;">
-        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2rem;">
-            <div>
-                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">JL BULLION LLC</h4>
-                <p style="line-height: 1.5; color: #94a3b8; margin-bottom: 0.8rem;">Institutional & Retail Precious Metals Trading Desk based in Miami, FL. Registered Precious Metals Dealer with FinCEN.</p>
-                <p style="color: #cbd5e1; font-weight: 600;">Miami, FL 33156 | USA</p>
-                <p><a href="mailto:trading@jlbullion.com" style="color: var(--accent); text-decoration: none;">trading@jlbullion.com</a></p>
-            </div>
-            <div>
-                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">Legal & Compliance</h4>
-                <ul style="list-style: none; padding: 0; line-height: 2;">
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('price-lock')" style="color: #f8f9fa; text-decoration: none;">🔒 Price Lock Agreement & Cancellation</a></li>
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('b2r-terms')" style="color: #f8f9fa; text-decoration: none;">📄 B2R Terms of Trading</a></li>
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('aml-policy')" style="color: #f8f9fa; text-decoration: none;">🛡️ AML / BSA Compliance Policy</a></li>
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('privacy-policy')" style="color: #f8f9fa; text-decoration: none;">🔐 Privacy & Florida Sales Tax Rules</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">Regulatory Disclosures</h4>
-                <p style="font-size: 0.75rem; color: #64748b; line-height: 1.4;">
-                    All prices are bound to live spot market fluctuations. Placing an order constitutes a binding Price Lock Commitment. Cash transactions in excess of $10,000 USD are reported to the IRS via Form 8300 as mandated by U.S. federal law.
-                </p>
-            </div>
-        </div>
-        <div style="border-top: 1px solid #1e293b; padding-top: 1.2rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: #64748b; font-size: 0.75rem;">
-            <p>&copy; 2026 JL BULLION LLC. All rights reserved. Registered Business in the State of Florida.</p>
-            <p>FinCEN MSB Registration ID: MRX26-00002577</p>
-        </div>
-    </footer>
-
-    <!-- MODAL DE DOCUMENTOS LEGALES -->
-    <div id="legalModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,25,47,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 1rem;">
-        <div style="background: #172a45; color: #f8f9fa; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 2rem; border-radius: 8px; border: 1px solid var(--accent); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <button onclick="closeLegalModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: var(--accent); font-size: 1.5rem; cursor: pointer; font-weight: 700;">&times;</button>
-            <div id="legalModalContent"></div>
-        </div>
-    </div>
 
 
 
