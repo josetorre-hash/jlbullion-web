@@ -4345,7 +4345,36 @@
             if (btnText) btnText.innerText = isDark ? '☀️ VIP Light' : '🌙 VIP Dark Mode';
         }
 
-        /* NAVEGACIÓN PRINCIPAL CON DESBLOQUEO OBLIGATORIO DE DISPLAY */
+        /* HELPER PARA ASIGNAR VALOR A CONTADORES SIN ROMPER EL SCRIPT */
+        function setCount(id, val) {
+            var el = document.getElementById(id);
+            if (el) el.innerText = val;
+        }
+
+        /* ACTUALIZACIÓN SEGURA DE CONTADORES DE PESTAÑAS Y SUB-PESTAÑAS */
+        function updateTabCounters() {
+            var goldCards = document.querySelectorAll('#gold .item-card');
+            var silverCards = document.querySelectorAll('#silver .item-card');
+            var specialsCards = document.querySelectorAll('#specials .item-card');
+
+            setCount('cnt-tab-gold', goldCards.length);
+            setCount('cnt-tab-silver', silverCards.length);
+            setCount('cnt-tab-specials', specialsCards.length);
+
+            var subGoldCoins = document.querySelectorAll('#sub-gold-coins .item-card');
+            var subGoldBars = document.querySelectorAll('#sub-gold-bars .item-card');
+
+            setCount('cnt-sub-gold-coins', subGoldCoins.length);
+            setCount('cnt-sub-gold-bars', subGoldBars.length);
+
+            var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card');
+            var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card');
+
+            setCount('cnt-nested-graduated-gold', nestedGraduated.length);
+            setCount('cnt-nested-bullion-gold', nestedBullion.length);
+        }
+
+        /* NAVEGACIÓN PRINCIPAL ENTRE PÁGINAS */
         function openTab(tabId, event) {
             var pages = document.querySelectorAll('.tab-page');
             pages.forEach(function(p) {
@@ -4379,59 +4408,82 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-    function openSubTab(subTabId, event) {
-    // 1. Ocultar todos los contenidos de sub-pestañas
-    document.querySelectorAll('.sub-tab-content').forEach(function(content) {
-        content.style.display = 'none';
-        content.classList.remove('active-subcontent');
-    });
+        /* NAVEGACIÓN ENTRE COINS Y BARS EN GOLD CATALOG */
+        function openSubTab(subTabId, event) {
+            document.querySelectorAll('.sub-tab-content').forEach(function(content) {
+                content.style.display = 'none';
+                content.classList.remove('active-subcontent');
+            });
 
-    // 2. Desactivar botones de sub-pestaña
-    document.querySelectorAll('.sub-tab-btn').forEach(function(btn) {
-        btn.classList.remove('active-subtab');
-    });
+            document.querySelectorAll('.sub-tab-btn').forEach(function(btn) {
+                btn.classList.remove('active-subtab');
+            });
 
-    // 3. Activar el contenedor seleccionado
-    var targetTab = document.getElementById(subTabId);
-    if (targetTab) {
-        targetTab.style.display = 'block';
-        targetTab.classList.add('active-subcontent');
+            var targetTab = document.getElementById(subTabId);
+            if (targetTab) {
+                targetTab.style.display = 'block';
+                targetTab.classList.add('active-subcontent');
 
-        // 4. RESETEAR FILTROS DE CATEGORÍA Y BUSQUEDA PARA MOSTRAR TODO
-        targetTab.querySelectorAll('.item-card').forEach(function(card) {
-            card.style.display = 'flex';
-        });
-    }
+                targetTab.querySelectorAll('.item-card').forEach(function(card) {
+                    card.style.removeProperty('display');
+                });
+            }
 
-    // 5. Activar el botón correspondiente
-    if (event && event.currentTarget) {
-        event.currentTarget.classList.add('active-subtab');
-    }
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active-subtab');
+            }
 
-    // 6. Resetear visualmente los botones de 'filter-chip' a "All Categories"
-    document.querySelectorAll('.filter-chip').forEach(function(chip) {
-        chip.classList.remove('active-chip');
-        if (chip.textContent.trim().toLowerCase().includes('all')) {
-            chip.classList.add('active-chip');
+            document.querySelectorAll('.filter-chip').forEach(function(chip) {
+                chip.classList.remove('active-chip');
+                if (chip.textContent.trim().toLowerCase().includes('all')) {
+                    chip.classList.add('active-chip');
+                }
+            });
+
+            activeCategoryFilter = 'all';
+            updateTabCounters();
+            if (typeof calculateSpotPrices === 'function') {
+                calculateSpotPrices();
+            }
         }
-    });
 
-    // 7. Recalcular contadores y precios
-    if (typeof calculateSpotPrices === 'function') {
-        calculateSpotPrices();
-    }
-}
+        /* NAVEGACIÓN ANIDADA ENTRE BULLION COINS Y GRADED & COLLECTOR GOLD */
+        function openNestedTab(nestedTabId, event) {
+            document.querySelectorAll('.nested-tab-content').forEach(function(content) {
+                content.style.display = 'none';
+                content.classList.remove('active-nestedcontent');
+            });
 
-    // 4. Activar el botón presionado
-    if (event && event.currentTarget) {
-        event.currentTarget.classList.add('active-subtab');
-    }
+            document.querySelectorAll('.nested-tab-btn').forEach(function(btn) {
+                btn.classList.remove('active-nestedtab');
+            });
 
-    // 5. Recalcular precios dinámicos
-    if (typeof calculateSpotPrices === 'function') {
-        calculateSpotPrices();
-    }
-}
+            var targetTab = document.getElementById(nestedTabId);
+            if (targetTab) {
+                targetTab.style.display = 'block';
+                targetTab.classList.add('active-nestedcontent');
+
+                targetTab.querySelectorAll('.item-card').forEach(function(card) {
+                    card.style.removeProperty('display');
+                });
+            }
+
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active-nestedtab');
+            }
+
+            var searchInput = document.querySelector('.search-box-input');
+            filterInventory(searchInput ? searchInput.value : '');
+        }
+
+        function openCartDrawer() {
+            var overlay = document.getElementById('cartOverlay');
+            var drawer = document.getElementById('cartDrawer');
+            if (overlay && drawer) {
+                overlay.classList.add('active');
+                drawer.classList.add('open');
+            }
+        }
 
         function closeCartDrawer() {
             var overlay = document.getElementById('cartOverlay');
@@ -4442,57 +4494,29 @@
             }
         }
 
-        function updateTabCounters() {
-            var goldCards = document.querySelectorAll('#gold .item-card');
-            var silverCards = document.querySelectorAll('#silver .item-card');
-            var specialsCards = document.querySelectorAll('#specials .item-card');
+        /* MIGRACIÓN A SPECIALS Y RESPETO DE BULLION Y GRADED */
+        function processSpecialsMigration() {
+            var gridSpecialsPage = document.getElementById('grid-specials-page');
+            var gridGraduated = document.getElementById('grid-graduated-gold');
+            var gridBullion = document.getElementById('grid-bullion-gold');
 
-            var elGold = document.getElementById('cnt-tab-gold');
-            var elSilver = document.getElementById('cnt-tab-silver');
-            var elSpecials = document.getElementById('cnt-tab-specials');
+            document.querySelectorAll('.item-card').forEach(function(card) {
+                var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
 
-            if(elGold) elGold.innerText = goldCards.length;
-            if(elSilver) elSilver.innerText = silverCards.length;
-            if(elSpecials) elSpecials.innerText = specialsCards.length;
-
-            var subGoldCoins = document.querySelectorAll('#sub-gold-coins .item-card');
-            var subGoldBars = document.querySelectorAll('#sub-gold-bars .item-card');
-            if(document.getElementById('cnt-sub-gold-coins')) document.getElementById('cnt-sub-gold-coins').innerText = subGoldCoins.length;
-            if(document.getElementById('cnt-sub-gold-bars')) document.getElementById('cnt-sub-gold-bars').innerText = subGoldBars.length;
-
-            var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card');
-            var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card');
-            if(document.getElementById('cnt-nested-graduated-gold')) document.getElementById('cnt-nested-graduated-gold').innerText = nestedGraduated.length;
-            if(document.getElementById('cnt-nested-bullion-gold')) document.getElementById('cnt-nested-bullion-gold').innerText = nestedBullion.length;
+                if (isSpecialAttr) {
+                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
+                        gridSpecialsPage.appendChild(card);
+                    }
+                } else {
+                    if (gridBullion && gridBullion.contains(card)) {
+                        return;
+                    }
+                    if (gridGraduated && !gridGraduated.contains(card)) {
+                        gridGraduated.appendChild(card);
+                    }
+                }
+            });
         }
-
-        /* MIGRACIÓN INTELIGENTE A SPECIALS (RESALTA BULLION COINS) */
-function processSpecialsMigration() {
-    var gridSpecialsPage = document.getElementById('grid-specials-page');
-    var gridGraduated = document.getElementById('grid-graduated-gold');
-    var gridBullion = document.getElementById('grid-bullion-gold');
-
-    document.querySelectorAll('.item-card').forEach(function(card) {
-        var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
-
-        if (isSpecialAttr) {
-            // Mueve a Specials si tiene la bandera de oferta especial
-            if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
-                gridSpecialsPage.appendChild(card);
-            }
-        } else {
-            // Si la moneda NO es una oferta especial:
-            // Solo la regresa a Graduated si NO está ya en Bullion Coins
-            if (gridBullion && gridBullion.contains(card)) {
-                // Se mantiene en Bullion Coins (por ejemplo: Niue #1945802)
-                return;
-            }
-            if (gridGraduated && !gridGraduated.contains(card)) {
-                gridGraduated.appendChild(card);
-            }
-        }
-    });
-}
 
         function filterInventory(query) {
             var searchTerm = (query || '').toLowerCase().trim();
@@ -4591,7 +4615,8 @@ function processSpecialsMigration() {
             if (selectedItems.length === 0) {
                 clearInterval(reservationTimer);
                 reservationTimer = null;
-                document.getElementById('timer-display').style.display = 'none';
+                var timerDisplay = document.getElementById('timer-display');
+                if (timerDisplay) timerDisplay.style.display = 'none';
             }
 
             calculateSpotPrices();
@@ -4605,11 +4630,11 @@ function processSpecialsMigration() {
             var totalAmount = 0;
             var textLines = ["Selected Items for Purchase:"];
 
-            container.innerHTML = "";
-            drawerContainer.innerHTML = "";
+            if (container) container.innerHTML = "";
+            if (drawerContainer) drawerContainer.innerHTML = "";
 
             if (selectedItems.length > 0) {
-                container.style.display = "flex";
+                if (container) container.style.display = "flex";
                 selectedItems.forEach(function(item) {
                     var spot = (item.metal === 'silver') ? silverSpotPrice : goldSpotPrice;
                     var calcPrice = (item.premiumType === 'fixed') ? (item.weight * spot) + (item.weight * item.premiumVal) : (item.weight * spot) * (1 + item.premiumVal);
@@ -4623,22 +4648,26 @@ function processSpecialsMigration() {
                                   '<span class="cart-item-price">$' + itemPrice.toFixed(2) + ' USD</span>' +
                                   '<button type="button" class="btn-remove-item" onclick="removeCoinFromCart(\'' + item.id + '\')">🗑️ Remove</button>';
 
-                    var row = document.createElement('div');
-                    row.className = 'cart-item-row';
-                    row.innerHTML = rowHtml;
-                    container.appendChild(row);
+                    if (container) {
+                        var row = document.createElement('div');
+                        row.className = 'cart-item-row';
+                        row.innerHTML = rowHtml;
+                        container.appendChild(row);
+                    }
 
-                    var drawerRow = document.createElement('div');
-                    drawerRow.className = 'cart-item-row';
-                    drawerRow.innerHTML = rowHtml;
-                    drawerContainer.appendChild(drawerRow);
+                    if (drawerContainer) {
+                        var drawerRow = document.createElement('div');
+                        drawerRow.className = 'cart-item-row';
+                        drawerRow.innerHTML = rowHtml;
+                        drawerContainer.appendChild(drawerRow);
+                    }
                 });
 
                 textLines.push("\nESTIMATED TOTAL: $" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD");
                 if (textArea) textArea.value = textLines.join("\n");
             } else {
-                container.style.display = "none";
-                drawerContainer.innerHTML = '<p style="color: #94a3b8; font-size: 0.88rem; text-align: center; margin-top: 2rem;">Your order drawer is empty.</p>';
+                if (container) container.style.display = "none";
+                if (drawerContainer) drawerContainer.innerHTML = '<p style="color: #94a3b8; font-size: 0.88rem; text-align: center; margin-top: 2rem;">Your order drawer is empty.</p>';
                 if (textArea) textArea.value = "";
             }
 
@@ -4712,29 +4741,21 @@ function processSpecialsMigration() {
                 });
         }
 
-
-
-/* INTERCEPCIÓN Y COPIADO AUTOMÁTICO PARA ANACS */
+        /* INTERCEPCIÓN Y COPIADO AUTOMÁTICO PARA ANACS */
         function fixAnacsLinks() {
             document.querySelectorAll('a').forEach(function(anchor) {
                 var href = anchor.getAttribute('href') || '';
                 
-                // Detecta cualquier enlace dirigido a ANACS
                 if (href.includes('anacs.com')) {
                     var text = anchor.innerText || '';
-                    
-                    // Extrae el número de certificado del texto o del enlace antiguo
                     var certMatch = text.match(/#(\d+)/) || href.match(/\d+/g);
                     var certNumber = certMatch ? (Array.isArray(certMatch) ? certMatch[certMatch.length - 1] : certMatch) : null;
 
-                    // Desactiva la navegación directa que causa el error 404 de ANACS
                     anchor.setAttribute('href', 'javascript:void(0);');
                     
                     anchor.onclick = function(e) {
                         e.preventDefault();
-                        
                         if (certNumber) {
-                            // Copia el número al portapapeles y abre el portal oficial
                             navigator.clipboard.writeText(certNumber).then(function() {
                                 alert('📋 Cert #' + certNumber + ' copied to clipboard!\n\nPaste it (Ctrl+V or Cmd+V) on the ANACS verification page.');
                                 window.open('https://anacs.com/verify/', '_blank');
@@ -4759,7 +4780,6 @@ function processSpecialsMigration() {
                 var labelText = labelEl.innerText.trim();
                 var valText = valEl.innerText.trim();
 
-                // Gross Wt -> Formato de 2 decimales en Gramos
                 if (labelText.includes('Gross Wt:')) {
                     var numGrams = parseFloat(valText.replace(/[^0-9.]/g, ''));
                     if (!isNaN(numGrams)) {
@@ -4767,7 +4787,6 @@ function processSpecialsMigration() {
                     }
                 }
 
-                // Pure Gold -> Formato de 3 decimales en Onzas
                 if (labelText.includes('Pure Gold:')) {
                     var numOunces = parseFloat(valText.replace(/[^0-9.]/g, ''));
                     if (!isNaN(numOunces)) {
@@ -4777,62 +4796,59 @@ function processSpecialsMigration() {
             });
         }
 
+        /* APLICAR DISPONIBILIDAD AUTOMÁTICA (IN-STOCK VS IN-TRANSIT) */
+        function applyAvailabilityBadges() {
+            document.querySelectorAll('.item-card').forEach(function(card) {
+                var availability = card.getAttribute('data-availability');
+                var badgeHolder = card.querySelector('.badge-holder');
+                var specsGrid = card.querySelector('.item-specs-grid');
 
-/* APLICAR DISPONIBILIDAD AUTOMÁTICA (IN-STOCK VS IN-TRANSIT) */
-function applyAvailabilityBadges() {
-    document.querySelectorAll('.item-card').forEach(function(card) {
-        var availability = card.getAttribute('data-availability');
-        var badgeHolder = card.querySelector('.badge-holder');
-        var specsGrid = card.querySelector('.item-specs-grid');
+                if (!availability) {
+                    availability = 'in-transit';
+                    card.setAttribute('data-availability', 'in-transit');
+                }
 
-        // Por defecto: Si no tiene el atributo "in-stock", asigna "in-transit"
-        if (!availability) {
-            availability = 'in-transit';
-            card.setAttribute('data-availability', 'in-transit');
+                if (badgeHolder && !badgeHolder.querySelector('.badge-availability')) {
+                    var badgeSpan = document.createElement('span');
+                    badgeSpan.className = 'badge-availability ';
+
+                    if (availability === 'in-stock') {
+                        badgeSpan.className += 'badge-in-stock';
+                        badgeSpan.innerHTML = '⚡ In Stock / Ready to Ship';
+                    } else {
+                        badgeSpan.className += 'badge-in-transit';
+                        badgeSpan.innerHTML = '🚚 Secured Vault / In Transit';
+                    }
+
+                    badgeHolder.insertBefore(badgeSpan, badgeHolder.firstChild);
+                }
+
+                if (specsGrid && !specsGrid.querySelector('.shipping-note-row')) {
+                    var noteRow = document.createElement('div');
+                    noteRow.className = 'shipping-note-row';
+
+                    if (availability === 'in-stock') {
+                        noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-stock">⚡ Ships within 24 Hours</span>';
+                    } else {
+                        noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-transit">📦 Ships within 7–12 business days</span>';
+                    }
+
+                    specsGrid.appendChild(noteRow);
+                }
+            });
         }
-
-        // 1. Agregar el Badge superior si no existe
-        if (badgeHolder && !badgeHolder.querySelector('.badge-availability')) {
-            var badgeSpan = document.createElement('span');
-            badgeSpan.className = 'badge-availability ';
-
-            if (availability === 'in-stock') {
-                badgeSpan.className += 'badge-in-stock';
-                badgeSpan.innerHTML = '⚡ In Stock / Ready to Ship';
-            } else {
-                badgeSpan.className += 'badge-in-transit';
-                badgeSpan.innerHTML = '🚚 Secured Vault / In Transit';
-            }
-
-            badgeHolder.insertBefore(badgeSpan, badgeHolder.firstChild);
-        }
-
-        // 2. Agregar la nota de envío al final de la Ficha Técnica si no existe
-        if (specsGrid && !specsGrid.querySelector('.shipping-note-row')) {
-            var noteRow = document.createElement('div');
-            noteRow.className = 'shipping-note-row';
-
-            if (availability === 'in-stock') {
-                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-stock">⚡ Ships within 24 Hours</span>';
-            } else {
-                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-transit">📦 Ships within 7–12 business days</span>';
-            }
-
-            specsGrid.appendChild(noteRow);
-        }
-    });
-}
 
         /* INICIALIZACIÓN DE LA PÁGINA */
-window.onload = function() {
-    if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-    }
-    calculateSpotPrices();
-    formatWeightsAndUnits();
-    fixAnacsLinks();
-    applyAvailabilityBadges(); // <-- AGREGAR ESTA LÍNEA
-};
+        window.onload = function() {
+            if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+            calculateSpotPrices();
+            formatWeightsAndUnits();
+            fixAnacsLinks();
+            applyAvailabilityBadges();
+            updateTabCounters();
+        };
     </script>
 </body>
 </html>
