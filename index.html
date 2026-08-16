@@ -1701,25 +1701,33 @@
             if(document.getElementById('cnt-nested-bullion-gold')) document.getElementById('cnt-nested-bullion-gold').innerText = nestedBullion.length;
         }
 
-        /* MIGRACIÓN DIRECTA Y OBLIGATORIA A SPECIALS 🔥 */
-        function processSpecialsMigration() {
-            var gridSpecialsPage = document.getElementById('grid-specials-page');
-            var gridGraduated = document.getElementById('grid-graduated-gold');
+        /* MIGRACIÓN INTELIGENTE A SPECIALS (RESALTA BULLION COINS) */
+function processSpecialsMigration() {
+    var gridSpecialsPage = document.getElementById('grid-specials-page');
+    var gridGraduated = document.getElementById('grid-graduated-gold');
+    var gridBullion = document.getElementById('grid-bullion-gold');
 
-            document.querySelectorAll('.item-card').forEach(function(card) {
-                var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
+    document.querySelectorAll('.item-card').forEach(function(card) {
+        var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
 
-                if (isSpecialAttr) {
-                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
-                        gridSpecialsPage.appendChild(card);
-                    }
-                } else {
-                    if (gridGraduated && !gridGraduated.contains(card)) {
-                        gridGraduated.appendChild(card);
-                    }
-                }
-            });
+        if (isSpecialAttr) {
+            // Mueve a Specials si tiene la bandera de oferta especial
+            if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
+                gridSpecialsPage.appendChild(card);
+            }
+        } else {
+            // Si la moneda NO es una oferta especial:
+            // Solo la regresa a Graduated si NO está ya en Bullion Coins
+            if (gridBullion && gridBullion.contains(card)) {
+                // Se mantiene en Bullion Coins (por ejemplo: Niue #1945802)
+                return;
+            }
+            if (gridGraduated && !gridGraduated.contains(card)) {
+                gridGraduated.appendChild(card);
+            }
         }
+    });
+}
 
         function filterInventory(query) {
             var searchTerm = (query || '').toLowerCase().trim();
