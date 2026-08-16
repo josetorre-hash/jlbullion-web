@@ -4379,14 +4379,14 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function openSubTab(subTabId, event) {
+    function openSubTab(subTabId, event) {
     // 1. Ocultar todos los contenidos de sub-pestañas
     document.querySelectorAll('.sub-tab-content').forEach(function(content) {
         content.style.display = 'none';
         content.classList.remove('active-subcontent');
     });
 
-    // 2. Desactivar todos los botones de sub-pestaña
+    // 2. Desactivar botones de sub-pestaña
     document.querySelectorAll('.sub-tab-btn').forEach(function(btn) {
         btn.classList.remove('active-subtab');
     });
@@ -4397,11 +4397,30 @@
         targetTab.style.display = 'block';
         targetTab.classList.add('active-subcontent');
 
-        // FORZAR VISIBILIDAD DE LAS TARJETAS DENTRO DE LA SUB-PESTAÑA
+        // 4. RESETEAR FILTROS DE CATEGORÍA Y BUSQUEDA PARA MOSTRAR TODO
         targetTab.querySelectorAll('.item-card').forEach(function(card) {
             card.style.display = 'flex';
         });
     }
+
+    // 5. Activar el botón correspondiente
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active-subtab');
+    }
+
+    // 6. Resetear visualmente los botones de 'filter-chip' a "All Categories"
+    document.querySelectorAll('.filter-chip').forEach(function(chip) {
+        chip.classList.remove('active-chip');
+        if (chip.textContent.trim().toLowerCase().includes('all')) {
+            chip.classList.add('active-chip');
+        }
+    });
+
+    // 7. Recalcular contadores y precios
+    if (typeof calculateSpotPrices === 'function') {
+        calculateSpotPrices();
+    }
+}
 
     // 4. Activar el botón presionado
     if (event && event.currentTarget) {
