@@ -4231,69 +4231,52 @@
 
 
 
+<!-- ========================================================= -->
+<!-- SECCIÓN 6: PÁGINA 3 - CATÁLOGO DE PLATA (SILVER CATALOG)   -->
+<!-- ========================================================= -->
+<div id="silver" class="tab-page" style="display: none;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h1 class="page-header-title" style="color: #0f172a; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Silver Catalog</h1>
+        <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Explore our official inventory database of fine silver bullion coins, certified eagles, maples, rounds, and silver bars.</p>
 
-
-   
-    <!-- ========================================================= -->
-    <!-- SECCIÓN 6: PÁGINA 4 - CATÁLOGO DE PLATA (SILVER CATALOG)   -->
-    <!-- ========================================================= -->
-    <div id="silver" class="tab-page">
-        <div class="container">
-            <h1 class="page-header-title">Silver Catalog</h1>
-            <p class="page-subtitle">Explore our fine collection of investment and numismatic silver pieces.</p>
-
-            <div class="sub-nav-tabs">
-                <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins <span class="tab-count-badge" id="cnt-sub-silver-coins">0</span></button>
-                <button class="sub-tab-btn" onclick="openSubTab('sub-silver-bars', event)">Silver Bars <span class="tab-count-badge" id="cnt-sub-silver-bars">0</span></button>
-            </div>
-
-            <!-- SUB-TAB 1: SILVER COINS -->
-            <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
-                <div class="nested-nav-tabs">
-                    <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-silver-bullion', event)">Silver Bullion Coins <span class="tab-count-badge" id="cnt-nested-silver-bullion">0</span></button>
-                    <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-silver', event)">Graduated Silver Coins <span class="tab-count-badge" id="cnt-nested-graduated-silver">0</span></button>
-                </div>
-
-                <div class="filter-chips-row">
-                    <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Silver 🇺🇸</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Silver 🇪🇺</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
-                    <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
-                </div>
-
-                <!-- CONTENEDOR 1: BULLION (VACÍO) -->
-                <div id="nested-silver-bullion" class="nested-tab-content active-nestedcontent">
-                    <div class="inventory-grid" id="grid-silver-bullion">
-                        <div class="no-items-message"><p>No silver bullion coins currently loaded.</p></div>
-                    </div>
-                </div>
-
-                <!-- CONTENEDOR 2: GRADUATED (VACÍO) -->
-                <div id="nested-graduated-silver" class="nested-tab-content">
-                    <div class="inventory-grid" id="grid-graduated-silver">
-                        <div class="no-items-message"><p>No graduated silver coins currently loaded.</p></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUB-TAB 2: SILVER BARS (VACÍO) -->
-            <div id="sub-silver-bars" class="sub-tab-content">
-                <div class="inventory-grid" id="grid-silver-bars">
-                    <div class="no-items-message"><p>Currently no loose silver bars in primary stock.</p></div>
-                </div>
-            </div>
+        <!-- NAVEGACIÓN PRINCIPAL ENTRE SILVER COINS Y SILVER BARS -->
+        <div class="sub-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins & Rounds <span class="tab-count-badge" id="cnt-sub-silver-coins">0</span></button>
+            <button class="sub-tab-btn" onclick="openSubTab('sub-silver-bars', event)">Silver Bars <span class="tab-count-badge" id="cnt-sub-silver-bars">0</span></button>
         </div>
-    </div>
 
+        <!-- ======================================================= -->
+        <!-- PESTAÑA 1: MONEDAS Y ROUNDS DE PLATA (SUB-SILVER-COINS) -->
+        <!-- ======================================================= -->
+        <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
+            <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
+                <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Silver 🇺🇸</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Silver 🇪🇺</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+            </div>
 
+            <div class="inventory-grid" id="grid-silver-coins" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
+                <!-- 📍 AQUÍ PEGAS TUS MONEDAS Y ROUNDS DE PLATA -->
 
+            </div>
+        </div> <!-- CIERRE DE SUB-SILVER-COINS -->
 
+        <!-- ======================================================= -->
+        <!-- PESTAÑA 2: BARRAS DE PLATA (SUB-SILVER-BARS)            -->
+        <!-- ======================================================= -->
+        <div id="sub-silver-bars" class="sub-tab-content" style="display: none;">
+            <div class="inventory-grid" id="grid-silver-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
+                <!-- 📍 AQUÍ PEGAS TUS BARRAS DE PLATA (1 OZ, 10 OZ, 1 KILO, 100 OZ) -->
 
+            </div>
+        </div> <!-- CIERRE DE SUB-SILVER-BARS -->
 
+    </div> <!-- CIERRE DE CONTAINER -->
+</div> <!-- CIERRE DE PAGE #SILVER -->
 
 
 
@@ -4375,8 +4358,6 @@
 
 
 
-
-
 <!-- ========================================================= -->
     <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
@@ -4431,7 +4412,7 @@
             if (el) el.innerText = val;
         }
 
-        /* ACTUALIZACIÓN SEGURA DE CONTADORES DE PESTAÑAS Y SUB-PESTAÑAS */
+        /* ACTUALIZACIÓN COMPLETA DE CONTADORES DE PESTAÑAS (ORO, PLATA, SPECIALS) */
         function updateTabCounters() {
             var goldCards = document.querySelectorAll('#gold .item-card');
             var silverCards = document.querySelectorAll('#silver .item-card');
@@ -4441,18 +4422,22 @@
             setCount('cnt-tab-silver', silverCards.length);
             setCount('cnt-tab-specials', specialsCards.length);
 
-            // Contadores específicos del Catálogo de Oro
-            var subCoins = document.querySelectorAll('#sub-gold-coins .item-card').length;
-            var subBars = document.querySelectorAll('#sub-gold-bars .item-card').length;
-
-            setCount('cnt-sub-gold-coins', subCoins);
-            setCount('cnt-sub-gold-bars', subBars);
+            // Contadores del Catálogo de Oro
+            var subGoldCoins = document.querySelectorAll('#sub-gold-coins .item-card').length;
+            var subGoldBars = document.querySelectorAll('#sub-gold-bars .item-card').length;
+            setCount('cnt-sub-gold-coins', subGoldCoins);
+            setCount('cnt-sub-gold-bars', subGoldBars);
 
             var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card').length;
             var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card').length;
-
             setCount('cnt-nested-bullion-gold', nestedBullion);
             setCount('cnt-nested-graduated-gold', nestedGraduated);
+
+            // Contadores del Catálogo de Plata
+            var subSilverCoins = document.querySelectorAll('#sub-silver-coins .item-card').length;
+            var subSilverBars = document.querySelectorAll('#sub-silver-bars .item-card').length;
+            setCount('cnt-sub-silver-coins', subSilverCoins);
+            setCount('cnt-sub-silver-bars', subSilverBars);
         }
 
         /* NAVEGACIÓN PRINCIPAL ENTRE PÁGINAS */
@@ -4489,14 +4474,17 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* NAVEGACIÓN ENTRE COINS Y BARS EN GOLD CATALOG */
+        /* NAVEGACIÓN SUB-PESTAÑAS (COINS VS BARS EN ORO Y PLATA) */
         function openSubTab(subTabId, event) {
-            document.querySelectorAll('.sub-tab-content').forEach(function(content) {
+            var parentPage = event ? event.currentTarget.closest('.tab-page') : null;
+            var searchContext = parentPage ? parentPage : document;
+
+            searchContext.querySelectorAll('.sub-tab-content').forEach(function(content) {
                 content.style.display = 'none';
                 content.classList.remove('active-subcontent');
             });
 
-            document.querySelectorAll('.sub-tab-btn').forEach(function(btn) {
+            searchContext.querySelectorAll('.sub-tab-btn').forEach(function(btn) {
                 btn.classList.remove('active-subtab');
             });
 
@@ -4514,7 +4502,7 @@
                 event.currentTarget.classList.add('active-subtab');
             }
 
-            document.querySelectorAll('.filter-chip').forEach(function(chip) {
+            searchContext.querySelectorAll('.filter-chip').forEach(function(chip) {
                 chip.classList.remove('active-chip');
                 if (chip.textContent.trim().toLowerCase().includes('all')) {
                     chip.classList.add('active-chip');
@@ -4528,7 +4516,7 @@
             }
         }
 
-        /* NAVEGACIÓN ANIDADA ENTRE BULLION COINS Y GRADED & COLLECTOR GOLD */
+        /* NAVEGACIÓN ANIDADA ENTRE BULLION COINS Y GRADED GOLD */
         function openNestedTab(nestedTabId, event) {
             document.querySelectorAll('.nested-tab-content').forEach(function(content) {
                 content.style.display = 'none';
@@ -4575,34 +4563,29 @@
             }
         }
 
-        /* MIGRACIÓN A SPECIALS PROTEGIENDO BARRAS DE ORO EN GRID-GOLD-BARS */
+        /* MIGRACIÓN A SPECIALS RESERVADA SOLO PARA MONEDAS CON DATA-IS-SPECIAL */
         function processSpecialsMigration() {
             var gridSpecialsPage = document.getElementById('grid-specials-page');
             var gridGraduated = document.getElementById('grid-graduated-gold');
             var gridBullion = document.getElementById('grid-bullion-gold');
-            var gridBars = document.getElementById('grid-gold-bars');
+            var gridGoldBars = document.getElementById('grid-gold-bars');
+            var gridSilverBars = document.getElementById('grid-silver-bars');
 
             document.querySelectorAll('.item-card').forEach(function(card) {
                 var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
-                var isBar = card.getAttribute('data-category') === 'bars' || (gridBars && gridBars.contains(card));
+                var isBar = card.getAttribute('data-category') === 'bars' || 
+                            (gridGoldBars && gridGoldBars.contains(card)) || 
+                            (gridSilverBars && gridSilverBars.contains(card));
 
-                // 1. SI ES UNA BARRA DE ORO, NUNCA SE MUEVE DE GRID-GOLD-BARS
-                if (isBar) {
-                    if (gridBars && !gridBars.contains(card)) {
-                        gridBars.appendChild(card);
-                    }
-                    return;
-                }
+                // LAS BARRAS PERMANECEN SIEMPRE EN SU CONTENEDOR DE BARRAS
+                if (isBar) return;
 
-                // 2. MIGRACIÓN PARA MONEDAS OFERTAS ESPECIALES
                 if (isSpecialAttr) {
                     if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
                         gridSpecialsPage.appendChild(card);
                     }
                 } else {
-                    if (gridBullion && gridBullion.contains(card)) {
-                        return;
-                    }
+                    if (gridBullion && gridBullion.contains(card)) return;
                     if (gridGraduated && !gridGraduated.contains(card)) {
                         gridGraduated.appendChild(card);
                     }
@@ -4610,7 +4593,7 @@
             });
         }
 
-        /* FILTRADO DE INVENTARIO */
+        /* FILTRADO DE INVENTARIO MULTI-METALES */
         function filterInventory(query) {
             var searchTerm = (query || '').toLowerCase().trim();
             var priceRange = document.getElementById('priceRangeFilter') ? document.getElementById('priceRangeFilter').value : 'all';
@@ -4620,7 +4603,7 @@
             grids.forEach(function(grid) {
                 var cards = grid.querySelectorAll('.item-card');
                 var visibleCount = 0;
-                var isBarGrid = grid.id === 'grid-gold-bars';
+                var isBarGrid = grid.id === 'grid-gold-bars' || grid.id === 'grid-silver-bars';
 
                 cards.forEach(function(card) {
                     var searchData = (card.getAttribute('data-search') || '').toLowerCase();
@@ -4632,8 +4615,6 @@
                     var cardWeight = parseFloat(priceEl ? priceEl.getAttribute('data-weight') : 0) || 0;
 
                     var matchesSearch = searchData.includes(searchTerm);
-
-                    // Si es una barra de oro, se muestra en su grid sin importar el filtro de país seleccionado
                     var matchesCategory = (activeCategoryFilter === 'all') || (cardCategory === activeCategoryFilter) || isBarGrid || (cardCategory === 'bars');
 
                     var matchesPrice = true;
@@ -4883,7 +4864,7 @@
                     }
                 }
 
-                if (labelText.includes('Pure Gold:')) {
+                if (labelText.includes('Pure Gold:') || labelText.includes('Pure Silver:')) {
                     var numOunces = parseFloat(valText.replace(/[^0-9.]/g, ''));
                     if (!isNaN(numOunces)) {
                         valEl.innerText = numOunces.toFixed(3) + ' oz';
