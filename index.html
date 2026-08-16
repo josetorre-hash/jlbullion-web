@@ -934,11 +934,12 @@
 
 
 
+
 <!-- ========================================================= -->
 <!-- SECCIÓN 5: PÁGINA OFERTAS ESPECIALES (SPECIALS 🔥)        -->
 <!-- ========================================================= -->
-<div id="specials" class="tab-page" style="width: 100%; min-height: 80vh; padding: 20px 0;">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+<div id="specials" class="tab-page" style="width: 100%; min-height: 80vh;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
         <h1 class="page-header-title" style="color: #0f172a; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Specials & Zero-Premium Offers 🔥</h1>
         <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
 
@@ -950,14 +951,11 @@
             <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
         </div>
 
-        <!-- RECEPTOR OBLIGATORIO DE TARJETAS ESPECIALES -->
-        <div class="inventory-grid" id="grid-specials-page" style="display: grid !important; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important; gap: 24px !important; width: 100% !important; min-height: 200px;">
-            <!-- Aquí migrarán dinámicamente las tarjetas #2109000, #2108999 y #2169796 -->
+        <!-- CONTENEDOR GRID OBLIGATORIO CON STYLE DIRECTO EN LINEA -->
+        <div class="inventory-grid" id="grid-specials-page" style="display: grid !important; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important; gap: 24px !important; width: 100% !important; min-height: 250px;">
         </div>
     </div>
 </div>
-
-
 
 
 
@@ -1163,36 +1161,121 @@
         }
 
         function openTab(tabId, event) {
-    // Oculta todas las páginas
-    var pages = document.querySelectorAll('.tab-page');
-    for(var i = 0; i < pages.length; i++) {
-        pages[i].classList.remove('active-page');
-        pages[i].style.display = 'none'; // Asegura ocultar las inactivas
-    }
+            var pages = document.querySelectorAll('.tab-page');
+            for(var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active-page');
+                pages[i].style.setProperty('display', 'none', 'important');
+            }
 
-    // Desmarca los botones del menú
-    var tabs = document.querySelectorAll('.nav-tab');
-    for(var j = 0; j < tabs.length; j++) {
-        tabs[j].classList.remove('active');
-    }
+            var tabs = document.querySelectorAll('.nav-tab');
+            for(var j = 0; j < tabs.length; j++) {
+                tabs[j].classList.remove('active');
+            }
 
-    // Muestra la página seleccionada
-    var selectedPage = document.getElementById(tabId);
-    if(selectedPage) {
-        selectedPage.classList.add('active-page');
-        selectedPage.style.display = 'block'; // Fuerza visibilidad de la pestaña
-    }
+            var selectedPage = document.getElementById(tabId);
+            if(selectedPage) {
+                selectedPage.classList.add('active-page');
+                selectedPage.style.setProperty('display', 'block', 'important');
+            }
 
-    if(event && event.currentTarget) {
-        event.currentTarget.classList.add('active');
-    }
+            if(event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
 
-    // Refresca la visibilidad de las tarjetas dentro de la página
-    var searchInput = document.querySelector('.search-box-input');
-    filterInventory(searchInput ? searchInput.value : '');
+            // Al cambiar a Specials, resetear el filtro activo a 'all' para garantizar la visibilidad
+            if (tabId === 'specials') {
+                activeCategoryFilter = 'all';
+                document.querySelectorAll('#specials .filter-chip').forEach(function(chip, idx) {
+                    if (idx === 0) chip.classList.add('active-chip');
+                    else chip.classList.remove('active-chip');
+                });
+            }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+            var searchInput = document.querySelector('.search-box-input');
+            filterInventory(searchInput ? searchInput.value : '');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function processSpecialsMigration() {
+            var gridSpecialsPage = document.getElementById('grid-specials-page');
+            var gridGraduated = document.getElementById('grid-graduated-gold');
+
+            document.querySelectorAll('.item-card').forEach(function(card) {
+                var priceEl = card.querySelector('.item-price');
+                if (!priceEl) return;
+
+                var weight = parseFloat(priceEl.getAttribute('data-weight')) || 0;
+                var premium = parseFloat(priceEl.getAttribute('data-premium')) || 0;
+                var pType = priceEl.getAttribute('data-premium-type') || 'percent';
+                var cost = parseFloat(priceEl.getAttribute('data-cost')) || 0;
+                var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
+
+                var calcPrice = (pType === 'fixed') ? (weight * goldSpotPrice) + (weight * premium) : (weight * goldSpotPrice) * (1 + premium);
+                var minPrice = cost > 0 ? cost * 1.02 : 0;
+
+                var isEligibleForSpecial = (premium === 0 || isSpecialAttr) && !(cost > 0 && calcPrice < minPrice);
+
+                if (isEligibleForSpecial) {
+                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
+                        gridSpecialsPage.appendChild(card);
+                    }
+                } else {
+                    if (gridGraduated && !gridGraduated.contains(card)) {
+                        gridGraduated.appendChild(card);
+                    }
+                }
+            });
+        }
+
+        function filterInventory(query) {
+            var searchTerm = (query || '').toLowerCase().trim();
+            var priceRange = document.getElementById('priceRangeFilter') ? document.getElementById('priceRangeFilter').value : 'all';
+            var weightRange = document.getElementById('weightRangeFilter') ? document.getElementById('weightRangeFilter').value : 'all';
+            var grids = document.querySelectorAll('.inventory-grid');
+
+            grids.forEach(function(grid) {
+                var cards = grid.querySelectorAll('.item-card');
+                var visibleCount = 0;
+
+                cards.forEach(function(card) {
+                    var searchData = (card.getAttribute('data-search') || '').toLowerCase();
+                    var cardCategory = card.getAttribute('data-category') || '';
+                    var cardId = card.getAttribute('data-id');
+                    
+                    var priceEl = card.querySelector('.item-price');
+                    var cardPrice = parseFloat(priceEl ? priceEl.getAttribute('data-calculated-price') : 0) || 0;
+                    var cardWeight = parseFloat(priceEl ? priceEl.getAttribute('data-weight') : 0) || 0;
+
+                    var matchesSearch = searchData.includes(searchTerm);
+                    var matchesCategory = (activeCategoryFilter === 'all') || (cardCategory === activeCategoryFilter);
+
+                    var matchesPrice = true;
+                    if (priceRange === 'under1000') matchesPrice = cardPrice < 1000;
+                    else if (priceRange === '1000to2500') matchesPrice = cardPrice >= 1000 && cardPrice <= 2500;
+                    else if (priceRange === 'over2500') matchesPrice = cardPrice > 2500;
+
+                    var matchesWeight = true;
+                    if (weightRange === 'fractional') matchesWeight = cardWeight < 0.99;
+                    else if (weightRange === '1oz') matchesWeight = (cardWeight >= 0.99 && cardWeight <= 1.05);
+                    else if (weightRange === 'multi') matchesWeight = cardWeight > 1.05;
+
+                    var isSelectedInCart = selectedItems.some(function(item) { return item.id === cardId; });
+
+                    if (matchesSearch && matchesCategory && matchesPrice && matchesWeight && !isSelectedInCart) {
+                        card.style.setProperty('display', 'flex', 'important');
+                        visibleCount++;
+                    } else {
+                        card.style.setProperty('display', 'none', 'important');
+                    }
+                });
+
+                var emptyState = grid.querySelector('.empty-search-state');
+                if (emptyState) {
+                    emptyState.style.display = (visibleCount === 0 && cards.length > 0) ? 'block' : 'none';
+                }
+            });
+        }
 
         function openSubTab(subTabId, event) {
             var subContents = document.querySelectorAll('.sub-tab-content');
