@@ -934,14 +934,11 @@
 
 
 
-
-
-
 <!-- ========================================================= -->
 <!-- SECCIÓN 5: PÁGINA OFERTAS ESPECIALES (SPECIALS 🔥)        -->
 <!-- ========================================================= -->
-<div id="specials" class="tab-page">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+<div id="specials" class="tab-page" style="width: 100%; min-height: 80vh; padding: 20px 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
         <h1 class="page-header-title" style="color: #0f172a; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Specials & Zero-Premium Offers 🔥</h1>
         <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
 
@@ -953,17 +950,12 @@
             <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
         </div>
 
-        <div class="inventory-grid" id="grid-specials-page" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; min-height: 300px;">
+        <!-- RECEPTOR OBLIGATORIO DE TARJETAS ESPECIALES -->
+        <div class="inventory-grid" id="grid-specials-page" style="display: grid !important; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important; gap: 24px !important; width: 100% !important; min-height: 200px;">
             <!-- Aquí migrarán dinámicamente las tarjetas #2109000, #2108999 y #2169796 -->
         </div>
     </div>
 </div>
-
-
-
-
-
-
 
 
 
@@ -1171,23 +1163,36 @@
         }
 
         function openTab(tabId, event) {
-            var pages = document.querySelectorAll('.tab-page');
-            for(var i=0; i<pages.length; i++) pages[i].classList.remove('active-page');
+    // Oculta todas las páginas
+    var pages = document.querySelectorAll('.tab-page');
+    for(var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('active-page');
+        pages[i].style.display = 'none'; // Asegura ocultar las inactivas
+    }
 
-            var tabs = document.querySelectorAll('.nav-tab');
-            for(var j=0; j<tabs.length; j++) tabs[j].classList.remove('active');
+    // Desmarca los botones del menú
+    var tabs = document.querySelectorAll('.nav-tab');
+    for(var j = 0; j < tabs.length; j++) {
+        tabs[j].classList.remove('active');
+    }
 
-            var selectedPage = document.getElementById(tabId);
-            if(selectedPage) selectedPage.classList.add('active-page');
+    // Muestra la página seleccionada
+    var selectedPage = document.getElementById(tabId);
+    if(selectedPage) {
+        selectedPage.classList.add('active-page');
+        selectedPage.style.display = 'block'; // Fuerza visibilidad de la pestaña
+    }
 
-            if(event && event.currentTarget) event.currentTarget.classList.add('active');
+    if(event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
 
-            /* FORZAR RE-EVALUACIÓN DE VISIBILIDAD DE TARJETAS AL CAMBIAR DE PESTAÑA */
-            var searchInput = document.querySelector('.search-box-input');
-            filterInventory(searchInput ? searchInput.value : '');
+    // Refresca la visibilidad de las tarjetas dentro de la página
+    var searchInput = document.querySelector('.search-box-input');
+    filterInventory(searchInput ? searchInput.value : '');
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
         function openSubTab(subTabId, event) {
             var subContents = document.querySelectorAll('.sub-tab-content');
