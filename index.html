@@ -940,10 +940,10 @@
 <!-- ========================================================= -->
 <!-- SECCIÓN 5: PÁGINA OFERTAS ESPECIALES (SPECIALS 🔥)        -->
 <!-- ========================================================= -->
-<div id="specials" class="tab-page" style="width: 100%; min-height: 80vh;">
-    <div class="container" style="padding: 30px 20px;">
-        <h1 class="page-header-title" style="color: #0f172a; font-size: 2rem; font-weight: 800; margin-bottom: 8px;">Specials & Zero-Premium Offers 🔥</h1>
-        <p class="page-subtitle" style="color: #64748b; margin-bottom: 24px;">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
+<div id="specials" class="tab-page">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h1 class="page-header-title" style="color: #0f172a; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Specials & Zero-Premium Offers 🔥</h1>
+        <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
 
         <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
             <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Specials</span>
@@ -953,15 +953,11 @@
             <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
         </div>
 
-        <!-- CONTENEDOR RECEPTOR CON ESTILOS GRID DIRECTOS -->
-        <div class="inventory-grid" id="grid-specials-page" style="display: grid !important; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; width: 100%;">
-            <!-- Las tarjetas especiales se inyectan automáticamente aquí vía JavaScript -->
+        <div class="inventory-grid" id="grid-specials-page" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; min-height: 300px;">
+            <!-- Aquí migrarán dinámicamente las tarjetas #2109000, #2108999 y #2169796 -->
         </div>
     </div>
 </div>
-
-
-
 
 
 
@@ -1124,8 +1120,7 @@
 
 
 
-
-   <!-- ========================================================= -->
+<!-- ========================================================= -->
     <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
     <script>
@@ -1186,6 +1181,11 @@
             if(selectedPage) selectedPage.classList.add('active-page');
 
             if(event && event.currentTarget) event.currentTarget.classList.add('active');
+
+            /* FORZAR RE-EVALUACIÓN DE VISIBILIDAD DE TARJETAS AL CAMBIAR DE PESTAÑA */
+            var searchInput = document.querySelector('.search-box-input');
+            filterInventory(searchInput ? searchInput.value : '');
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -1254,11 +1254,11 @@
             if(elSubBars) elSubBars.innerText = subGoldBars.length;
 
             var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card');
-            var nestedSpecials = document.querySelectorAll('#nested-specials-gold .item-card');
+            var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card');
             var elNestGraduated = document.getElementById('cnt-nested-graduated-gold');
-            var elNestSpecials = document.getElementById('cnt-nested-specials-gold');
+            var elNestBullion = document.getElementById('cnt-nested-bullion-gold');
             if(elNestGraduated) elNestGraduated.innerText = nestedGraduated.length;
-            if(elNestSpecials) elNestSpecials.innerText = nestedSpecials.length;
+            if(elNestBullion) elNestBullion.innerText = nestedBullion.length;
 
             var subSilverCoins = document.querySelectorAll('#sub-silver-coins .item-card');
             var subSilverBars = document.querySelectorAll('#sub-silver-bars .item-card');
@@ -1275,7 +1275,7 @@
             if(elNestSilverGrad) elNestSilverGrad.innerText = nestedSilverGrad.length;
         }
 
-        /* FILTRADO MULTIDIMENSIONAL INTEGRADO: BÚSQUEDA + REGIÓN + PRECIO + PESO */
+        /* FILTRADO MULTIDIMENSIONAL INTEGRADO */
         function filterInventory(query) {
             var searchTerm = (query || '').toLowerCase().trim();
             var priceRange = document.getElementById('priceRangeFilter') ? document.getElementById('priceRangeFilter').value : 'all';
@@ -1311,10 +1311,10 @@
                     var isSelectedInCart = selectedItems.some(function(item) { return item.id === cardId; });
 
                     if (matchesSearch && matchesCategory && matchesPrice && matchesWeight && !isSelectedInCart) {
-                        card.style.display = 'flex';
+                        card.style.setProperty('display', 'flex', 'important');
                         visibleCount++;
                     } else {
-                        card.style.display = 'none';
+                        card.style.setProperty('display', 'none', 'important');
                     }
                 });
 
@@ -1365,7 +1365,7 @@
 
         function selectCoin(cardId, title, weight, metal, cost, premiumVal, premiumType) {
             var card = document.querySelector('.item-card[data-id="' + cardId + '"]');
-            if (card) card.style.display = 'none';
+            if (card) card.style.setProperty('display', 'none', 'important');
 
             selectedItems.push({
                 id: cardId, title: title, weight: weight, metal: metal, cost: cost || 0,
@@ -1576,7 +1576,7 @@
             alert("⏱️ Your 10-minute reservation period has expired. Selected items have been returned to the public catalog.");
         }
 
-        /* MIGRACIÓN Y RENDERIZADO VISIBLE EN SPECIALS 🔥 */
+        /* LÓGICA DE MIGRACIÓN Y RENDERIZADO VISIBLE A SPECIALS */
         function processSpecialsMigration() {
             document.querySelectorAll('.item-card').forEach(function(card) {
                 var priceEl = card.querySelector('.item-price');
@@ -1597,12 +1597,10 @@
                 var gridGraduated = document.getElementById('grid-graduated-gold');
 
                 if (isEligibleForSpecial) {
-                    if (gridSpecialsPage) {
-                        if (!gridSpecialsPage.contains(card)) {
-                            gridSpecialsPage.appendChild(card);
-                        }
-                        card.style.display = 'flex'; // Fuerza a que la tarjeta sea visible en Specials
+                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
+                        gridSpecialsPage.appendChild(card);
                     }
+                    card.style.setProperty('display', 'flex', 'important');
                 } else {
                     if (gridGraduated && !gridGraduated.contains(card)) {
                         gridGraduated.appendChild(card);
@@ -1611,7 +1609,7 @@
             });
         }
 
-        /* INYECTOR DE COMPOSICIÓN Y PUREZA DESDE GOOGLE SHEET / ATRIBUTOS */
+        /* INYECTOR DE COMPOSICIÓN Y PUREZA DESDE ATRIBUTOS */
         function injectMetalPurityBadges() {
             document.querySelectorAll('.item-card').forEach(function(card) {
                 var priceEl = card.querySelector('.item-price');
@@ -1710,6 +1708,18 @@
             });
         }
 
+        /* CORRECCIÓN AUTOMÁTICA DE FORMATO EN DENOMINACIÓN (QUITA DECIMAL .0) */
+        function fixDenominations() {
+            document.querySelectorAll('.spec-row').forEach(function(row) {
+                if (row.innerText.includes('Denom:')) {
+                    var valSpan = row.querySelector('.spec-val');
+                    if (valSpan) {
+                        valSpan.innerText = valSpan.innerText.replace('.0', '');
+                    }
+                }
+            });
+        }
+
         /* ANIMACIÓN DE DESTELLO SPOT EN TIEMPO REAL (FLASH UP/DOWN) */
         function updateAllPrices() {
             processSpecialsMigration();
@@ -1777,6 +1787,10 @@
             calculateSpotPrices();
             injectMetalPurityBadges();
             fixAndRenderCertificates();
+            fixDenominations();
             setInterval(calculateSpotPrices, 120000);
         };
     </script>
+</body>
+</html>
+   
