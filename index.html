@@ -430,112 +430,112 @@
 
 
     <!-- ========================================================= -->
-    <!-- SECCIÓN 2: CABECERA, LOGO, TICKER SPOT Y NAVEGACIÓN      -->
-    <!-- ========================================================= -->
-    <div class="sticky-top-wrapper">
-        <header>
-            <div class="logo-container" onclick="openTab('home', event)">
-                <img src="logo-transparente.png" alt="JL Bullion Logo" class="logo-img">
-                <div class="logo-text-group">
-                    <span class="logo-title">JL BULLION</span>
-                    <span class="logo-subtitle">Precious Metals & Numismatics</span>
-                </div>
-            </div>
-            
-            <div class="contact-header">
-                <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
-                    <span id="themeSwitchText">🌙 VIP Dark Mode</span>
-                </button>
-                <span>Miami, FL | <a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></span>
-            </div>
-        </header>
-
-        <div class="ticker-wrapper">
-            <div class="tradingview-widget-container" style="flex: 1;">
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                {
-                    "symbols": [
-                        { "proName": "TVC:GOLD", "title": "Gold Spot ($/oz)" },
-                        { "proName": "TVC:SILVER", "title": "Silver Spot ($/oz)" }
-                    ],
-                    "showSymbolLogo": false,
-                    "colorTheme": "light",
-                    "isTransparent": true,
-                    "displayMode": "regular",
-                    "locale": "en"
-                }
-                </script>
-            </div>
-            <div class="live-status-pill">
-                <span class="live-dot"></span> LIVE SPOT
+<!-- SECCIÓN 2: CABECERA, LOGO, TICKER SPOT Y NAVEGACIÓN       -->
+<!-- ========================================================= -->
+<div class="sticky-top-wrapper">
+    <header>
+        <div class="logo-container" onclick="openTab('home', event)">
+            <img src="logo-transparente.png" alt="JL Bullion Logo" class="logo-img">
+            <div class="logo-text-group">
+                <span class="logo-title">JL BULLION</span>
+                <span class="logo-subtitle">Precious Metals & Numismatics</span>
             </div>
         </div>
+        
+        <div class="contact-header">
+            <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
+                <span id="themeSwitchText">🌙 VIP Dark Mode</span>
+            </button>
+            <span>Miami, FL | <a href="mailto:trading@jlbullion.com">trading@jlbullion.com</a></span>
+        </div>
+    </header>
 
-        <nav class="main-nav-tabs">
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰ Menu</button>
+    <div class="ticker-wrapper">
+        <div class="tradingview-widget-container" style="flex: 1;">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                    { "proName": "TVC:GOLD", "title": "Gold Spot ($/oz)" },
+                    { "proName": "TVC:SILVER", "title": "Silver Spot ($/oz)" }
+                ],
+                "showSymbolLogo": false,
+                "colorTheme": "light",
+                "isTransparent": true,
+                "displayMode": "regular",
+                "locale": "en"
+            }
+            </script>
+        </div>
+        <div class="live-status-pill">
+            <span class="live-dot"></span> LIVE SPOT
+        </div>
+    </div>
 
-            <div class="nav-links-group" id="navLinksGroup">
-    <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
-    <span class="nav-tab" onclick="openTab('gold', event)">Gold <span class="tab-count-badge" id="cnt-tab-gold">2</span></span>
-    <span class="nav-tab" onclick="openTab('silver', event)">Silver <span class="tab-count-badge" id="cnt-tab-silver">0</span></span>
-    <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥 <span class="tab-count-badge" id="cnt-tab-specials">0</span></span>
-    <a href="#contacto" class="nav-tab">Trading Desk</a>
+    <nav class="main-nav-tabs">
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰ Menu</button>
+
+        <div class="nav-links-group" id="navLinksGroup">
+            <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
+            <span class="nav-tab" onclick="openTab('gold', event)">Gold <span class="tab-count-badge" id="cnt-tab-gold">0</span></span>
+            <span class="nav-tab" onclick="openTab('silver', event)">Silver <span class="tab-count-badge" id="cnt-tab-silver">0</span></span>
+            <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥 <span class="tab-count-badge" id="cnt-tab-specials">0</span></span>
+            <a href="#contacto" class="nav-tab">Trading Desk</a>
+        </div>
+
+        <div class="header-search-group">
+            <input type="text" class="header-search-input search-box-input" placeholder="🔍 Search coins, dates..." onkeyup="filterInventory(this.value)">
+
+            <select class="header-filter-dropdown" id="priceRangeFilter" onchange="filterInventory(document.querySelector('.search-box-input').value)">
+                <option value="all">💰 All Prices</option>
+                <option value="under1000">Under $1,000 USD</option>
+                <option value="1000to2500">$1,000 - $2,500 USD</option>
+                <option value="over2500">Over $2,500 USD</option>
+            </select>
+
+            <select class="header-filter-dropdown" id="weightRangeFilter" onchange="filterInventory(document.querySelector('.search-box-input').value)">
+                <option value="all">⚖️ All Weights</option>
+                <option value="fractional">&lt; 1.0 oz (Fractional)</option>
+                <option value="1oz">Exact 1.0 oz</option>
+                <option value="multi">1.0+ oz / Kilos / Bars</option>
+            </select>
+
+            <select class="header-sort-dropdown" onchange="sortInventory(this.value)">
+                <option value="default">Default Order</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="weight-desc">Metal Weight</option>
+                <option value="id-asc">Item #</option>
+            </select>
+        </div>
+    </nav>
 </div>
 
-            <div class="header-search-group">
-                <input type="text" class="header-search-input search-box-input" placeholder="🔍 Search coins, dates..." onkeyup="filterInventory(this.value)">
-
-                <select class="header-filter-dropdown" id="priceRangeFilter" onchange="filterInventory(document.querySelector('.search-box-input').value)">
-                    <option value="all">💰 All Prices</option>
-                    <option value="under1000">Under $1,000 USD</option>
-                    <option value="1000to2500">$1,000 - $2,500 USD</option>
-                    <option value="over2500">Over $2,500 USD</option>
-                </select>
-
-                <select class="header-filter-dropdown" id="weightRangeFilter" onchange="filterInventory(document.querySelector('.search-box-input').value)">
-                    <option value="all">⚖️ All Weights</option>
-                    <option value="fractional">&lt; 1.0 oz (Fractional)</option>
-                    <option value="1oz">Exact 1.0 oz</option>
-                    <option value="multi">1.0+ oz / Kilos / Bars</option>
-                </select>
-
-                <select class="header-sort-dropdown" onchange="sortInventory(this.value)">
-                    <option value="default">Default Order</option>
-                    <option value="price-asc">Price: Low to High</option>
-                    <option value="price-desc">Price: High to Low</option>
-                    <option value="weight-desc">Metal Weight</option>
-                    <option value="id-asc">Item #</option>
-                </select>
-            </div>
-        </nav>
-    </div>
-
-    <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div>
-            <div class="drawer-header">
-                <h3>Order Drawer</h3>
-                <button class="close-drawer-btn" onclick="closeCartDrawer()">&times;</button>
-            </div>
-            <div class="drawer-body" id="drawerItemsContainer">
-                <p style="color: #94a3b8; font-size: 0.88rem; text-align: center; margin-top: 2rem;">Your order drawer is empty.</p>
-            </div>
+<div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+<div class="cart-drawer" id="cartDrawer">
+    <div>
+        <div class="drawer-header">
+            <h3>Order Drawer</h3>
+            <button class="close-drawer-btn" onclick="closeCartDrawer()">&times;</button>
         </div>
-        <div class="drawer-footer">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0.8rem;">
-                <span>Estimated Total:</span>
-                <span id="drawerTotalAmount" style="color: var(--accent);">$0.00 USD</span>
-            </div>
-            
-            <div class="drawer-actions-row">
-                <button type="button" class="btn-drawer-action" onclick="copyQuoteToClipboard()">📋 Copy Quote</button>
-                <button type="button" class="btn-drawer-action" onclick="printFormalPDFQuote()">📄 Print PDF Quote</button>
-            </div>
-
-            <a href="#contacto" class="drawer-checkout-btn" onclick="closeCartDrawer()">Proceed to Trading Desk Form</a>
+        <div class="drawer-body" id="drawerItemsContainer">
+            <p style="color: #94a3b8; font-size: 0.88rem; text-align: center; margin-top: 2rem;">Your order drawer is empty.</p>
         </div>
     </div>
+    <div class="drawer-footer">
+        <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0.8rem;">
+            <span>Estimated Total:</span>
+            <span id="drawerTotalAmount" style="color: var(--accent);">$0.00 USD</span>
+        </div>
+        
+        <div class="drawer-actions-row">
+            <button type="button" class="btn-drawer-action" onclick="copyQuoteToClipboard()">📋 Copy Quote</button>
+            <button type="button" class="btn-drawer-action" onclick="printFormalPDFQuote()">📄 Print PDF Quote</button>
+        </div>
+
+        <a href="#contacto" class="drawer-checkout-btn" onclick="closeCartDrawer()">Proceed to Trading Desk Form</a>
+    </div>
+</div>
 
 
 
@@ -937,7 +937,28 @@
 
 
 
+<!-- ========================================================= -->
+<!-- SECCIÓN 4: PÁGINA OFERTAS ESPECIALES (SPECIALS 🔥)        -->
+<!-- ========================================================= -->
+<div id="specials" class="tab-page" style="width: 100%; min-height: 80vh;">
+    <div class="container" style="padding: 30px 20px;">
+        <h1 class="page-header-title" style="color: #0f172a; font-size: 2rem; font-weight: 800; margin-bottom: 8px;">Specials & Zero-Premium Offers 🔥</h1>
+        <p class="page-subtitle" style="color: #64748b; margin-bottom: 24px;">Exclusive institutional inventory priced directly at spot cost or zero-premium allocation.</p>
 
+        <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
+            <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Specials</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+            <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+        </div>
+
+        <!-- CONTENEDOR RECEPTOR CON ESTILOS GRID DIRECTOS -->
+        <div class="inventory-grid" id="grid-specials-page" style="display: grid !important; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; width: 100%;">
+            <!-- Las tarjetas especiales se inyectan automáticamente aquí vía JavaScript -->
+        </div>
+    </div>
+</div>
 
 
 
@@ -1588,7 +1609,7 @@
             alert("⏱️ Your 10-minute reservation period has expired. Selected items have been returned to the public catalog.");
         }
 
-        /* CORREGIDO: LÓGICA DE MIGRACIÓN AUTOMÁTICA A SPECIALS */
+        /* MIGRACIÓN Y RENDERIZADO VISIBLE EN SPECIALS 🔥 */
         function processSpecialsMigration() {
             document.querySelectorAll('.item-card').forEach(function(card) {
                 var priceEl = card.querySelector('.item-price');
@@ -1609,8 +1630,11 @@
                 var gridGraduated = document.getElementById('grid-graduated-gold');
 
                 if (isEligibleForSpecial) {
-                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
-                        gridSpecialsPage.appendChild(card);
+                    if (gridSpecialsPage) {
+                        if (!gridSpecialsPage.contains(card)) {
+                            gridSpecialsPage.appendChild(card);
+                        }
+                        card.style.display = 'flex'; // Fuerza a que la tarjeta sea visible en Specials
                     }
                 } else {
                     if (gridGraduated && !gridGraduated.contains(card)) {
