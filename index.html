@@ -2791,12 +2791,57 @@ function processSpecialsMigration() {
                 });
         }
 
+
+
+/* FORMATO AUTOMÁTICO DE PESOS (2 DECIMALES EN GRAMOS, 3 DECIMALES EN ONZAS) */
+        function formatWeightsAndUnits() {
+            document.querySelectorAll('.item-specs-grid .spec-row').forEach(function(row) {
+                var labelEl = row.querySelector('.spec-label');
+                var valEl = row.querySelector('.spec-val');
+                if (!labelEl || !valEl) return;
+
+                var labelText = labelEl.innerText.trim();
+                var valText = valEl.innerText.trim();
+
+                // Gross Wt -> Formato de 2 decimales en Gramos
+                if (labelText.includes('Gross Wt:')) {
+                    var numGrams = parseFloat(valText.replace(/[^0-9.]/g, ''));
+                    if (!isNaN(numGrams)) {
+                        valEl.innerText = numGrams.toFixed(2) + ' g';
+                    }
+                }
+
+                // Pure Gold -> Formato de 3 decimales en Onzas
+                if (labelText.includes('Pure Gold:')) {
+                    var numOunces = parseFloat(valText.replace(/[^0-9.]/g, ''));
+                    if (!isNaN(numOunces)) {
+                        valEl.innerText = numOunces.toFixed(3) + ' oz';
+                    }
+                }
+            });
+        }
+
+        /* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
             if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
                 document.body.classList.add('dark-mode');
             }
             calculateSpotPrices();
+            formatWeightsAndUnits(); // <-- LLAMADA AQUÍ
         };
+    </script>
+</body>
+</html>
+
+
+
+        window.onload = function() {
+    if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+    calculateSpotPrices();
+    formatWeightsAndUnits(); // <-- Agrega esta línea aquí
+};
     </script>
 </body>
 </html>
