@@ -637,6 +637,8 @@
 
 
 
+
+
 <!-- ========================================================= -->
 <!-- SECCIÓN 4: PÁGINA 2 - CATÁLOGO DE ORO (GOLD CATALOG)      -->
 <!-- ========================================================= -->
@@ -645,13 +647,15 @@
         <h1 class="page-header-title" style="color: #0f172a; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Gold Catalog</h1>
         <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Explore our official inventory database of investment gold, certified numismatic eagles, double eagles, and world gold pieces.</p>
 
-        <!-- NAVEGACIÓN PRINCIPAL ENTRE COINS Y BARS -->
+        <!-- NAVEGACIÓN PRINCIPAL ENTRE MONEDAS Y BARRAS -->
         <div class="sub-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
             <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">0</span></button>
             <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
         </div>
 
-        <!-- BLOQUE 1: MONEDAS DE ORO (SUB-GOLD-COINS) -->
+        <!-- ======================================================= -->
+        <!-- BLOQUE 1: MONEDAS DE ORO (SUB-GOLD-COINS)               -->
+        <!-- ======================================================= -->
         <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
             <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
                 <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">0</span></button>
@@ -668,11 +672,11 @@
                 <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
             </div>
 
-            <!-- SUB-CONTENEDOR 1: GOLD BULLION COINS -->
+            <!-- SUB-PESTAÑA 1: GOLD BULLION COINS -->
             <div id="nested-bullion-gold" class="nested-tab-content active-nestedcontent">
                 <div class="inventory-grid" id="grid-bullion-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
-                    <!-- ITEM 1945802 (NIUE IN TRANSIT) -->
+                    <!-- ITEM 1945802 -->
                     <div class="item-card gold-card-finish" data-id="1945802" data-availability="in-transit" data-category="oceania" data-composition="✨ .9999 Gold" data-grading-service="Raw / Card of Issue" data-cert-number="010306" data-grade="BU" data-search="niue 2015 gold $25 statue of liberty proof uncertified in card of issue 1945802 au 999.9 oceania bullion in transit">
                         <div>
                             <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
@@ -810,14 +814,14 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
+                </div> <!-- Cierre de grid-bullion-gold -->
+            </div> <!-- Cierre de nested-bullion-gold -->
 
-            <!-- SUB-CONTENEDOR 2: GRADED & COLLECTOR GOLD -->
+            <!-- SUB-PESTAÑA 2: GRADED & COLLECTOR GOLD -->
             <div id="nested-graduated-gold" class="nested-tab-content" style="display: none;">
                 <div class="inventory-grid" id="grid-graduated-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
-                    <!-- ITEM 2109000 (SPOT DEAL -> MIGRARA A SPECIALS) -->
+                    <!-- ITEM 2109000 -->
                     <div class="item-card gold-card-finish" 
                          data-id="2109000" 
                          data-is-special="true"
@@ -859,14 +863,14 @@
                         </div>
                     </div>
 
-                    <!-- AQUÍ PUEDES PEGAR TUS OTRAS MONEDAS GRADUADAS EN EL FUTURO -->
-
                 </div> <!-- 1. CIERRA grid-graduated-gold -->
             </div> <!-- 2. CIERRA nested-graduated-gold -->
 
-        </div> <!-- 3. CIERRA sub-gold-coins -->
+        </div> <!-- 3. CIERRA sub-gold-coins DEFINITIVAMENTE -->
 
-        <!-- BLOQUE 2: BARRAS DE ORO (SUB-GOLD-BARS TOTALMENTE INDEPENDIENTE) -->
+        <!-- ======================================================= -->
+        <!-- BLOQUE 2: BARRAS DE ORO (SUB-GOLD-BARS INDEPENDIENTE)   -->
+        <!-- ======================================================= -->
         <div id="sub-gold-bars" class="sub-tab-content" style="display: none;">
             <div class="inventory-grid" id="grid-gold-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
@@ -975,11 +979,11 @@
                     </div>
                 </div>
 
-            </div>
-        </div> <!-- CIERRE DE SUB-GOLD-BARS -->
+            </div> <!-- Cierre de grid-gold-bars -->
+        </div> <!-- Cierre de sub-gold-bars -->
 
-    </div> <!-- CIERRE DE CONTAINER -->
-</div> <!-- CIERRE DE PAGE #GOLD -->
+    </div> <!-- Cierre del contenedor principal -->
+</div> <!-- Cierre de la página tab-page gold -->
 
 
 
