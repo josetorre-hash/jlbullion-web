@@ -650,7 +650,9 @@
         <!-- BOTONES PRINCIPALES DE NAVEGACIÓN -->
         <div class="sub-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
             <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">0</span></button>
-            <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">5</span></button>
+            <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">
+    Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">5</span>
+</button>
         </div>
 
         <!-- 1. BLOQUE DE MONEDAS (GOLD COINS) -->
@@ -4032,7 +4034,7 @@
 
         <!-- 2. BLOQUE INDEPENDIENTE DE BARRAS DE ORO (GOLD BARS) -->
         <div id="sub-gold-bars" class="sub-tab-content" style="display: none;">
-            <div class="inventory-grid" id="grid-gold-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+    <div class="inventory-grid" id="grid-gold-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
                 <!-- 1 OZ GOLD BAR PAMP FORTUNA -->
                 <div class="item-card gold-card-finish" data-id="GB1PAMPF" data-availability="in-transit" data-category="bars" data-composition="✨ .9999 Fine Gold" data-search="1 oz gold bar pamp fortuna sealed carded gb1pampf elemetal in transit">
@@ -4353,26 +4355,27 @@
 
         /* ACTUALIZACIÓN SEGURA DE CONTADORES DE PESTAÑAS Y SUB-PESTAÑAS */
         function updateTabCounters() {
-            var goldCards = document.querySelectorAll('#gold .item-card');
-            var silverCards = document.querySelectorAll('#silver .item-card');
-            var specialsCards = document.querySelectorAll('#specials .item-card');
+    var goldCards = document.querySelectorAll('#gold .item-card');
+    var silverCards = document.querySelectorAll('#silver .item-card');
+    var specialsCards = document.querySelectorAll('#specials .item-card');
 
-            setCount('cnt-tab-gold', goldCards.length);
-            setCount('cnt-tab-silver', silverCards.length);
-            setCount('cnt-tab-specials', specialsCards.length);
+    setCount('cnt-tab-gold', goldCards.length);
+    setCount('cnt-tab-silver', silverCards.length);
+    setCount('cnt-tab-specials', specialsCards.length);
 
-            var subGoldCoins = document.querySelectorAll('#sub-gold-coins .item-card');
-            var subGoldBars = document.querySelectorAll('#sub-gold-bars .item-card');
+    // Contadores específicos del Catálogo de Oro
+    var subCoins = document.querySelectorAll('#sub-gold-coins .item-card').length;
+    var subBars = document.querySelectorAll('#sub-gold-bars .item-card').length;
 
-            setCount('cnt-sub-gold-coins', subGoldCoins.length);
-            setCount('cnt-sub-gold-bars', subGoldBars.length);
+    setCount('cnt-sub-gold-coins', subCoins);
+    setCount('cnt-sub-gold-bars', subBars);
 
-            var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card');
-            var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card');
+    var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card').length;
+    var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card').length;
 
-            setCount('cnt-nested-graduated-gold', nestedGraduated.length);
-            setCount('cnt-nested-bullion-gold', nestedBullion.length);
-        }
+    setCount('cnt-nested-bullion-gold', nestedBullion);
+    setCount('cnt-nested-graduated-gold', nestedGraduated);
+}
 
         /* NAVEGACIÓN PRINCIPAL ENTRE PÁGINAS */
         function openTab(tabId, event) {
