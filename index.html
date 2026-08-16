@@ -538,7 +538,48 @@
 </div>
 
 
+/* BADGES DE DISPONIBILIDAD */
+.badge-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+}
 
+/* Estado: En Mano (In Stock) */
+.badge-in-stock {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid #10b981;
+}
+
+/* Estado: En Tránsito (In Transit) */
+.badge-in-transit {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid #f59e0b;
+}
+
+/* NOTA DE ENVÍO DENTRO DE LA FICHA TÉCNICA */
+.shipping-note-row {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 6px;
+    margin-top: 2px;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shipping-note-in-stock { color: #10b981; font-weight: 600; }
+.shipping-note-in-transit { color: #cbd5e1; font-style: italic; }
 
 
 
@@ -3943,15 +3984,62 @@ function processSpecialsMigration() {
             });
         }
 
-        /* INICIALIZACIÓN DE LA PÁGINA */
-        window.onload = function() {
-            if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
-                document.body.classList.add('dark-mode');
+
+/* APLICAR DISPONIBILIDAD AUTOMÁTICA (IN-STOCK VS IN-TRANSIT) */
+function applyAvailabilityBadges() {
+    document.querySelectorAll('.item-card').forEach(function(card) {
+        var availability = card.getAttribute('data-availability');
+        var badgeHolder = card.querySelector('.badge-holder');
+        var specsGrid = card.querySelector('.item-specs-grid');
+
+        // Por defecto: Si no tiene el atributo "in-stock", asigna "in-transit"
+        if (!availability) {
+            availability = 'in-transit';
+            card.setAttribute('data-availability', 'in-transit');
+        }
+
+        // 1. Agregar el Badge superior si no existe
+        if (badgeHolder && !badgeHolder.querySelector('.badge-availability')) {
+            var badgeSpan = document.createElement('span');
+            badgeSpan.className = 'badge-availability ';
+
+            if (availability === 'in-stock') {
+                badgeSpan.className += 'badge-in-stock';
+                badgeSpan.innerHTML = '⚡ In Stock / Ready to Ship';
+            } else {
+                badgeSpan.className += 'badge-in-transit';
+                badgeSpan.innerHTML = '🚚 Secured Vault / In Transit';
             }
-            calculateSpotPrices();
-            formatWeightsAndUnits();
-            fixAnacsLinks();
-        };
+
+            badgeHolder.insertBefore(badgeSpan, badgeHolder.firstChild);
+        }
+
+        // 2. Agregar la nota de envío al final de la Ficha Técnica si no existe
+        if (specsGrid && !specsGrid.querySelector('.shipping-note-row')) {
+            var noteRow = document.createElement('div');
+            noteRow.className = 'shipping-note-row';
+
+            if (availability === 'in-stock') {
+                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-stock">⚡ Ships within 24 Hours</span>';
+            } else {
+                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-transit">📦 Ships within 7–12 business days</span>';
+            }
+
+            specsGrid.appendChild(noteRow);
+        }
+    });
+}
+
+        /* INICIALIZACIÓN DE LA PÁGINA */
+window.onload = function() {
+    if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+    calculateSpotPrices();
+    formatWeightsAndUnits();
+    fixAnacsLinks();
+    applyAvailabilityBadges(); // <-- AGREGAR ESTA LÍNEA
+};
     </script>
 </body>
 </html>
