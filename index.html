@@ -3909,18 +3909,40 @@ function processSpecialsMigration() {
         }
 
 
-/* REDIRECCIÓN OFICIAL A LA PÁGINA DE VERIFICACIÓN DE ANACS */
+/* MANEJO INTELIGENTE DE VERIFICACIÓN ANACS */
 function fixAnacsLinks() {
     document.querySelectorAll('a').forEach(function(anchor) {
         var href = anchor.getAttribute('href') || '';
         if (href.includes('anacs.com')) {
-            // Se actualiza el enlace a la landing page de verificación oficial
-            anchor.setAttribute('href', 'https://anacs.com/verify/');
-            anchor.setAttribute('target', '_blank');
-            anchor.setAttribute('rel', 'noopener noreferrer');
+            // Extraer el número de certificado del texto del botón o de la URL
+            var text = anchor.innerText || '';
+            var certMatch = text.match(/#(\d+)/) || href.match(/\d+/g);
+            
+            if (certMatch) {
+                var certNumber = Array.isArray(certMatch) ? (certMatch[1] || certMatch[certMatch.length - 1]) : certMatch;
+                
+                // Asignar función interactiva al hacer clic
+                anchor.setAttribute('href', 'javascript:void(0);');
+                anchor.onclick = function(e) {
+                    e.preventDefault();
+                    
+                    // Copiar número de certificado al portapapeles
+                    navigator.clipboard.writeText(certNumber).then(function() {
+                        alert('📋 Cert #' + certNumber + ' copied to clipboard!\n\nJust paste it (Ctrl+V) on the ANACS verification page.');
+                        window.open('https://anacs.com/verify/', '_blank');
+                    }).catch(function() {
+                        window.open('https://anacs.com/verify/', '_blank');
+                    });
+                };
+            } else {
+                anchor.setAttribute('href', 'https://anacs.com/verify/');
+                anchor.setAttribute('target', '_blank');
+            }
         }
     });
-}        /* INICIALIZACIÓN DE LA PÁGINA */
+} 
+
+/* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
             if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
                 document.body.classList.add('dark-mode');
