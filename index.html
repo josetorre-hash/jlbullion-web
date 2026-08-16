@@ -3199,10 +3199,12 @@
 
 <!-- PESTAÑA INDEPENDIENTE DE BARRAS DE ORO (GOLD BARS) -->
 
-        <div id="sub-gold-bars" class="sub-tab-content" style="display: none;">
-            <div class="inventory-grid" id="grid-gold-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+<div id="sub-gold-bars" class="sub-tab-content">
+    <div class="inventory-grid" id="grid-gold-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">    
 
-                <!-- 1 OZ GOLD BAR PAMP FORTUNA -->
+
+
+            <!-- 1 OZ GOLD BAR PAMP FORTUNA -->
                 <div class="item-card gold-card-finish" data-id="GB1PAMPF" data-availability="in-transit" data-category="bars" data-composition="✨ .9999 Fine Gold" data-search="1 oz gold bar pamp fortuna sealed carded gb1pampf elemetal in transit">
                     <div>
                         <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +1.80% Premium</span>
@@ -4432,37 +4434,34 @@
         }
 
         function openSubTab(subTabId, event) {
-            var subContents = document.querySelectorAll('.sub-tab-content');
-            subContents.forEach(function(sc) { sc.classList.remove('active-subcontent'); });
+    // 1. Ocultar todos los contenidos de sub-pestañas
+    document.querySelectorAll('.sub-tab-content').forEach(function(content) {
+        content.style.display = 'none';
+        content.classList.remove('active-subcontent');
+    });
 
-            var subBtns = document.querySelectorAll('.sub-tab-btn');
-            subBtns.forEach(function(sb) { sb.classList.remove('active-subtab'); });
+    // 2. Remover clase activa de los botones
+    document.querySelectorAll('.sub-tab-btn').forEach(function(btn) {
+        btn.classList.remove('active-subtab');
+    });
 
-            var selectedSub = document.getElementById(subTabId);
-            if (selectedSub) selectedSub.classList.add('active-subcontent');
-            if(event && event.currentTarget) event.currentTarget.classList.add('active-subtab');
-        }
+    // 3. Mostrar la sub-pestaña seleccionada
+    var targetTab = document.getElementById(subTabId);
+    if (targetTab) {
+        targetTab.style.display = 'block';
+        targetTab.classList.add('active-subcontent');
+    }
 
-        function openNestedTab(nestedTabId, event) {
-            var nestedContents = document.querySelectorAll('.nested-tab-content');
-            nestedContents.forEach(function(nc) { nc.classList.remove('active-nestedcontent'); });
+    // 4. Activar el botón correspondiente
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active-subtab');
+    }
 
-            var nestedBtns = document.querySelectorAll('.nested-tab-btn');
-            nestedBtns.forEach(function(nb) { nb.classList.remove('active-nestedtab'); });
-
-            var selectedNested = document.getElementById(nestedTabId);
-            if (selectedNested) selectedNested.classList.add('active-nestedcontent');
-            if(event && event.currentTarget) event.currentTarget.classList.add('active-nestedtab');
-        }
-
-        function openCartDrawer() {
-            var overlay = document.getElementById('cartOverlay');
-            var drawer = document.getElementById('cartDrawer');
-            if (overlay && drawer) {
-                overlay.classList.add('active');
-                drawer.classList.add('open');
-            }
-        }
+    // 5. Recalcular precios e imágenes por si acaso
+    if (typeof calculateSpotPrices === 'function') {
+        calculateSpotPrices();
+    }
+}
 
         function closeCartDrawer() {
             var overlay = document.getElementById('cartOverlay');
