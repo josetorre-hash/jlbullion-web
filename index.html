@@ -647,15 +647,17 @@
         <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Explore our official inventory database of investment gold, certified numismatic eagles, double eagles, and world gold pieces.</p>
 
         <div class="sub-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
-            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">17</span></button>
+            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">0</span></button>
             <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
         </div>
 
+       
         <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
             <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
                 <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">1</span></button>
-                <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">16</span></button>
+                <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graded & Collector Gold <span class="tab-count-badge" id="cnt-nested-graduated-gold">0</span></button>
             </div>
+        
 
             <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
                 <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
