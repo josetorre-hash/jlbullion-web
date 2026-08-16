@@ -895,7 +895,7 @@
 
 
 
-    <!-- ========================================================= -->
+   <!-- ========================================================= -->
     <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
     <script>
@@ -1346,25 +1346,34 @@
             alert("⏱️ Your 10-minute reservation period has expired. Selected items have been returned to the public catalog.");
         }
 
+        /* CORREGIDO: LÓGICA DE MIGRACIÓN AUTOMÁTICA A SPECIALS */
         function processSpecialsMigration() {
-            document.querySelectorAll('.item-card[data-is-special="true"]').forEach(function(card) {
+            document.querySelectorAll('.item-card').forEach(function(card) {
                 var priceEl = card.querySelector('.item-price');
+                if (!priceEl) return;
+
                 var weight = parseFloat(priceEl.getAttribute('data-weight')) || 0;
                 var premium = parseFloat(priceEl.getAttribute('data-premium')) || 0;
                 var pType = priceEl.getAttribute('data-premium-type') || 'percent';
                 var cost = parseFloat(priceEl.getAttribute('data-cost')) || 0;
-                var spot = goldSpotPrice;
+                var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
 
-                var calcPrice = (pType === 'fixed') ? (weight * spot) + (weight * premium) : (weight * spot) * (1 + premium);
+                var calcPrice = (pType === 'fixed') ? (weight * goldSpotPrice) + (weight * premium) : (weight * goldSpotPrice) * (1 + premium);
                 var minPrice = cost > 0 ? cost * 1.02 : 0;
 
-                var gridSpecials = document.getElementById('grid-specials');
+                var isEligibleForSpecial = (premium === 0 || isSpecialAttr) && !(cost > 0 && calcPrice < minPrice);
+
+                var gridSpecialsPage = document.getElementById('grid-specials-page');
                 var gridGraduated = document.getElementById('grid-graduated-gold');
 
-                if (cost > 0 && calcPrice < minPrice) {
-                    if (card.parentElement !== gridGraduated && gridGraduated) gridGraduated.appendChild(card);
+                if (isEligibleForSpecial) {
+                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
+                        gridSpecialsPage.appendChild(card);
+                    }
                 } else {
-                    if (card.parentElement !== gridSpecials && gridSpecials) gridSpecials.appendChild(card);
+                    if (gridGraduated && !gridGraduated.contains(card)) {
+                        gridGraduated.appendChild(card);
+                    }
                 }
             });
         }
@@ -1538,5 +1547,3 @@
             setInterval(calculateSpotPrices, 120000);
         };
     </script>
-</body>
-</html>
