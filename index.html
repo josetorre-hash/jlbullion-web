@@ -4225,12 +4225,6 @@
 
 
 
-
-
-
-
-
-
 <!-- ========================================================= -->
 <!-- SECCIÓN 6: PÁGINA 3 - CATÁLOGO DE PLATA (SILVER CATALOG)   -->
 <!-- ========================================================= -->
@@ -4239,33 +4233,55 @@
         <h1 class="page-header-title" style="color: #0f172a; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Silver Catalog</h1>
         <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Explore our official inventory database of fine silver bullion coins, certified eagles, maples, rounds, and silver bars.</p>
 
-        <!-- NAVEGACIÓN PRINCIPAL ENTRE SILVER COINS Y SILVER BARS -->
+        <!-- NAVEGACIÓN PRINCIPAL: COINS & ROUNDS VS BARS -->
         <div class="sub-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
             <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-silver-coins', event)">Silver Coins & Rounds <span class="tab-count-badge" id="cnt-sub-silver-coins">0</span></button>
             <button class="sub-tab-btn" onclick="openSubTab('sub-silver-bars', event)">Silver Bars <span class="tab-count-badge" id="cnt-sub-silver-bars">0</span></button>
         </div>
 
         <!-- ======================================================= -->
-        <!-- PESTAÑA 1: MONEDAS Y ROUNDS DE PLATA (SUB-SILVER-COINS) -->
+        <!-- PESTAÑA 1: SILVER COINS & ROUNDS (SUB-SILVER-COINS)     -->
         <!-- ======================================================= -->
         <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
+            
+            <!-- NAVEGACIÓN ANIDADA PARA PLATA -->
+            <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-silver', event)">Silver Bullion Coins & Rounds <span class="tab-count-badge" id="cnt-nested-bullion-silver">0</span></button>
+                <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-silver', event)">Graded & Collector Silver <span class="tab-count-badge" id="cnt-nested-graduated-silver">0</span></button>
+            </div>
+
             <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
                 <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
                 <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Silver 🇺🇸</span>
                 <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Silver 🇪🇺</span>
                 <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+                <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
                 <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
             </div>
 
-            <div class="inventory-grid" id="grid-silver-coins" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+            <!-- SUB-PESTAÑA 1.1: SILVER BULLION COINS & ROUNDS -->
+            <div id="nested-bullion-silver" class="nested-tab-content active-nestedcontent">
+                <div class="inventory-grid" id="grid-bullion-silver" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
-                <!-- 📍 AQUÍ PEGAS TUS MONEDAS Y ROUNDS DE PLATA -->
+                    <!-- 📍 AQUÍ PEGAS TUS MONEDAS/ROUNDS DE INVERSIÓN Y AL PESO -->
 
+                </div>
             </div>
-        </div> <!-- CIERRE DE SUB-SILVER-COINS -->
+
+            <!-- SUB-PESTAÑA 1.2: GRADED & COLLECTOR SILVER -->
+            <div id="nested-graduated-silver" class="nested-tab-content" style="display: none;">
+                <div class="inventory-grid" id="grid-graduated-silver" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+
+                    <!-- 📍 AQUÍ PEGAS TUS MONEDAS DE PLATA CERTIFICADAS (PCGS/NGC/ANACS) -->
+
+                </div>
+            </div>
+
+        </div> <!-- 🛑 CIERRE DE SUB-SILVER-COINS -->
 
         <!-- ======================================================= -->
-        <!-- PESTAÑA 2: BARRAS DE PLATA (SUB-SILVER-BARS)            -->
+        <!-- PESTAÑA 2: SILVER BARS (SUB-SILVER-BARS INDEPENDIENTE)  -->
         <!-- ======================================================= -->
         <div id="sub-silver-bars" class="sub-tab-content" style="display: none;">
             <div class="inventory-grid" id="grid-silver-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
@@ -4273,10 +4289,13 @@
                 <!-- 📍 AQUÍ PEGAS TUS BARRAS DE PLATA (1 OZ, 10 OZ, 1 KILO, 100 OZ) -->
 
             </div>
-        </div> <!-- CIERRE DE SUB-SILVER-BARS -->
+        </div> <!-- 🛑 CIERRE DE SUB-SILVER-BARS -->
 
     </div> <!-- CIERRE DE CONTAINER -->
 </div> <!-- CIERRE DE PAGE #SILVER -->
+
+
+
 
 
 
@@ -4356,8 +4375,6 @@
 
 
 
-
-
 <!-- ========================================================= -->
     <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
@@ -4428,16 +4445,21 @@
             setCount('cnt-sub-gold-coins', subGoldCoins);
             setCount('cnt-sub-gold-bars', subGoldBars);
 
-            var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card').length;
-            var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card').length;
-            setCount('cnt-nested-bullion-gold', nestedBullion);
-            setCount('cnt-nested-graduated-gold', nestedGraduated);
+            var nestedBullionGold = document.querySelectorAll('#nested-bullion-gold .item-card').length;
+            var nestedGraduatedGold = document.querySelectorAll('#nested-graduated-gold .item-card').length;
+            setCount('cnt-nested-bullion-gold', nestedBullionGold);
+            setCount('cnt-nested-graduated-gold', nestedGraduatedGold);
 
             // Contadores del Catálogo de Plata
             var subSilverCoins = document.querySelectorAll('#sub-silver-coins .item-card').length;
             var subSilverBars = document.querySelectorAll('#sub-silver-bars .item-card').length;
             setCount('cnt-sub-silver-coins', subSilverCoins);
             setCount('cnt-sub-silver-bars', subSilverBars);
+
+            var nestedBullionSilver = document.querySelectorAll('#nested-bullion-silver .item-card').length;
+            var nestedGraduatedSilver = document.querySelectorAll('#nested-graduated-silver .item-card').length;
+            setCount('cnt-nested-bullion-silver', nestedBullionSilver);
+            setCount('cnt-nested-graduated-silver', nestedGraduatedSilver);
         }
 
         /* NAVEGACIÓN PRINCIPAL ENTRE PÁGINAS */
@@ -4516,14 +4538,17 @@
             }
         }
 
-        /* NAVEGACIÓN ANIDADA ENTRE BULLION COINS Y GRADED GOLD */
+        /* NAVEGACIÓN ANIDADA (BULLION VS GRADED EN ORO Y PLATA) */
         function openNestedTab(nestedTabId, event) {
-            document.querySelectorAll('.nested-tab-content').forEach(function(content) {
+            var parentSubTab = event ? event.currentTarget.closest('.sub-tab-content') : null;
+            var searchContext = parentSubTab ? parentSubTab : document;
+
+            searchContext.querySelectorAll('.nested-tab-content').forEach(function(content) {
                 content.style.display = 'none';
                 content.classList.remove('active-nestedcontent');
             });
 
-            document.querySelectorAll('.nested-tab-btn').forEach(function(btn) {
+            searchContext.querySelectorAll('.nested-tab-btn').forEach(function(btn) {
                 btn.classList.remove('active-nestedtab');
             });
 
@@ -4563,11 +4588,15 @@
             }
         }
 
-        /* MIGRACIÓN A SPECIALS RESERVADA SOLO PARA MONEDAS CON DATA-IS-SPECIAL */
+        /* MIGRACIÓN A SPECIALS PROTEGIENDO LAS BARRAS Y SUB-PESTAÑAS DE ORO Y PLATA */
         function processSpecialsMigration() {
             var gridSpecialsPage = document.getElementById('grid-specials-page');
-            var gridGraduated = document.getElementById('grid-graduated-gold');
-            var gridBullion = document.getElementById('grid-bullion-gold');
+            var gridGraduatedGold = document.getElementById('grid-graduated-gold');
+            var gridBullionGold = document.getElementById('grid-bullion-gold');
+            
+            var gridGraduatedSilver = document.getElementById('grid-graduated-silver');
+            var gridBullionSilver = document.getElementById('grid-bullion-silver');
+
             var gridGoldBars = document.getElementById('grid-gold-bars');
             var gridSilverBars = document.getElementById('grid-silver-bars');
 
@@ -4585,10 +4614,11 @@
                         gridSpecialsPage.appendChild(card);
                     }
                 } else {
-                    if (gridBullion && gridBullion.contains(card)) return;
-                    if (gridGraduated && !gridGraduated.contains(card)) {
-                        gridGraduated.appendChild(card);
-                    }
+                    // Evita mover tarjetas entre sub-pestañas si ya están situadas en su lugar correcto
+                    if (gridBullionGold && gridBullionGold.contains(card)) return;
+                    if (gridGraduatedGold && gridGraduatedGold.contains(card)) return;
+                    if (gridBullionSilver && gridBullionSilver.contains(card)) return;
+                    if (gridGraduatedSilver && gridGraduatedSilver.contains(card)) return;
                 }
             });
         }
