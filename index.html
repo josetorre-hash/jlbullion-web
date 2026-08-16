@@ -603,28 +603,26 @@
 
 
 
-
-    <!-- ========================================================= -->
+<!-- ========================================================= -->
 <!-- SECCIÓN 4: PÁGINA 2 - CATÁLOGO DE ORO (GOLD CATALOG)      -->
 <!-- ========================================================= -->
 <div id="gold" class="tab-page">
-    <div class="container">
-        <h1 class="page-header-title">Gold Catalog</h1>
-        <p class="page-subtitle">Explore our official inventory database of investment gold, certified numismatic eagles, double eagles, and world gold pieces.</p>
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h1 class="page-header-title" style="color: #0f172a; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Gold Catalog</h1>
+        <p class="page-subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 24px;">Explore our official inventory database of investment gold, certified numismatic eagles, double eagles, and world gold pieces.</p>
 
-        <div class="sub-nav-tabs">
-            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">2</span></button>
+        <div class="sub-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button class="sub-tab-btn active-subtab" onclick="openSubTab('sub-gold-coins', event)">Gold Coins <span class="tab-count-badge" id="cnt-sub-gold-coins">6</span></button>
             <button class="sub-tab-btn" onclick="openSubTab('sub-gold-bars', event)">Gold Bars <span class="tab-count-badge" id="cnt-sub-gold-bars">0</span></button>
         </div>
 
         <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
-            <div class="nested-nav-tabs">
-                <!-- GOLD BULLION COINS AHORA ES LA PRIMERA PESTAÑA Y TIENE LA CLASE ACTIVE -->
+            <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
                 <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">0</span></button>
-                <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">2</span></button>
+                <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">6</span></button>
             </div>
 
-            <div class="filter-chips-row">
+            <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
                 <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
                 <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
                 <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
@@ -634,299 +632,254 @@
                 <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
             </div>
 
-            <!-- PRIMER CONTENEDOR: GOLD BULLION COINS (ACTIVO) -->
+            <!-- TAB 1: GOLD BULLION -->
             <div id="nested-bullion-gold" class="nested-tab-content active-nestedcontent">
-                <div class="inventory-grid" id="grid-bullion-gold">
-                    <div class="no-items-message"><p>No gold bullion coins currently loaded.</p></div>
+                <div class="inventory-grid" id="grid-bullion-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+                    <div class="no-items-message" style="grid-column: 1 / -1; text-align: center; color: #94a3b8; padding: 40px 0;"><p>No gold bullion coins currently loaded.</p></div>
                 </div>
             </div>
 
-            <!-- SEGUNDO CONTENEDOR: GRADUATED GOLD COINS -->
+            <!-- TAB 2: GRADUATED GOLD -->
             <div id="nested-graduated-gold" class="nested-tab-content">
-                <div class="inventory-grid" id="grid-graduated-gold">
+                <div class="inventory-grid" id="grid-graduated-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
 
-                    <!-- ITEM 2109000 (OFERTA ESPECIAL 0%) -->
-<div class="item-card gold-card-finish" 
-     data-id="2109000" 
-     data-category="us" 
-     data-composition=".900 Gold (21.6K)" 
-     data-grading-service="NGC" 
-     data-cert-number="599682-013" 
-     data-grade="MS-61" 
-     data-is-special="true"
-     data-search="1881 liberty gold eagle ngc ms-61 2109000 599682-013 ngc ms-61 .900 gold (21.6k)">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-61</span>
-        </div>
-        <h3>1881 Liberty Gold Eagle NGC MS-61</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #599682-013</div>
+                    <!-- ITEM 2109000 -->
+                    <div class="item-card gold-card-finish" data-id="2109000" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="NGC" data-cert-number="599682-013" data-grade="MS-61" data-is-special="true" data-search="1881 liberty gold eagle ngc ms-61 2109000 599682-013 ngc ms-61 .900 gold (21.6k)">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-61</span></div>
+                            <h3>1881 Liberty Gold Eagle NGC MS-61</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #599682-013</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2109000</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">3,888,360</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/599682-013/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #599682-013 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1950.21" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2109000', '1881 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1950.21, 0.0, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2108999 -->
+                    <div class="item-card gold-card-finish" data-id="2108999" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="NGC" data-cert-number="150143-007" data-grade="MS-61" data-is-special="true" data-search="1894 liberty gold eagle ngc ms-61 2108999 150143-007 ngc ms-61 .900 gold (21.6k)">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-ngc">NGC MS-61</span></div>
+                            <h3>1894 Liberty Gold Eagle NGC MS-61</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #150143-007</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2108999</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">2,470,700</span></div>
+                            </div>
+                            <a href="https://www.ngccoin.com/certlookup/150143-007/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #150143-007 on NGC</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1965.57" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2108999', '1894 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1965.57, 0.0, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2169796 -->
+                    <div class="item-card gold-card-finish" data-id="2169796" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="PCGS" data-cert-number="61811378" data-grade="AU Details" data-is-special="true" data-search="1901-s liberty gold double eagle pcgs genuine au details 2169796 61811378 pcgs .900 gold (21.6k)">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS AU Details</span></div>
+                            <h3>1901-S Liberty Gold Double Eagle PCGS Genuine AU Details</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 42px; height: 42px; line-height: 42px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">$20</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #61811378</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2169796</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$20 Double Eagle</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">San Francisco ('S')</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.436 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.9675 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">34.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">1,596,000</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/61811378" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #61811378 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="3841.18" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2169796', '1901-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold', 3841.18, 0.0, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2170283 -->
+                    <div class="item-card gold-card-finish" data-id="2170283" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="PCGS" data-cert-number="64202727" data-grade="Proof-70 DCAM" data-search="2007-w jamestown 400th anniversary gold $5 pcgs proof-70 dcam 2170283 64202727 pcgs .900 gold (21.6k)">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +3.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-70 DCAM</span></div>
+                            <h3>2007-W Jamestown 400th Anniversary Gold $5 PCGS Proof-70 DCAM</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$5</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #64202727</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2170283</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$5 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.3590 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2418 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">21.60 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">47,123</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/64202727" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #64202727 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.2418" data-cost="982.24" data-premium="0.03" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2170283', '2007-W Jamestown 400th Anniversary Gold $5 PCGS Proof-70 DCAM', 0.2418, 'gold', 982.24, 0.03, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 1914605 -->
+                    <div class="item-card gold-card-finish" data-id="1914605" data-category="us" data-composition="✨ .9999 Gold" data-grading-service="PCGS" data-cert-number="41424734" data-grade="Proof-69 DCAM" data-search="2020-w end of world war ii 75th anniversary gold $25 first strike pcgs proof-69 dcam 1914605 41424734 pcgs .9999 gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-69 DCAM</span></div>
+                            <h3>2020-W End of World War II 75th Anniversary Gold $25 First Strike PCGS Proof-69 DCAM</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #41424734</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1914605</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">15.5540 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">7,500</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/41424734" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #41424734 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2042.38" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('1914605', '2020-W End of WWII 75th Anniv Gold $25 First Strike PCGS PR-69 DCAM', 0.5000, 'gold', 2042.38, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2178489 -->
+                    <div class="item-card gold-card-finish" data-id="2178489" data-category="us" data-composition="🪙 22K Gold" data-grading-service="PCGS" data-cert-number="58936942" data-grade="Proof-67 DCAM" data-search="2011-w $10 quarter-ounce gold american eagle pcgs proof-67 dcam 2178489 58936942 pcgs 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +4.00% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-67 DCAM</span></div>
+                            <h3>2011-W $10 Quarter-Ounce Gold American Eagle PCGS Proof-67 DCAM</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58936942</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2178489</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.4830 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2500 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/58936942" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58936942 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.2500" data-cost="1026.13" data-premium="0.04" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2178489', '2011-W $10 1/4 oz Gold American Eagle PCGS PR-67 DCAM', 0.2500, 'gold', 1026.13, 0.04, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2182029 -->
+                    <div class="item-card gold-card-finish" data-id="2182029" data-category="us" data-composition="🪙 22K Gold" data-grading-service="PCGS" data-cert-number="56811004" data-grade="MS-69" data-search="1986 $25 half-ounce gold american eagle pcgs ms-69 2182029 56811004 pcgs 22k gold">
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
+                            <div class="badge-holder" style="margin-bottom: 8px;"><span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-69</span></div>
+                            <h3>1986 $25 Half-Ounce Gold American Eagle PCGS MS-69</h3>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
+                                    <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #56811004</div>
+                                </div>
+                            </div>
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2182029</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">599,566</span></div>
+                            </div>
+                            <a href="https://www.pcgs.com/cert/56811004" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #56811004 on PCGS</a>
+                        </div>
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2182029', '1986 $25 1/2 oz Gold American Eagle PCGS MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2109000</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">3,888,360</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/599682-013/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #599682-013 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1950.21" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2109000', '1881 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1950.21, 0.0, 'percent')">Add to Order</button>
-    </div>
-</div>
 
-<!-- ITEM 2108999 (OFERTA ESPECIAL 0%) -->
-<div class="item-card gold-card-finish" 
-     data-id="2108999" 
-     data-category="us" 
-     data-composition=".900 Gold (21.6K)" 
-     data-grading-service="NGC" 
-     data-cert-number="150143-007" 
-     data-grade="MS-61" 
-     data-is-special="true"
-     data-search="1894 liberty gold eagle ngc ms-61 2108999 150143-007 ngc ms-61 .900 gold (21.6k)">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-61</span>
-        </div>
-        <h3>1894 Liberty Gold Eagle NGC MS-61</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #150143-007</div>
+        <div id="sub-gold-bars" class="sub-tab-content">
+            <div class="inventory-grid" id="grid-gold-bars" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+                <div class="no-items-message" style="grid-column: 1 / -1; text-align: center; color: #94a3b8; padding: 40px 0;"><p>Currently no loose gold bars in primary stock.</p></div>
             </div>
         </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2108999</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">2,470,700</span></div>
-        </div>
-        <a href="https://www.ngccoin.com/certlookup/150143-007/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">🔍 Verify Cert #150143-007 on NGC</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1965.57" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2108999', '1894 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1965.57, 0.0, 'percent')">Add to Order</button>
     </div>
 </div>
+   
 
-<!-- ITEM 2169796 (OFERTA ESPECIAL 0%) -->
-<div class="item-card gold-card-finish" 
-     data-id="2169796" 
-     data-category="us" 
-     data-composition=".900 Gold (21.6K)" 
-     data-grading-service="PCGS" 
-     data-cert-number="61811378" 
-     data-grade="AU Details" 
-     data-is-special="true"
-     data-search="1901-s liberty gold double eagle pcgs genuine au details 2169796 61811378 pcgs .900 gold (21.6k)">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS AU Details</span>
-        </div>
-        <h3>1901-S Liberty Gold Double Eagle PCGS Genuine AU Details</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 42px; height: 42px; line-height: 42px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.85rem; border: 1px solid #fde68a;">$20</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #61811378</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2169796</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$20 Double Eagle</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">San Francisco ('S')</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">33.436 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.9675 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">34.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">1,596,000</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/61811378" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #61811378 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="3841.18" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2169796', '1901-S Liberty Gold Double Eagle PCGS Genuine AU Details', 0.9675, 'gold', 3841.18, 0.0, 'percent')">Add to Order</button>
-    </div>
-</div>
 
-<!-- ITEM 2170283 (GRADUATED GOLD) -->
-<div class="item-card gold-card-finish" 
-     data-id="2170283" 
-     data-category="us" 
-     data-composition=".900 Gold (21.6K)" 
-     data-grading-service="PCGS" 
-     data-cert-number="64202727" 
-     data-grade="Proof-70 DCAM" 
-     data-search="2007-w jamestown 400th anniversary gold $5 pcgs proof-70 dcam 2170283 64202727 pcgs .900 gold (21.6k)">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +3.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-70 DCAM</span>
-        </div>
-        <h3>2007-W Jamestown 400th Anniversary Gold $5 PCGS Proof-70 DCAM</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$5</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #64202727</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2170283</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$5 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.3590 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2418 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">21.60 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">47,123</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/64202727" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #64202727 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.2418" data-cost="982.24" data-premium="0.03" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2170283', '2007-W Jamestown 400th Anniversary Gold $5 PCGS Proof-70 DCAM', 0.2418, 'gold', 982.24, 0.03, 'percent')">Add to Order</button>
-    </div>
-</div>
 
-<!-- ITEM 1914605 (GRADUATED GOLD) -->
-<div class="item-card gold-card-finish" 
-     data-id="1914605" 
-     data-category="us" 
-     data-composition="✨ .9999 Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="41424734" 
-     data-grade="Proof-69 DCAM" 
-     data-search="2020-w end of world war ii 75th anniversary gold $25 first strike pcgs proof-69 dcam 1914605 41424734 pcgs .9999 gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-69 DCAM</span>
-        </div>
-        <h3>2020-W End of World War II 75th Anniversary Gold $25 First Strike PCGS Proof-69 DCAM</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #41424734</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1914605</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">15.5540 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">7,500</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/41424734" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #41424734 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2042.38" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('1914605', '2020-W End of WWII 75th Anniv Gold $25 First Strike PCGS PR-69 DCAM', 0.5000, 'gold', 2042.38, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
 
-<!-- ITEM 2178489 (GRADUATED GOLD) -->
-<div class="item-card gold-card-finish" 
-     data-id="2178489" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="58936942" 
-     data-grade="Proof-67 DCAM" 
-     data-search="2011-w $10 quarter-ounce gold american eagle pcgs proof-67 dcam 2178489 58936942 pcgs 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +4.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS PR-67 DCAM</span>
-        </div>
-        <h3>2011-W $10 Quarter-Ounce Gold American Eagle PCGS Proof-67 DCAM</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #58936942</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2178489</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">West Point ('W')</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">8.4830 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2500 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">N/A</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/58936942" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #58936942 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.2500" data-cost="1026.13" data-premium="0.04" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2178489', '2011-W $10 1/4 oz Gold American Eagle PCGS PR-67 DCAM', 0.2500, 'gold', 1026.13, 0.04, 'percent')">Add to Order</button>
-    </div>
-</div>
 
-<!-- ITEM 2182029 (GRADUATED GOLD) -->
-<div class="item-card gold-card-finish" 
-     data-id="2182029" 
-     data-category="us" 
-     data-composition="🪙 22K Gold" 
-     data-grading-service="PCGS" 
-     data-cert-number="56811004" 
-     data-grade="MS-69" 
-     data-search="1986 $25 half-ounce gold american eagle pcgs ms-69 2182029 56811004 pcgs 22k gold">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.20% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-pcgs" style="background: #1e3a8a; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">PCGS MS-69</span>
-        </div>
-        <h3>1986 $25 Half-Ounce Gold American Eagle PCGS MS-69</h3>
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder pcgs-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #1e3a8a; text-align: center;">
-                <div class="slab-header-pcgs" style="background: #1e3a8a; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">PCGS CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$25</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">PCGS CERT #56811004</div>
-            </div>
-        </div>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2182029</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.9660 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.5000 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">599,566</span></div>
-        </div>
-        <a href="https://www.pcgs.com/cert/56811004" target="_blank" rel="noopener" class="btn-verify-cert pcgs-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #0f172a; color: #38bdf8; border: 1px solid #1e3a8a;">🔍 Verify Cert #56811004 on PCGS</a>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.5000" data-cost="2052.25" data-premium="0.022" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2182029', '1986 $25 1/2 oz Gold American Eagle PCGS MS-69', 0.5000, 'gold', 2052.25, 0.022, 'percent')">Add to Order</button>
-    </div>
-</div>
+
+
+
 
 
 
@@ -1109,7 +1062,6 @@
 
 
 
-
 <!-- ========================================================= -->
     <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
@@ -1125,10 +1077,10 @@
         var b2bRecommendedItems = [];
 
         var legalTexts = {
-            'price-lock': '<h3>🔒 Price Lock Agreement & Cancellation Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">When you submit an order through the JL Bullion Trading Desk, your price is locked in real-time based on live market spot prices. By submitting an order, you enter into a binding agreement. Any market loss resulting from a customer cancellation will be billed to the customer, plus a $50 USD market loss administrative fee.</p>',
-            'b2r-terms': '<h3>📄 Business-to-Retail (B2R) Terms of Trading</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC offers precious metals trading for retail buyers, investors, and wholesale accounts. All sales are finalized upon written confirmation from our Trading Desk. Orders ship via insured carrier (FedEx) requiring adult signature upon delivery.</p>',
-            'aml-policy': '<h3>🛡️ Anti-Money Laundering (AML) & BSA Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC strictly enforces an Anti-Money Laundering Compliance Program under 31 CFR Part 1027, the USA PATRIOT Act, and the Bank Secrecy Act (BSA). We perform Customer Due Diligence (KYC) on high-value and cash-equivalent transactions. FinCEN Registration Tracking ID: MRX26-00002577.</p>',
-            'privacy-policy': '<h3>🔐 Privacy Policy & Florida Sales Tax Rules (HB 7031)</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC protects customer data and does not sell information to third parties.<br><br><b>Florida Sales Tax Exemptions (F.S. 212.08 / HB 7031):</b><br>• <i>US Legal Tender Coins & Precious Metal Bullion:</i> All qualifying Gold, Silver, and Platinum bullion (bars, ingots, rounds) and US legal tender coins are <b>100% Sales Tax Exempt with NO minimum purchase requirement</b>.<br>• <i>Foreign Sovereign Coins:</i> Tax-exempt when the total single transaction of foreign currency exceeds $500 USD.<br><br><b>Federal Tax Compliance:</b> Cash or cash-equivalent payments exceeding $10,000 USD within a 24-hour period require mandatory reporting to the Internal Revenue Service via IRS Form 8300.</p>'
+            'price-lock': '<h3>🔒 Price Lock Agreement & Cancellation Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">When you submit an order through the JL Bullion Trading Desk, your price is locked in real-time based on live market spot prices.</p>',
+            'b2r-terms': '<h3>📄 Business-to-Retail (B2R) Terms of Trading</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC offers precious metals trading for retail buyers, investors, and wholesale accounts.</p>',
+            'aml-policy': '<h3>🛡️ Anti-Money Laundering (AML) & BSA Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC strictly enforces an Anti-Money Laundering Compliance Program under 31 CFR Part 1027.</p>',
+            'privacy-policy': '<h3>🔐 Privacy Policy & Florida Sales Tax Rules (HB 7031)</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC protects customer data and does not sell information to third parties.</p>'
         };
 
         function openLegalModal(docType) {
@@ -1150,27 +1102,24 @@
             if (menu) menu.classList.toggle('mobile-open');
         }
 
-        /* MODO OSCURO VIP (DARK LUXURY SWITCH) */
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             var isDark = document.body.classList.contains('dark-mode');
             localStorage.setItem('jlb_dark_mode', isDark ? 'enabled' : 'disabled');
-            
             var btnText = document.getElementById('themeSwitchText');
             if (btnText) btnText.innerText = isDark ? '☀️ VIP Light' : '🌙 VIP Dark Mode';
         }
 
+        /* NAVEGACIÓN PRINCIPAL CON DESBLOQUEO OBLIGATORIO DE DISPLAY */
         function openTab(tabId, event) {
             var pages = document.querySelectorAll('.tab-page');
-            for(var i = 0; i < pages.length; i++) {
-                pages[i].classList.remove('active-page');
-                pages[i].style.setProperty('display', 'none', 'important');
-            }
+            pages.forEach(function(p) {
+                p.classList.remove('active-page');
+                p.style.setProperty('display', 'none', 'important');
+            });
 
             var tabs = document.querySelectorAll('.nav-tab');
-            for(var j = 0; j < tabs.length; j++) {
-                tabs[j].classList.remove('active');
-            }
+            tabs.forEach(function(t) { t.classList.remove('active'); });
 
             var selectedPage = document.getElementById(tabId);
             if(selectedPage) {
@@ -1182,7 +1131,6 @@
                 event.currentTarget.classList.add('active');
             }
 
-            // Al cambiar a Specials, resetear el filtro activo a 'all' para garantizar la visibilidad
             if (tabId === 'specials') {
                 activeCategoryFilter = 'all';
                 document.querySelectorAll('#specials .filter-chip').forEach(function(chip, idx) {
@@ -1193,96 +1141,15 @@
 
             var searchInput = document.querySelector('.search-box-input');
             filterInventory(searchInput ? searchInput.value : '');
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function processSpecialsMigration() {
-            var gridSpecialsPage = document.getElementById('grid-specials-page');
-            var gridGraduated = document.getElementById('grid-graduated-gold');
-
-            document.querySelectorAll('.item-card').forEach(function(card) {
-                var priceEl = card.querySelector('.item-price');
-                if (!priceEl) return;
-
-                var weight = parseFloat(priceEl.getAttribute('data-weight')) || 0;
-                var premium = parseFloat(priceEl.getAttribute('data-premium')) || 0;
-                var pType = priceEl.getAttribute('data-premium-type') || 'percent';
-                var cost = parseFloat(priceEl.getAttribute('data-cost')) || 0;
-                var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
-
-                var calcPrice = (pType === 'fixed') ? (weight * goldSpotPrice) + (weight * premium) : (weight * goldSpotPrice) * (1 + premium);
-                var minPrice = cost > 0 ? cost * 1.02 : 0;
-
-                var isEligibleForSpecial = (premium === 0 || isSpecialAttr) && !(cost > 0 && calcPrice < minPrice);
-
-                if (isEligibleForSpecial) {
-                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
-                        gridSpecialsPage.appendChild(card);
-                    }
-                } else {
-                    if (gridGraduated && !gridGraduated.contains(card)) {
-                        gridGraduated.appendChild(card);
-                    }
-                }
-            });
-        }
-
-        function filterInventory(query) {
-            var searchTerm = (query || '').toLowerCase().trim();
-            var priceRange = document.getElementById('priceRangeFilter') ? document.getElementById('priceRangeFilter').value : 'all';
-            var weightRange = document.getElementById('weightRangeFilter') ? document.getElementById('weightRangeFilter').value : 'all';
-            var grids = document.querySelectorAll('.inventory-grid');
-
-            grids.forEach(function(grid) {
-                var cards = grid.querySelectorAll('.item-card');
-                var visibleCount = 0;
-
-                cards.forEach(function(card) {
-                    var searchData = (card.getAttribute('data-search') || '').toLowerCase();
-                    var cardCategory = card.getAttribute('data-category') || '';
-                    var cardId = card.getAttribute('data-id');
-                    
-                    var priceEl = card.querySelector('.item-price');
-                    var cardPrice = parseFloat(priceEl ? priceEl.getAttribute('data-calculated-price') : 0) || 0;
-                    var cardWeight = parseFloat(priceEl ? priceEl.getAttribute('data-weight') : 0) || 0;
-
-                    var matchesSearch = searchData.includes(searchTerm);
-                    var matchesCategory = (activeCategoryFilter === 'all') || (cardCategory === activeCategoryFilter);
-
-                    var matchesPrice = true;
-                    if (priceRange === 'under1000') matchesPrice = cardPrice < 1000;
-                    else if (priceRange === '1000to2500') matchesPrice = cardPrice >= 1000 && cardPrice <= 2500;
-                    else if (priceRange === 'over2500') matchesPrice = cardPrice > 2500;
-
-                    var matchesWeight = true;
-                    if (weightRange === 'fractional') matchesWeight = cardWeight < 0.99;
-                    else if (weightRange === '1oz') matchesWeight = (cardWeight >= 0.99 && cardWeight <= 1.05);
-                    else if (weightRange === 'multi') matchesWeight = cardWeight > 1.05;
-
-                    var isSelectedInCart = selectedItems.some(function(item) { return item.id === cardId; });
-
-                    if (matchesSearch && matchesCategory && matchesPrice && matchesWeight && !isSelectedInCart) {
-                        card.style.setProperty('display', 'flex', 'important');
-                        visibleCount++;
-                    } else {
-                        card.style.setProperty('display', 'none', 'important');
-                    }
-                });
-
-                var emptyState = grid.querySelector('.empty-search-state');
-                if (emptyState) {
-                    emptyState.style.display = (visibleCount === 0 && cards.length > 0) ? 'block' : 'none';
-                }
-            });
         }
 
         function openSubTab(subTabId, event) {
             var subContents = document.querySelectorAll('.sub-tab-content');
-            for(var i=0; i<subContents.length; i++) subContents[i].classList.remove('active-subcontent');
+            subContents.forEach(function(sc) { sc.classList.remove('active-subcontent'); });
 
             var subBtns = document.querySelectorAll('.sub-tab-btn');
-            for(var j=0; j<subBtns.length; j++) subBtns[j].classList.remove('active-subtab');
+            subBtns.forEach(function(sb) { sb.classList.remove('active-subtab'); });
 
             var selectedSub = document.getElementById(subTabId);
             if (selectedSub) selectedSub.classList.add('active-subcontent');
@@ -1291,17 +1158,16 @@
 
         function openNestedTab(nestedTabId, event) {
             var nestedContents = document.querySelectorAll('.nested-tab-content');
-            for(var i=0; i<nestedContents.length; i++) nestedContents[i].classList.remove('active-nestedcontent');
+            nestedContents.forEach(function(nc) { nc.classList.remove('active-nestedcontent'); });
 
             var nestedBtns = document.querySelectorAll('.nested-tab-btn');
-            for(var j=0; j<nestedBtns.length; j++) nestedBtns[j].classList.remove('active-nestedtab');
+            nestedBtns.forEach(function(nb) { nb.classList.remove('active-nestedtab'); });
 
             var selectedNested = document.getElementById(nestedTabId);
             if (selectedNested) selectedNested.classList.add('active-nestedcontent');
             if(event && event.currentTarget) event.currentTarget.classList.add('active-nestedtab');
         }
 
-        /* CONTROL DE CARRITO LATERAL (OFF-CANVAS ORDER DRAWER) */
         function openCartDrawer() {
             var overlay = document.getElementById('cartOverlay');
             var drawer = document.getElementById('cartDrawer');
@@ -1320,7 +1186,6 @@
             }
         }
 
-        /* RECALCULADOR DE CONTADORES AUTOMÁTICO */
         function updateTabCounters() {
             var goldCards = document.querySelectorAll('#gold .item-card');
             var silverCards = document.querySelectorAll('#silver .item-card');
@@ -1336,34 +1201,35 @@
 
             var subGoldCoins = document.querySelectorAll('#sub-gold-coins .item-card');
             var subGoldBars = document.querySelectorAll('#sub-gold-bars .item-card');
-            var elSubCoins = document.getElementById('cnt-sub-gold-coins');
-            var elSubBars = document.getElementById('cnt-sub-gold-bars');
-            if(elSubCoins) elSubCoins.innerText = subGoldCoins.length;
-            if(elSubBars) elSubBars.innerText = subGoldBars.length;
+            if(document.getElementById('cnt-sub-gold-coins')) document.getElementById('cnt-sub-gold-coins').innerText = subGoldCoins.length;
+            if(document.getElementById('cnt-sub-gold-bars')) document.getElementById('cnt-sub-gold-bars').innerText = subGoldBars.length;
 
             var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card');
             var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card');
-            var elNestGraduated = document.getElementById('cnt-nested-graduated-gold');
-            var elNestBullion = document.getElementById('cnt-nested-bullion-gold');
-            if(elNestGraduated) elNestGraduated.innerText = nestedGraduated.length;
-            if(elNestBullion) elNestBullion.innerText = nestedBullion.length;
-
-            var subSilverCoins = document.querySelectorAll('#sub-silver-coins .item-card');
-            var subSilverBars = document.querySelectorAll('#sub-silver-bars .item-card');
-            var elSubSilver = document.getElementById('cnt-sub-silver-coins');
-            var elSubSilverBars = document.getElementById('cnt-sub-silver-bars');
-            if(elSubSilver) elSubSilver.innerText = subSilverCoins.length;
-            if(elSubSilverBars) elSubSilverBars.innerText = subSilverBars.length;
-
-            var nestedSilverBullion = document.querySelectorAll('#nested-silver-bullion .item-card');
-            var nestedSilverGrad = document.querySelectorAll('#nested-graduated-silver .item-card');
-            var elNestSilverBullion = document.getElementById('cnt-nested-silver-bullion');
-            var elNestSilverGrad = document.getElementById('cnt-nested-graduated-silver');
-            if(elNestSilverBullion) elNestSilverBullion.innerText = nestedSilverBullion.length;
-            if(elNestSilverGrad) elNestSilverGrad.innerText = nestedSilverGrad.length;
+            if(document.getElementById('cnt-nested-graduated-gold')) document.getElementById('cnt-nested-graduated-gold').innerText = nestedGraduated.length;
+            if(document.getElementById('cnt-nested-bullion-gold')) document.getElementById('cnt-nested-bullion-gold').innerText = nestedBullion.length;
         }
 
-        /* FILTRADO MULTIDIMENSIONAL INTEGRADO */
+        /* MIGRACIÓN DIRECTA Y OBLIGATORIA A SPECIALS 🔥 */
+        function processSpecialsMigration() {
+            var gridSpecialsPage = document.getElementById('grid-specials-page');
+            var gridGraduated = document.getElementById('grid-graduated-gold');
+
+            document.querySelectorAll('.item-card').forEach(function(card) {
+                var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
+
+                if (isSpecialAttr) {
+                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
+                        gridSpecialsPage.appendChild(card);
+                    }
+                } else {
+                    if (gridGraduated && !gridGraduated.contains(card)) {
+                        gridGraduated.appendChild(card);
+                    }
+                }
+            });
+        }
+
         function filterInventory(query) {
             var searchTerm = (query || '').toLowerCase().trim();
             var priceRange = document.getElementById('priceRangeFilter') ? document.getElementById('priceRangeFilter').value : 'all';
@@ -1427,7 +1293,6 @@
 
         function sortInventory(sortBy) {
             var grids = document.querySelectorAll('.inventory-grid');
-
             grids.forEach(function(grid) {
                 var cards = Array.from(grid.querySelectorAll('.item-card'));
                 if (cards.length === 0) return;
@@ -1435,18 +1300,10 @@
                 cards.sort(function(a, b) {
                     var priceA = parseFloat(a.querySelector('.item-price').getAttribute('data-calculated-price')) || 0;
                     var priceB = parseFloat(b.querySelector('.item-price').getAttribute('data-calculated-price')) || 0;
-                    var weightA = parseFloat(a.querySelector('.item-price').getAttribute('data-weight')) || 0;
-                    var weightB = parseFloat(b.querySelector('.item-price').getAttribute('data-weight')) || 0;
-                    var idA = a.getAttribute('data-id') || '';
-                    var idB = b.getAttribute('data-id') || '';
-
                     if (sortBy === 'price-asc') return priceA - priceB;
                     if (sortBy === 'price-desc') return priceB - priceA;
-                    if (sortBy === 'weight-desc') return weightB - weightA;
-                    if (sortBy === 'id-asc') return idA.localeCompare(idB, undefined, {numeric: true});
                     return 0;
                 });
-
                 cards.forEach(function(card) { grid.appendChild(card); });
             });
         }
@@ -1455,14 +1312,8 @@
             var card = document.querySelector('.item-card[data-id="' + cardId + '"]');
             if (card) card.style.setProperty('display', 'none', 'important');
 
-            selectedItems.push({
-                id: cardId, title: title, weight: weight, metal: metal, cost: cost || 0,
-                premiumVal: premiumVal || 0, premiumType: premiumType || 'percent'
-            });
-
-            if (selectedItems.length === 1 && !reservationTimer) {
-                startReservationTimer();
-            }
+            selectedItems.push({ id: cardId, title: title, weight: weight, metal: metal, cost: cost || 0, premiumVal: premiumVal || 0, premiumType: premiumType || 'percent' });
+            if (selectedItems.length === 1 && !reservationTimer) startReservationTimer();
 
             updateTradingDesk();
             openCartDrawer();
@@ -1470,7 +1321,6 @@
 
         function removeCoinFromCart(cardId) {
             selectedItems = selectedItems.filter(function(item) { return item.id !== cardId; });
-
             var searchInput = document.querySelector('.search-box-input');
             filterInventory(searchInput ? searchInput.value : '');
 
@@ -1489,7 +1339,7 @@
             var container = document.getElementById('selected-items-container');
             var drawerContainer = document.getElementById('drawerItemsContainer');
             var totalAmount = 0;
-            var textLines = ["Selected Items for Purchase (Prices subject to live market spot fluctuation):"];
+            var textLines = ["Selected Items for Purchase:"];
 
             container.innerHTML = "";
             drawerContainer.innerHTML = "";
@@ -1503,7 +1353,7 @@
                     var itemPrice = (item.cost > 0 && calcPrice < minPrice) ? minPrice : calcPrice;
                     totalAmount += itemPrice;
 
-                    textLines.push("• Item #" + item.id + " - " + item.title + " [Price: $" + itemPrice.toFixed(2) + " USD]");
+                    textLines.push("• Item #" + item.id + " - " + item.title + " [$" + itemPrice.toFixed(2) + " USD]");
 
                     var rowHtml = '<span class="cart-item-title">Item #' + item.id + ' - ' + item.title + '</span>' +
                                   '<span class="cart-item-price">$' + itemPrice.toFixed(2) + ' USD</span>' +
@@ -1520,122 +1370,23 @@
                     drawerContainer.appendChild(drawerRow);
                 });
 
-                textLines.push("\nESTIMATED TOTAL AT LIVE MARKET: $" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD");
-                textArea.value = textLines.join("\n");
+                textLines.push("\nESTIMATED TOTAL: $" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD");
+                if (textArea) textArea.value = textLines.join("\n");
             } else {
                 container.style.display = "none";
                 drawerContainer.innerHTML = '<p style="color: #94a3b8; font-size: 0.88rem; text-align: center; margin-top: 2rem;">Your order drawer is empty.</p>';
-                textArea.value = "";
+                if (textArea) textArea.value = "";
             }
 
             var formattedTotal = "$" + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD";
-            document.getElementById('cart-total-amount').innerText = formattedTotal;
-            document.getElementById('drawerTotalAmount').innerText = formattedTotal;
-        }
-
-        /* ACCIONES B2B EN CARRITO: COPIAR Y EXPORTAR A PDF FORMAL */
-        function copyQuoteToClipboard() {
-            var textArea = document.getElementById('order-details');
-            if (!textArea || !textArea.value) {
-                alert("Your order drawer is empty.");
-                return;
-            }
-            navigator.clipboard.writeText(textArea.value).then(function() {
-                alert("📋 Formal quote copied to clipboard!");
-            });
-        }
-
-        function printFormalPDFQuote() {
-            if (selectedItems.length === 0) {
-                alert("Please add items to your order first.");
-                return;
-            }
-
-            var totalAmount = 0;
-            var tableRows = selectedItems.map(function(item) {
-                var spot = (item.metal === 'silver') ? silverSpotPrice : goldSpotPrice;
-                var calcPrice = (item.premiumType === 'fixed') ? (item.weight * spot) + (item.weight * item.premiumVal) : (item.weight * spot) * (1 + item.premiumVal);
-                var minPrice = item.cost > 0 ? item.cost * 1.02 : 0;
-                var finalPrice = (item.cost > 0 && calcPrice < minPrice) ? minPrice : calcPrice;
-                totalAmount += finalPrice;
-
-                return '<tr>' +
-                    '<td style="padding:8px; border-bottom:1px solid #ddd;">#' + item.id + '</td>' +
-                    '<td style="padding:8px; border-bottom:1px solid #ddd;">' + item.title + '</td>' +
-                    '<td style="padding:8px; border-bottom:1px solid #ddd; text-align:right;">' + item.weight + ' oz</td>' +
-                    '<td style="padding:8px; border-bottom:1px solid #ddd; text-align:right;">$' + finalPrice.toFixed(2) + ' USD</td>' +
-                '</tr>';
-            }).join('');
-
-            var printWindow = window.open('', '_blank');
-            printWindow.document.write('<html><head><title>JL Bullion LLC - Proforma Quote</title>' +
-                '<style>body{font-family:Arial,sans-serif; padding:30px;} table{width:100%; border-collapse:collapse; margin-top:20px;}</style></head><body>' +
-                '<div style="display:flex; justify-content:space-between; border-bottom:2px solid #d4af37; padding-bottom:10px;">' +
-                    '<div><h2 style="margin:0; color:#0a192f;">JL BULLION LLC</h2><p style="margin:2px 0; font-size:12px; color:#666;">Precious Metals Trading Desk | Miami, FL</p><p style="margin:0; font-size:11px; color:#666;">FinCEN Registration ID: MRX26-00002577</p></div>' +
-                    '<div style="text-align:right;"><h3 style="margin:0; color:#d4af37;">PROFORMA QUOTE</h3><p style="margin:2px 0; font-size:12px;">Date: ' + new Date().toLocaleDateString() + '</p></div>' +
-                '</div>' +
-                '<table><thead><tr style="background:#0a192f; color:#fff;"><th style="padding:8px; text-align:left;">Item #</th><th style="padding:8px; text-align:left;">Description</th><th style="padding:8px; text-align:right;">Weight</th><th style="padding:8px; text-align:right;">Locked Price</th></tr></thead><tbody>' +
-                tableRows +
-                '</tbody></table>' +
-                '<div style="text-align:right; margin-top:20px; font-size:18px; font-weight:bold; color:#0a192f;">Total Locked Amount: $' + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD</div>' +
-                '<p style="font-size:10px; color:#888; margin-top:40px;">* Live Spot Market Disclaimer: Prices bound to spot fluctuations upon formal Trading Desk confirmation. All qualified bullion sales are 100% Florida Sales Tax Exempt (HB 7031 / F.S. 212.08).</p>' +
-                '</body></html>');
-            printWindow.document.close();
-            printWindow.print();
-        }
-
-        /* CALCULADORA DE ASIGNACIÓN DE CAPITAL */
-        function calculateB2BAllocation() {
-            var capital = parseFloat(document.getElementById('b2bCapitalInput').value) || 0;
-            var strategy = document.getElementById('b2bStrategySelect').value;
-            
-            if (capital < 1000) {
-                alert("Minimum allocation threshold is $1,000 USD.");
-                return;
-            }
-
-            var goldTarget = capital * (strategy === 'heavyGold' ? 0.80 : (strategy === 'heavySilver' ? 0.20 : 0.50));
-            var silverTarget = capital - goldTarget;
-
-            var gold1ozPrice = goldSpotPrice * 1.04;
-            var silver100ozPrice = (silverSpotPrice * 100) + 250;
-
-            var goldOunces = Math.floor(goldTarget / gold1ozPrice);
-            var silverBars100oz = Math.floor(silverTarget / silver100ozPrice);
-
-            b2bRecommendedItems = [];
-            var htmlText = "• <b>" + goldOunces + "x</b> Gold American Eagle 1 oz (~$" + (goldOunces * gold1ozPrice).toFixed(2) + " USD)<br>" +
-                           "• <b>" + silverBars100oz + "x</b> Silver Bar 100 oz (~$" + (silverBars100oz * silver100ozPrice).toFixed(2) + " USD)<br>" +
-                           "<b>Allocated Total:</b> $" + ((goldOunces * gold1ozPrice) + (silverBars100oz * silver100ozPrice)).toLocaleString('en-US', {minimumFractionDigits:2}) + " USD";
-
-            document.getElementById('b2bResultDetails').innerHTML = htmlText;
-            document.getElementById('b2bResultBox').style.display = 'block';
-
-            b2bRecommendedItems = [
-                { id: 'GAE-1OZ', title: 'Gold American Eagle 1 oz', weight: 1.0, metal: 'gold', cost: 0, premiumVal: 0.04, premiumType: 'percent', qty: goldOunces },
-                { id: 'SBAR-MXD-100OZ-C', title: 'Silver Bar 100 oz (Mixed)', weight: 100.0, metal: 'silver', cost: 0, premiumVal: 2.50, premiumType: 'fixed', qty: silverBars100oz }
-            ];
-        }
-
-        function applyB2BToCart() {
-            b2bRecommendedItems.forEach(function(item) {
-                for (var i = 0; i < item.qty; i++) {
-                    selectedItems.push({
-                        id: item.id, title: item.title, weight: item.weight,
-                        metal: item.metal, cost: item.cost, premiumVal: item.premiumVal, premiumType: item.premiumType
-                    });
-                }
-            });
-
-            if (selectedItems.length > 0 && !reservationTimer) startReservationTimer();
-            updateTradingDesk();
-            openCartDrawer();
+            if (document.getElementById('cart-total-amount')) document.getElementById('cart-total-amount').innerText = formattedTotal;
+            if (document.getElementById('drawerTotalAmount')) document.getElementById('drawerTotalAmount').innerText = formattedTotal;
         }
 
         function startReservationTimer() {
             timeRemaining = 600;
             var timerDisplay = document.getElementById('timer-display');
-            timerDisplay.style.display = 'inline-block';
+            if(timerDisplay) timerDisplay.style.display = 'inline-block';
 
             reservationTimer = setInterval(function() {
                 timeRemaining--;
@@ -1643,172 +1394,20 @@
                 var seconds = timeRemaining % 60;
                 if (seconds < 10) seconds = "0" + seconds;
 
-                timerDisplay.innerText = "Time Left: " + minutes + ":" + seconds;
+                if (timerDisplay) timerDisplay.innerText = "Time Left: " + minutes + ":" + seconds;
 
                 if (timeRemaining <= 0) {
-                    resetCartAndReturnItems();
+                    clearInterval(reservationTimer);
+                    reservationTimer = null;
+                    selectedItems = [];
+                    calculateSpotPrices();
+                    updateTradingDesk();
+                    closeCartDrawer();
+                    alert("⏱️ Your 10-minute reservation period has expired.");
                 }
             }, 1000);
         }
 
-        function resetCartAndReturnItems() {
-            clearInterval(reservationTimer);
-            reservationTimer = null;
-            document.getElementById('timer-display').style.display = 'none';
-
-            selectedItems = [];
-            calculateSpotPrices();
-            updateTradingDesk();
-            closeCartDrawer();
-
-            alert("⏱️ Your 10-minute reservation period has expired. Selected items have been returned to the public catalog.");
-        }
-
-        /* LÓGICA DE MIGRACIÓN Y RENDERIZADO VISIBLE A SPECIALS */
-        function processSpecialsMigration() {
-            document.querySelectorAll('.item-card').forEach(function(card) {
-                var priceEl = card.querySelector('.item-price');
-                if (!priceEl) return;
-
-                var weight = parseFloat(priceEl.getAttribute('data-weight')) || 0;
-                var premium = parseFloat(priceEl.getAttribute('data-premium')) || 0;
-                var pType = priceEl.getAttribute('data-premium-type') || 'percent';
-                var cost = parseFloat(priceEl.getAttribute('data-cost')) || 0;
-                var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
-
-                var calcPrice = (pType === 'fixed') ? (weight * goldSpotPrice) + (weight * premium) : (weight * goldSpotPrice) * (1 + premium);
-                var minPrice = cost > 0 ? cost * 1.02 : 0;
-
-                var isEligibleForSpecial = (premium === 0 || isSpecialAttr) && !(cost > 0 && calcPrice < minPrice);
-
-                var gridSpecialsPage = document.getElementById('grid-specials-page');
-                var gridGraduated = document.getElementById('grid-graduated-gold');
-
-                if (isEligibleForSpecial) {
-                    if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
-                        gridSpecialsPage.appendChild(card);
-                    }
-                    card.style.setProperty('display', 'flex', 'important');
-                } else {
-                    if (gridGraduated && !gridGraduated.contains(card)) {
-                        gridGraduated.appendChild(card);
-                    }
-                }
-            });
-        }
-
-        /* INYECTOR DE COMPOSICIÓN Y PUREZA DESDE ATRIBUTOS */
-        function injectMetalPurityBadges() {
-            document.querySelectorAll('.item-card').forEach(function(card) {
-                var priceEl = card.querySelector('.item-price');
-                if (!priceEl || card.querySelector('.metal-purity-badge')) return;
-
-                var metal = priceEl ? priceEl.getAttribute('data-metal') : 'gold';
-                var customComp = card.getAttribute('data-composition');
-                var title = card.querySelector('h3') ? card.querySelector('h3').innerText.toLowerCase() : '';
-
-                var badge = document.createElement('span');
-                badge.className = 'metal-purity-badge ';
-
-                if (customComp) {
-                    if (metal === 'gold') {
-                        badge.className += 'badge-gold-purity';
-                        badge.innerHTML = '🪙 ' + customComp + ' • AGW';
-                    } else {
-                        badge.className += 'badge-silver-purity';
-                        badge.innerHTML = '🥈 ' + customComp + ' • ASW';
-                    }
-                } else {
-                    if (metal === 'gold') {
-                        badge.className += 'badge-gold-purity';
-                        if (title.includes('uruguay') || title.includes('peru') || title.includes('libra')) {
-                            badge.innerHTML = '🪙 .917 Gold (22K) • AGW';
-                        } else if (title.includes('buffalo') || title.includes('american liberty')) {
-                            badge.innerHTML = '✨ .9999 Gold • AGW';
-                        } else if (title.includes('50 peso') || title.includes('chile') || title.includes('liberty') || 
-                                   title.includes('saint-gaudens') || title.includes('indian') || title.includes('double eagle') || 
-                                   title.includes('half eagle') || title.includes('eagle $') || title.includes('jamestown') || 
-                                   title.includes('wwii') || title.includes('gulden') || title.includes('franc') || title.includes('balboas')) {
-                            badge.innerHTML = '🪙 .900 Gold (21.6K) • AGW';
-                        } else if (title.includes('american eagle') || title.includes('krugerrand')) {
-                            badge.innerHTML = '🪙 22K Gold • AGW';
-                        } else {
-                            badge.innerHTML = '✨ .9999 Gold • AGW';
-                        }
-                    } else if (metal === 'silver') {
-                        badge.className += 'badge-silver-purity';
-                        badge.innerHTML = '🥈 .999 Silver • ASW';
-                    }
-                }
-
-                card.appendChild(badge);
-            });
-        }
-
-        /* CONTROL Y CORRECCIÓN AUTOMÁTICA DE CERTIFICADOS */
-        function fixAndRenderCertificates() {
-            document.querySelectorAll('.item-card').forEach(function(card) {
-                var itemId = card.getAttribute('data-id') || '';
-                var certNum = card.getAttribute('data-cert-number') || '';
-                var service = card.getAttribute('data-grading-service') || '';
-                var isGraded = service && service.toLowerCase() !== 'uncertified' && service.toLowerCase() !== 'raw';
-
-                var isInvalidCert = (!certNum || certNum === itemId || certNum === '0' || certNum.length < 5);
-
-                if (isGraded) {
-                    if (isInvalidCert) {
-                        var certRow = card.querySelector('.item-specs-grid .spec-row:last-child');
-                        if (certRow && certRow.innerText.includes('Cert')) {
-                            certRow.remove();
-                        }
-
-                        var mediaWrapper = card.querySelector('.card-media-wrapper');
-                        if (mediaWrapper) {
-                            mediaWrapper.remove();
-                        }
-
-                        var verifyBtn = card.querySelector('.btn-verify-cert');
-                        if (verifyBtn) {
-                            verifyBtn.remove();
-                        }
-                    } else {
-                        var isNGC = service.toUpperCase().includes('NGC');
-                        var certUrl = isNGC 
-                            ? 'https://www.ngccoin.com/certlookup/' + certNum + '/'
-                            : 'https://www.pcgs.com/cert/' + certNum;
-
-                        var existingBtn = card.querySelector('.btn-verify-cert');
-                        if (!existingBtn) {
-                            var verifyBtn = document.createElement('a');
-                            verifyBtn.className = 'btn-verify-cert ' + (isNGC ? 'ngc-btn' : 'pcgs-btn');
-                            verifyBtn.href = certUrl;
-                            verifyBtn.target = '_blank';
-                            verifyBtn.rel = 'noopener';
-                            verifyBtn.innerHTML = '🔍 Verify Cert #' + certNum + ' on ' + (isNGC ? 'NGC' : 'PCGS');
-
-                            var specsGrid = card.querySelector('.item-specs-grid');
-                            if (specsGrid && specsGrid.parentNode) {
-                                specsGrid.parentNode.insertBefore(verifyBtn, specsGrid.nextSibling);
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        /* CORRECCIÓN AUTOMÁTICA DE FORMATO EN DENOMINACIÓN (QUITA DECIMAL .0) */
-        function fixDenominations() {
-            document.querySelectorAll('.spec-row').forEach(function(row) {
-                if (row.innerText.includes('Denom:')) {
-                    var valSpan = row.querySelector('.spec-val');
-                    if (valSpan) {
-                        valSpan.innerText = valSpan.innerText.replace('.0', '');
-                    }
-                }
-            });
-        }
-
-        /* ANIMACIÓN DE DESTELLO SPOT EN TIEMPO REAL (FLASH UP/DOWN) */
         function updateAllPrices() {
             processSpecialsMigration();
 
@@ -1819,7 +1418,6 @@
                 var pType = el.getAttribute('data-premium-type') || 'percent';
                 var cost = parseFloat(el.getAttribute('data-cost')) || 0;
                 var spot = (metal === 'silver') ? silverSpotPrice : goldSpotPrice;
-                var oldSpot = (metal === 'silver') ? prevSilverSpot : prevGoldSpot;
 
                 if (!isNaN(weight)) {
                     var calcPrice = (pType === 'fixed') ? (weight * spot) + (weight * premium) : (weight * spot) * (1 + premium);
@@ -1828,20 +1426,12 @@
 
                     el.setAttribute('data-calculated-price', finalPrice.toFixed(2));
                     el.innerHTML = 'Price: $' + Number(finalPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
-
-                    if (oldSpot > 0 && spot !== oldSpot) {
-                        el.classList.remove('flash-up', 'flash-down');
-                        void el.offsetWidth;
-                        if (spot > oldSpot) el.classList.add('flash-up');
-                        else if (spot < oldSpot) el.classList.add('flash-down');
-                    }
                 }
             });
 
             var searchInput = document.querySelector('.search-box-input');
             filterInventory(searchInput ? searchInput.value : '');
             updateTabCounters();
-
             if (selectedItems.length > 0) updateTradingDesk();
         }
 
@@ -1849,18 +1439,11 @@
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold,kinesis-silver&vs_currencies=usd')
                 .then(function(res) { return res.json(); })
                 .then(function(data) {
-                    if (data['pax-gold']) {
-                        prevGoldSpot = goldSpotPrice;
-                        goldSpotPrice = data['pax-gold'].usd;
-                    }
-                    if (data['kinesis-silver']) {
-                        prevSilverSpot = silverSpotPrice;
-                        silverSpotPrice = data['kinesis-silver'].usd;
-                    }
+                    if (data['pax-gold']) goldSpotPrice = data['pax-gold'].usd;
+                    if (data['kinesis-silver']) silverSpotPrice = data['kinesis-silver'].usd;
                     updateAllPrices();
                 })
                 .catch(function(err) {
-                    console.log("Error fetching spot prices:", err);
                     updateAllPrices();
                 });
         }
@@ -1868,17 +1451,9 @@
         window.onload = function() {
             if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
                 document.body.classList.add('dark-mode');
-                var btnText = document.getElementById('themeSwitchText');
-                if (btnText) btnText.innerText = '☀️ VIP Light';
             }
-            
             calculateSpotPrices();
-            injectMetalPurityBadges();
-            fixAndRenderCertificates();
-            fixDenominations();
-            setInterval(calculateSpotPrices, 120000);
         };
     </script>
 </body>
 </html>
-   
