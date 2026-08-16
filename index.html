@@ -3909,25 +3909,18 @@ function processSpecialsMigration() {
         }
 
 
-/* CORRECCIÓN DEFECTO ENLACES ANACS */
+/* REDIRECCIÓN OFICIAL A LA PÁGINA DE VERIFICACIÓN DE ANACS */
 function fixAnacsLinks() {
     document.querySelectorAll('a').forEach(function(anchor) {
         var href = anchor.getAttribute('href') || '';
         if (href.includes('anacs.com')) {
-            // Extraer solo los números del certificado
-            var certNumbers = href.match(/\d+/g);
-            if (certNumbers && certNumbers.length > 0) {
-                var cleanCert = certNumbers[certNumbers.length - 1]; // Obtiene el número de certificado
-                var newUrl = 'https://www.anacs.com/cert-verification/?cert=' + cleanCert;
-                
-                anchor.setAttribute('href', newUrl);
-                anchor.setAttribute('target', '_blank');
-                anchor.setAttribute('rel', 'noopener noreferrer');
-            }
+            // Se actualiza el enlace a la landing page de verificación oficial
+            anchor.setAttribute('href', 'https://anacs.com/verify/');
+            anchor.setAttribute('target', '_blank');
+            anchor.setAttribute('rel', 'noopener noreferrer');
         }
     });
-}
-        /* INICIALIZACIÓN DE LA PÁGINA */
+}        /* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
             if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
                 document.body.classList.add('dark-mode');
