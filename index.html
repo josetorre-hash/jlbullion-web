@@ -3880,7 +3880,42 @@ function processSpecialsMigration() {
 
 
 
-/* FORMATO AUTOMÁTICO DE PESOS (2 DECIMALES EN GRAMOS, 3 DECIMALES EN ONZAS) */
+/* INTERCEPCIÓN Y COPIADO AUTOMÁTICO PARA ANACS */
+        function fixAnacsLinks() {
+            document.querySelectorAll('a').forEach(function(anchor) {
+                var href = anchor.getAttribute('href') || '';
+                
+                // Detecta cualquier enlace dirigido a ANACS
+                if (href.includes('anacs.com')) {
+                    var text = anchor.innerText || '';
+                    
+                    // Extrae el número de certificado del texto o del enlace antiguo
+                    var certMatch = text.match(/#(\d+)/) || href.match(/\d+/g);
+                    var certNumber = certMatch ? (Array.isArray(certMatch) ? certMatch[certMatch.length - 1] : certMatch) : null;
+
+                    // Desactiva la navegación directa que causa el error 404 de ANACS
+                    anchor.setAttribute('href', 'javascript:void(0);');
+                    
+                    anchor.onclick = function(e) {
+                        e.preventDefault();
+                        
+                        if (certNumber) {
+                            // Copia el número al portapapeles y abre el portal oficial
+                            navigator.clipboard.writeText(certNumber).then(function() {
+                                alert('📋 Cert #' + certNumber + ' copied to clipboard!\n\nPaste it (Ctrl+V or Cmd+V) on the ANACS verification page.');
+                                window.open('https://anacs.com/verify/', '_blank');
+                            }).catch(function() {
+                                window.open('https://anacs.com/verify/', '_blank');
+                            });
+                        } else {
+                            window.open('https://anacs.com/verify/', '_blank');
+                        }
+                    };
+                }
+            });
+        }
+
+        /* FORMATO AUTOMÁTICO DE PESOS (2 DECIMALES EN GRAMOS, 3 DECIMALES EN ONZAS) */
         function formatWeightsAndUnits() {
             document.querySelectorAll('.item-specs-grid .spec-row').forEach(function(row) {
                 var labelEl = row.querySelector('.spec-label');
@@ -3908,63 +3943,15 @@ function processSpecialsMigration() {
             });
         }
 
-
-/* MANEJO INTELIGENTE DE VERIFICACIÓN ANACS */
-function fixAnacsLinks() {
-    document.querySelectorAll('a').forEach(function(anchor) {
-        var href = anchor.getAttribute('href') || '';
-        if (href.includes('anacs.com')) {
-            // Extraer el número de certificado del texto del botón o de la URL
-            var text = anchor.innerText || '';
-            var certMatch = text.match(/#(\d+)/) || href.match(/\d+/g);
-            
-            if (certMatch) {
-                var certNumber = Array.isArray(certMatch) ? (certMatch[1] || certMatch[certMatch.length - 1]) : certMatch;
-                
-                // Asignar función interactiva al hacer clic
-                anchor.setAttribute('href', 'javascript:void(0);');
-                anchor.onclick = function(e) {
-                    e.preventDefault();
-                    
-                    // Copiar número de certificado al portapapeles
-                    navigator.clipboard.writeText(certNumber).then(function() {
-                        alert('📋 Cert #' + certNumber + ' copied to clipboard!\n\nJust paste it (Ctrl+V) on the ANACS verification page.');
-                        window.open('https://anacs.com/verify/', '_blank');
-                    }).catch(function() {
-                        window.open('https://anacs.com/verify/', '_blank');
-                    });
-                };
-            } else {
-                anchor.setAttribute('href', 'https://anacs.com/verify/');
-                anchor.setAttribute('target', '_blank');
-            }
-        }
-    });
-} 
-
-/* INICIALIZACIÓN DE LA PÁGINA */
+        /* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
             if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
                 document.body.classList.add('dark-mode');
             }
             calculateSpotPrices();
-            formatWeightsAndUnits(); // <-- LLAMADA AQUÍ
+            formatWeightsAndUnits();
+            fixAnacsLinks();
         };
-    </script>
-</body>
-</html>
-
-
-
-        window.onload = function() {
-    if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-    }
-    calculateSpotPrices();
-    formatWeightsAndUnits();
-    fixAnacsLinks(); // <-- Se ejecuta aquí
-};
-
     </script>
 </body>
 </html>
