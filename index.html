@@ -617,27 +617,64 @@
         </div>
 
         <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
-            <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">0</span></button>
-                <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">6</span></button>
-            </div>
+    <div class="nested-nav-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">1</span></button>
+        <button class="nested-tab-btn" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">21</span></button>
+    </div>
 
-            <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
-                <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
-                <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
-                <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
-                <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
-                <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
-                <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
-                <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
-            </div>
+    <div class="filter-chips-row" style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
+        <span class="filter-chip active-chip" onclick="applyCategoryFilter('all', this)">All Categories</span>
+        <span class="filter-chip" onclick="applyCategoryFilter('us', this)">U.S. Gold 🇺🇸</span>
+        <span class="filter-chip" onclick="applyCategoryFilter('europe', this)">European Gold 🇪🇺</span>
+        <span class="filter-chip" onclick="applyCategoryFilter('americas', this)">Americas & Caribbean 🌎</span>
+        <span class="filter-chip" onclick="applyCategoryFilter('asia', this)">Asia & Middle East 🌏</span>
+        <span class="filter-chip" onclick="applyCategoryFilter('africa', this)">Africa 🌍</span>
+        <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
+    </div>
 
-            <!-- TAB 1: GOLD BULLION -->
-            <div id="nested-bullion-gold" class="nested-tab-content active-nestedcontent">
-                <div class="inventory-grid" id="grid-bullion-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
-                    <div class="no-items-message" style="grid-column: 1 / -1; text-align: center; color: #94a3b8; padding: 40px 0;"><p>No gold bullion coins currently loaded.</p></div>
+    <!-- PESTAÑA 1: GOLD BULLION COINS (1 MONEDA RAW/UNGRADED) -->
+    <div id="nested-bullion-gold" class="nested-tab-content active-nestedcontent">
+        <div class="inventory-grid" id="grid-bullion-gold" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+            
+            <!-- ITEM 1945802 -->
+            <div class="item-card gold-card-finish" 
+                 data-id="1945802" 
+                 data-category="oceania" 
+                 data-composition="✨ .9999 Gold" 
+                 data-grading-service="Raw / Card of Issue" 
+                 data-cert-number="010306" 
+                 data-grade="BU" 
+                 data-search="niue 2015 gold $25 statue of liberty proof uncertified in card of issue 1945802 au 999.9 oceania bullion">
+                <div>
+                    <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
+                    
+                    <div class="badge-holder" style="margin-bottom: 8px;">
+                        <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">BU in Card of Issue</span>
+                    </div>
+
+                    <h3>Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card of Issue</h3>
+
+                    <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1945802</span></div>
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇳🇺 Niue</span></div>
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">B.H. Mayer's</span></div>
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">7.7800 g</span></div>
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2495 oz</span></div>
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
+                        <div class="spec-row"><span class="spec-label" style="color: #64748b;">Cert No:</span> <span class="spec-val" style="font-weight: 700;">#010306</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="item-price" data-metal="gold" data-weight="0.2495" data-cost="987.73" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
+                    <button class="btn-quote" onclick="selectCoin('1945802', 'Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card', 0.2495, 'gold', 987.73, 0.02, 'percent')">Add to Order</button>
                 </div>
             </div>
+
+        </div>
+    </div>
+
+
 
             <!-- TAB 2: GRADUATED GOLD -->
             <div id="nested-graduated-gold" class="nested-tab-content">
@@ -1234,37 +1271,7 @@
     </div>
 </div>
 
-<!-- ITEM 1945802 -->
-<div class="item-card gold-card-finish" 
-     data-id="1945802" 
-     data-category="oceania" 
-     data-composition="✨ .9999 Gold" 
-     data-grading-service="Raw / Card of Issue" 
-     data-cert-number="010306" 
-     data-grade="Proof" 
-     data-search="niue 2015 gold $25 statue of liberty proof uncertified card of issue 1945802 au 999.9 oceania">
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: #ffffff; font-weight: 700;">🔥 +2.00% Premium</span>
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge" style="background: #334155; color: #f8fafc; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">Proof in Card</span>
-        </div>
-        <h3>Niue 2015 Gold $25 Statue of Liberty Proof Uncertified in Card of Issue</h3>
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem; margin-top: 10px;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#1945802</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇳🇺 Niue</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$25 USD</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">B.H. Mayer's</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">7.7800 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.2495 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">22.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">500</span></div>
-        </div>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.2495" data-cost="987.73" data-premium="0.02" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('1945802', 'Niue 2015 Gold $25 Statue of Liberty Proof in Card', 0.2495, 'gold', 987.73, 0.02, 'percent')">Add to Order</button>
-    </div>
-</div>
+
 
 <!-- ITEM 1915046 -->
 <div class="item-card gold-card-finish" 
