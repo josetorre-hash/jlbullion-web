@@ -1228,27 +1228,27 @@
 
         /* ACTUALIZACIÓN SEGURA DE CONTADORES DE PESTAÑAS Y SUB-PESTAÑAS */
         function updateTabCounters() {
-    var goldCards = document.querySelectorAll('#gold .item-card');
-    var silverCards = document.querySelectorAll('#silver .item-card');
-    var specialsCards = document.querySelectorAll('#specials .item-card');
+            var goldCards = document.querySelectorAll('#gold .item-card');
+            var silverCards = document.querySelectorAll('#silver .item-card');
+            var specialsCards = document.querySelectorAll('#specials .item-card');
 
-    setCount('cnt-tab-gold', goldCards.length);
-    setCount('cnt-tab-silver', silverCards.length);
-    setCount('cnt-tab-specials', specialsCards.length);
+            setCount('cnt-tab-gold', goldCards.length);
+            setCount('cnt-tab-silver', silverCards.length);
+            setCount('cnt-tab-specials', specialsCards.length);
 
-    // Contadores específicos del Catálogo de Oro
-    var subCoins = document.querySelectorAll('#sub-gold-coins .item-card').length;
-    var subBars = document.querySelectorAll('#sub-gold-bars .item-card').length;
+            // Contadores específicos del Catálogo de Oro
+            var subCoins = document.querySelectorAll('#sub-gold-coins .item-card').length;
+            var subBars = document.querySelectorAll('#sub-gold-bars .item-card').length;
 
-    setCount('cnt-sub-gold-coins', subCoins);
-    setCount('cnt-sub-gold-bars', subBars);
+            setCount('cnt-sub-gold-coins', subCoins);
+            setCount('cnt-sub-gold-bars', subBars);
 
-    var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card').length;
-    var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card').length;
+            var nestedBullion = document.querySelectorAll('#nested-bullion-gold .item-card').length;
+            var nestedGraduated = document.querySelectorAll('#nested-graduated-gold .item-card').length;
 
-    setCount('cnt-nested-bullion-gold', nestedBullion);
-    setCount('cnt-nested-graduated-gold', nestedGraduated);
-}
+            setCount('cnt-nested-bullion-gold', nestedBullion);
+            setCount('cnt-nested-graduated-gold', nestedGraduated);
+        }
 
         /* NAVEGACIÓN PRINCIPAL ENTRE PÁGINAS */
         function openTab(tabId, event) {
@@ -1370,15 +1370,26 @@
             }
         }
 
-        /* MIGRACIÓN A SPECIALS Y RESPETO DE BULLION Y GRADED */
+        /* MIGRACIÓN A SPECIALS PROTEGIENDO BARRAS DE ORO EN GRID-GOLD-BARS */
         function processSpecialsMigration() {
             var gridSpecialsPage = document.getElementById('grid-specials-page');
             var gridGraduated = document.getElementById('grid-graduated-gold');
             var gridBullion = document.getElementById('grid-bullion-gold');
+            var gridBars = document.getElementById('grid-gold-bars');
 
             document.querySelectorAll('.item-card').forEach(function(card) {
                 var isSpecialAttr = card.getAttribute('data-is-special') === 'true';
+                var isBar = card.getAttribute('data-category') === 'bars' || (gridBars && gridBars.contains(card));
 
+                // 1. SI ES UNA BARRA DE ORO, NUNCA SE MUEVE DE GRID-GOLD-BARS
+                if (isBar) {
+                    if (gridBars && !gridBars.contains(card)) {
+                        gridBars.appendChild(card);
+                    }
+                    return;
+                }
+
+                // 2. MIGRACIÓN PARA MONEDAS OFERTAS ESPECIALES
                 if (isSpecialAttr) {
                     if (gridSpecialsPage && !gridSpecialsPage.contains(card)) {
                         gridSpecialsPage.appendChild(card);
@@ -1394,6 +1405,7 @@
             });
         }
 
+        /* FILTRADO DE INVENTARIO */
         function filterInventory(query) {
             var searchTerm = (query || '').toLowerCase().trim();
             var priceRange = document.getElementById('priceRangeFilter') ? document.getElementById('priceRangeFilter').value : 'all';
@@ -1403,8 +1415,6 @@
             grids.forEach(function(grid) {
                 var cards = grid.querySelectorAll('.item-card');
                 var visibleCount = 0;
-
-                // Verifica si este grid pertenece a la sección de Gold Bars
                 var isBarGrid = grid.id === 'grid-gold-bars';
 
                 cards.forEach(function(card) {
@@ -1418,7 +1428,7 @@
 
                     var matchesSearch = searchData.includes(searchTerm);
 
-                    // REGLA CLAVE: Si es una barra o está en la pestaña de barras, NO la oculta el filtro de países
+                    // Si es una barra de oro, se muestra en su grid sin importar el filtro de país seleccionado
                     var matchesCategory = (activeCategoryFilter === 'all') || (cardCategory === activeCategoryFilter) || isBarGrid || (cardCategory === 'bars');
 
                     var matchesPrice = true;
