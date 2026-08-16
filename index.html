@@ -423,6 +423,12 @@
 
 
 
+
+
+
+
+
+
     <!-- ========================================================= -->
     <!-- SECCIÓN 2: CABECERA, LOGO, TICKER SPOT Y NAVEGACIÓN      -->
     <!-- ========================================================= -->
@@ -535,6 +541,13 @@
 
 
 
+
+
+
+
+
+
+
     <!-- ========================================================= -->
     <!-- SECCIÓN 3: PÁGINA 1 - HOME Y CALCULADORA DE CAPITAL       -->
     <!-- ========================================================= -->
@@ -583,6 +596,14 @@
 
 
 
+
+
+
+
+
+
+
+
     <!-- ========================================================= -->
 <!-- SECCIÓN 4: PÁGINA 2 - CATÁLOGO DE ORO (GOLD CATALOG)      -->
 <!-- ========================================================= -->
@@ -599,7 +620,7 @@
         <div id="sub-gold-coins" class="sub-tab-content active-subcontent">
             <div class="nested-nav-tabs">
                 <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-graduated-gold', event)">Graduated Gold Coins <span class="tab-count-badge" id="cnt-nested-graduated-gold">2</span></button>
-                <button class="nested-tab-btn" onclick="openNestedTab('nested-specials-gold', event)">Specials <span class="tab-count-badge" id="cnt-nested-specials-gold">0</span></button>
+                <button class="nested-tab-btn" onclick="openNestedTab('nested-bullion-gold', event)">Gold Bullion Coins <span class="tab-count-badge" id="cnt-nested-bullion-gold">0</span></button>
             </div>
 
             <div class="filter-chips-row">
@@ -612,125 +633,126 @@
                 <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
             </div>
 
-            <!-- TAB: GRADUATED GOLD COINS (SOLO 2 MONEDAS) -->
+            <!-- TAB 1: GRADUATED GOLD COINS -->
             <div id="nested-graduated-gold" class="nested-tab-content active-nestedcontent">
                 <div class="inventory-grid" id="grid-graduated-gold">
 
                     <!-- ITEM 2109000 -->
-<div class="item-card gold-card-finish" 
-     data-id="2109000" 
-     data-category="us" 
-     data-composition=".900 Gold (21.6K)" 
-     data-grading-service="NGC" 
-     data-cert-number="599682-013" 
-     data-grade="MS-61" 
-     data-search="1881 liberty gold eagle ngc ms-61 2109000 599682-013 ngc ms-61 .900 gold (21.6k)">
-    
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
-        
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-61</span>
-        </div>
+                    <div class="item-card gold-card-finish" 
+                         data-id="2109000" 
+                         data-category="us" 
+                         data-composition=".900 Gold (21.6K)" 
+                         data-grading-service="NGC" 
+                         data-cert-number="599682-013" 
+                         data-grade="MS-61" 
+                         data-is-special="true"
+                         data-search="1881 liberty gold eagle ngc ms-61 2109000 599682-013 ngc ms-61 .900 gold (21.6k)">
+                        
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
+                            
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge badge-ngc">NGC MS-61</span>
+                            </div>
 
-        <h3>1881 Liberty Gold Eagle NGC MS-61</h3>
+                            <h3>1881 Liberty Gold Eagle NGC MS-61</h3>
 
-        <!-- CÁPSULA / SLAB DIGITAL VISUAL -->
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #599682-013</div>
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #599682-013</div>
+                                </div>
+                            </div>
+
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2109000</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">3,888,360</span></div>
+                            </div>
+
+                            <a href="https://www.ngccoin.com/certlookup/599682-013/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">
+                                🔍 Verify Cert #599682-013 on NGC
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1950.21" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2109000', '1881 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1950.21, 0.0, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2108999 -->
+                    <div class="item-card gold-card-finish" 
+                         data-id="2108999" 
+                         data-category="us" 
+                         data-composition=".900 Gold (21.6K)" 
+                         data-grading-service="NGC" 
+                         data-cert-number="150143-007" 
+                         data-grade="MS-61" 
+                         data-is-special="true"
+                         data-search="1894 liberty gold eagle ngc ms-61 2108999 150143-007 ngc ms-61 .900 gold (21.6k)">
+                        
+                        <div>
+                            <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
+                            
+                            <div class="badge-holder" style="margin-bottom: 8px;">
+                                <span class="badge badge-ngc">NGC MS-61</span>
+                            </div>
+
+                            <h3>1894 Liberty Gold Eagle NGC MS-61</h3>
+
+                            <div class="card-media-wrapper" style="margin: 10px 0;">
+                                <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
+                                    <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
+                                    <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
+                                    <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #150143-007</div>
+                                </div>
+                            </div>
+
+                            <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2108999</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
+                                <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">2,470,700</span></div>
+                            </div>
+
+                            <a href="https://www.ngccoin.com/certlookup/150143-007/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">
+                                🔍 Verify Cert #150143-007 on NGC
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <div class="item-price" data-metal="gold" data-weight="0.4838" data-cost="1965.57" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
+                            <button class="btn-quote" onclick="selectCoin('2108999', '1894 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1965.57, 0.0, 'percent')">Add to Order</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TAB 2: GOLD BULLION COINS -->
+            <div id="nested-bullion-gold" class="nested-tab-content">
+                <div class="inventory-grid" id="grid-bullion-gold">
+                    <div class="no-items-message"><p>No gold bullion coins currently loaded.</p></div>
+                </div>
             </div>
         </div>
 
-        <!-- ESTRUCTURA EN CUADRÍCULA DE 2 COLUMNAS -->
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2109000</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">3,888,360</span></div>
-        </div>
-
-        <!-- BOTÓN DE VERIFICACIÓN NGC -->
-        <a href="https://www.ngccoin.com/certlookup/599682-013/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">
-            🔍 Verify Cert #599682-013 on NGC
-        </a>
-    </div>
-    
-    <!-- BLOQUE DE PRECIO Y BOTÓN -->
-    <div>
-        <div class="item-price" 
-             data-metal="gold" 
-             data-weight="0.4838" 
-             data-cost="1950.21" 
-             data-premium="0.0" 
-             data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2109000', '1881 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1950.21, 0.0, 'percent')">Add to Order</button>
-    </div>
-</div>
-
-
-
-<!-- ITEM 2108999 -->
-<div class="item-card gold-card-finish" 
-     data-id="2108999" 
-     data-category="us" 
-     data-composition=".900 Gold (21.6K)" 
-     data-grading-service="NGC" 
-     data-cert-number="150143-007" 
-     data-grade="MS-61" 
-     data-search="1894 liberty gold eagle ngc ms-61 2108999 150143-007 ngc ms-61 .900 gold (21.6k)">
-    
-    <div>
-        <span class="metal-purity-badge badge-special-promo" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; font-weight: 700;">🔥 +0.00% Premium</span>
-        
-        <div class="badge-holder" style="margin-bottom: 8px;">
-            <span class="badge badge-ngc">NGC MS-61</span>
-        </div>
-
-        <h3>1894 Liberty Gold Eagle NGC MS-61</h3>
-
-        <!-- CÁPSULA / SLAB DIGITAL VISUAL -->
-        <div class="card-media-wrapper" style="margin: 10px 0;">
-            <div class="digital-slab-placeholder ngc-slab" style="padding: 8px; border-radius: 6px; background: #0b192c; border: 1px solid #334155; text-align: center;">
-                <div class="slab-header-ngc" style="background: #334155; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 4px; border-radius: 3px;">NGC CERTIFIED SLAB</div>
-                <div class="slab-coin-view" style="width: 38px; height: 38px; line-height: 38px; background: radial-gradient(circle, #fef3c7 0%, #d4af37 70%, #854d0e 100%); border-radius: 50%; margin: 6px auto; color: #fff; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a;">$10</div>
-                <div class="slab-cert-num" style="color: #38bdf8; font-size: 0.72rem; font-family: monospace; font-weight: 700;">NGC CERT #150143-007</div>
+        <div id="sub-gold-bars" class="sub-tab-content">
+            <div class="inventory-grid" id="grid-gold-bars">
+                <div class="no-items-message"><p>Currently no loose gold bars in primary stock.</p></div>
             </div>
         </div>
-
-        <!-- ESTRUCTURA EN CUADRÍCULA DE 2 COLUMNAS -->
-        <div class="item-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: rgba(15, 23, 42, 0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.78rem;">
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">SKU:</span> <span class="spec-val" style="font-weight: 700;">#2108999</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Country:</span> <span class="spec-val" style="font-weight: 700;">🇺🇸 USA</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Denom:</span> <span class="spec-val" style="font-weight: 700;">$10 Eagle</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mint:</span> <span class="spec-val" style="font-weight: 700;">Philadelphia</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Gross Wt:</span> <span class="spec-val" style="font-weight: 700;">16.718 g</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Pure Gold:</span> <span class="spec-val" style="font-weight: 700;">0.4838 oz</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Diameter:</span> <span class="spec-val" style="font-weight: 700;">27.00 mm</span></div>
-            <div class="spec-row"><span class="spec-label" style="color: #64748b;">Mintage:</span> <span class="spec-val" style="font-weight: 700;">2,470,700</span></div>
-        </div>
-
-        <!-- BOTÓN DE VERIFICACIÓN NGC -->
-        <a href="https://www.ngccoin.com/certlookup/150143-007/" target="_blank" rel="noopener" class="btn-verify-cert ngc-btn" style="display: block; text-align: center; padding: 6px; margin: 10px 0; font-size: 0.78rem; font-weight: 700; text-decoration: none; border-radius: 4px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8;">
-            🔍 Verify Cert #150143-007 on NGC
-        </a>
-    </div>
-    
-    <!-- BLOQUE DE PRECIO Y BOTÓN -->
-    <div>
-        <div class="item-price" 
-             data-metal="gold" 
-             data-weight="0.4838" 
-             data-cost="1965.57" 
-             data-premium="0.0" 
-             data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2108999', '1894 Liberty Gold Eagle NGC MS-61', 0.4838, 'gold', 1965.57, 0.0, 'percent')">Add to Order</button>
     </div>
 </div>
 
