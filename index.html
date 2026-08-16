@@ -3909,18 +3909,24 @@ function processSpecialsMigration() {
         }
 
 
-/* CORRECCIÓN AUTOMÁTICA DE ENLACES DE ANACS */
+/* CORRECCIÓN DEFECTO ENLACES ANACS */
 function fixAnacsLinks() {
-    document.querySelectorAll('a[href*="anacs.com"]').forEach(function(anchor) {
-        var href = anchor.getAttribute('href');
-        var certMatch = href.match(/Cert=([0-9]+)/i) || href.match(/cert=([0-9]+)/i);
-        
-        if (certMatch && certMatch[1]) {
-            anchor.setAttribute('href', 'https://www.anacs.com/cert-verification/?cert=' + certMatch[1]);
+    document.querySelectorAll('a').forEach(function(anchor) {
+        var href = anchor.getAttribute('href') || '';
+        if (href.includes('anacs.com')) {
+            // Extraer solo los números del certificado
+            var certNumbers = href.match(/\d+/g);
+            if (certNumbers && certNumbers.length > 0) {
+                var cleanCert = certNumbers[certNumbers.length - 1]; // Obtiene el número de certificado
+                var newUrl = 'https://www.anacs.com/cert-verification/?cert=' + cleanCert;
+                
+                anchor.setAttribute('href', newUrl);
+                anchor.setAttribute('target', '_blank');
+                anchor.setAttribute('rel', 'noopener noreferrer');
+            }
         }
     });
 }
-
         /* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
             if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
@@ -3941,8 +3947,9 @@ function fixAnacsLinks() {
     }
     calculateSpotPrices();
     formatWeightsAndUnits();
-    fixAnacsLinks(); // <-- AGREGAR ESTA LÍNEA
+    fixAnacsLinks(); // <-- Se ejecuta aquí
 };
+
     </script>
 </body>
 </html>
