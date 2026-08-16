@@ -470,12 +470,12 @@
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰ Menu</button>
 
             <div class="nav-links-group" id="navLinksGroup">
-                <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
-                <span class="nav-tab" onclick="openTab('gold', event)">Gold <span class="tab-count-badge" id="cnt-tab-gold">81</span></span>
-                <span class="nav-tab" onclick="openTab('silver', event)">Silver <span class="tab-count-badge" id="cnt-tab-silver">68</span></span>
-                <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥 <span class="tab-count-badge" id="cnt-tab-specials">15</span></span>
-                <a href="#contacto" class="nav-tab">Trading Desk</a>
-            </div>
+    <span class="nav-tab active" onclick="openTab('home', event)">Home</span>
+    <span class="nav-tab" onclick="openTab('gold', event)">Gold <span class="tab-count-badge" id="cnt-tab-gold">2</span></span>
+    <span class="nav-tab" onclick="openTab('silver', event)">Silver <span class="tab-count-badge" id="cnt-tab-silver">0</span></span>
+    <span class="nav-tab" onclick="openTab('specials', event)">Specials 🔥 <span class="tab-count-badge" id="cnt-tab-specials">0</span></span>
+    <a href="#contacto" class="nav-tab">Trading Desk</a>
+</div>
 
             <div class="header-search-group">
                 <input type="text" class="header-search-input search-box-input" placeholder="🔍 Search coins, dates..." onkeyup="filterInventory(this.value)">
@@ -738,9 +738,9 @@
 
 
 
-    <!-- ========================================================= -->
-    <!-- SECCIÓN 5: PÁGINA 3 - OFERTAS ESPECIALES (SPECIALS 🔥)    -->
-    <!-- ========================================================= -->
+   <!-- ========================================================= -->
+<!-- SECCIÓN 5: PÁGINA 3 - OFERTAS ESPECIALES (SPECIALS 🔥)    -->
+<!-- ========================================================= -->
 <div id="specials" class="tab-page">
     <div class="container">
         <h1 class="page-header-title">Specials & Zero-Premium Offers 🔥</h1>
@@ -755,28 +755,7 @@
         </div>
 
         <div class="inventory-grid" id="grid-specials-page">
-<!-- ITEM 2169796 -->
-<div class="item-card gold-card-finish" data-id="2169796" data-category="us" data-composition=".900 Gold (21.6K)" data-grading-service="PCGS/NGC" data-cert-number="2169796" data-grade="Graded" data-search="1901-s liberty gold double eagle $20 2169796 2169796 pcgs/ngc graded .900 gold (21.6k) special 0% premium">
-    <div>
-        <span class="metal-purity-badge badge-gold-purity">🪙 .900 Gold (21.6K) • AGW</span>
-        <div class="badge-holder">
-            <span class="badge badge-special-promo">🔥 0% Premium Offer</span>
-            <span class="badge badge-ngc">PCGS/NGC Graded</span>
-            <span class="badge badge-stock">In Stock</span>
-        </div>
-        <h3>1901-S Liberty Gold Double Eagle $20</h3>
-        <div class="item-specs-grid">
-            <div class="spec-row"><span class="spec-label">Item SKU:</span> <span class="spec-val">#2169796</span></div>
-            <div class="spec-row"><span class="spec-label">Pure Gold (AGW):</span> <span class="spec-val">0.9675 oz troy</span></div>
-            <div class="spec-row"><span class="spec-label">Gross Weight:</span> <span class="spec-val">33.436 g</span></div>
-            <div class="spec-row"><span class="spec-label">Fineness / Ley:</span> <span class="spec-val">.900</span></div>
-        </div>
-    </div>
-    <div>
-        <div class="item-price" data-metal="gold" data-weight="0.9675" data-cost="3841.18" data-premium="0.0" data-premium-type="percent">Calculating price...</div>
-        <button class="btn-quote" onclick="selectCoin('2169796', '1901-S Liberty Gold Double Eagle $20', 0.9675, 'gold', 3841.18, 0.0, 'percent')">Add to Order</button>
-    </div>
-</div>
+            <div class="no-items-message"><p>No special promotional offers currently loaded.</p></div>
         </div>
     </div>
 </div>
@@ -915,7 +894,7 @@
 
 
     <!-- ========================================================= -->
-    <!-- SECCIÓN 8: LOGICA Y FUNCIONES JAVASCRIPT                  -->
+    <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
     <script>
         var selectedItems = [];
@@ -1021,10 +1000,11 @@
             }
         }
 
+        /* RECALCULADOR DE CONTADORES AUTOMÁTICO */
         function updateTabCounters() {
             var goldCards = document.querySelectorAll('#gold .item-card');
             var silverCards = document.querySelectorAll('#silver .item-card');
-            var specialsCards = document.querySelectorAll('#grid-specials-page .item-card');
+            var specialsCards = document.querySelectorAll('#specials .item-card');
 
             var elGold = document.getElementById('cnt-tab-gold');
             var elSilver = document.getElementById('cnt-tab-silver');
@@ -1047,6 +1027,20 @@
             var elNestSpecials = document.getElementById('cnt-nested-specials-gold');
             if(elNestGraduated) elNestGraduated.innerText = nestedGraduated.length;
             if(elNestSpecials) elNestSpecials.innerText = nestedSpecials.length;
+
+            var subSilverCoins = document.querySelectorAll('#sub-silver-coins .item-card');
+            var subSilverBars = document.querySelectorAll('#sub-silver-bars .item-card');
+            var elSubSilver = document.getElementById('cnt-sub-silver-coins');
+            var elSubSilverBars = document.getElementById('cnt-sub-silver-bars');
+            if(elSubSilver) elSubSilver.innerText = subSilverCoins.length;
+            if(elSubSilverBars) elSubSilverBars.innerText = subSilverBars.length;
+
+            var nestedSilverBullion = document.querySelectorAll('#nested-silver-bullion .item-card');
+            var nestedSilverGrad = document.querySelectorAll('#nested-graduated-silver .item-card');
+            var elNestSilverBullion = document.getElementById('cnt-nested-silver-bullion');
+            var elNestSilverGrad = document.getElementById('cnt-nested-graduated-silver');
+            if(elNestSilverBullion) elNestSilverBullion.innerText = nestedSilverBullion.length;
+            if(elNestSilverGrad) elNestSilverGrad.innerText = nestedSilverGrad.length;
         }
 
         /* FILTRADO MULTIDIMENSIONAL INTEGRADO: BÚSQUEDA + REGIÓN + PRECIO + PESO */
@@ -1542,6 +1536,5 @@
             setInterval(calculateSpotPrices, 120000);
         };
     </script>
-
 </body>
 </html>
