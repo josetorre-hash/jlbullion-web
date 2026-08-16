@@ -4528,6 +4528,9 @@
                 var cards = grid.querySelectorAll('.item-card');
                 var visibleCount = 0;
 
+                // Verifica si este grid pertenece a la sección de Gold Bars
+                var isBarGrid = grid.id === 'grid-gold-bars';
+
                 cards.forEach(function(card) {
                     var searchData = (card.getAttribute('data-search') || '').toLowerCase();
                     var cardCategory = card.getAttribute('data-category') || '';
@@ -4538,7 +4541,9 @@
                     var cardWeight = parseFloat(priceEl ? priceEl.getAttribute('data-weight') : 0) || 0;
 
                     var matchesSearch = searchData.includes(searchTerm);
-                    var matchesCategory = (activeCategoryFilter === 'all') || (cardCategory === activeCategoryFilter);
+
+                    // REGLA CLAVE: Si es una barra o está en la pestaña de barras, NO la oculta el filtro de países
+                    var matchesCategory = (activeCategoryFilter === 'all') || (cardCategory === activeCategoryFilter) || isBarGrid || (cardCategory === 'bars');
 
                     var matchesPrice = true;
                     if (priceRange === 'under1000') matchesPrice = cardPrice < 1000;
