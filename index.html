@@ -429,9 +429,54 @@
 
 
 
-    <!-- ========================================================= -->
+<!-- ========================================================= -->
 <!-- SECCIÓN 2: CABECERA, LOGO, TICKER SPOT Y NAVEGACIÓN       -->
 <!-- ========================================================= -->
+<style>
+/* BADGES DE DISPONIBILIDAD */
+.badge-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+}
+
+/* Estado: En Mano (In Stock) */
+.badge-in-stock {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid #10b981;
+}
+
+/* Estado: En Tránsito (In Transit) */
+.badge-in-transit {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid #f59e0b;
+}
+
+/* NOTA DE ENVÍO DENTRO DE LA FICHA TÉCNICA */
+.shipping-note-row {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 6px;
+    margin-top: 2px;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shipping-note-in-stock { color: #10b981; font-weight: 600; }
+.shipping-note-in-transit { color: #cbd5e1; font-style: italic; }
+</style>
+
 <div class="sticky-top-wrapper">
     <header>
         <div class="logo-container" onclick="openTab('home', event)">
@@ -536,50 +581,6 @@
         <a href="#contacto" class="drawer-checkout-btn" onclick="closeCartDrawer()">Proceed to Trading Desk Form</a>
     </div>
 </div>
-
-
-/* BADGES DE DISPONIBILIDAD */
-.badge-availability {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    margin-bottom: 6px;
-}
-
-/* Estado: En Mano (In Stock) */
-.badge-in-stock {
-    background: rgba(16, 185, 129, 0.15);
-    color: #10b981;
-    border: 1px solid #10b981;
-}
-
-/* Estado: En Tránsito (In Transit) */
-.badge-in-transit {
-    background: rgba(245, 158, 11, 0.15);
-    color: #f59e0b;
-    border: 1px solid #f59e0b;
-}
-
-/* NOTA DE ENVÍO DENTRO DE LA FICHA TÉCNICA */
-.shipping-note-row {
-    grid-column: 1 / -1;
-    background: rgba(255, 255, 255, 0.03);
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
-    padding-top: 6px;
-    margin-top: 2px;
-    font-size: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.shipping-note-in-stock { color: #10b981; font-weight: 600; }
-.shipping-note-in-transit { color: #cbd5e1; font-style: italic; }
 
 
 
