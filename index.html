@@ -3908,6 +3908,19 @@ function processSpecialsMigration() {
             });
         }
 
+
+/* CORRECCIÓN AUTOMÁTICA DE ENLACES DE ANACS */
+function fixAnacsLinks() {
+    document.querySelectorAll('a[href*="anacs.com"]').forEach(function(anchor) {
+        var href = anchor.getAttribute('href');
+        var certMatch = href.match(/Cert=([0-9]+)/i) || href.match(/cert=([0-9]+)/i);
+        
+        if (certMatch && certMatch[1]) {
+            anchor.setAttribute('href', 'https://www.anacs.com/cert-verification/?cert=' + certMatch[1]);
+        }
+    });
+}
+
         /* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
             if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
@@ -3927,7 +3940,8 @@ function processSpecialsMigration() {
         document.body.classList.add('dark-mode');
     }
     calculateSpotPrices();
-    formatWeightsAndUnits(); // <-- Agrega esta línea aquí
+    formatWeightsAndUnits();
+    fixAnacsLinks(); // <-- AGREGAR ESTA LÍNEA
 };
     </script>
 </body>
