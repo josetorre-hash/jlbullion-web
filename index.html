@@ -777,6 +777,7 @@
                 <button class="sub-tab-btn" onclick="openSubTab('sub-silver-bars', event)">Silver Bars <span class="tab-count-badge" id="cnt-sub-silver-bars">0</span></button>
             </div>
 
+            <!-- SUB-TAB 1: SILVER COINS -->
             <div id="sub-silver-coins" class="sub-tab-content active-subcontent">
                 <div class="nested-nav-tabs">
                     <button class="nested-tab-btn active-nestedtab" onclick="openNestedTab('nested-silver-bullion', event)">Silver Bullion Coins <span class="tab-count-badge" id="cnt-nested-silver-bullion">0</span></button>
@@ -792,22 +793,22 @@
                     <span class="filter-chip" onclick="applyCategoryFilter('oceania', this)">Oceania 🇦🇺</span>
                 </div>
 
+                <!-- CONTENEDOR 1: BULLION (VACÍO) -->
                 <div id="nested-silver-bullion" class="nested-tab-content active-nestedcontent">
                     <div class="inventory-grid" id="grid-silver-bullion">
-                        <div class="item-card silver-card-finish" data-id="SAE-2026-1OZ" data-category="us" data-search="Silver American Eagles 1oz 2026 SAE-2026-1OZ">
-                            <div><div class="badge-holder"><span class="badge badge-bullion">Bullion Coin</span><span class="badge badge-stock">In Stock</span></div><h3>Silver American Eagle 1 oz (2026 CY)</h3><div class="item-details">Product Code: SAE-2026-1OZ | ASW = 1.0000 oz</div></div>
-                            <div><div class="item-price" data-metal="silver" data-weight="1.0000" data-cost="0" data-premium="9.00" data-premium-type="fixed">Calculating price...</div><button class="btn-quote" onclick="selectCoin('SAE-2026-1OZ', 'Silver American Eagle 1 oz', 1.0000, 'silver', 0, 9.00, 'fixed')">Add to Order</button></div>
-                        </div>
+                        <div class="no-items-message"><p>No silver bullion coins currently loaded.</p></div>
                     </div>
                 </div>
 
+                <!-- CONTENEDOR 2: GRADUATED (VACÍO) -->
                 <div id="nested-graduated-silver" class="nested-tab-content">
                     <div class="inventory-grid" id="grid-graduated-silver">
-                        <div class="item-card silver-card-finish" data-id="2118184" data-category="us" data-search="1923 Peace Silver Dollar NGC MS-66 2118184"><div><div class="badge-holder"><span class="badge badge-ngc">NGC MS-66</span><span class="badge badge-stock">In Stock</span></div><h3>1923 Peace Silver Dollar</h3><div class="item-details">Item #2118184 | NGC MS-66 | ASW = 0.7734 oz</div></div><div><div class="item-price" data-metal="silver" data-weight="0.7734" data-cost="373.60" data-premium="5.50" data-premium-type="percent">Calculating price...</div><button class="btn-quote" onclick="selectCoin('2118184', '1923 Peace Silver Dollar NGC MS-66', 0.7734, 'silver', 373.60, 5.50, 'percent')">Add to Order</button></div></div>
+                        <div class="no-items-message"><p>No graduated silver coins currently loaded.</p></div>
                     </div>
                 </div>
             </div>
 
+            <!-- SUB-TAB 2: SILVER BARS (VACÍO) -->
             <div id="sub-silver-bars" class="sub-tab-content">
                 <div class="inventory-grid" id="grid-silver-bars">
                     <div class="no-items-message"><p>Currently no loose silver bars in primary stock.</p></div>
