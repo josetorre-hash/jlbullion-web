@@ -5064,40 +5064,44 @@
             });
         }
 
-        /* APLICAR DISPONIBILIDAD AUTOMÁTICA RETAIL */
+        /* APLICAR DISPONIBILIDAD Y NOTA DE ENVÍO CONSTANTE EN EL CATÁLOGO */
 function applyAvailabilityBadges() {
     document.querySelectorAll('.item-card').forEach(function(card) {
         var availability = card.getAttribute('data-availability');
         var badgeHolder = card.querySelector('.badge-holder');
         var specsGrid = card.querySelector('.item-specs-grid');
 
+        // Si no tiene el atributo o no está en stock local, se asigna 'in-transit' por defecto
         if (!availability) {
             availability = 'in-transit';
             card.setAttribute('data-availability', 'in-transit');
         }
 
+        // 1. GENERAR ETIQUETA VISUAL (BADGE)
         if (badgeHolder && !badgeHolder.querySelector('.badge-availability')) {
             var badgeSpan = document.createElement('span');
             badgeSpan.className = 'badge-availability ';
 
             if (availability === 'in-stock') {
                 badgeSpan.className += 'badge-in-stock';
-                badgeSpan.innerHTML = '🛡️ Immediate Vault Allocation';
+                badgeSpan.innerHTML = '⚡ Ready to Ship';
             } else {
                 badgeSpan.className += 'badge-in-transit';
-                badgeSpan.innerHTML = '🚚 Secured Vault / In Transit';
+                badgeSpan.innerHTML = '🚚 Secured Vault Allocation';
             }
 
             badgeHolder.insertBefore(badgeSpan, badgeHolder.firstChild);
         }
 
+        // 2. GENERAR NOTA CONSTANTE DE CUMPLIMIENTO / ENVÍO (FULFILLMENT)
         if (specsGrid && !specsGrid.querySelector('.shipping-note-row')) {
             var noteRow = document.createElement('div');
             noteRow.className = 'shipping-note-row';
 
             if (availability === 'in-stock') {
-                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-stock">📦 Ships within 3–5 business days</span>';
+                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-stock">📦 Ships within 2–3 business days</span>';
             } else {
+                // CONSTANTE SOLICITADA PARA PRODUCTOS NO EN MANO
                 noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-transit">📦 Ships within 7–12 business days</span>';
             }
 
