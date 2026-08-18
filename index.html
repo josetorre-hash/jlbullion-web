@@ -5576,8 +5576,6 @@
 
 
 
-
-
 <!-- ========================================================= -->
     <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
@@ -5809,7 +5807,6 @@
                             (gridGoldBars && gridGoldBars.contains(card)) || 
                             (gridSilverBars && gridSilverBars.contains(card));
 
-                // LAS BARRAS PERMANECEN SIEMPRE EN SU CONTENEDOR DE BARRAS
                 if (isBar) return;
 
                 if (isSpecialAttr) {
@@ -6016,11 +6013,12 @@
             }, 1000);
         }
 
-        /* ACTUALIZACIÓN DE PRECIOS CON PROTECCIÓN ABSOLUTA DE COSTO */
+        /* ACTUALIZACIÓN DE PRECIOS CON PROTECCIÓN Y BADGE DINÁMICO */
         function updateAllPrices() {
             processSpecialsMigration();
 
             document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
+                var card = el.closest('.item-card');
                 var weight = parseFloat(el.getAttribute('data-weight')) || 0;
                 var metal = el.getAttribute('data-metal');
                 var premium = parseFloat(el.getAttribute('data-premium')) || 0;
@@ -6033,10 +6031,28 @@
                     : (weight * spot) * (1 + premium);
 
                 var minPrice = cost > 0 ? cost * 1.02 : 0;
-                var finalPrice = (cost > 0 && calcPrice < minPrice) ? minPrice : calcPrice;
+                var isCostProtected = (cost > 0 && calcPrice < minPrice);
+                var finalPrice = isCostProtected ? minPrice : calcPrice;
 
                 el.setAttribute('data-calculated-price', finalPrice.toFixed(2));
                 el.innerHTML = 'Price: $' + Number(finalPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
+
+                if (card) {
+                    var badge = card.querySelector('.metal-purity-badge');
+                    if (badge) {
+                        if (isCostProtected) {
+                            badge.innerHTML = '🔥 Vault Guaranteed Price';
+                            badge.style.background = 'linear-gradient(135deg, #0f172a 0%, #334155 100%)';
+                        } else {
+                            if (pType === 'fixed') {
+                                badge.innerHTML = '🔥 +$' + premium.toFixed(2) + (weight === 1 ? '/oz' : ' Fixed') + ' Premium';
+                            } else {
+                                badge.innerHTML = '🔥 +' + (premium * 100).toFixed(1) + '% Premium';
+                            }
+                            badge.style.background = 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)';
+                        }
+                    }
+                }
             });
 
             var searchInput = document.querySelector('.search-box-input');
