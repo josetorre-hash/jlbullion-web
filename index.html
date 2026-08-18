@@ -5574,6 +5574,10 @@
 
 
 
+
+
+
+
 <!-- ========================================================= -->
     <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
     <!-- ========================================================= -->
@@ -5813,7 +5817,6 @@
                         gridSpecialsPage.appendChild(card);
                     }
                 } else {
-                    // Evita mover tarjetas entre sub-pestañas si ya están situadas en su lugar correcto
                     if (gridBullionGold && gridBullionGold.contains(card)) return;
                     if (gridGraduatedGold && gridGraduatedGold.contains(card)) return;
                     if (gridBullionSilver && gridBullionSilver.contains(card)) return;
@@ -5929,6 +5932,7 @@
             updateTradingDesk();
         }
 
+        /* CARRITO DE COMPRAS Y TRADING DESK CON PROTECCIÓN DE COSTO */
         function updateTradingDesk() {
             var textArea = document.getElementById('order-details');
             var container = document.getElementById('selected-items-container');
@@ -5943,9 +5947,14 @@
                 if (container) container.style.display = "flex";
                 selectedItems.forEach(function(item) {
                     var spot = (item.metal === 'silver') ? silverSpotPrice : goldSpotPrice;
-                    var calcPrice = (item.premiumType === 'fixed') ? (item.weight * spot) + (item.weight * item.premiumVal) : (item.weight * spot) * (1 + item.premiumVal);
+                    
+                    var calcPrice = (item.premiumType === 'fixed') 
+                        ? (item.weight * spot) + (item.weight * item.premiumVal) 
+                        : (item.weight * spot) * (1 + item.premiumVal);
+
                     var minPrice = item.cost > 0 ? item.cost * 1.02 : 0;
                     var itemPrice = (item.cost > 0 && calcPrice < minPrice) ? minPrice : calcPrice;
+                    
                     totalAmount += itemPrice;
 
                     textLines.push("• Item #" + item.id + " - " + item.title + " [$" + itemPrice.toFixed(2) + " USD]");
@@ -6007,25 +6016,27 @@
             }, 1000);
         }
 
+        /* ACTUALIZACIÓN DE PRECIOS CON PROTECCIÓN ABSOLUTA DE COSTO */
         function updateAllPrices() {
             processSpecialsMigration();
 
             document.querySelectorAll('.item-price[data-weight]').forEach(function(el) {
-                var weight = parseFloat(el.getAttribute('data-weight'));
+                var weight = parseFloat(el.getAttribute('data-weight')) || 0;
                 var metal = el.getAttribute('data-metal');
                 var premium = parseFloat(el.getAttribute('data-premium')) || 0;
                 var pType = el.getAttribute('data-premium-type') || 'percent';
                 var cost = parseFloat(el.getAttribute('data-cost')) || 0;
                 var spot = (metal === 'silver') ? silverSpotPrice : goldSpotPrice;
 
-                if (!isNaN(weight)) {
-                    var calcPrice = (pType === 'fixed') ? (weight * spot) + (weight * premium) : (weight * spot) * (1 + premium);
-                    var minPrice = cost > 0 ? cost * 1.02 : 0;
-                    var finalPrice = (cost > 0 && calcPrice < minPrice) ? minPrice : calcPrice;
+                var calcPrice = (pType === 'fixed') 
+                    ? (weight * spot) + (weight * premium) 
+                    : (weight * spot) * (1 + premium);
 
-                    el.setAttribute('data-calculated-price', finalPrice.toFixed(2));
-                    el.innerHTML = 'Price: $' + Number(finalPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
-                }
+                var minPrice = cost > 0 ? cost * 1.02 : 0;
+                var finalPrice = (cost > 0 && calcPrice < minPrice) ? minPrice : calcPrice;
+
+                el.setAttribute('data-calculated-price', finalPrice.toFixed(2));
+                el.innerHTML = 'Price: $' + Number(finalPrice.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' USD';
             });
 
             var searchInput = document.querySelector('.search-box-input');
@@ -6103,50 +6114,46 @@
         }
 
         /* APLICAR DISPONIBILIDAD Y TIEMPOS REALES DE DESPACHO */
-function applyAvailabilityBadges() {
-    document.querySelectorAll('.item-card').forEach(function(card) {
-        var availability = card.getAttribute('data-availability');
-        var badgeHolder = card.querySelector('.badge-holder');
-        var specsGrid = card.querySelector('.item-specs-grid');
+        function applyAvailabilityBadges() {
+            document.querySelectorAll('.item-card').forEach(function(card) {
+                var availability = card.getAttribute('data-availability');
+                var badgeHolder = card.querySelector('.badge-holder');
+                var specsGrid = card.querySelector('.item-specs-grid');
 
-        // Si no se especifica o no está en mano, se establece 'in-transit' por defecto
-        if (!availability || availability === 'in-transit') {
-            availability = 'in-transit';
-            card.setAttribute('data-availability', 'in-transit');
+                if (!availability || availability === 'in-transit') {
+                    availability = 'in-transit';
+                    card.setAttribute('data-availability', 'in-transit');
+                }
+
+                if (badgeHolder && !badgeHolder.querySelector('.badge-availability')) {
+                    var badgeSpan = document.createElement('span');
+                    badgeSpan.className = 'badge-availability ';
+
+                    if (availability === 'in-stock') {
+                        badgeSpan.className += 'badge-in-stock';
+                        badgeSpan.innerHTML = '⚡ In Hand / Ready to Ship';
+                    } else {
+                        badgeSpan.className += 'badge-in-transit';
+                        badgeSpan.innerHTML = '🚚 Secured Vault Allocation';
+                    }
+
+                    badgeHolder.insertBefore(badgeSpan, badgeHolder.firstChild);
+                }
+
+                if (specsGrid && !specsGrid.querySelector('.shipping-note-row')) {
+                    var noteRow = document.createElement('div');
+                    noteRow.className = 'shipping-note-row';
+
+                    if (availability === 'in-stock') {
+                        noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-stock">📦 Ships within 1–2 business days</span>';
+                    } else {
+                        noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-transit">📦 Ships within 7–12 business days</span>';
+                    }
+
+                    specsGrid.appendChild(noteRow);
+                }
+            });
         }
-
-        // 1. DISTINTIVO SUPERIOR (BADGE)
-        if (badgeHolder && !badgeHolder.querySelector('.badge-availability')) {
-            var badgeSpan = document.createElement('span');
-            badgeSpan.className = 'badge-availability ';
-
-            if (availability === 'in-stock') {
-                badgeSpan.className += 'badge-in-stock';
-                badgeSpan.innerHTML = '⚡ In Hand / Ready to Ship';
-            } else {
-                badgeSpan.className += 'badge-in-transit';
-                badgeSpan.innerHTML = '🚚 Secured Vault Allocation';
-            }
-
-            badgeHolder.insertBefore(badgeSpan, badgeHolder.firstChild);
-        }
-
-        // 2. FILA DE CUMPLIMIENTO / TIEMPO DE ENVÍO (FULFILLMENT)
-        if (specsGrid && !specsGrid.querySelector('.shipping-note-row')) {
-            var noteRow = document.createElement('div');
-            noteRow.className = 'shipping-note-row';
-
-            if (availability === 'in-stock') {
-                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-stock">📦 Ships within 1–2 business days</span>';
-            } else {
-                // CONSTANTE EXACTA PARA PEDIDOS A PROVEEDOR / EN TRÁNSITO
-                noteRow.innerHTML = '<span style="color: #64748b;">Fulfillment:</span><span class="shipping-note-in-transit">📦 Ships within 7–12 business days</span>';
-            }
-
-            specsGrid.appendChild(noteRow);
-        }
-    });
-}
 
         /* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
