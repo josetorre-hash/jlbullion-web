@@ -6199,7 +6199,9 @@
             });
         }
 
-        /* INICIALIZACIÓN DE LA PÁGINA */
+
+
+        /* INICIALIZACIÓN DE LA PÁGINA CON ACTUALIZACIÓN EN TIEMPO REAL */
         window.onload = function() {
             var savedTheme = localStorage.getItem('specie_dark_mode') || localStorage.getItem('jlb_dark_mode');
             if (savedTheme === 'enabled') {
@@ -6207,11 +6209,18 @@
                 var btnText = document.getElementById('themeSwitchText');
                 if (btnText) btnText.innerText = '☀️ VIP Light';
             }
+
+            // Carga inicial al abrir la página
             calculateSpotPrices();
             formatWeightsAndUnits();
             fixAnacsLinks();
             applyAvailabilityBadges();
             updateTabCounters();
+
+            // Consulta en tiempo real cada 30 segundos (30,000 ms)
+            setInterval(function() {
+                calculateSpotPrices();
+            }, 30000);
         };
     </script>
 </body>
