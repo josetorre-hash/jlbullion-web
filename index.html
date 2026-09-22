@@ -6013,7 +6013,9 @@
             }, 1000);
         }
 
-        /* ACTUALIZACIÓN Y RENDERIZADO DEL TICKER EN EL HEADER */
+        
+
+/* ACTUALIZACIÓN Y RENDERIZADO DEL TICKER EN EL HEADER CON ICONOS METALÚRGICOS */
         function updateHeaderTicker() {
             var tickerElem = document.getElementById('ticker-move');
             if (!tickerElem) return;
@@ -6028,11 +6030,25 @@
             var goldColor = goldChange >= 0 ? '#4ade80' : '#f87171';
             var silverColor = silverChange >= 0 ? '#4ade80' : '#f87171';
 
-            var itemGold = '<span style="margin-right: 30px;">Gold Spot ($/oz): <strong style="color: ' + goldColor + ';">' + goldSpotPrice.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</strong> <span style="color: ' + goldColor + ';">' + goldSign + goldChange.toFixed(2) + ' (' + goldSign + goldPct.toFixed(2) + '%)</span></span>';
-            var itemSilver = '<span style="margin-right: 30px;">Silver Spot ($/oz): <strong style="color: ' + silverColor + ';">' + silverSpotPrice.toFixed(4) + '</strong> <span style="color: ' + silverColor + ';">' + silverSign + silverChange.toFixed(2) + ' (' + silverSign + silverPct.toFixed(2) + '%)</span></span>';
+            // Iconos estilizados para Oro (🟡) y Plata (⚪)
+            var itemGold = '<span style="margin-right: 30px; display: inline-flex; align-items: center; gap: 6px;">' +
+                           '<span style="font-size: 1.1rem; filter: drop-shadow(0 0 3px rgba(234, 179, 8, 0.6));">🟡</span> ' +
+                           '<strong style="color: #fef08a;">Gold Spot ($/oz):</strong> ' +
+                           '<strong style="color: ' + goldColor + ';">' + goldSpotPrice.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</strong> ' +
+                           '<span style="color: ' + goldColor + ';">' + goldSign + goldChange.toFixed(2) + ' (' + goldSign + goldPct.toFixed(2) + '%)</span>' +
+                           '</span>';
+
+            var itemSilver = '<span style="margin-right: 30px; display: inline-flex; align-items: center; gap: 6px;">' +
+                             '<span style="font-size: 1.1rem; filter: drop-shadow(0 0 3px rgba(226, 232, 240, 0.6));">⚪</span> ' +
+                             '<strong style="color: #e2e8f0;">Silver Spot ($/oz):</strong> ' +
+                             '<strong style="color: ' + silverColor + ';">' + silverSpotPrice.toFixed(4) + '</strong> ' +
+                             '<span style="color: ' + silverColor + ';">' + silverSign + silverChange.toFixed(2) + ' (' + silverSign + silverPct.toFixed(2) + '%)</span>' +
+                             '</span>';
 
             tickerElem.innerHTML = itemGold + itemSilver + itemGold + itemSilver;
         }
+
+
 
         /* ACTUALIZACIÓN DE PRECIOS CON PROTECCIÓN Y BADGE DINÁMICO */
         function updateAllPrices() {
