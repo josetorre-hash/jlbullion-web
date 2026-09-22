@@ -11,9 +11,9 @@
 
 
     <!-- ========================================================= -->
-    <!-- SECCIÓN 1: ESTILOS CSS GENERALES Y COMPONENTES VISUALES   -->
-    <!-- ========================================================= -->
-    <style>
+<!-- SECCIÓN 1: ESTILOS CSS GENERALES Y COMPONENTES VISUALES   -->
+<!-- ========================================================= -->
+<style>
 
 /* ESTILOS PARA SLAB Y ENLACE DE VERIFICACIÓN NGC / PCGS */
 .card-media-wrapper {
@@ -110,6 +110,21 @@
             color: #f8f9fa;
         }
 
+        /* CORRECCIÓN VISUAL: TEXTOS DE CABECERA Y TÍTULOS EN MODO OSCURO */
+        body.dark-mode .page-header-title,
+        body.dark-mode h1,
+        body.dark-mode .hero-title,
+        body.dark-mode h2 {
+            color: #ffffff !important;
+            text-shadow: 0 2px 12px rgba(212, 175, 55, 0.35);
+        }
+
+        body.dark-mode .page-subtitle,
+        body.dark-mode .hero-subtitle,
+        body.dark-mode p {
+            color: #cbd5e1 !important;
+        }
+
         body.dark-mode .item-card {
             background: rgba(23, 42, 69, 0.85);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
@@ -134,7 +149,7 @@
         header { background-color: var(--primary); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
         .logo-container { display: flex; align-items: center; gap: 5px; text-decoration: none; cursor: pointer; }
         .logo-img { 
-            height: 85px; 
+            height: 106px; 
             width: auto; 
             margin-top: -15px; 
             margin-bottom: -15px; 
@@ -418,7 +433,6 @@
     </style>
 </head>
 <body>
-
 
 
 
