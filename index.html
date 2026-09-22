@@ -471,74 +471,57 @@
 }
 .shipping-note-in-stock { color: #10b981; font-weight: 600; }
 .shipping-note-in-transit { color: #cbd5e1; font-style: italic; }
+
+/* ANIMACIÓN Y ESTILOS DEL TICKER UNIFICADO */
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.header-ticker-box {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 50%;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.header-ticker-content {
+    display: inline-block;
+    animation: ticker-scroll 25s linear infinite;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
 </style>
 
-
-
-
-
 <div class="sticky-top-wrapper">
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 5px 20px; background-color: #0b1d3a; gap: 20px;">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 6px 20px; background-color: #0b1d3a; gap: 20px;">
         
-        <!-- 1. Logo a la izquierda -->
+        <!-- 1. Logo Specie Reserve a la izquierda -->
         <div class="logo-container" onclick="openTab('home', event)" style="cursor: pointer; display: flex; align-items: center; flex-shrink: 0;">
             <img src="logo-transparente.png" alt="Specie Reserve" class="logo-img" style="height: 85px; width: auto; object-fit: contain; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5)); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
         </div>
 
-        <!-- 2. Ticker de Precios en vivo en el centro -->
-        <div class="ticker-wrapper" style="flex-grow: 1; overflow: hidden; white-space: nowrap; max-width: 50%; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-            <div class="ticker-content" style="display: inline-block; animation: ticker-scroll 25s linear infinite; color: #ffffff; font-size: 0.85rem; font-weight: 500;">
-                <span style="margin-right: 25px;">Silver Spot ($/oz): <strong style="color: #4ade80;">67.4206</strong> <span style="color: #4ade80;">+1.44 (+2.25%)</span></span>
-                <span style="margin-right: 25px;">Gold Spot ($/oz): <strong style="color: #4ade80;">4,367.880</strong> <span style="color: #4ade80;">+25.38 (+0.58%)</span></span>
-                <span style="margin-right: 25px;">Silver Spot ($/oz): <strong style="color: #4ade80;">67.4206</strong> <span style="color: #4ade80;">+1.44 (+2.25%)</span></span>
-                <span style="margin-right: 25px;">Gold Spot ($/oz): <strong style="color: #4ade80;">4,367.880</strong> <span style="color: #4ade80;">+25.38 (+0.58%)</span></span>
+        <!-- 2. Ticker de precios en vivo integrado al centro -->
+        <div class="header-ticker-box">
+            <div class="header-ticker-content" id="ticker-move">
+                <!-- Se alimenta automáticamente mediante JavaScript -->
             </div>
         </div>
 
-        <!-- 3. Botones y Contacto a la derecha -->
-        <div class="header-right-actions" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0;">
-            <button class="dark-mode-btn" style="padding: 3px 12px; font-size: 0.75rem;">🌙 VIP Dark Mode</button>
-            <div style="color: #e2e8f0; font-size: 0.8rem;">
-                Miami, FL | <a href="mailto:trading@speciereserve.com" style="color: #faca15; text-decoration: none; font-weight: 600;">trading@speciereserve.com</a>
-            </div>
-        </div>
-
-    </header>
-</div>
-        
-
-
-
+        <!-- 3. Acciones a la derecha (Dark Mode + Email) -->
         <div class="contact-header">
             <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
                 <span id="themeSwitchText">🌙 VIP Dark Mode</span>
             </button>
-            <span>Miami, FL | <a href="mailto:trading@speciereserve.com">trading@speciereserve.com</a></span>
+            <span style="font-size: 0.8rem;">Miami, FL | <a href="mailto:trading@speciereserve.com">trading@speciereserve.com</a></span>
         </div>
+
     </header>
 
-    <div class="ticker-wrapper">
-        <div class="tradingview-widget-container" style="flex: 1;">
-            <div class="tradingview-widget-container__widget"></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-            {
-                "symbols": [
-                    { "proName": "TVC:GOLD", "title": "Gold Spot ($/oz)" },
-                    { "proName": "TVC:SILVER", "title": "Silver Spot ($/oz)" }
-                ],
-                "showSymbolLogo": false,
-                "colorTheme": "light",
-                "isTransparent": true,
-                "displayMode": "regular",
-                "locale": "en"
-            }
-            </script>
-        </div>
-        <div class="live-status-pill">
-            <span class="live-dot"></span> LIVE SPOT
-        </div>
-    </div>
-
+    <!-- NAVEGACIÓN Y FILTROS -->
     <nav class="main-nav-tabs">
         <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰ Menu</button>
 
@@ -603,7 +586,6 @@
         <a href="#contacto" class="drawer-checkout-btn" onclick="closeCartDrawer()">Proceed to Trading Desk Form</a>
     </div>
 </div>
-
 
 
 
