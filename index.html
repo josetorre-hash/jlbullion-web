@@ -5531,35 +5531,31 @@
     </div>
 
     <!-- FOOTER INSTITUCIONAL B2R & COMPLIANCE -->
-    <footer style="background: var(--primary); color: var(--text-muted); padding: 3rem 1.5rem 1.5rem; margin-top: 4rem; border-top: 2px solid var(--accent); font-size: 0.82rem;">
-        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2rem;">
-            <div>
-                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">JL BULLION LLC</h4>
-                <p style="line-height: 1.5; color: #94a3b8; margin-bottom: 0.8rem;">Institutional & Retail Precious Metals Trading Desk based in Miami, FL. Registered Precious Metals Dealer with FinCEN.</p>
-                <p style="color: #cbd5e1; font-weight: 600;">Miami, FL 33156 | USA</p>
-                <p><a href="mailto:trading@jlbullion.com" style="color: var(--accent); text-decoration: none;">trading@jlbullion.com</a></p>
-            </div>
-            <div>
-                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">Legal & Compliance</h4>
-                <ul style="list-style: none; padding: 0; line-height: 2;">
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('price-lock')" style="color: #f8f9fa; text-decoration: none;">🔒 Price Lock Agreement & Cancellation</a></li>
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('b2r-terms')" style="color: #f8f9fa; text-decoration: none;">📄 B2R Terms of Trading</a></li>
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('aml-policy')" style="color: #f8f9fa; text-decoration: none;">🛡️ AML / BSA Compliance Policy</a></li>
-                    <li><a href="javascript:void(0)" onclick="openLegalModal('privacy-policy')" style="color: #f8f9fa; text-decoration: none;">🔐 Privacy & Florida Sales Tax Rules</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 0.8rem; font-size: 1rem;">Regulatory Disclosures</h4>
-                <p style="font-size: 0.75rem; color: #64748b; line-height: 1.4;">
-                    All prices are bound to live spot market fluctuations. Placing an order constitutes a binding Price Lock Commitment. Cash transactions in excess of $10,000 USD are reported to the IRS via Form 8300 as mandated by U.S. federal law.
-                </p>
-            </div>
+    <footer style="background: #0f172a; color: #94a3b8; padding: 40px 20px; font-size: 0.85rem; border-top: 1px solid #1e293b;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <p style="color: #f8fafc; font-weight: 700; font-size: 1.1rem; margin-bottom: 8px;">
+            Specie Reserve
+        </p>
+        <p style="margin-bottom: 16px;">
+            Official Precious Metals Catalog & Trading Desk
+        </p>
+        
+        <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <a href="javascript:void(0)" onclick="openLegalModal('price-lock')" style="color: #38bdf8; text-decoration: none;">Price Lock Policy</a> |
+            <a href="javascript:void(0)" onclick="openLegalModal('b2r-terms')" style="color: #38bdf8; text-decoration: none;">Terms of Trading</a> |
+            <a href="javascript:void(0)" onclick="openLegalModal('aml-policy')" style="color: #38bdf8; text-decoration: none;">AML Policy</a> |
+            <a href="javascript:void(0)" onclick="openLegalModal('privacy-policy')" style="color: #38bdf8; text-decoration: none;">Privacy Policy</a>
         </div>
-        <div style="border-top: 1px solid #1e293b; padding-top: 1.2rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: #64748b; font-size: 0.75rem;">
-            <p>&copy; 2026 JL BULLION LLC. All rights reserved. Registered Business in the State of Florida.</p>
-            <p>FinCEN MSB Registration ID: MRX26-00002577</p>
-        </div>
-    </footer>
+
+        <p style="font-size: 0.78rem; color: #64748b; line-height: 1.5; max-width: 800px; margin: 0 auto 16px auto;">
+            <strong>Legal Notice:</strong> Specie Reserve (speciereserve.com) is a registered fictitious name (DBA) operated by JL Bullion LLC. All transactions, price locks, and invoices are processed under JL Bullion LLC.
+        </p>
+
+        <p style="font-size: 0.75rem; color: #475569;">
+            © 2026 Specie Reserve (JL Bullion LLC). All Rights Reserved.
+        </p>
+    </div>
+</footer>
 
     <!-- MODAL DE DOCUMENTOS LEGALES -->
     <div id="legalModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,25,47,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 1rem;">
@@ -5591,11 +5587,11 @@
         var b2bRecommendedItems = [];
 
         var legalTexts = {
-            'price-lock': '<h3>🔒 Price Lock Agreement & Cancellation Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">When you submit an order through the JL Bullion Trading Desk, your price is locked in real-time based on live market spot prices.</p>',
-            'b2r-terms': '<h3>📄 Business-to-Retail (B2R) Terms of Trading</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC offers precious metals trading for retail buyers, investors, and wholesale accounts.</p>',
-            'aml-policy': '<h3>🛡️ Anti-Money Laundering (AML) & BSA Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC strictly enforces an Anti-Money Laundering Compliance Program under 31 CFR Part 1027.</p>',
-            'privacy-policy': '<h3>🔐 Privacy Policy & Florida Sales Tax Rules (HB 7031)</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">JL Bullion LLC protects customer data and does not sell information to third parties.</p>'
-        };
+    'price-lock': '<h3>🔒 Price Lock Agreement & Cancellation Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">When you submit an order through the Specie Reserve Trading Desk, your price is locked in real-time based on live market spot prices. Specie Reserve is a fictitious name (DBA) operated by JL Bullion LLC.</p>',
+    'b2r-terms': '<h3>📄 Business-to-Retail (B2R) Terms of Trading</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve (DBA of JL Bullion LLC) offers precious metals trading for retail buyers, investors, and wholesale accounts.</p>',
+    'aml-policy': '<h3>🛡️ Anti-Money Laundering (AML) & BSA Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve (operated by JL Bullion LLC) strictly enforces an Anti-Money Laundering Compliance Program under 31 CFR Part 1027.</p>',
+    'privacy-policy': '<h3>🔐 Privacy Policy & Florida Sales Tax Rules (HB 7031)</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve and JL Bullion LLC protect customer data and do not sell information to third parties.</p>'
+};
 
         function openLegalModal(docType) {
             var modal = document.getElementById('legalModal');
@@ -5619,7 +5615,7 @@
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             var isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('jlb_dark_mode', isDark ? 'enabled' : 'disabled');
+            localStorage.setItem('specie_dark_mode', isDark ? 'enabled' : 'disabled');
             var btnText = document.getElementById('themeSwitchText');
             if (btnText) btnText.innerText = isDark ? '☀️ VIP Light' : '🌙 VIP Dark Mode';
         }
