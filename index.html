@@ -5594,11 +5594,8 @@
 
 
 
-
-
-
 <!-- ========================================================= -->
-    <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                  -->
+    <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                 -->
     <!-- ========================================================= -->
     <script>
         var selectedItems = [];
@@ -5612,11 +5609,11 @@
         var b2bRecommendedItems = [];
 
         var legalTexts = {
-    'price-lock': '<h3>🔒 Price Lock Agreement & Cancellation Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">When you submit an order through the Specie Reserve Trading Desk, your price is locked in real-time based on live market spot prices. Specie Reserve is a fictitious name (DBA) operated by JL Bullion LLC.</p>',
-    'b2r-terms': '<h3>📄 Business-to-Retail (B2R) Terms of Trading</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve (DBA of JL Bullion LLC) offers precious metals trading for retail buyers, investors, and wholesale accounts.</p>',
-    'aml-policy': '<h3>🛡️ Anti-Money Laundering (AML) & BSA Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve (operated by JL Bullion LLC) strictly enforces an Anti-Money Laundering Compliance Program under 31 CFR Part 1027.</p>',
-    'privacy-policy': '<h3>🔐 Privacy Policy & Florida Sales Tax Rules (HB 7031)</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve and JL Bullion LLC protect customer data and do not sell information to third parties.</p>'
-};
+            'price-lock': '<h3>🔒 Price Lock Agreement & Cancellation Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">When you submit an order through the Specie Reserve Trading Desk, your price is locked in real-time based on live market spot prices. Specie Reserve is a fictitious name (DBA) operated by JL Bullion LLC.</p>',
+            'b2r-terms': '<h3>📄 Business-to-Retail (B2R) Terms of Trading</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve (DBA of JL Bullion LLC) offers precious metals trading for retail buyers, investors, and wholesale accounts.</p>',
+            'aml-policy': '<h3>🛡️ Anti-Money Laundering (AML) & BSA Policy</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve (operated by JL Bullion LLC) strictly enforces an Anti-Money Laundering Compliance Program under 31 CFR Part 1027.</p>',
+            'privacy-policy': '<h3>🔐 Privacy Policy & Florida Sales Tax Rules (HB 7031)</h3><p style="margin-top:1rem; line-height:1.6; font-size:0.88rem; color:#cbd5e1;">Specie Reserve and JL Bullion LLC protect customer data and do not sell information to third parties.</p>'
+        };
 
         function openLegalModal(docType) {
             var modal = document.getElementById('legalModal');
@@ -6034,6 +6031,27 @@
             }, 1000);
         }
 
+        /* ACTUALIZACIÓN Y RENDERIZADO DEL TICKER EN EL HEADER */
+        function updateHeaderTicker() {
+            var tickerElem = document.getElementById('ticker-move');
+            if (!tickerElem) return;
+
+            var goldChange = prevGoldSpot > 0 ? (goldSpotPrice - prevGoldSpot) : 0;
+            var goldPct = prevGoldSpot > 0 ? ((goldChange / prevGoldSpot) * 100) : 0;
+            var silverChange = prevSilverSpot > 0 ? (silverSpotPrice - prevSilverSpot) : 0;
+            var silverPct = prevSilverSpot > 0 ? ((silverChange / prevSilverSpot) * 100) : 0;
+
+            var goldSign = goldChange >= 0 ? '+' : '';
+            var silverSign = silverChange >= 0 ? '+' : '';
+            var goldColor = goldChange >= 0 ? '#4ade80' : '#f87171';
+            var silverColor = silverChange >= 0 ? '#4ade80' : '#f87171';
+
+            var itemGold = '<span style="margin-right: 30px;">Gold Spot ($/oz): <strong style="color: ' + goldColor + ';">' + goldSpotPrice.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</strong> <span style="color: ' + goldColor + ';">' + goldSign + goldChange.toFixed(2) + ' (' + goldSign + goldPct.toFixed(2) + '%)</span></span>';
+            var itemSilver = '<span style="margin-right: 30px;">Silver Spot ($/oz): <strong style="color: ' + silverColor + ';">' + silverSpotPrice.toFixed(4) + '</strong> <span style="color: ' + silverColor + ';">' + silverSign + silverChange.toFixed(2) + ' (' + silverSign + silverPct.toFixed(2) + '%)</span></span>';
+
+            tickerElem.innerHTML = itemGold + itemSilver + itemGold + itemSilver;
+        }
+
         /* ACTUALIZACIÓN DE PRECIOS CON PROTECCIÓN Y BADGE DINÁMICO */
         function updateAllPrices() {
             processSpecialsMigration();
@@ -6079,6 +6097,7 @@
             var searchInput = document.querySelector('.search-box-input');
             filterInventory(searchInput ? searchInput.value : '');
             updateTabCounters();
+            updateHeaderTicker();
             if (selectedItems.length > 0) updateTradingDesk();
         }
 
@@ -6086,8 +6105,14 @@
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold,kinesis-silver&vs_currencies=usd')
                 .then(function(res) { return res.json(); })
                 .then(function(data) {
-                    if (data['pax-gold']) goldSpotPrice = data['pax-gold'].usd;
-                    if (data['kinesis-silver']) silverSpotPrice = data['kinesis-silver'].usd;
+                    if (data['pax-gold']) {
+                        prevGoldSpot = goldSpotPrice;
+                        goldSpotPrice = data['pax-gold'].usd;
+                    }
+                    if (data['kinesis-silver']) {
+                        prevSilverSpot = silverSpotPrice;
+                        silverSpotPrice = data['kinesis-silver'].usd;
+                    }
                     updateAllPrices();
                 })
                 .catch(function(err) {
@@ -6194,8 +6219,11 @@
 
         /* INICIALIZACIÓN DE LA PÁGINA */
         window.onload = function() {
-            if (localStorage.getItem('jlb_dark_mode') === 'enabled') {
+            var savedTheme = localStorage.getItem('specie_dark_mode') || localStorage.getItem('jlb_dark_mode');
+            if (savedTheme === 'enabled') {
                 document.body.classList.add('dark-mode');
+                var btnText = document.getElementById('themeSwitchText');
+                if (btnText) btnText.innerText = '☀️ VIP Light';
             }
             calculateSpotPrices();
             formatWeightsAndUnits();
