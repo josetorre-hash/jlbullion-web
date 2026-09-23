@@ -440,7 +440,6 @@
 
 
 
-
 <!-- ========================================================= -->
 <!-- SECCIÓN 2: CABECERA, LOGO, TICKER SPOT Y NAVEGACIÓN       -->
 <!-- ========================================================= -->
@@ -498,9 +497,8 @@
     flex-grow: 1;
     overflow: hidden;
     white-space: nowrap;
-    max-width: 50%;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .header-ticker-content {
@@ -516,24 +514,29 @@
     <header style="display: flex; align-items: center; justify-content: space-between; padding: 6px 20px; background-color: #0b1d3a; gap: 20px;">
         
         <!-- 1. Logo Specie Reserve a la izquierda (+25% de diámetro) -->
-<div class="logo-container" onclick="openTab('home', event)" style="cursor: pointer; display: flex; align-items: center; flex-shrink: 0;">
-    <img src="logo-transparente.png" alt="Specie Reserve" class="logo-img" style="height: 106px; width: auto; object-fit: contain; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-</div>
+        <div class="logo-container" onclick="openTab('home', event)" style="cursor: pointer; display: flex; align-items: center; flex-shrink: 0;">
+            <img src="logo-transparente.png" alt="Specie Reserve" class="logo-img" style="height: 106px; width: auto; object-fit: contain; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
 
-        <!-- 2. Ticker de precios en vivo integrado al centro -->
-        <!-- Busca la clase header-ticker-box y asegúrate de que tenga esta regla: -->
-<div class="header-ticker-box" style="flex-grow: 1; overflow: hidden; white-space: nowrap; max-width: 65%; display: flex; align-items: center;">
-    <div class="header-ticker-content" id="ticker-move">
-        <!-- Ticker dinámico -->
-    </div>
-</div>
+        <!-- 2. Grupo Izquierdo: Ubicación + Ticker en Continuidad -->
+        <div style="display: flex; align-items: center; gap: 20px; flex-grow: 1; overflow: hidden;">
+            <span style="font-size: 0.82rem; color: #94a3b8; font-weight: 600; white-space: nowrap; flex-shrink: 0;">
+                Miami, FL <span style="color: #475569; margin-left: 2px;">|</span>
+            </span>
 
-        <!-- 3. Acciones a la derecha (Dark Mode + Email) -->
-        <div class="contact-header">
+            <div class="header-ticker-box" style="display: flex; align-items: center;">
+                <div class="header-ticker-content" id="ticker-move">
+                    <!-- Ticker dinámico -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Acciones a la derecha (Email + Dark Mode) con margen simétrico -->
+        <div class="contact-header" style="display: flex; align-items: center; gap: 15px; flex-shrink: 0; white-space: nowrap;">
+            <a href="mailto:trading@speciereserve.com" style="color: var(--accent); font-size: 0.82rem; text-decoration: none; font-weight: 600;">trading@speciereserve.com</a>
             <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
                 <span id="themeSwitchText">🌙 VIP Dark Mode</span>
             </button>
-            <span style="font-size: 0.8rem;">Miami, FL | <a href="mailto:trading@speciereserve.com">trading@speciereserve.com</a></span>
         </div>
 
     </header>
@@ -610,18 +613,14 @@
 
 
 
-
-
-
-
- <!-- ========================================================= -->
+<!-- ========================================================= -->
 <!-- SECCIÓN 3: PÁGINA 1 - HOME Y CALCULADORA DE CAPITAL       -->
 <!-- ========================================================= -->
 <div id="home" class="tab-page active-page">
     <section class="hero" style="text-align: center; padding: 3rem 1rem 2rem;">
-        <!-- LOGO INSTITUCIONAL CENTRAL (REEMPLAZA AL TÍTULO DE TEXTO) -->
-        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 1rem;">
-            <img src="logo-transparente.png" alt="Specie Reserve" style="height: 180px; width: auto; object-fit: contain; filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.45)); transition: transform 0.3s ease;">
+        <!-- LOGO INSTITUCIONAL CENTRAL (INCREMENTADO UN 50% A 270PX) -->
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
+            <img src="logo-transparente.png" alt="Specie Reserve" style="height: 270px; width: auto; object-fit: contain; filter: drop-shadow(0px 8px 25px rgba(0, 0, 0, 0.5)); transition: transform 0.3s ease;">
         </div>
         
         <div class="tagline" style="font-size: 1.25rem; color: var(--accent); font-weight: 700; margin-bottom: 1.2rem; letter-spacing: 2px; font-family: 'Cinzel', serif; text-transform: uppercase;">
@@ -670,6 +669,9 @@
     </div>
 </div>
 
+
+
+ 
 
 
 
