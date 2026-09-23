@@ -609,15 +609,23 @@
 
 
 
-
 <!-- ========================================================= -->
 <!-- SECCIÓN 3: PÁGINA 1 - HOME Y CALCULADORA DE CAPITAL       -->
 <!-- ========================================================= -->
 <div id="home" class="tab-page active-page">
     <section class="hero" style="text-align: center; padding: 3rem 1rem 2rem;">
-        <!-- LOGO INSTITUCIONAL CENTRAL (INCREMENTADO UN 50% A 270PX) -->
-        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
-            <img src="logo-transparente.png" alt="Specie Reserve" style="height: 270px; width: auto; object-fit: contain; filter: drop-shadow(0px 8px 25px rgba(0, 0, 0, 0.5)); transition: transform 0.3s ease;">
+        <!-- LOGO INSTITUCIONAL CENTRAL CON INTERACCIÓN Y APRECIACIÓN ARTÍSTICA -->
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem; perspective: 1000px;">
+            <img src="logo-transparente.png" 
+                 alt="Specie Reserve Institutional Emblem" 
+                 style="height: 270px; 
+                        width: auto; 
+                        object-fit: contain; 
+                        cursor: pointer;
+                        filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.45)); 
+                        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;" 
+                 onmouseover="this.style.transform='scale(1.4) translateY(-8px)'; this.style.filter='drop-shadow(0px 20px 35px rgba(0,0,0,0.6)) drop-shadow(0px 0px 25px rgba(212, 175, 55, 0.4))';" 
+                 onmouseout="this.style.transform='scale(1) translateY(0px)'; this.style.filter='drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.45))';">
         </div>
         
         <div class="tagline" style="font-size: 1.25rem; color: var(--accent); font-weight: 700; margin-bottom: 1.2rem; letter-spacing: 2px; font-family: 'Cinzel', serif; text-transform: uppercase;">
