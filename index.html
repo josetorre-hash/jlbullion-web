@@ -521,11 +521,12 @@
 </div>
 
         <!-- 2. Ticker de precios en vivo integrado al centro -->
-        <div class="header-ticker-box">
-            <div class="header-ticker-content" id="ticker-move">
-                <!-- Se alimenta automáticamente mediante JavaScript -->
-            </div>
-        </div>
+        <!-- Busca la clase header-ticker-box y asegúrate de que tenga esta regla: -->
+<div class="header-ticker-box" style="flex-grow: 1; overflow: hidden; white-space: nowrap; max-width: 65%; display: flex; align-items: center;">
+    <div class="header-ticker-content" id="ticker-move">
+        <!-- Ticker dinámico -->
+    </div>
+</div>
 
         <!-- 3. Acciones a la derecha (Dark Mode + Email) -->
         <div class="contact-header">
