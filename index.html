@@ -6071,7 +6071,7 @@
         }, 1000);
     }
 
-    /* RENDERIZADO ULTRALIMPIO DEL TICKER CON COLORES METALÚRGICOS ESPECÍFICOS */
+    /* RENDERIZADO ULTRALIMPIO DEL TICKER CON COLORES METALÚRGICOS Y 2 DECIMALES UNIFORMES */
     function updateHeaderTicker() {
         var tickerElem = document.getElementById('ticker-move');
         if (!tickerElem) return;
@@ -6091,7 +6091,7 @@
         }
 
         var itemGold = getMetaHtml('Gold', goldSpotPrice, prevGoldSpot, false, '#fef08a');
-        var itemSilver = getMetaHtml('Silver', silverSpotPrice, prevSilverSpot, true, '#f1f5f9');
+        var itemSilver = getMetaHtml('Silver', silverSpotPrice, prevSilverSpot, false, '#f1f5f9');
         var itemPlatinum = getMetaHtml('Platinum', platinumSpotPrice, prevPlatinumSpot, false, '#94a3b8');
         var itemPalladium = getMetaHtml('Palladium', palladiumSpotPrice, prevPalladiumSpot, false, '#cbd5e1');
 
