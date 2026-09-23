@@ -5624,9 +5624,6 @@
 <!-- ========================================================= -->
 <script>
     var selectedItems = [];
-    
-    // 🔑 CLAVE API DE GOLDAPI.IO CONFIGURADA
-    var GOLD_API_KEY = 'goldapi-f1950abc84d31d831a20bebb054b07ac-io';
 
     // Cotizaciones base e históricas
     var goldSpotPrice = 4293.20;
@@ -6064,7 +6061,7 @@
         }, 1000);
     }
 
-    /* RENDERIZADO DEL TICKER CON COLORES METALÚRGICOS Y VARIACIÓN EN TIEMPO REAL DE GOLDAPI */
+    /* RENDERIZADO DEL TICKER CON COLORES METALÚRGICOS Y CÁLCULO EN TIEMPO REAL */
     function updateHeaderTicker() {
         var tickerElem = document.getElementById('ticker-move');
         if (!tickerElem) return;
@@ -6142,52 +6139,36 @@
         if (selectedItems.length > 0) updateTradingDesk();
     }
 
-    /* CONSULTA PROFESIONAL Y OFICIAL VÍA GOLDAPI.IO */
-    function fetchSingleMetal(symbol) {
-        var myHeaders = new Headers();
-        myHeaders.append("x-access-token", GOLD_API_KEY);
-        myHeaders.append("Content-Type", "application/json");
-
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
-
-        return fetch("https://www.goldapi.io/api/" + symbol + "/USD", requestOptions)
-            .then(function(res) { 
-                if (!res.ok) throw new Error("API error");
-                return res.json(); 
-            });
-    }
-
+    /* OBTENCIÓN EN TIEMPO REAL VÍA COMEX / NYMEX (YAHOO FINANCE VIA PROXY) */
     function calculateSpotPrices() {
-        Promise.all([
-            fetchSingleMetal('XAU'),
-            fetchSingleMetal('XAG'),
-            fetchSingleMetal('XPT'),
-            fetchSingleMetal('XPD')
-        ]).then(function(results) {
-            if (results[0] && results[0].price) {
-                goldSpotPrice = results[0].price;
-                gold24hChange = results[0].chp || 0;
-            }
-            if (results[1] && results[1].price) {
-                silverSpotPrice = results[1].price;
-                silver24hChange = results[1].chp || 0;
-            }
-            if (results[2] && results[2].price) {
-                platinumSpotPrice = results[2].price;
-                platinum24hChange = results[2].chp || 0;
-            }
-            if (results[3] && results[3].price) {
-                palladiumSpotPrice = results[3].price;
-                palladium24hChange = results[3].chp || 0;
-            }
-            updateAllPrices();
-        }).catch(function() {
-            updateAllPrices();
-        });
+        var symbols = ['GC=F', 'SI=F', 'PL=F', 'PA=F'];
+        var targetUrl = 'https://query1.finance.yahoo.com/v7/finance/quote?symbols=' + symbols.join(',');
+        var proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(targetUrl);
+
+        fetch(proxyUrl)
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                var result = (data.quoteResponse && data.quoteResponse.result) ? data.quoteResponse.result : [];
+                result.forEach(function(quote) {
+                    if (quote.symbol === 'GC=F') {
+                        goldSpotPrice = quote.regularMarketPrice || goldSpotPrice;
+                        gold24hChange = quote.regularMarketChangePercent || 0;
+                    } else if (quote.symbol === 'SI=F') {
+                        silverSpotPrice = quote.regularMarketPrice || silverSpotPrice;
+                        silver24hChange = quote.regularMarketChangePercent || 0;
+                    } else if (quote.symbol === 'PL=F') {
+                        platinumSpotPrice = quote.regularMarketPrice || platinumSpotPrice;
+                        platinum24hChange = quote.regularMarketChangePercent || 0;
+                    } else if (quote.symbol === 'PA=F') {
+                        palladiumSpotPrice = quote.regularMarketPrice || palladiumSpotPrice;
+                        palladium24hChange = quote.regularMarketChangePercent || 0;
+                    }
+                });
+                updateAllPrices();
+            })
+            .catch(function() {
+                updateAllPrices();
+            });
     }
 
     function fixAnacsLinks() {
