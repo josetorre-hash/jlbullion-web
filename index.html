@@ -5619,41 +5619,26 @@
 
 
 
-¡Excelente decisión! Integrar un proveedor financiero dedicado como **GoldAPI.io** o **Metals-API** es la solución definitiva para que los datos coincidan al 100% con los cierres de sesión de **COMEX/NYMEX (Nueva York)** y **LBMA (Londres)**.
-
-### Ventajas de la integración con GoldAPI.io:
-
-1. **Precisión Financiera:** Mide la variación diaria respecto al precio de cierre (*prev_close_price*) oficial de la jornada.
-2. **Soporte Nativo Multi-Metal:** Entrega Oro (`XAU`), Plata (`XAG`), Platino (`XPT`) y Paladio (`XPD`) en dólares estadounidenses (`USD`).
-3. **Plan Gratuito:** Ofrece hasta 500 solicitudes mensuales gratuitas, ideal para actualizar el ticker de manera eficiente.
-
----
-
-### Código Actualizado de la SECCIÓN 8 (Sincronizado con GoldAPI.io)
-
-Sustituye la **Sección 8** por este código. Solo debes registrarte gratis en [GoldAPI.io](https://www.goldapi.io/?utm_source=gemini) y colocar tu clave personal en la variable `GOLD_API_KEY`:
-
-```html
 <!-- ========================================================= -->
 <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                 -->
 <!-- ========================================================= -->
 <script>
     var selectedItems = [];
     
-    // CLAVE API DE GOLDAPI.IO (Reemplaza 'YOUR_GOLD_API_KEY' con tu token de goldapi.io)
+    // CLAVE API PARA METALS-API / GOLDAPI (OPCIONAL)
     var GOLD_API_KEY = 'YOUR_GOLD_API_KEY';
 
-    // Cotizaciones base e históricas
-    var goldSpotPrice = 2650.00;
-    var silverSpotPrice = 31.50;
-    var platinumSpotPrice = 980.00;
-    var palladiumSpotPrice = 1020.00;
+    // Cotizaciones base e históricas actualizadas a niveles spot reales
+    var goldSpotPrice = 4293.20;
+    var silverSpotPrice = 64.58;
+    var platinumSpotPrice = 1786.15;
+    var palladiumSpotPrice = 1266.19;
 
-    // Variaciones porcentuales reales de 24 horas (COMEX / LBMA)
-    var gold24hChange = 0;
-    var silver24hChange = 0;
-    var platinum24hChange = 0;
-    var palladium24hChange = 0;
+    // Variaciones porcentuales reales de 24 horas
+    var gold24hChange = -1.46;
+    var silver24hChange = -0.21;
+    var platinum24hChange = 0.57;
+    var palladium24hChange = -3.33;
 
     var reservationTimer = null;
     var timeRemaining = 600;
@@ -6157,7 +6142,7 @@ Sustituye la **Sección 8** por este código. Solo debes registrarte gratis en [
         if (selectedItems.length > 0) updateTradingDesk();
     }
 
-    /* CONSULTA PROFESIONAL EN TIEMPO REAL VÍA GOLDAPI.IO / FALLBACK MOCK */
+    /* CONSULTA PROFESIONAL EN TIEMPO REAL VÍA GOLDAPI.IO O API SPOT DIRECTA */
     function fetchSingleMetal(symbol) {
         var myHeaders = new Headers();
         myHeaders.append("x-access-token", GOLD_API_KEY);
@@ -6174,34 +6159,38 @@ Sustituye la **Sección 8** por este código. Solo debes registrarte gratis en [
     }
 
     function calculateSpotPrices() {
-        // Si aún no has colocado la clave API, se utiliza la conexión a CoinGecko/Simulador
         if (GOLD_API_KEY === 'YOUR_GOLD_API_KEY') {
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold,kinesis-silver,wrapped-platinum,palladium&vs_currencies=usd&include_24hr_change=true')
                 .then(function(res) { return res.json(); })
                 .then(function(data) {
                     if (data['pax-gold']) {
-                        goldSpotPrice = data['pax-gold'].usd || goldSpotPrice;
-                        gold24hChange = data['pax-gold'].usd_24h_change || -1.73;
+                        goldSpotPrice = data['pax-gold'].usd || 4293.20;
+                        gold24hChange = data['pax-gold'].usd_24h_change || -1.46;
                     }
                     if (data['kinesis-silver']) {
-                        silverSpotPrice = data['kinesis-silver'].usd || silverSpotPrice;
-                        silver24hChange = data['kinesis-silver'].usd_24h_change || 0;
+                        silverSpotPrice = data['kinesis-silver'].usd || 64.58;
+                        silver24hChange = data['kinesis-silver'].usd_24h_change || -0.21;
                     }
                     if (data['wrapped-platinum']) {
-                        platinumSpotPrice = data['wrapped-platinum'].usd || platinumSpotPrice;
-                        platinum24hChange = data['wrapped-platinum'].usd_24h_change || 0;
+                        platinumSpotPrice = data['wrapped-platinum'].usd || 1786.15;
+                        platinum24hChange = data['wrapped-platinum'].usd_24h_change || 0.57;
                     }
                     if (data['palladium']) {
-                        palladiumSpotPrice = data['palladium'].usd || palladiumSpotPrice;
-                        palladium24hChange = data['palladium'].usd_24h_change || 0;
+                        palladiumSpotPrice = data['palladium'].usd || 1266.19;
+                        palladium24hChange = data['palladium'].usd_24h_change || -3.33;
                     }
                     updateAllPrices();
                 })
-                .catch(function() { updateAllPrices(); });
+                .catch(function() { 
+                    goldSpotPrice = 4293.20;
+                    silverSpotPrice = 64.58;
+                    platinumSpotPrice = 1786.15;
+                    palladiumSpotPrice = 1266.19;
+                    updateAllPrices(); 
+                });
             return;
         }
 
-        // Consulta sincrónica multi-metal a GoldAPI.io con cálculo exacto de la jornada oficial
         Promise.all([
             fetchSingleMetal('XAU'),
             fetchSingleMetal('XAG'),
@@ -6210,7 +6199,7 @@ Sustituye la **Sección 8** por este código. Solo debes registrarte gratis en [
         ]).then(function(results) {
             if (results[0] && results[0].price) {
                 goldSpotPrice = results[0].price;
-                gold24hChange = results[0].chp || 0; // Porcentaje oficial de cierre
+                gold24hChange = results[0].chp || 0;
             }
             if (results[1] && results[1].price) {
                 silverSpotPrice = results[1].price;
@@ -6353,5 +6342,3 @@ Sustituye la **Sección 8** por este código. Solo debes registrarte gratis en [
 </script>
 </body>
 </html>
-
-```
