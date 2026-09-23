@@ -484,7 +484,7 @@
 .shipping-note-in-stock { color: #10b981; font-weight: 600; }
 .shipping-note-in-transit { color: #cbd5e1; font-style: italic; }
 
-/* ANIMACIÓN Y ESTILOS DEL TICKER CORREGIDO */
+/* ANIMACIÓN Y ESTILOS DEL TICKER UNIFICADO */
 @keyframes ticker-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -494,6 +494,7 @@
     flex-grow: 1;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 }
 
 .header-ticker-content {
@@ -506,30 +507,30 @@
 </style>
 
 <div class="sticky-top-wrapper">
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; background-color: #0b1d3a; gap: 15px;">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; background-color: #0b1d3a; height: 48px; box-sizing: border-box;">
         
         <!-- 1. Logo Specie Reserve (Visible únicamente fuera de Home) -->
         <div class="logo-container" onclick="openTab('home', event)" style="cursor: pointer; display: flex; align-items: center; flex-shrink: 0;">
             <img src="logo-transparente.png" alt="Specie Reserve" class="logo-img" style="height: 106px; width: auto; object-fit: contain; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
         </div>
 
-        <!-- 2. UBICACIÓN "Miami, FL |" CON MARGEN IZQUIERDO Y TICKER EN CONTINUIDAD CONTINUA -->
-        <div style="display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; margin-left: 10px;">
+        <!-- 2. UBICACIÓN "Miami, FL |" Y TICKER CORRIENDO A CONTINUACIÓN SIN TAPAR NADA -->
+        <div style="display: flex; align-items: center; gap: 15px; flex-grow: 1; overflow: hidden; margin-left: 15px; min-width: 0;">
             <span style="font-size: 0.85rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; flex-shrink: 0;">
-                Miami, FL <span style="color: #64748b; margin-left: 6px; font-weight: 400;">|</span>
+                Miami, FL <span style="color: #64748b; margin-left: 4px; font-weight: 400;">|</span>
             </span>
 
-            <div class="header-ticker-box" style="display: flex; align-items: center;">
+            <div class="header-ticker-box">
                 <div class="header-ticker-content" id="ticker-move">
-                    <!-- Ticker dinámico -->
+                    <!-- Ticker dinámico generado en JS -->
                 </div>
             </div>
         </div>
 
-        <!-- 3. EMAIL Y DARK MODE (Con el mismo margen exacto al borde derecho) -->
-        <div class="contact-header" style="display: flex; align-items: center; gap: 16px; flex-shrink: 0; white-space: nowrap; margin-right: 10px;">
-            <a href="mailto:trading@speciereserve.com" style="color: var(--accent); font-size: 0.85rem; text-decoration: none; font-weight: 600;">trading@speciereserve.com</a>
-            <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
+        <!-- 3. EMAIL Y DARK MODE EN UNA SOLA LÍNEA ALINEADOS A LA DERECHA -->
+        <div class="contact-header" style="display: flex; align-items: center; gap: 15px; flex-shrink: 0; white-space: nowrap; margin-left: 20px;">
+            <a href="mailto:trading@speciereserve.com" style="color: var(--accent); font-size: 0.82rem; text-decoration: none; font-weight: 600;">trading@speciereserve.com</a>
+            <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()" style="margin: 0;">
                 <span id="themeSwitchText">🌙 VIP Dark Mode</span>
             </button>
         </div>
