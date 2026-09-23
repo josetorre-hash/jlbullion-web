@@ -5625,17 +5625,17 @@
 <script>
     var selectedItems = [];
 
-    // Cotizaciones base e históricas
-    var goldSpotPrice = 4293.20;
-    var silverSpotPrice = 64.73;
-    var platinumSpotPrice = 1779.00;
-    var palladiumSpotPrice = 1301.00;
+    // Cotizaciones Spot reales de referencia al contado
+    var goldSpotPrice = 4303.40;
+    var silverSpotPrice = 64.90;
+    var platinumSpotPrice = 1785.00;
+    var palladiumSpotPrice = 1290.00;
 
-    // Variaciones porcentuales oficiales de la sesión
-    var gold24hChange = 0;
-    var silver24hChange = 0;
-    var platinum24hChange = 0;
-    var palladium24hChange = 0;
+    // Variaciones porcentuales reales de 24 horas (XAU/USD / XAG/USD)
+    var gold24hChange = -1.67;
+    var silver24hChange = -0.41;
+    var platinum24hChange = 0.35;
+    var palladium24hChange = -1.80;
 
     var reservationTimer = null;
     var timeRemaining = 600;
@@ -6061,7 +6061,7 @@
         }, 1000);
     }
 
-    /* RENDERIZADO DEL TICKER CON COLORES METALÚRGICOS Y CÁLCULO EN TIEMPO REAL */
+    /* RENDERIZADO DEL TICKER CON COLORES METALÚRGICOS Y VARIACIÓN SPOT AL CONTADO */
     function updateHeaderTicker() {
         var tickerElem = document.getElementById('ticker-move');
         if (!tickerElem) return;
@@ -6139,10 +6139,9 @@
         if (selectedItems.length > 0) updateTradingDesk();
     }
 
-    /* OBTENCIÓN EN TIEMPO REAL VÍA COMEX / NYMEX (YAHOO FINANCE VIA PROXY) */
+    /* OBTENCIÓN EN TIEMPO REAL VÍA SÍMBOLOS SPOT AL CONTADO (XAU/USD, XAG/USD, XPT/USD, XPD/USD) */
     function calculateSpotPrices() {
-        var symbols = ['GC=F', 'SI=F', 'PL=F', 'PA=F'];
-        var targetUrl = 'https://query1.finance.yahoo.com/v7/finance/quote?symbols=' + symbols.join(',');
+        var targetUrl = 'https://query1.finance.yahoo.com/v7/finance/quote?symbols=XAUUSD=X,XAGUSD=X,XPTUSD=X,XPDUSD=X';
         var proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(targetUrl);
 
         fetch(proxyUrl)
@@ -6150,16 +6149,16 @@
             .then(function(data) {
                 var result = (data.quoteResponse && data.quoteResponse.result) ? data.quoteResponse.result : [];
                 result.forEach(function(quote) {
-                    if (quote.symbol === 'GC=F') {
+                    if (quote.symbol === 'XAUUSD=X') {
                         goldSpotPrice = quote.regularMarketPrice || goldSpotPrice;
                         gold24hChange = quote.regularMarketChangePercent || 0;
-                    } else if (quote.symbol === 'SI=F') {
+                    } else if (quote.symbol === 'XAGUSD=X') {
                         silverSpotPrice = quote.regularMarketPrice || silverSpotPrice;
                         silver24hChange = quote.regularMarketChangePercent || 0;
-                    } else if (quote.symbol === 'PL=F') {
+                    } else if (quote.symbol === 'XPTUSD=X') {
                         platinumSpotPrice = quote.regularMarketPrice || platinumSpotPrice;
                         platinum24hChange = quote.regularMarketChangePercent || 0;
-                    } else if (quote.symbol === 'PA=F') {
+                    } else if (quote.symbol === 'XPDUSD=X') {
                         palladiumSpotPrice = quote.regularMarketPrice || palladiumSpotPrice;
                         palladium24hChange = quote.regularMarketChangePercent || 0;
                     }
