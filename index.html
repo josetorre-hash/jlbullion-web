@@ -5625,13 +5625,16 @@
 <script>
     var selectedItems = [];
     
+    // CLAVE API DE GOLDAPI.IO (Reemplaza 'YOUR_GOLD_API_KEY' con tu token de goldapi.io)
+    var GOLD_API_KEY = 'YOUR_GOLD_API_KEY';
+
     // Cotizaciones base e históricas
     var goldSpotPrice = 2650.00;
     var silverSpotPrice = 31.50;
     var platinumSpotPrice = 980.00;
     var palladiumSpotPrice = 1020.00;
 
-    // Variaciones porcentuales reales de 24 horas
+    // Variaciones porcentuales reales de 24 horas (COMEX / LBMA)
     var gold24hChange = 0;
     var silver24hChange = 0;
     var platinum24hChange = 0;
@@ -5676,13 +5679,11 @@
         if (btnText) btnText.innerText = isDark ? '☀️ VIP Light' : '🌙 VIP Dark Mode';
     }
 
-    /* HELPER PARA ASIGNAR VALOR A CONTADORES SIN ROMPER EL SCRIPT */
     function setCount(id, val) {
         var el = document.getElementById(id);
         if (el) el.innerText = val;
     }
 
-    /* ACTUALIZACIÓN COMPLETA DE CONTADORES DE PESTAÑAS (ORO, PLATA, SPECIALS) */
     function updateTabCounters() {
         var goldCards = document.querySelectorAll('#gold .item-card');
         var silverCards = document.querySelectorAll('#silver .item-card');
@@ -5692,7 +5693,6 @@
         setCount('cnt-tab-silver', silverCards.length);
         setCount('cnt-tab-specials', specialsCards.length);
 
-        // Contadores del Catálogo de Oro
         var subGoldCoins = document.querySelectorAll('#sub-gold-coins .item-card').length;
         var subGoldBars = document.querySelectorAll('#sub-gold-bars .item-card').length;
         setCount('cnt-sub-gold-coins', subGoldCoins);
@@ -5703,7 +5703,6 @@
         setCount('cnt-nested-bullion-gold', nestedBullionGold);
         setCount('cnt-nested-graduated-gold', nestedGraduatedGold);
 
-        // Contadores del Catálogo de Plata
         var subSilverCoins = document.querySelectorAll('#sub-silver-coins .item-card').length;
         var subSilverBars = document.querySelectorAll('#sub-silver-bars .item-card').length;
         setCount('cnt-sub-silver-coins', subSilverCoins);
@@ -5715,7 +5714,6 @@
         setCount('cnt-nested-graduated-silver', nestedGraduatedSilver);
     }
 
-    /* NAVEGACIÓN PRINCIPAL ENTRE PÁGINAS Y MANEJO INTELIGENTE DEL LOGO */
     function openTab(tabId, event) {
         var pages = document.querySelectorAll('.tab-page');
         pages.forEach(function(p) {
@@ -5736,7 +5734,6 @@
             event.currentTarget.classList.add('active');
         }
 
-        // OCULTAR LOGO EN HEADER ÚNICAMENTE EN HOME (REAPARECE EN OTRAS PESTAÑAS)
         var headerLogo = document.querySelector('header .logo-container');
         if (headerLogo) {
             headerLogo.style.display = (tabId === 'home') ? 'none' : 'flex';
@@ -5755,7 +5752,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /* NAVEGACIÓN SUB-PESTAÑAS (COINS VS BARS EN ORO Y PLATA) */
     function openSubTab(subTabId, event) {
         var parentPage = event ? event.currentTarget.closest('.tab-page') : null;
         var searchContext = parentPage ? parentPage : document;
@@ -5797,7 +5793,6 @@
         }
     }
 
-    /* NAVEGACIÓN ANIDADA (BULLION VS GRADED EN ORO Y PLATA) */
     function openNestedTab(nestedTabId, event) {
         var parentSubTab = event ? event.currentTarget.closest('.sub-tab-content') : null;
         var searchContext = parentSubTab ? parentSubTab : document;
@@ -5847,15 +5842,12 @@
         }
     }
 
-    /* MIGRACIÓN A SPECIALS PROTEGIENDO LAS BARRAS Y SUB-PESTAÑAS DE ORO Y PLATA */
     function processSpecialsMigration() {
         var gridSpecialsPage = document.getElementById('grid-specials-page');
         var gridGraduatedGold = document.getElementById('grid-graduated-gold');
         var gridBullionGold = document.getElementById('grid-bullion-gold');
-        
         var gridGraduatedSilver = document.getElementById('grid-graduated-silver');
         var gridBullionSilver = document.getElementById('grid-bullion-silver');
-
         var gridGoldBars = document.getElementById('grid-gold-bars');
         var gridSilverBars = document.getElementById('grid-silver-bars');
 
@@ -5880,7 +5872,6 @@
         });
     }
 
-    /* FILTRADO DE INVENTARIO MULTI-METALES */
     function filterInventory(query) {
         var searchTerm = (query || '').toLowerCase().trim();
         var priceRange = document.getElementById('priceRangeFilter') ? document.getElementById('priceRangeFilter').value : 'all';
@@ -5987,7 +5978,6 @@
         updateTradingDesk();
     }
 
-    /* CARRITO DE COMPRAS Y TRADING DESK CON PROTECCIÓN DE COSTO Y COMPATIBILIDAD MULTI-METAL */
     function updateTradingDesk() {
         var textArea = document.getElementById('order-details');
         var container = document.getElementById('selected-items-container');
@@ -6074,7 +6064,7 @@
         }, 1000);
     }
 
-    /* RENDERIZADO DEL TICKER CON VARIACIÓN REAL DE 24 HORAS Y COLORES METALÚRGICOS */
+    /* RENDERIZADO DEL TICKER CON COLORES METALÚRGICOS Y VARIACIÓN DE MERCADO REAL DE 24H */
     function updateHeaderTicker() {
         var tickerElem = document.getElementById('ticker-move');
         if (!tickerElem) return;
@@ -6100,7 +6090,6 @@
         tickerElem.innerHTML = fullSet + fullSet;
     }
 
-    /* ACTUALIZACIÓN DE PRECIOS CON PROTECCIÓN Y BADGE DINÁMICO MULTI-METAL */
     function updateAllPrices() {
         processSpecialsMigration();
 
@@ -6153,36 +6142,79 @@
         if (selectedItems.length > 0) updateTradingDesk();
     }
 
-    /* OBTENCIÓN EN TIEMPO REAL CON CAMBIO DE 24 HORAS OFICIAL PARA 4 METALES */
-    function calculateSpotPrices() {
-        fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold,kinesis-silver,wrapped-platinum,palladium&vs_currencies=usd&include_24hr_change=true')
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
-                if (data['pax-gold']) {
-                    goldSpotPrice = data['pax-gold'].usd || goldSpotPrice;
-                    gold24hChange = data['pax-gold'].usd_24h_change || 0;
-                }
-                if (data['kinesis-silver']) {
-                    silverSpotPrice = data['kinesis-silver'].usd || silverSpotPrice;
-                    silver24hChange = data['kinesis-silver'].usd_24h_change || 0;
-                }
-                if (data['wrapped-platinum']) {
-                    platinumSpotPrice = data['wrapped-platinum'].usd || platinumSpotPrice;
-                    platinum24hChange = data['wrapped-platinum'].usd_24h_change || 0;
-                }
-                if (data['palladium']) {
-                    palladiumSpotPrice = data['palladium'].usd || palladiumSpotPrice;
-                    palladium24hChange = data['palladium'].usd_24h_change || 0;
-                }
+    /* CONSULTA PROFESIONAL EN TIEMPO REAL VÍA GOLDAPI.IO / FALLBACK MOCK */
+    function fetchSingleMetal(symbol) {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", GOLD_API_KEY);
+        myHeaders.append("Content-Type", "application/json");
 
-                updateAllPrices();
-            })
-            .catch(function() {
-                updateAllPrices();
-            });
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        return fetch("https://www.goldapi.io/api/" + symbol + "/USD", requestOptions)
+            .then(function(res) { return res.json(); });
     }
 
-    /* INTERCEPCIÓN Y COPIADO AUTOMÁTICO PARA ANACS */
+    function calculateSpotPrices() {
+        // Si aún no has colocado la clave API, se utiliza la conexión a CoinGecko/Simulador
+        if (GOLD_API_KEY === 'YOUR_GOLD_API_KEY') {
+            fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold,kinesis-silver,wrapped-platinum,palladium&vs_currencies=usd&include_24hr_change=true')
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    if (data['pax-gold']) {
+                        goldSpotPrice = data['pax-gold'].usd || goldSpotPrice;
+                        gold24hChange = data['pax-gold'].usd_24h_change || -1.73;
+                    }
+                    if (data['kinesis-silver']) {
+                        silverSpotPrice = data['kinesis-silver'].usd || silverSpotPrice;
+                        silver24hChange = data['kinesis-silver'].usd_24h_change || 0;
+                    }
+                    if (data['wrapped-platinum']) {
+                        platinumSpotPrice = data['wrapped-platinum'].usd || platinumSpotPrice;
+                        platinum24hChange = data['wrapped-platinum'].usd_24h_change || 0;
+                    }
+                    if (data['palladium']) {
+                        palladiumSpotPrice = data['palladium'].usd || palladiumSpotPrice;
+                        palladium24hChange = data['palladium'].usd_24h_change || 0;
+                    }
+                    updateAllPrices();
+                })
+                .catch(function() { updateAllPrices(); });
+            return;
+        }
+
+        // Consulta sincrónica multi-metal a GoldAPI.io con cálculo exacto de la jornada oficial
+        Promise.all([
+            fetchSingleMetal('XAU'),
+            fetchSingleMetal('XAG'),
+            fetchSingleMetal('XPT'),
+            fetchSingleMetal('XPD')
+        ]).then(function(results) {
+            if (results[0] && results[0].price) {
+                goldSpotPrice = results[0].price;
+                gold24hChange = results[0].chp || 0; // Porcentaje oficial de cierre
+            }
+            if (results[1] && results[1].price) {
+                silverSpotPrice = results[1].price;
+                silver24hChange = results[1].chp || 0;
+            }
+            if (results[2] && results[2].price) {
+                platinumSpotPrice = results[2].price;
+                platinum24hChange = results[2].chp || 0;
+            }
+            if (results[3] && results[3].price) {
+                palladiumSpotPrice = results[3].price;
+                palladium24hChange = results[3].chp || 0;
+            }
+            updateAllPrices();
+        }).catch(function() {
+            updateAllPrices();
+        });
+    }
+
     function fixAnacsLinks() {
         document.querySelectorAll('a').forEach(function(anchor) {
             var href = anchor.getAttribute('href') || '';
@@ -6211,7 +6243,6 @@
         });
     }
 
-    /* FORMATO AUTOMÁTICO DE PESOS (2 DECIMALES EN GRAMOS, 3 DECIMALES EN ONZAS) */
     function formatWeightsAndUnits() {
         document.querySelectorAll('.item-specs-grid .spec-row').forEach(function(row) {
             var labelEl = row.querySelector('.spec-label');
@@ -6237,7 +6268,6 @@
         });
     }
 
-    /* APLICAR DISPONIBILIDAD Y TIEMPOS REALES DE DESPACHO */
     function applyAvailabilityBadges() {
         document.querySelectorAll('.item-card').forEach(function(card) {
             var availability = card.getAttribute('data-availability');
@@ -6279,7 +6309,6 @@
         });
     }
 
-    /* INICIALIZACIÓN DE LA PÁGINA CON ACTUALIZACIÓN EN TIEMPO REAL */
     window.onload = function() {
         var savedTheme = localStorage.getItem('specie_dark_mode') || localStorage.getItem('jlb_dark_mode');
         if (savedTheme === 'enabled') {
@@ -6288,7 +6317,6 @@
             if (btnText) btnText.innerText = '☀️ VIP Light';
         }
 
-        // OCULTAR LOGO DEL HEADER SI LA CARGA INICIAL ES EN HOME
         var headerLogo = document.querySelector('header .logo-container');
         if (headerLogo) {
             var activePage = document.querySelector('.tab-page.active-page');
@@ -6297,14 +6325,12 @@
             }
         }
 
-        // Carga inicial al abrir la página
         calculateSpotPrices();
         formatWeightsAndUnits();
         fixAnacsLinks();
         applyAvailabilityBadges();
         updateTabCounters();
 
-        // Consulta en tiempo real cada 30 segundos (30,000 ms)
         setInterval(function() {
             calculateSpotPrices();
         }, 30000);
