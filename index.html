@@ -458,21 +458,18 @@
     margin-bottom: 6px;
 }
 
-/* Estado: En Mano (In Stock) */
 .badge-in-stock {
     background: rgba(16, 185, 129, 0.15);
     color: #10b981;
     border: 1px solid #10b981;
 }
 
-/* Estado: En Tránsito (In Transit) */
 .badge-in-transit {
     background: rgba(245, 158, 11, 0.15);
     color: #f59e0b;
     border: 1px solid #f59e0b;
 }
 
-/* NOTA DE ENVÍO DENTRO DE LA FICHA TÉCNICA */
 .shipping-note-row {
     grid-column: 1 / -1;
     background: rgba(255, 255, 255, 0.03);
@@ -487,7 +484,7 @@
 .shipping-note-in-stock { color: #10b981; font-weight: 600; }
 .shipping-note-in-transit { color: #cbd5e1; font-style: italic; }
 
-/* ANIMACIÓN Y ESTILOS DEL TICKER UNIFICADO */
+/* ANIMACIÓN Y ESTILOS DEL TICKER CORREGIDO */
 @keyframes ticker-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -497,8 +494,6 @@
     flex-grow: 1;
     overflow: hidden;
     white-space: nowrap;
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .header-ticker-content {
@@ -511,17 +506,17 @@
 </style>
 
 <div class="sticky-top-wrapper">
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 6px 20px; background-color: #0b1d3a; gap: 20px;">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; background-color: #0b1d3a; gap: 15px;">
         
-        <!-- 1. Logo Specie Reserve a la izquierda (+25% de diámetro) -->
+        <!-- 1. Logo Specie Reserve (Visible únicamente fuera de Home) -->
         <div class="logo-container" onclick="openTab('home', event)" style="cursor: pointer; display: flex; align-items: center; flex-shrink: 0;">
             <img src="logo-transparente.png" alt="Specie Reserve" class="logo-img" style="height: 106px; width: auto; object-fit: contain; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
         </div>
 
-        <!-- 2. Grupo Izquierdo: Ubicación + Ticker en Continuidad -->
-        <div style="display: flex; align-items: center; gap: 20px; flex-grow: 1; overflow: hidden;">
-            <span style="font-size: 0.82rem; color: #94a3b8; font-weight: 600; white-space: nowrap; flex-shrink: 0;">
-                Miami, FL <span style="color: #475569; margin-left: 2px;">|</span>
+        <!-- 2. UBICACIÓN "Miami, FL |" CON MARGEN IZQUIERDO Y TICKER EN CONTINUIDAD CONTINUA -->
+        <div style="display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; margin-left: 10px;">
+            <span style="font-size: 0.85rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; flex-shrink: 0;">
+                Miami, FL <span style="color: #64748b; margin-left: 6px; font-weight: 400;">|</span>
             </span>
 
             <div class="header-ticker-box" style="display: flex; align-items: center;">
@@ -531,9 +526,9 @@
             </div>
         </div>
 
-        <!-- 3. Acciones a la derecha (Email + Dark Mode) con margen simétrico -->
-        <div class="contact-header" style="display: flex; align-items: center; gap: 15px; flex-shrink: 0; white-space: nowrap;">
-            <a href="mailto:trading@speciereserve.com" style="color: var(--accent); font-size: 0.82rem; text-decoration: none; font-weight: 600;">trading@speciereserve.com</a>
+        <!-- 3. EMAIL Y DARK MODE (Con el mismo margen exacto al borde derecho) -->
+        <div class="contact-header" style="display: flex; align-items: center; gap: 16px; flex-shrink: 0; white-space: nowrap; margin-right: 10px;">
+            <a href="mailto:trading@speciereserve.com" style="color: var(--accent); font-size: 0.85rem; text-decoration: none; font-weight: 600;">trading@speciereserve.com</a>
             <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
                 <span id="themeSwitchText">🌙 VIP Dark Mode</span>
             </button>
