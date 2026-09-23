@@ -440,6 +440,7 @@
 
 
 
+
 <!-- ========================================================= -->
 <!-- SECCIÓN 2: CABECERA, LOGO, TICKER SPOT Y NAVEGACIÓN       -->
 <!-- ========================================================= -->
@@ -458,18 +459,21 @@
     margin-bottom: 6px;
 }
 
+/* Estado: En Mano (In Stock) */
 .badge-in-stock {
     background: rgba(16, 185, 129, 0.15);
     color: #10b981;
     border: 1px solid #10b981;
 }
 
+/* Estado: En Tránsito (In Transit) */
 .badge-in-transit {
     background: rgba(245, 158, 11, 0.15);
     color: #f59e0b;
     border: 1px solid #f59e0b;
 }
 
+/* NOTA DE ENVÍO DENTRO DE LA FICHA TÉCNICA */
 .shipping-note-row {
     grid-column: 1 / -1;
     background: rgba(255, 255, 255, 0.03);
@@ -494,7 +498,9 @@
     flex-grow: 1;
     overflow: hidden;
     white-space: nowrap;
-    position: relative;
+    max-width: 50%;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .header-ticker-content {
@@ -507,32 +513,27 @@
 </style>
 
 <div class="sticky-top-wrapper">
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; background-color: #0b1d3a; height: 48px; box-sizing: border-box;">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 6px 20px; background-color: #0b1d3a; gap: 20px;">
         
-        <!-- 1. Logo Specie Reserve (Visible únicamente fuera de Home) -->
-        <div class="logo-container" onclick="openTab('home', event)" style="cursor: pointer; display: flex; align-items: center; flex-shrink: 0;">
-            <img src="logo-transparente.png" alt="Specie Reserve" class="logo-img" style="height: 106px; width: auto; object-fit: contain; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
+        <!-- 1. Logo Specie Reserve a la izquierda (+25% de diámetro) -->
+<div class="logo-container" onclick="openTab('home', event)" style="cursor: pointer; display: flex; align-items: center; flex-shrink: 0;">
+    <img src="logo-transparente.png" alt="Specie Reserve" class="logo-img" style="height: 106px; width: auto; object-fit: contain; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.5)); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+</div>
 
-        <!-- 2. UBICACIÓN "Miami, FL |" Y TICKER CORRIENDO A CONTINUACIÓN SIN TAPAR NADA -->
-        <div style="display: flex; align-items: center; gap: 15px; flex-grow: 1; overflow: hidden; margin-left: 15px; min-width: 0;">
-            <span style="font-size: 0.85rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; flex-shrink: 0;">
-                Miami, FL <span style="color: #64748b; margin-left: 4px; font-weight: 400;">|</span>
-            </span>
+        <!-- 2. Ticker de precios en vivo integrado al centro -->
+        <!-- Busca la clase header-ticker-box y asegúrate de que tenga esta regla: -->
+<div class="header-ticker-box" style="flex-grow: 1; overflow: hidden; white-space: nowrap; max-width: 65%; display: flex; align-items: center;">
+    <div class="header-ticker-content" id="ticker-move">
+        <!-- Ticker dinámico -->
+    </div>
+</div>
 
-            <div class="header-ticker-box">
-                <div class="header-ticker-content" id="ticker-move">
-                    <!-- Ticker dinámico generado en JS -->
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. EMAIL Y DARK MODE EN UNA SOLA LÍNEA ALINEADOS A LA DERECHA -->
-        <div class="contact-header" style="display: flex; align-items: center; gap: 15px; flex-shrink: 0; white-space: nowrap; margin-left: 20px;">
-            <a href="mailto:trading@speciereserve.com" style="color: var(--accent); font-size: 0.82rem; text-decoration: none; font-weight: 600;">trading@speciereserve.com</a>
-            <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()" style="margin: 0;">
+        <!-- 3. Acciones a la derecha (Dark Mode + Email) -->
+        <div class="contact-header">
+            <button type="button" class="theme-switch-btn" onclick="toggleDarkMode()">
                 <span id="themeSwitchText">🌙 VIP Dark Mode</span>
             </button>
+            <span style="font-size: 0.8rem;">Miami, FL | <a href="mailto:trading@speciereserve.com">trading@speciereserve.com</a></span>
         </div>
 
     </header>
