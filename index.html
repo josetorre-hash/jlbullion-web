@@ -5617,6 +5617,8 @@
 
 
 
+
+
 <!-- ========================================================= -->
 <!-- SECCIÓN 8: LÓGICA Y FUNCIONES JAVASCRIPT                 -->
 <!-- ========================================================= -->
@@ -6069,33 +6071,33 @@
         }, 1000);
     }
 
-    /* ACTUALIZACIÓN Y RENDERIZADO ULTRALIMPIO DEL TICKER (ESTILO BLOOMBERG / REUTERS) */
-function updateHeaderTicker() {
-    var tickerElem = document.getElementById('ticker-move');
-    if (!tickerElem) return;
+    /* RENDERIZADO ULTRALIMPIO DEL TICKER CON COLORES METALÚRGICOS ESPECÍFICOS */
+    function updateHeaderTicker() {
+        var tickerElem = document.getElementById('ticker-move');
+        if (!tickerElem) return;
 
-    function getMetaHtml(label, price, prevPrice, isDec4) {
-        var change = prevPrice > 0 ? (price - prevPrice) : 0;
-        var pct = prevPrice > 0 ? ((change / prevPrice) * 100) : 0;
-        var sign = change >= 0 ? '+' : '';
-        var color = change >= 0 ? '#4ade80' : '#f87171';
-        var formattedPrice = isDec4 ? price.toFixed(4) : price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        function getMetaHtml(label, price, prevPrice, isDec4, labelColor) {
+            var change = prevPrice > 0 ? (price - prevPrice) : 0;
+            var pct = prevPrice > 0 ? ((change / prevPrice) * 100) : 0;
+            var sign = change >= 0 ? '+' : '';
+            var color = change >= 0 ? '#4ade80' : '#f87171';
+            var formattedPrice = isDec4 ? price.toFixed(4) : price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
-        return '<span style="margin-right: 30px; display: inline-flex; align-items: center; gap: 6px;">' +
-               '<strong style="color: #cbd5e1; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;">' + label + ':</strong> ' +
-               '<strong style="color: ' + color + ';">$' + formattedPrice + '</strong> ' +
-               '<span style="color: ' + color + '; font-size: 0.8rem;">(' + sign + pct.toFixed(2) + '%)</span>' +
-               '</span>';
+            return '<span style="margin-right: 35px; display: inline-flex; align-items: center; gap: 6px;">' +
+                   '<strong style="color: ' + labelColor + '; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">' + label + ':</strong> ' +
+                   '<strong style="color: ' + color + ';">$' + formattedPrice + '</strong> ' +
+                   '<span style="color: ' + color + '; font-size: 0.8rem;">(' + sign + pct.toFixed(2) + '%)</span>' +
+                   '</span>';
+        }
+
+        var itemGold = getMetaHtml('Gold', goldSpotPrice, prevGoldSpot, false, '#fef08a');
+        var itemSilver = getMetaHtml('Silver', silverSpotPrice, prevSilverSpot, true, '#f1f5f9');
+        var itemPlatinum = getMetaHtml('Platinum', platinumSpotPrice, prevPlatinumSpot, false, '#94a3b8');
+        var itemPalladium = getMetaHtml('Palladium', palladiumSpotPrice, prevPalladiumSpot, false, '#cbd5e1');
+
+        var fullSet = itemGold + itemSilver + itemPlatinum + itemPalladium;
+        tickerElem.innerHTML = fullSet + fullSet;
     }
-
-    var itemGold = getMetaHtml('Gold', goldSpotPrice, prevGoldSpot, false);
-    var itemSilver = getMetaHtml('Silver', silverSpotPrice, prevSilverSpot, true);
-    var itemPlatinum = getMetaHtml('Platinum', platinumSpotPrice, prevPlatinumSpot, false);
-    var itemPalladium = getMetaHtml('Palladium', palladiumSpotPrice, prevPalladiumSpot, false);
-
-    var fullSet = itemGold + itemSilver + itemPlatinum + itemPalladium;
-    tickerElem.innerHTML = fullSet + fullSet;
-}
 
     /* ACTUALIZACIÓN DE PRECIOS CON PROTECCIÓN Y BADGE DINÁMICO MULTI-METAL */
     function updateAllPrices() {
@@ -6313,4 +6315,3 @@ function updateHeaderTicker() {
 </script>
 </body>
 </html>
-
