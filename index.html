@@ -149,13 +149,15 @@
         header { background-color: var(--primary); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
         .logo-container { display: flex; align-items: center; gap: 5px; text-decoration: none; cursor: pointer; }
         .logo-img { 
-            height: 106px; 
-            width: auto; 
-            margin-top: -15px; 
-            margin-bottom: -15px; 
-            margin-right: -22px; 
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); 
-        }
+    height: 106px; 
+    width: auto; 
+    margin-top: -15px; 
+    margin-bottom: -15px; 
+    margin-right: -10px; 
+    object-fit: contain;
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.6));
+    transition: transform 0.2s ease;
+}
         .logo-text-group { display: flex; flex-direction: column; }
         .logo-title { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--accent); font-weight: 700; letter-spacing: 2px; line-height: 1.1; }
         .logo-subtitle { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; color: var(--text-light); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px; }
