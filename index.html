@@ -6010,42 +6010,67 @@
     }
 
     function openTab(tabId, event) {
-        var pages = document.querySelectorAll('.tab-page');
-        pages.forEach(function(p) {
-            p.classList.remove('active-page');
-            p.style.setProperty('display', 'none', 'important');
-        });
+    var pages = document.querySelectorAll('.tab-page');
+    pages.forEach(function(p) {
+        p.classList.remove('active-page');
+        p.style.setProperty('display', 'none', 'important');
+    });
 
-        var tabs = document.querySelectorAll('.nav-tab');
-        tabs.forEach(function(t) { t.classList.remove('active'); });
+    var tabs = document.querySelectorAll('.nav-tab');
+    tabs.forEach(function(t) { t.classList.remove('active'); });
 
-        var selectedPage = document.getElementById(tabId);
-        if(selectedPage) {
-            selectedPage.classList.add('active-page');
-            selectedPage.style.setProperty('display', 'block', 'important');
-        }
-
-        if(event && event.currentTarget) {
-            event.currentTarget.classList.add('active');
-        }
-
-        var headerLogo = document.querySelector('header .logo-container');
-        if (headerLogo) {
-            headerLogo.style.display = (tabId === 'home') ? 'none' : 'flex';
-        }
-
-        if (tabId === 'specials') {
-            activeCategoryFilter = 'all';
-            document.querySelectorAll('#specials .filter-chip').forEach(function(chip, idx) {
-                if (idx === 0) chip.classList.add('active-chip');
-                else chip.classList.remove('active-chip');
-            });
-        }
-
-        var searchInput = document.querySelector('.search-box-input');
-        filterInventory(searchInput ? searchInput.value : '');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    var selectedPage = document.getElementById(tabId);
+    if (selectedPage) {
+        selectedPage.classList.add('active-page');
+        selectedPage.style.setProperty('display', 'block', 'important');
     }
+
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
+
+    // Control del Logo en Header según la pestaña
+    var headerLogo = document.querySelector('header .logo-container');
+    if (headerLogo) {
+        headerLogo.style.display = (tabId === 'home') ? 'none' : 'flex';
+    }
+
+    // Al volver a 'home' o 'specials', restablecer filtros
+    activeCategoryFilter = 'all';
+    document.querySelectorAll('.filter-chip').forEach(function(chip, idx) {
+        if (idx === 0) chip.classList.add('active-chip');
+        else chip.classList.remove('active-chip');
+    });
+
+    // Limpiar buscador y mostrar todo el inventario de la pestaña activa
+    var searchInput = document.querySelector('.search-box-input');
+    if (searchInput) searchInput.value = '';
+    
+    filterInventory('');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.onload = function() {
+    var savedTheme = localStorage.getItem('specie_dark_mode') || localStorage.getItem('jlb_dark_mode');
+    if (savedTheme === 'enabled') {
+        document.body.classList.add('dark-mode');
+        var btnText = document.getElementById('themeSwitchText');
+        if (btnText) btnText.innerText = '☀️ VIP Light';
+    }
+
+    // Forzar la activación de la pestaña 'home'
+    openTab('home', null);
+
+    calculateSpotPrices();
+    formatWeightsAndUnits();
+    fixAnacsLinks();
+    applyAvailabilityBadges();
+    updateTabCounters();
+
+    setInterval(function() {
+        calculateSpotPrices();
+    }, 30000);
+};
 
     function openSubTab(subTabId, event) {
         var parentPage = event ? event.currentTarget.closest('.tab-page') : null;
